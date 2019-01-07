@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Judson|Pacifico&subset=vietnamese");
+@import url("https://fonts.googleapis.com/css?family=Lobster&amp;subset=vietnamese");
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   border: 0;
@@ -234,6 +234,7 @@ body {
   background-size: cover;
   min-height: 100vh;
   color: white;
+  font-family: "Lobster", cursive;
 }
 body:before {
   content: "";
@@ -279,9 +280,10 @@ body section.decoration .conerCircles .circle {
   position: fixed;
   width: 20vmax;
   height: 20vmax;
-  background: url(../img/circle-motif-02.svg) no-repeat center;
+  background: url(../img/circle-motif-02.svg);
   top: 0;
   left: 0;
+  z-index: 10;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
@@ -300,12 +302,14 @@ body section.decoration .conerCircles .circle:nth-child(4) {
 body section.mountains {
   position: fixed;
   bottom: 0;
+  max-width: 60vw;
+  margin: 0 auto;
   left: 0;
   right: 0;
   display: flex;
 }
-body section.mountains #rule, body section.mountains #wheel, body section.mountains #result {
-  height: 60vh;
+body section.mountains #ruleArea, body section.mountains #wheelArea, body section.mountains #resultArea {
+  height: 80vh;
   position: relative;
   -ms-flex: 1;
   -webkit-flex: 1;
@@ -315,42 +319,51 @@ body section.mountains #rule, body section.mountains #wheel, body section.mounta
   -o-transition: flex 0.5s;
   transition: flex 0.5s;
 }
-body section.mountains #rule.active, body section.mountains #wheel.active, body section.mountains #result.active {
+body section.mountains #ruleArea.active, body section.mountains #wheelArea.active, body section.mountains #resultArea.active {
   -ms-flex: 1.1;
   -webkit-flex: 1.1;
   -moz-flex: 1.1;
   flex: 1.1;
 }
-body section.mountains #rule .bottomLink, body section.mountains #wheel .bottomLink, body section.mountains #result .bottomLink {
+body section.mountains #ruleArea .bottomLink, body section.mountains #wheelArea .bottomLink, body section.mountains #resultArea .bottomLink {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   height: 150px;
-  display: flex;
-  align-items: center;
   text-align: center;
 }
-body section.mountains #rule .bottomLink:before, body section.mountains #wheel .bottomLink:before, body section.mountains #result .bottomLink:before {
-  content: "";
-  background: url(../img/yellow-mountain.svg) no-repeat center bottom;
-  background-size: contain;
+body section.mountains #ruleArea .bottomLink .mountainBackground, body section.mountains #wheelArea .bottomLink .mountainBackground, body section.mountains #resultArea .bottomLink .mountainBackground {
   position: absolute;
-  left: 50%;
+  height: 120%;
   top: 50%;
-  width: 100vw;
-  height: 100%;
-  z-index: -1;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-body section.mountains #rule .bottomLink *, body section.mountains #wheel .bottomLink *, body section.mountains #result .bottomLink * {
+body section.mountains #ruleArea .bottomLink a, body section.mountains #wheelArea .bottomLink a, body section.mountains #resultArea .bottomLink a {
+  position: relative;
+  display: block;
+  top: 45%;
+}
+body section.mountains #ruleArea .bottomLink *, body section.mountains #wheelArea .bottomLink *, body section.mountains #resultArea .bottomLink * {
   -ms-flex: 1;
   -webkit-flex: 1;
   -moz-flex: 1;
   flex: 1;
+}
+body section.mountains #ruleArea .objectsArea, body section.mountains #wheelArea .objectsArea, body section.mountains #resultArea .objectsArea {
+  background: #cc2121;
+  height: 100%;
+  width: 100vw;
+  position: absolute;
+  left: 50%;
+  z-index: -1;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 /*# sourceMappingURL=import.css.map */
