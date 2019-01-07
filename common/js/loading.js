@@ -1,0 +1,5 @@
+function loadingObj(){
+
+}
+
+loadingObj.prototype =

@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css?family=Judson|Pacifico&subset=vietnamese')
+/* Let's get this party started */
+::-webkit-scrollbar
+    width: 4px
+
+/* Track */
+::-webkit-scrollbar-track
+    /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3)*/
+    width: 10px
+    /*display:none*/
+    background: transparent
+
+/* Handle */
+::-webkit-scrollbar-thumb
+    // -webkit-border-radius: 10px
+    // border-radius: 10px
+    background-color: $red
+    /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5)*/
+::-webkit-scrollbar-thumb:window-inactive
+    /*background: rgba(255,0,0,0.4)*/
+
+
+body
+    background: url(../img/red-gradient.svg) center no-repeat
+    background-size: cover
+    min-height: 100vh
+    color: white
+    &:before
+        content: ""
+        position: absolute
+        top: 0
+        bottom: 0
+        left: 0
+        right: 0
+        background: url(../img/pattern-motif.svg) center repeat
+        background-size: 2%
+        background-size: 2vmin
+        z-index: -1
+        opacity: 0.2
+
+    header
+        padding-top: 40px
+        .wrapper
+            display: flex
+        #topLogo
+            background: url(../img/vina_logo_white.svg) center no-repeat
+            background-size: contain
+            width: 200px
+            height: 50px
+        nav
+            @include flex(1)
+            align-self: center
+            text-align: right
+            a
+                margin: 20px
+    
+    .wrapper
+        max-width: calc(100vw - 30vw)
+        margin: auto
+    
+    section
+        &.decoration
+            .conerCircles
+                .circle
+                    position: fixed
+                    width: 20vmax
+                    height: 20vmax
+                    background: url(../img/circle-motif-02.svg) no-repeat center
+                    top: 0
+                    left: 0
+                    @include transform(translate(-50%, -50%))
+                    &:nth-child(2)
+                        left: 100%
+                    &:nth-child(3)
+                        top: 100%
+                    &:nth-child(4)
+                        top: 100%
+                        left: 100%
+
+        &.mountains
+            position: fixed
+            bottom: 0
+            left:0
+            right: 0
+            display: flex
+
+            #rule, #wheel, #result
+                height: 60vh
+                position: relative
+
+                @include flex(1)
+                @include transition(flex 0.5s)
+                &.active
+                    @include flex(1.1)
+
+                .bottomLink
+                    position: absolute
+                    bottom: 0
+                    left: 0
+                    right: 0
+                    height: 150px
+                    display: flex
+                    align-items: center
+                    text-align: center
+                    &:before
+                        content: ""
+                        background: url(../img/yellow-mountain.svg) no-repeat center bottom
+                        background-size: contain
+                        position: absolute
+                        left: 50%
+                        top: 50%
+                        width: 100vw
+                        height: 100%
+                        z-index: -1
+                        @include transform(translate(-50%,-50%))
+                    *
+                        @include flex(1)
+                

@@ -1,0 +1,53 @@
+@mixin transform($transform)
+    -webkit-transform: $transform
+    -ms-transform: $transform
+    -o-transform: $transform
+    transform: $transform
+
+@mixin transformOrigin($transform: 50% 50%)
+    -webkit-transform-origin: $transform
+    -moz-transform-origin: $transform
+    -ms-transform-origin: $transform
+    -o-transform-origin: $transform
+    transform-origin: $transform
+
+@mixin appendTransform($transform)
+    @include transform(translate(-50%,-80%) $transform)
+
+@mixin boxSizing($value: border-box)
+    -webkit-box-sizing: $value
+    -moz-box-sizing: $value
+    box-sizing: $value
+
+@mixin flex($value: flex-value)
+    -ms-flex: $value
+    -webkit-flex: $value
+    -moz-flex: $value
+    flex: $value
+
+@mixin transition($transition)
+    -webkit-transition: $transition
+    -o-transition: $transition
+    transition: $transition
+
+@mixin transitionTransform($delayTransform: 1s, $transition: null)
+    $transition_str: null
+    @if ($transition != null)
+        $transition_str: ', ' $transition
+    -webkit-transition: -webkit-transform $delayTransform $transition_str
+    -o-transition: -o-transform $delayTransform $transition_str
+    transition: transform $delayTransform, -o-transform  $delayTransform $transition_str
+
+@mixin transitionTimingFunction($timingFunction: linear)
+    -webkit-transition-timing-function: $timingFunction
+    -o-transition-timing-function: $timingFunction
+    transition-timing-function: $timingFunction
+
+@mixin setRotate($selectNumber)
+    &[data-number='#{$selectNumber}']
+        $degRotate: 18 * ($selectNumber - 1)
+        @include transform(rotate($degRotate+deg))
+
+@mixin firefox-message($selector)
+    body.firefox #{$selector}:before
+        content: "Hi, Firefox users!"
