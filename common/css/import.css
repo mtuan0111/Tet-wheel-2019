@@ -308,9 +308,16 @@ body section.mountains {
   right: 0;
   display: flex;
 }
-body section.mountains #ruleArea, body section.mountains #wheelArea, body section.mountains #resultArea {
-  height: 80vh;
+body section.mountains.activeRule {
+  margin-left: 40vw;
+}
+body section.mountains.activeResult {
+  margin-right: 40vw;
+}
+body section.mountains div[id$=Area] {
+  height: 90vh;
   position: relative;
+  background: rgba(255, 255, 255, 0.5);
   -ms-flex: 1;
   -webkit-flex: 1;
   -moz-flex: 1;
@@ -319,21 +326,26 @@ body section.mountains #ruleArea, body section.mountains #wheelArea, body sectio
   -o-transition: flex 0.5s;
   transition: flex 0.5s;
 }
-body section.mountains #ruleArea.active, body section.mountains #wheelArea.active, body section.mountains #resultArea.active {
+body section.mountains div[id$=Area].active {
   -ms-flex: 1.1;
   -webkit-flex: 1.1;
   -moz-flex: 1.1;
   flex: 1.1;
 }
-body section.mountains #ruleArea .bottomLink, body section.mountains #wheelArea .bottomLink, body section.mountains #resultArea .bottomLink {
+body section.mountains div[id$=Area] .bottom {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 150px;
+  height: 15vmax;
   text-align: center;
 }
-body section.mountains #ruleArea .bottomLink .mountainBackground, body section.mountains #wheelArea .bottomLink .mountainBackground, body section.mountains #resultArea .bottomLink .mountainBackground {
+body section.mountains div[id$=Area] .bottom .bottomLink {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+body section.mountains div[id$=Area] .bottom .bottomLink .mountainBackground {
   position: absolute;
   height: 120%;
   top: 50%;
@@ -342,28 +354,34 @@ body section.mountains #ruleArea .bottomLink .mountainBackground, body section.m
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-body section.mountains #ruleArea .bottomLink a, body section.mountains #wheelArea .bottomLink a, body section.mountains #resultArea .bottomLink a {
+body section.mountains div[id$=Area] .bottom .bottomLink a {
   position: relative;
   display: block;
   top: 45%;
 }
-body section.mountains #ruleArea .bottomLink *, body section.mountains #wheelArea .bottomLink *, body section.mountains #resultArea .bottomLink * {
-  -ms-flex: 1;
-  -webkit-flex: 1;
-  -moz-flex: 1;
-  flex: 1;
-}
-body section.mountains #ruleArea .objectsArea, body section.mountains #wheelArea .objectsArea, body section.mountains #resultArea .objectsArea {
-  background: #cc2121;
-  height: 100%;
-  width: 100vw;
+body section.mountains #ruleArea .trees {
   position: absolute;
-  left: 50%;
+  bottom: 0;
+  width: 100%;
+  height: 260%;
+}
+body section.mountains #ruleArea .trees .tree01, body section.mountains #ruleArea .trees .tree02 {
+  background: url(../img/tree-01.svg) no-repeat bottom;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 10%;
+  -webkit-transform: rotate(-10deg);
+  -ms-transform: rotate(-10deg);
+  -o-transform: rotate(-10deg);
+  transform: rotate(-10deg);
   z-index: -1;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
-  transform: translateX(-50%);
+  left: -30%;
+  -webkit-transform-origin: 50% 100%;
+  -moz-transform-origin: 50% 100%;
+  -ms-transform-origin: 50% 100%;
+  -o-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
 }
 
 /*# sourceMappingURL=import.css.map */

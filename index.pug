@@ -27,28 +27,42 @@ html(lang="en")
                 .object.circle
                 .object.circle
                 .object.circle
-            
-            
-        section.mountains
+
+        section.mountains.activeRule
             #ruleArea
-                .bottomLink
-                    img.mountainBackground(src="common/img/yellow-mountain.svg", alt="Menu section")
-                    a(href="#") Thể lệ
-                .objectsArea
-                    .trees
+                .top
+                .content
+                    .objectsArea
+                        .ruleBroad
+                            p.textContent
+                .bottom
+                    .bottomLink
+                        img.mountainBackground(src="common/img/yellow-mountain.svg", alt="Menu section")
+                        a(href="#") Thể lệ
+                        .trees
+                            .tree01
+                            .tree02
+
+
+
 
             #wheelArea
-                .bottomLink
-                    img.mountainBackground(src="common/img/yellow-mountain.svg", alt="Menu section")
-                    a(href="#") Vòng quay
-                .objectsArea
-
+                .top
+                .content
+                .bottom
+                    .bottomLink
+                        img.mountainBackground(src="common/img/yellow-mountain.svg", alt="Menu section")
+                        a(href="#") Vòng quay
+                //- .objectsArea
 
             #resultArea
-                .bottomLink
-                    img.mountainBackground(src="common/img/yellow-mountain.svg", alt="Menu section")
-                    a(href="#") Kết quả
-                .objectsArea
+                .top
+                .content
+                .bottom
+                    .bottomLink
+                        img.mountainBackground(src="common/img/yellow-mountain.svg", alt="Menu section")
+                        a(href="#") Kết quả
+                //- .objectsArea
             
         section
             p This is a post about Pug template engine, enjoy it!

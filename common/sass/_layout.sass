@@ -88,50 +88,82 @@ body
             left:0
             right: 0
             display: flex
+            
+            &.activeRule
+                margin-left: 40vw
 
-            #ruleArea, #wheelArea, #resultArea
-                height: 80vh
+            &.activeResult
+                margin-right: 40vw    
+
+            div[id$="Area"]
+                height: 90vh
                 position: relative
-
+                background: rgba(255,255,255,0.5)
+                
                 @include flex(1)
                 @include transition(flex 0.5s)
                 &.active
                     @include flex(1.1)
 
-                .bottomLink
+                .bottom
                     position: absolute
                     bottom: 0
                     left: 0
                     right: 0
-                    height: 150px
-                    // display: flex
-                    // align-items: center
+                    height: 15vmax
                     text-align: center
-
-                    .mountainBackground
-                        position: absolute
-                        height: 120%
-                        top: 50%
-                        @include transform(translate(-50%, -50%))
-
-                    a
+                    .bottomLink
+                        height: 100%
+                        width: 100%
                         position: relative
-                        display: block
-                        top: 45%
+                        .mountainBackground
+                            position: absolute
+                            height: 120%
+                            top: 50%
+                            @include transform(translate(-50%, -50%))
 
-                    *
-                        @include flex(1)
+                        a
+                            position: relative
+                            display: block
+                            top: 45%
 
-                .objectsArea
-                    background: $red
-                    height: 100%
-                    width: 100vw
+            //     .objectsArea
+            //         height: 100%
+            //         width: 100vw
+            //         position: absolute
+            //         left: 50%
+            //         @include transform(translateX(-50%))
+
+            #ruleArea
+                .trees
                     position: absolute
-                    left: 50%
-                    z-index: -1
-                    @include transform(translateX(-50%))
-
-
-
-
-                
+                    bottom: 0
+                    width: 100%
+                    height: 260%
+                    .tree01, .tree02
+                        background: url(../img/tree-01.svg) no-repeat bottom
+                        position: absolute
+                        width: 100%
+                        height: 100%
+                        bottom: 10%
+                        @include transform(rotate(-10deg))
+                        z-index: -1
+                        left: -30%
+                        @include transformOrigin(50% 100%)
+                        
+            //         .tree02
+            //             background: url(../img/tree-02.svg) no-repeat top
+            //             left: 0
+            //             width: 80%
+            //             height: 80%
+            //             // padding-bottom: 20vh
+            //             // margin-bottom: 10vh
+            //             @include transform(rotate(5deg))
+                        
+            //     .ruleBroad
+            //         position: absolute
+            //         left: 50%
+            //         height: 100%
+            //         width: 60vmax
+            //         background: url(../img/rule-board.svg) no-repeat center 
+            //         @include transform(translateX(-50%))
