@@ -196,9 +196,9 @@ body
                     position: absolute
                     height: $introSize
                     width: $introSize
-                    bottom: 10vmin
+                    top: 50%
                     left: 50%
-                    @include transform(translateX(-50%))
+                    @include transform(translate(-50%, -50%))
                     .outsideCorner
                         position: inherit
                         height: 108%
@@ -207,7 +207,7 @@ body
                         @include transform(translate(-50%, -50%))
                         left: 50%
                         top: 50%
-                        @extend .yellowLinearGradient
+                        z-index: 0
                         &:before
                             content: ""
                             position: absolute
@@ -219,6 +219,17 @@ body
                             border-radius: inherit 
                             background: white
                             opacity: 0.2
+                            z-index: 1
+                        &:after
+                            content: ""
+                            position: absolute
+                            height: 100%
+                            width: 100%
+                            left: 50%
+                            top: 50%
+                            @include transform(translate(-50%, -50%))
+                            border-radius: inherit
+                            @extend .yellowLinearGradient
                     .insideCorner
                         position: inherit
                         height: inherit
@@ -335,14 +346,27 @@ body
                             width: $introSize/6
                             @include transform(translate(-50%, -50%))
                             &:nth-child(1)
-                                @include transform(translate(-120%, -50%))
+                                @include transform(translate(-120%, -40%))
                             &:nth-child(2)
-                                @include transform(translate(20%, -50%))
+                                @include transform(translate(20%, -40%))
                             &:nth-child(3)
-                                @include transform(translate(-50%, -80%) scale(1.5))
+                                z-index: -1
+                                @include transform(translate(-50%, -50%) scale(1.4))
 
                         &.bottom
                             @include transform(scaleY(-1))
 
-                        .outsideCorner
-                            
+                    .outsideCorner
+                        .wingBehind
+                            pointer-events: none
+                            position: absolute
+                            height: 105%
+                            width: 65%
+                            background: blue
+                            top: 50%
+                            left: 50%
+                            @include transform(translate(-100%, -50%))
+                            background: url(../img/frame-behide.svg) no-repeat left
+                            z-index: -2
+                            &:nth-child(2)
+                                @include transform(translate(0%, -50%) scale(-1))

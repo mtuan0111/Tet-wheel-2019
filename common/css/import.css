@@ -35,7 +35,7 @@ table {
   border-spacing: 0;
 }
 
-.yellowLinearGradient, body section.mountains #wheelArea .introCircle .outsideCorner, body section.mountains #wheelArea .wheelCircle .outsideCorner, .titleText {
+.yellowLinearGradient, body section.mountains #wheelArea .introCircle .outsideCorner:after, body section.mountains #wheelArea .wheelCircle .outsideCorner:after, .titleText {
   background: #ffed4a;
   background: -moz-linear-gradient(-45deg, #ffed4a 0%, #5a541a 25%, #ffed4a 50%, #5a541a 75%, #ffed4a 100%);
   background: -webkit-linear-gradient(-45deg, #ffed4a 0%, #5a541a 25%, #ffed4a 50%, #5a541a 75%, #ffed4a 100%);
@@ -544,12 +544,12 @@ body section.mountains #wheelArea .introCircle, body section.mountains #wheelAre
   position: absolute;
   height: 60vmin;
   width: 60vmin;
-  bottom: 10vmin;
+  top: 50%;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
-  transform: translateX(-50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 body section.mountains #wheelArea .introCircle .outsideCorner, body section.mountains #wheelArea .wheelCircle .outsideCorner {
   position: inherit;
@@ -562,6 +562,7 @@ body section.mountains #wheelArea .introCircle .outsideCorner, body section.moun
   transform: translate(-50%, -50%);
   left: 50%;
   top: 50%;
+  z-index: 0;
 }
 body section.mountains #wheelArea .introCircle .outsideCorner:before, body section.mountains #wheelArea .wheelCircle .outsideCorner:before {
   content: "";
@@ -577,6 +578,20 @@ body section.mountains #wheelArea .introCircle .outsideCorner:before, body secti
   border-radius: inherit;
   background: white;
   opacity: 0.2;
+  z-index: 1;
+}
+body section.mountains #wheelArea .introCircle .outsideCorner:after, body section.mountains #wheelArea .wheelCircle .outsideCorner:after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-radius: inherit;
 }
 body section.mountains #wheelArea .introCircle .insideCorner, body section.mountains #wheelArea .wheelCircle .insideCorner {
   position: inherit;
@@ -728,22 +743,23 @@ body section.mountains #wheelArea .wheelCircle .circleGroup .circle, body sectio
   transform: translate(-50%, -50%);
 }
 body section.mountains #wheelArea .wheelCircle .circleGroup .circle:nth-child(1), body section.mountains #wheelArea .introCircle .insideCorner [class$=Context].loginContext .wheelCircle .circleGroup input:nth-child(1), body section.mountains #wheelArea .wheelCircle .circleGroup .insideCorner [class$=Context].loginContext input:nth-child(1), body section.mountains #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext .circleGroup input:nth-child(1) {
-  -webkit-transform: translate(-120%, -50%);
-  -ms-transform: translate(-120%, -50%);
-  -o-transform: translate(-120%, -50%);
-  transform: translate(-120%, -50%);
+  -webkit-transform: translate(-120%, -40%);
+  -ms-transform: translate(-120%, -40%);
+  -o-transform: translate(-120%, -40%);
+  transform: translate(-120%, -40%);
 }
 body section.mountains #wheelArea .wheelCircle .circleGroup .circle:nth-child(2), body section.mountains #wheelArea .introCircle .insideCorner [class$=Context].loginContext .wheelCircle .circleGroup input:nth-child(2), body section.mountains #wheelArea .wheelCircle .circleGroup .insideCorner [class$=Context].loginContext input:nth-child(2), body section.mountains #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext .circleGroup input:nth-child(2) {
-  -webkit-transform: translate(20%, -50%);
-  -ms-transform: translate(20%, -50%);
-  -o-transform: translate(20%, -50%);
-  transform: translate(20%, -50%);
+  -webkit-transform: translate(20%, -40%);
+  -ms-transform: translate(20%, -40%);
+  -o-transform: translate(20%, -40%);
+  transform: translate(20%, -40%);
 }
 body section.mountains #wheelArea .wheelCircle .circleGroup .circle:nth-child(3), body section.mountains #wheelArea .introCircle .insideCorner [class$=Context].loginContext .wheelCircle .circleGroup input:nth-child(3), body section.mountains #wheelArea .wheelCircle .circleGroup .insideCorner [class$=Context].loginContext input:nth-child(3), body section.mountains #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext .circleGroup input:nth-child(3) {
-  -webkit-transform: translate(-50%, -80%) scale(1.5);
-  -ms-transform: translate(-50%, -80%) scale(1.5);
-  -o-transform: translate(-50%, -80%) scale(1.5);
-  transform: translate(-50%, -80%) scale(1.5);
+  z-index: -1;
+  -webkit-transform: translate(-50%, -50%) scale(1.4);
+  -ms-transform: translate(-50%, -50%) scale(1.4);
+  -o-transform: translate(-50%, -50%) scale(1.4);
+  transform: translate(-50%, -50%) scale(1.4);
 }
 body section.mountains #wheelArea .wheelCircle .circleGroup.bottom {
   -webkit-transform: scaleY(-1);
@@ -751,6 +767,28 @@ body section.mountains #wheelArea .wheelCircle .circleGroup.bottom {
   -o-transform: scaleY(-1);
   transform: scaleY(-1);
 }
+body section.mountains #wheelArea .wheelCircle .outsideCorner .wingBehind {
+  pointer-events: none;
+  position: absolute;
+  height: 105%;
+  width: 65%;
+  background: blue;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-100%, -50%);
+  -ms-transform: translate(-100%, -50%);
+  -o-transform: translate(-100%, -50%);
+  transform: translate(-100%, -50%);
+  background: url(../img/frame-behide.svg) no-repeat left;
+  z-index: -2;
+}
+body section.mountains #wheelArea .wheelCircle .outsideCorner .wingBehind:nth-child(2) {
+  -webkit-transform: translate(0%, -50%) scale(-1);
+  -ms-transform: translate(0%, -50%) scale(-1);
+  -o-transform: translate(0%, -50%) scale(-1);
+  transform: translate(0%, -50%) scale(-1);
+}
+
 body {
   font-size: 2vmin;
 }
