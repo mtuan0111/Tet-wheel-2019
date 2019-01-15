@@ -4,6 +4,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   border: 0;
   font-size: 100%;
   font: inherit;
+  line-height: normal;
   vertical-align: baseline;
 }
 
@@ -34,7 +35,7 @@ table {
   border-spacing: 0;
 }
 
-.yellowGradient, body section.mountains #wheelArea .introCircle .outsideCorner, .titleText {
+.yellowLinearGradient, body section.mountains #wheelArea .introCircle .outsideCorner, body section.mountains #wheelArea .wheelCircle .outsideCorner, .titleText {
   background: #ffed4a;
   background: -moz-linear-gradient(-45deg, #ffed4a 0%, #5a541a 25%, #ffed4a 50%, #5a541a 75%, #ffed4a 100%);
   background: -webkit-linear-gradient(-45deg, #ffed4a 0%, #5a541a 25%, #ffed4a 50%, #5a541a 75%, #ffed4a 100%);
@@ -42,21 +43,66 @@ table {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="$yellow", endColorstr="$yellow-dark",GradientType=0 );
 }
 
-.redGradientBackground, body section.mountains #wheelArea .introCircle .insideCorner {
-  background: url(../img/red-gradient.svg) center no-repeat;
-  background-size: cover;
+.yellowRadialGradient {
+  background: #ffed4a;
+  background: -moz-radial-gradient(#ffed4a 0%, #5a541a 25%, #ffed4a 50%, #5a541a 75%, #ffed4a 100%);
+  background: -webkit-radial-gradient(#ffed4a 0%, #5a541a 25%, #ffed4a 50%, #5a541a 75%, #ffed4a 100%);
+  background: radial-gradient(#ffed4a 0%, #5a541a 25%, #ffed4a 50%, #5a541a 75%, #ffed4a 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="$yellow", endColorstr="$yellow-dark",GradientType=0 );
 }
 
-.circle {
-  background: url(../img/circle-motif-02.svg);
+.redLinearGradient {
+  background: #cc2121;
+  background: -moz-linear-gradient(-45deg, #cc2121 0%, #3d0a0a 25%, #cc2121 50%, #3d0a0a 75%, #cc2121 100%);
+  background: -webkit-linear-gradient(-45deg, #cc2121 0%, #3d0a0a 25%, #cc2121 50%, #3d0a0a 75%, #cc2121 100%);
+  background: linear-gradient(-45deg, #cc2121 0%, #3d0a0a 25%, #cc2121 50%, #3d0a0a 75%, #cc2121 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="$red", endColorstr="$red-dark",GradientType=0 );
 }
 
-.circleSpecial {
-  background: url(../img/circle-motif-01.svg);
+.redRadialGradient, .circle, body section.mountains #wheelArea .introCircle .insideCorner [class$=Context].loginContext input, body section.mountains #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext input {
+  background: #cc2121;
+  background: -moz-radial-gradient(#cc2121 0%, #3d0a0a 25%, #cc2121 50%, #3d0a0a 75%, #cc2121 100%);
+  background: -webkit-radial-gradient(#cc2121 0%, #3d0a0a 25%, #cc2121 50%, #3d0a0a 75%, #cc2121 100%);
+  background: radial-gradient(#cc2121 0%, #3d0a0a 25%, #cc2121 50%, #3d0a0a 75%, #cc2121 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="$red", endColorstr="$red-dark",GradientType=0 );
+}
+
+.redGradientBackground, body section.mountains #wheelArea .introCircle .insideCorner, body section.mountains #wheelArea .wheelCircle .insideCorner {
+  background: #cc2121;
+  background: -moz-radial-gradient(#cc2121 0%, #3d0a0a 100%);
+  background: -webkit-radial-gradient(#cc2121 0%, #3d0a0a 100%);
+  background: radial-gradient(#cc2121 0%, #3d0a0a 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="$red", endColorstr="$red-dark",GradientType=0 );
+}
+
+.circle, body section.mountains #wheelArea .introCircle .insideCorner [class$=Context].loginContext input, body section.mountains #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext input {
+  border-radius: 100vmax;
+  border: solid 0.8vmin;
+  border-color: #ffed4a;
+}
+.circle:before, body section.mountains #wheelArea .introCircle .insideCorner [class$=Context].loginContext input:before, body section.mountains #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext input:before, .circle:after, body section.mountains #wheelArea .introCircle .insideCorner [class$=Context].loginContext input:after, body section.mountains #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext input:after {
+  content: "";
+  position: absolute;
+  width: 66%;
+  height: 66%;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border: inherit;
+  border-radius: inherit;
+  border-width: 0.6vmin;
+}
+.circle:after, body section.mountains #wheelArea .introCircle .insideCorner [class$=Context].loginContext input:after, body section.mountains #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext input:after {
+  width: 30%;
+  height: 30%;
+  border-width: 0.3vmin;
 }
 
 .titleText {
-  font-size: 10vmin;
+  font-size: 8vmin;
   text-align: center;
   margin: 5% 10%;
   -webkit-background-clip: text;
@@ -69,6 +115,26 @@ h1.titleText {
 
 p.textContent {
   margin: 2%;
+}
+
+.txt-al-l {
+  text-align: left;
+}
+
+.txt-al-c {
+  text-align: center;
+}
+
+.txt-al-r {
+  text-align: right;
+}
+
+.p-e-n {
+  pointer-events: none;
+}
+
+.dis-none {
+  display: none;
 }
 
 .light-rotate-animation, .light-rotate-animation-slow {
@@ -296,7 +362,7 @@ body header .wrapper {
 body header #topLogo {
   background: url(../img/vina_logo_white.svg) center no-repeat;
   background-size: contain;
-  width: 20vmin;
+  width: 25vmin;
   height: 5vmin;
 }
 body header nav {
@@ -308,13 +374,14 @@ body header nav {
   text-align: right;
 }
 body header nav a {
+  color: white;
   margin: 2vmin;
 }
 body .wrapper {
   max-width: calc(100vw - 30vw);
   margin: auto;
 }
-body section.decoration .conerCircles .circle {
+body section.decoration .conerCircles .circle, body section.decoration .conerCircles section.mountains #wheelArea .introCircle .insideCorner [class$=Context].loginContext input, body section.mountains #wheelArea .introCircle .insideCorner [class$=Context].loginContext section.decoration .conerCircles input, body section.decoration .conerCircles section.mountains #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext input, body section.mountains #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext section.decoration .conerCircles input {
   position: fixed;
   width: 20vmax;
   height: 20vmax;
@@ -326,13 +393,13 @@ body section.decoration .conerCircles .circle {
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-body section.decoration .conerCircles .circle:nth-child(2) {
+body section.decoration .conerCircles .circle:nth-child(2), body section.decoration .conerCircles section.mountains #wheelArea .introCircle .insideCorner [class$=Context].loginContext input:nth-child(2), body section.mountains #wheelArea .introCircle .insideCorner [class$=Context].loginContext section.decoration .conerCircles input:nth-child(2), body section.decoration .conerCircles section.mountains #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext input:nth-child(2), body section.mountains #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext section.decoration .conerCircles input:nth-child(2) {
   left: 100%;
 }
-body section.decoration .conerCircles .circle:nth-child(3) {
+body section.decoration .conerCircles .circle:nth-child(3), body section.decoration .conerCircles section.mountains #wheelArea .introCircle .insideCorner [class$=Context].loginContext input:nth-child(3), body section.mountains #wheelArea .introCircle .insideCorner [class$=Context].loginContext section.decoration .conerCircles input:nth-child(3), body section.decoration .conerCircles section.mountains #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext input:nth-child(3), body section.mountains #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext section.decoration .conerCircles input:nth-child(3) {
   top: 100%;
 }
-body section.decoration .conerCircles .circle:nth-child(4) {
+body section.decoration .conerCircles .circle:nth-child(4), body section.decoration .conerCircles section.mountains #wheelArea .introCircle .insideCorner [class$=Context].loginContext input:nth-child(4), body section.mountains #wheelArea .introCircle .insideCorner [class$=Context].loginContext section.decoration .conerCircles input:nth-child(4), body section.decoration .conerCircles section.mountains #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext input:nth-child(4), body section.mountains #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext section.decoration .conerCircles input:nth-child(4) {
   top: 100%;
   left: 100%;
 }
@@ -363,7 +430,6 @@ body section.mountains.activeWheel div[id$=Area]:not(#wheelArea) .content, body 
 body section.mountains div[id$=Area] {
   height: 90vh;
   position: relative;
-  background: rgba(255, 255, 255, 0.5);
   -ms-flex: 1;
   -webkit-flex: 1;
   -moz-flex: 1;
@@ -381,13 +447,13 @@ body section.mountains div[id$=Area].active {
 body section.mountains div[id$=Area] .content {
   position: relative;
   height: 90%;
+  z-index: 1;
 }
 body section.mountains div[id$=Area] .content .objectsArea {
   height: 100%;
   width: 80vw;
   position: absolute;
   left: 10vw;
-  background: green;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   -o-transform: translateX(-50%);
@@ -414,8 +480,10 @@ body section.mountains div[id$=Area] .bottom .bottomLink .mountainBackground {
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  pointer-events: none;
 }
 body section.mountains div[id$=Area] .bottom .bottomLink a {
+  font-size: 150%;
   position: relative;
   display: block;
   top: 45%;
@@ -452,6 +520,7 @@ body section.mountains #ruleArea .trees {
   bottom: 0;
   width: 100%;
   height: 260%;
+  pointer-events: none;
 }
 body section.mountains #ruleArea .trees .tree01, body section.mountains #ruleArea .trees .tree02 {
   background: url(../img/tree-01.svg) no-repeat bottom;
@@ -471,22 +540,22 @@ body section.mountains #ruleArea .trees .tree01, body section.mountains #ruleAre
   -o-transform-origin: 50% 100%;
   transform-origin: 50% 100%;
 }
-body section.mountains #wheelArea .introCircle {
+body section.mountains #wheelArea .introCircle, body section.mountains #wheelArea .wheelCircle {
   position: absolute;
-  height: 80vmin;
-  width: 80vmin;
-  bottom: 0;
+  height: 60vmin;
+  width: 60vmin;
+  bottom: 10vmin;
   left: 50%;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   -o-transform: translateX(-50%);
   transform: translateX(-50%);
 }
-body section.mountains #wheelArea .introCircle .outsideCorner {
+body section.mountains #wheelArea .introCircle .outsideCorner, body section.mountains #wheelArea .wheelCircle .outsideCorner {
   position: inherit;
   height: 108%;
   width: 108%;
-  border-radius: 100vmax;
+  border-radius: 100%;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
@@ -494,7 +563,7 @@ body section.mountains #wheelArea .introCircle .outsideCorner {
   left: 50%;
   top: 50%;
 }
-body section.mountains #wheelArea .introCircle .outsideCorner:before {
+body section.mountains #wheelArea .introCircle .outsideCorner:before, body section.mountains #wheelArea .wheelCircle .outsideCorner:before {
   content: "";
   position: absolute;
   height: 96%;
@@ -509,14 +578,14 @@ body section.mountains #wheelArea .introCircle .outsideCorner:before {
   background: white;
   opacity: 0.2;
 }
-body section.mountains #wheelArea .introCircle .insideCorner {
+body section.mountains #wheelArea .introCircle .insideCorner, body section.mountains #wheelArea .wheelCircle .insideCorner {
   position: inherit;
   height: inherit;
   width: inherit;
-  border-radius: 100vmax;
+  border-radius: 100%;
   overflow: hidden;
 }
-body section.mountains #wheelArea .introCircle .insideCorner:before {
+body section.mountains #wheelArea .introCircle .insideCorner:before, body section.mountains #wheelArea .wheelCircle .insideCorner:before {
   content: "";
   position: absolute;
   height: 96%;
@@ -531,7 +600,7 @@ body section.mountains #wheelArea .introCircle .insideCorner:before {
   background: black;
   opacity: 0.2;
 }
-body section.mountains #wheelArea .introCircle .insideCorner:after {
+body section.mountains #wheelArea .introCircle .insideCorner:after, body section.mountains #wheelArea .wheelCircle .insideCorner:after {
   content: "";
   position: absolute;
   height: 80%;
@@ -545,70 +614,157 @@ body section.mountains #wheelArea .introCircle .insideCorner:after {
   border: dotted #ffed4a 1vmin;
   border-radius: inherit;
 }
-body section.mountains #wheelArea .introCircle .insideCorner .circleGroup {
+body section.mountains #wheelArea .introCircle .insideCorner .circleGroup, body section.mountains #wheelArea .wheelCircle .insideCorner .circleGroup {
   position: absolute;
   z-index: 1;
   left: 50%;
 }
-body section.mountains #wheelArea .introCircle .insideCorner .circleGroup .circle {
+body section.mountains #wheelArea .introCircle .insideCorner .circleGroup .circle, body section.mountains #wheelArea .introCircle .insideCorner .circleGroup [class$=Context].loginContext input, body section.mountains #wheelArea .introCircle .insideCorner [class$=Context].loginContext .circleGroup input, body section.mountains #wheelArea .wheelCircle .insideCorner .circleGroup .circle, body section.mountains #wheelArea .wheelCircle .insideCorner .circleGroup [class$=Context].loginContext input, body section.mountains #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext .circleGroup input {
   position: absolute;
-  height: 16vmin;
-  width: 16vmin;
+  height: 10vmin;
+  width: 10vmin;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-body section.mountains #wheelArea .introCircle .insideCorner .circleGroup .circle:nth-child(1) {
+body section.mountains #wheelArea .introCircle .insideCorner .circleGroup .circle:nth-child(1), body section.mountains #wheelArea .introCircle .insideCorner .circleGroup [class$=Context].loginContext input:nth-child(1), body section.mountains #wheelArea .introCircle .insideCorner [class$=Context].loginContext .circleGroup input:nth-child(1), body section.mountains #wheelArea .wheelCircle .insideCorner .circleGroup .circle:nth-child(1), body section.mountains #wheelArea .wheelCircle .insideCorner .circleGroup [class$=Context].loginContext input:nth-child(1), body section.mountains #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext .circleGroup input:nth-child(1) {
   -webkit-transform: translate(-170%, -10%);
   -ms-transform: translate(-170%, -10%);
   -o-transform: translate(-170%, -10%);
   transform: translate(-170%, -10%);
 }
-body section.mountains #wheelArea .introCircle .insideCorner .circleGroup .circle:nth-child(2) {
+body section.mountains #wheelArea .introCircle .insideCorner .circleGroup .circle:nth-child(2), body section.mountains #wheelArea .introCircle .insideCorner .circleGroup [class$=Context].loginContext input:nth-child(2), body section.mountains #wheelArea .introCircle .insideCorner [class$=Context].loginContext .circleGroup input:nth-child(2), body section.mountains #wheelArea .wheelCircle .insideCorner .circleGroup .circle:nth-child(2), body section.mountains #wheelArea .wheelCircle .insideCorner .circleGroup [class$=Context].loginContext input:nth-child(2), body section.mountains #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext .circleGroup input:nth-child(2) {
   -webkit-transform: translate(70%, -10%);
   -ms-transform: translate(70%, -10%);
   -o-transform: translate(70%, -10%);
   transform: translate(70%, -10%);
 }
-body section.mountains #wheelArea .introCircle .insideCorner .circleGroup .circle:nth-child(3) {
+body section.mountains #wheelArea .introCircle .insideCorner .circleGroup .circle:nth-child(3), body section.mountains #wheelArea .introCircle .insideCorner .circleGroup [class$=Context].loginContext input:nth-child(3), body section.mountains #wheelArea .introCircle .insideCorner [class$=Context].loginContext .circleGroup input:nth-child(3), body section.mountains #wheelArea .wheelCircle .insideCorner .circleGroup .circle:nth-child(3), body section.mountains #wheelArea .wheelCircle .insideCorner .circleGroup [class$=Context].loginContext input:nth-child(3), body section.mountains #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext .circleGroup input:nth-child(3) {
   -webkit-transform: translate(-120%, 0);
   -ms-transform: translate(-120%, 0);
   -o-transform: translate(-120%, 0);
   transform: translate(-120%, 0);
 }
-body section.mountains #wheelArea .introCircle .insideCorner .circleGroup .circle:nth-child(4) {
+body section.mountains #wheelArea .introCircle .insideCorner .circleGroup .circle:nth-child(4), body section.mountains #wheelArea .introCircle .insideCorner .circleGroup [class$=Context].loginContext input:nth-child(4), body section.mountains #wheelArea .introCircle .insideCorner [class$=Context].loginContext .circleGroup input:nth-child(4), body section.mountains #wheelArea .wheelCircle .insideCorner .circleGroup .circle:nth-child(4), body section.mountains #wheelArea .wheelCircle .insideCorner .circleGroup [class$=Context].loginContext input:nth-child(4), body section.mountains #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext .circleGroup input:nth-child(4) {
   -webkit-transform: translate(20%, 0);
   -ms-transform: translate(20%, 0);
   -o-transform: translate(20%, 0);
   transform: translate(20%, 0);
 }
-body section.mountains #wheelArea .introCircle .insideCorner .circleGroup .circle:nth-child(5) {
+body section.mountains #wheelArea .introCircle .insideCorner .circleGroup .circle:nth-child(5), body section.mountains #wheelArea .introCircle .insideCorner .circleGroup [class$=Context].loginContext input:nth-child(5), body section.mountains #wheelArea .introCircle .insideCorner [class$=Context].loginContext .circleGroup input:nth-child(5), body section.mountains #wheelArea .wheelCircle .insideCorner .circleGroup .circle:nth-child(5), body section.mountains #wheelArea .wheelCircle .insideCorner .circleGroup [class$=Context].loginContext input:nth-child(5), body section.mountains #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext .circleGroup input:nth-child(5) {
   -webkit-transform: translate(-50%, 20%) scale(1.1);
   -ms-transform: translate(-50%, 20%) scale(1.1);
   -o-transform: translate(-50%, 20%) scale(1.1);
   transform: translate(-50%, 20%) scale(1.1);
 }
-body section.mountains #wheelArea .introCircle .insideCorner .circleGroup.bottom {
+body section.mountains #wheelArea .introCircle .insideCorner .circleGroup.bottom, body section.mountains #wheelArea .wheelCircle .insideCorner .circleGroup.bottom {
   -webkit-transform: scaleY(-1);
   -ms-transform: scaleY(-1);
   -o-transform: scaleY(-1);
   transform: scaleY(-1);
 }
-body section.mountains #wheelArea .introCircle .insideCorner .introContext {
-  font-size: 20vmin;
+body section.mountains #wheelArea .introCircle .insideCorner [class$=Context], body section.mountains #wheelArea .wheelCircle .insideCorner [class$=Context] {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 100%;
+  width: 70%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+body section.mountains #wheelArea .introCircle .insideCorner [class$=Context].introContext .introText, body section.mountains #wheelArea .wheelCircle .insideCorner [class$=Context].introContext .introText {
+  font-size: 17.1428571429vmin;
+  line-height: 13.7142857143vmin;
+  color: white;
+}
+body section.mountains #wheelArea .introCircle .insideCorner [class$=Context].introContext .introText .subTitle, body section.mountains #wheelArea .wheelCircle .insideCorner [class$=Context].introContext .introText .subTitle {
+  font-size: 6vmin;
+}
+body section.mountains #wheelArea .introCircle .insideCorner [class$=Context].loginContext input, body section.mountains #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext input {
+  font-size: 3vmin;
+  max-width: 30vmin;
+  padding: 1.2vmin;
+  text-align: inherit;
+  margin: 0.6vmin auto;
+  display: block;
+  background: none;
+  color: white;
+  font-family: inherit;
+  border: none;
+  border-bottom: solid 0.3vmin #ffed4a;
+  outline: none;
+}
+body section.mountains #wheelArea .introCircle .insideCorner [class$=Context].loginContext input::placeholder, body section.mountains #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext input::placeholder {
+  color: white;
+  opacity: 0.5;
+  font-size: 2vmin;
+}
+body section.mountains #wheelArea .introCircle .insideCorner [class$=Context].loginContext input:focus, body section.mountains #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext input:focus {
+  border-bottom-color: #5a541a;
+}
+body section.mountains #wheelArea .introCircle .insideCorner [class$=Context].loginContext input#remember, body section.mountains #wheelArea .introCircle .insideCorner [class$=Context].loginContext input + label, body section.mountains #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext input#remember, body section.mountains #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext input + label {
+  display: inline-block;
+  vertical-align: middle;
+}
+body section.mountains #wheelArea .introCircle .insideCorner [class$=Context].loginContext a#forgetPassword, body section.mountains #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext a#forgetPassword {
+  color: inherit;
+  font-size: 80%;
+}
+body section.mountains #wheelArea .wheelCircle .circleGroup {
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+}
+body section.mountains #wheelArea .wheelCircle .circleGroup .circle, body section.mountains #wheelArea .introCircle .insideCorner [class$=Context].loginContext .wheelCircle .circleGroup input, body section.mountains #wheelArea .wheelCircle .circleGroup .insideCorner [class$=Context].loginContext input, body section.mountains #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext .circleGroup input {
+  position: absolute;
+  height: 10vmin;
+  width: 10vmin;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
+body section.mountains #wheelArea .wheelCircle .circleGroup .circle:nth-child(1), body section.mountains #wheelArea .introCircle .insideCorner [class$=Context].loginContext .wheelCircle .circleGroup input:nth-child(1), body section.mountains #wheelArea .wheelCircle .circleGroup .insideCorner [class$=Context].loginContext input:nth-child(1), body section.mountains #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext .circleGroup input:nth-child(1) {
+  -webkit-transform: translate(-120%, -50%);
+  -ms-transform: translate(-120%, -50%);
+  -o-transform: translate(-120%, -50%);
+  transform: translate(-120%, -50%);
+}
+body section.mountains #wheelArea .wheelCircle .circleGroup .circle:nth-child(2), body section.mountains #wheelArea .introCircle .insideCorner [class$=Context].loginContext .wheelCircle .circleGroup input:nth-child(2), body section.mountains #wheelArea .wheelCircle .circleGroup .insideCorner [class$=Context].loginContext input:nth-child(2), body section.mountains #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext .circleGroup input:nth-child(2) {
+  -webkit-transform: translate(20%, -50%);
+  -ms-transform: translate(20%, -50%);
+  -o-transform: translate(20%, -50%);
+  transform: translate(20%, -50%);
+}
+body section.mountains #wheelArea .wheelCircle .circleGroup .circle:nth-child(3), body section.mountains #wheelArea .introCircle .insideCorner [class$=Context].loginContext .wheelCircle .circleGroup input:nth-child(3), body section.mountains #wheelArea .wheelCircle .circleGroup .insideCorner [class$=Context].loginContext input:nth-child(3), body section.mountains #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext .circleGroup input:nth-child(3) {
+  -webkit-transform: translate(-50%, -80%) scale(1.5);
+  -ms-transform: translate(-50%, -80%) scale(1.5);
+  -o-transform: translate(-50%, -80%) scale(1.5);
+  transform: translate(-50%, -80%) scale(1.5);
+}
+body section.mountains #wheelArea .wheelCircle .circleGroup.bottom {
+  -webkit-transform: scaleY(-1);
+  -ms-transform: scaleY(-1);
+  -o-transform: scaleY(-1);
+  transform: scaleY(-1);
+}
+body {
+  font-size: 2vmin;
+}
 
 :after, :before {
   pointer-events: none;
+}
+
+a {
+  color: #cc2121;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
 }
 
 /*# sourceMappingURL=import.css.map */

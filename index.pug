@@ -17,9 +17,14 @@ html(lang="en")
         header
             .wrapper
                 a#topLogo(href="#")
-                nav
-                    a Đăng nhập
-                    a Đăng ký
+                //- nav.beforeLogin
+                //-     a Đăng nhập
+                //-     a Đăng ký
+                nav.afterLogin
+                    a Tên đăng nhập
+                    a 9000 điểm
+
+
                     
         section.decoration
             .conerCircles
@@ -97,7 +102,7 @@ html(lang="en")
                 .top
                 .content
                     .objectsArea
-                        .introCircle
+                        .introCircle.dis-none
                             .outsideCorner
                             .insideCorner
                                 .circleGroup
@@ -114,15 +119,51 @@ html(lang="en")
                                     .circle
                                     .circle.circleSpecial
 
-                                .introContext
-                                    h1.titleText Tết 2019
+                                //- .introContext
+                                //-     h1.introText 2019
+                                //-         p.subTitle Vòng quay tết
 
-                            .mainScreen
+                                form(action="", method="post").loginContext
+                                    input(type="text" placeholder="Nhập username")
+                                    input(type="password" placeholder="Nhập mật khẩu")
+                                    input#remember(type="checkbox")
+                                    label(for="remember") Nhớ đăng nhập
+                                    p.txt-al-c
+                                        a#forgetPassword(href="#") Quên mật khẩu
+                                    input(type="submit" value="Đăng nhập")
+                        
+                        .wheelCircle.di-none
+                            .circleGroup
+                                .circle
+                                .circle
+                                .circle.circleSpecial
 
-                            //- #wheelRotate
-                            //-     - for (var i=1; i<=20; i++)
-                            //-         .wheel_num(data-number=i)
-                            //-             span.pointValue 100
+                            .circleGroup.bottom
+                                .circle
+                                .circle
+                                .circle.circleSpecial
+                            .outsideCorner
+                                .wingBehind
+                                .wingBehind
+                            .insideCorner
+
+                                //- .introContext
+                                //-     h1.introText 2019
+                                //-         p.subTitle Vòng quay tết
+
+                                //- form(action="", method="post").loginContext
+                                //-     input(type="text" placeholder="Nhập username")
+                                //-     input(type="password" placeholder="Nhập mật khẩu")
+                                //-     input#remember(type="checkbox")
+                                //-     label(for="remember") Nhớ đăng nhập
+                                //-     p.txt-al-c
+                                //-         a#forgetPassword(href="#") Quên mật khẩu
+                                //-     input(type="submit" value="Đăng nhập")
+
+                                #wheelRotate
+                                    - for (var i=1; i<=20; i++)
+                                        .wheel_num(data-number=i)
+                                            span.pointValue 100
                             //- .wheelCenter
                 .bottom
                     .bottomLink
