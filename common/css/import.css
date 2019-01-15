@@ -34,6 +34,43 @@ table {
   border-spacing: 0;
 }
 
+.yellowGradient, body section.mountains #wheelArea .introCircle .outsideCorner, .titleText {
+  background: #ffed4a;
+  background: -moz-linear-gradient(-45deg, #ffed4a 0%, #5a541a 25%, #ffed4a 50%, #5a541a 75%, #ffed4a 100%);
+  background: -webkit-linear-gradient(-45deg, #ffed4a 0%, #5a541a 25%, #ffed4a 50%, #5a541a 75%, #ffed4a 100%);
+  background: linear-gradient(-45deg, #ffed4a 0%, #5a541a 25%, #ffed4a 50%, #5a541a 75%, #ffed4a 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="$yellow", endColorstr="$yellow-dark",GradientType=0 );
+}
+
+.redGradientBackground, body section.mountains #wheelArea .introCircle .insideCorner {
+  background: url(../img/red-gradient.svg) center no-repeat;
+  background-size: cover;
+}
+
+.circle {
+  background: url(../img/circle-motif-02.svg);
+}
+
+.circleSpecial {
+  background: url(../img/circle-motif-01.svg);
+}
+
+.titleText {
+  font-size: 10vmin;
+  text-align: center;
+  margin: 5% 10%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h1.titleText {
+  font-size: 10vmin;
+}
+
+p.textContent {
+  margin: 2%;
+}
+
 .light-rotate-animation, .light-rotate-animation-slow {
   animation: lightRotate linear 6s;
   animation-iteration-count: infinite;
@@ -235,6 +272,7 @@ body {
   min-height: 100vh;
   color: white;
   font-family: "Lobster", cursive;
+  font-size: 2vmin;
 }
 body:before {
   content: "";
@@ -250,7 +288,7 @@ body:before {
   opacity: 0.2;
 }
 body header {
-  padding-top: 40px;
+  padding-top: 4vmin;
 }
 body header .wrapper {
   display: flex;
@@ -258,8 +296,8 @@ body header .wrapper {
 body header #topLogo {
   background: url(../img/vina_logo_white.svg) center no-repeat;
   background-size: contain;
-  width: 200px;
-  height: 50px;
+  width: 20vmin;
+  height: 5vmin;
 }
 body header nav {
   -ms-flex: 1;
@@ -270,7 +308,7 @@ body header nav {
   text-align: right;
 }
 body header nav a {
-  margin: 20px;
+  margin: 2vmin;
 }
 body .wrapper {
   max-width: calc(100vw - 30vw);
@@ -280,7 +318,6 @@ body section.decoration .conerCircles .circle {
   position: fixed;
   width: 20vmax;
   height: 20vmax;
-  background: url(../img/circle-motif-02.svg);
   top: 0;
   left: 0;
   z-index: 10;
@@ -311,8 +348,17 @@ body section.mountains {
 body section.mountains.activeRule {
   margin-left: 40vw;
 }
+body section.mountains.activeRule div[id$=Area]:not(#ruleArea) .content {
+  display: none;
+}
 body section.mountains.activeResult {
   margin-right: 40vw;
+}
+body section.mountains.activeResult div[id$=Area]:not(#resultArea) .content {
+  display: none;
+}
+body section.mountains.activeWheel div[id$=Area]:not(#wheelArea) .content, body section.mountains:not(.activeRule):not(.activeResult) div[id$=Area]:not(#wheelArea) .content {
+  display: none;
 }
 body section.mountains div[id$=Area] {
   height: 90vh;
@@ -332,12 +378,27 @@ body section.mountains div[id$=Area].active {
   -moz-flex: 1.1;
   flex: 1.1;
 }
+body section.mountains div[id$=Area] .content {
+  position: relative;
+  height: 90%;
+}
+body section.mountains div[id$=Area] .content .objectsArea {
+  height: 100%;
+  width: 80vw;
+  position: absolute;
+  left: 10vw;
+  background: green;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
 body section.mountains div[id$=Area] .bottom {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 15vmax;
+  height: 15%;
   text-align: center;
 }
 body section.mountains div[id$=Area] .bottom .bottomLink {
@@ -358,6 +419,33 @@ body section.mountains div[id$=Area] .bottom .bottomLink a {
   position: relative;
   display: block;
   top: 45%;
+}
+body section.mountains #ruleArea .ruleBroad {
+  position: inherit;
+  height: 100%;
+  width: 100%;
+}
+body section.mountains #ruleArea .ruleBroad .topObject, body section.mountains #ruleArea .ruleBroad .bottomObject {
+  position: absolute;
+  top: 0;
+  height: 15%;
+  width: 100%;
+  background: green;
+}
+body section.mountains #ruleArea .ruleBroad .middleObject {
+  position: absolute;
+  top: 15%;
+  height: 70%;
+  width: 100%;
+  background: #cc2121;
+  padding: 5% 10%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: auto;
+}
+body section.mountains #ruleArea .ruleBroad .bottomObject {
+  top: 85%;
 }
 body section.mountains #ruleArea .trees {
   position: absolute;
@@ -382,6 +470,145 @@ body section.mountains #ruleArea .trees .tree01, body section.mountains #ruleAre
   -ms-transform-origin: 50% 100%;
   -o-transform-origin: 50% 100%;
   transform-origin: 50% 100%;
+}
+body section.mountains #wheelArea .introCircle {
+  position: absolute;
+  height: 80vmin;
+  width: 80vmin;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+body section.mountains #wheelArea .introCircle .outsideCorner {
+  position: inherit;
+  height: 108%;
+  width: 108%;
+  border-radius: 100vmax;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+body section.mountains #wheelArea .introCircle .outsideCorner:before {
+  content: "";
+  position: absolute;
+  height: 96%;
+  width: 96%;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-radius: inherit;
+  background: white;
+  opacity: 0.2;
+}
+body section.mountains #wheelArea .introCircle .insideCorner {
+  position: inherit;
+  height: inherit;
+  width: inherit;
+  border-radius: 100vmax;
+  overflow: hidden;
+}
+body section.mountains #wheelArea .introCircle .insideCorner:before {
+  content: "";
+  position: absolute;
+  height: 96%;
+  width: 96%;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-radius: inherit;
+  background: black;
+  opacity: 0.2;
+}
+body section.mountains #wheelArea .introCircle .insideCorner:after {
+  content: "";
+  position: absolute;
+  height: 80%;
+  width: 80%;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border: dotted #ffed4a 1vmin;
+  border-radius: inherit;
+}
+body section.mountains #wheelArea .introCircle .insideCorner .circleGroup {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+}
+body section.mountains #wheelArea .introCircle .insideCorner .circleGroup .circle {
+  position: absolute;
+  height: 16vmin;
+  width: 16vmin;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+body section.mountains #wheelArea .introCircle .insideCorner .circleGroup .circle:nth-child(1) {
+  -webkit-transform: translate(-170%, -10%);
+  -ms-transform: translate(-170%, -10%);
+  -o-transform: translate(-170%, -10%);
+  transform: translate(-170%, -10%);
+}
+body section.mountains #wheelArea .introCircle .insideCorner .circleGroup .circle:nth-child(2) {
+  -webkit-transform: translate(70%, -10%);
+  -ms-transform: translate(70%, -10%);
+  -o-transform: translate(70%, -10%);
+  transform: translate(70%, -10%);
+}
+body section.mountains #wheelArea .introCircle .insideCorner .circleGroup .circle:nth-child(3) {
+  -webkit-transform: translate(-120%, 0);
+  -ms-transform: translate(-120%, 0);
+  -o-transform: translate(-120%, 0);
+  transform: translate(-120%, 0);
+}
+body section.mountains #wheelArea .introCircle .insideCorner .circleGroup .circle:nth-child(4) {
+  -webkit-transform: translate(20%, 0);
+  -ms-transform: translate(20%, 0);
+  -o-transform: translate(20%, 0);
+  transform: translate(20%, 0);
+}
+body section.mountains #wheelArea .introCircle .insideCorner .circleGroup .circle:nth-child(5) {
+  -webkit-transform: translate(-50%, 20%) scale(1.1);
+  -ms-transform: translate(-50%, 20%) scale(1.1);
+  -o-transform: translate(-50%, 20%) scale(1.1);
+  transform: translate(-50%, 20%) scale(1.1);
+}
+body section.mountains #wheelArea .introCircle .insideCorner .circleGroup.bottom {
+  -webkit-transform: scaleY(-1);
+  -ms-transform: scaleY(-1);
+  -o-transform: scaleY(-1);
+  transform: scaleY(-1);
+}
+body section.mountains #wheelArea .introCircle .insideCorner .introContext {
+  font-size: 20vmin;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+:after, :before {
+  pointer-events: none;
 }
 
 /*# sourceMappingURL=import.css.map */

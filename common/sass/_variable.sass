@@ -1,6 +1,46 @@
 
 // For color
 $yellow: #ffed4a
-$red: #cc2121
+$yellow-dark: #5a541a
+$rotate: -45deg
 
-$titleSize: 200%
+$red: #cc2121
+// $yellow-gradient: top, #1e5799 0%, #2989d8 30%, #207cca 72%, #7db9e8 100%
+
+$standardFontsize: 2vmin
+$h2titleSize: 10vmin
+$h1titleSize: 10vmin
+
+$introTitleSize: 20vmin
+
+
+.yellowGradient
+    background: $yellow
+    background: -moz-linear-gradient($rotate, $yellow 0%, $yellow-dark 25%, $yellow 50%, $yellow-dark 75%, $yellow 100%)
+    background: -webkit-linear-gradient($rotate, $yellow 0%, $yellow-dark 25%, $yellow 50%, $yellow-dark 75%, $yellow 100%)
+    background: linear-gradient($rotate, $yellow 0%, $yellow-dark 25%, $yellow 50%, $yellow-dark 75%, $yellow 100%)
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$yellow', endColorstr='$yellow-dark',GradientType=0 )
+
+.redGradientBackground
+    background: url(../img/red-gradient.svg) center no-repeat
+    background-size: cover
+
+.circle
+    background: url(../img/circle-motif-02.svg)
+
+.circleSpecial
+    background: url(../img/circle-motif-01.svg)
+
+.titleText
+    font-size: $h2titleSize
+    text-align: center
+    margin: 5% 10%
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+    @extend .yellowGradient
+
+h1.titleText
+    font-size: $h1titleSize
+
+p.textContent
+    margin: 2%

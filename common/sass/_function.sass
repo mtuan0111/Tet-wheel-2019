@@ -51,3 +51,8 @@
 @mixin firefox-message($selector)
     body.firefox #{$selector}:before
         content: "Hi, Firefox users!"
+
+@mixin gradient-color($colorString)
+    background: -moz-linear-gradient($colorString)
+    background: -webkit-linear-gradient($colorString)
+    background: linear-gradient($colorString)

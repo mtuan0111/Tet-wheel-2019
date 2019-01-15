@@ -26,6 +26,7 @@ body
     min-height: 100vh
     color: white
     font-family: 'Lobster', cursive
+    font-size: $standardFontsize
     &:before
         content: ""
         position: absolute
@@ -40,20 +41,20 @@ body
         opacity: 0.2
 
     header
-        padding-top: 40px
+        padding-top: 4vmin
         .wrapper
             display: flex
         #topLogo
             background: url(../img/vina_logo_white.svg) center no-repeat
             background-size: contain
-            width: 200px
-            height: 50px
+            width: 20vmin
+            height: 5vmin
         nav
             @include flex(1)
             align-self: center
             text-align: right
             a
-                margin: 20px
+                margin: 2vmin
     
     .wrapper
         max-width: calc(100vw - 30vw)
@@ -66,7 +67,6 @@ body
                     position: fixed
                     width: 20vmax
                     height: 20vmax
-                    background: url(../img/circle-motif-02.svg)
                     top: 0
                     left: 0
                     z-index: 10
@@ -91,26 +91,43 @@ body
             
             &.activeRule
                 margin-left: 40vw
+                div[id$="Area"]:not(#ruleArea) .content
+                    display: none
 
             &.activeResult
-                margin-right: 40vw    
+                margin-right: 40vw
+                div[id$="Area"]:not(#resultArea) .content
+                    display: none
+
+            &.activeWheel, &:not(.activeRule):not(.activeResult)
+                div[id$="Area"]:not(#wheelArea) .content
+                    display: none
 
             div[id$="Area"]
                 height: 90vh
                 position: relative
-                background: rgba(255,255,255,0.5)
-                
+                background: rgba(255,255,255,0.5)   
                 @include flex(1)
                 @include transition(flex 0.5s)
                 &.active
                     @include flex(1.1)
-
+                
+                .content
+                    position: relative
+                    height: 90%
+                    .objectsArea
+                        height: 100%
+                        width: 80vw
+                        position: absolute
+                        left: 10vw
+                        background: green
+                        @include transform(translateX(-50%))
                 .bottom
                     position: absolute
                     bottom: 0
                     left: 0
                     right: 0
-                    height: 15vmax
+                    height: 15%
                     text-align: center
                     .bottomLink
                         height: 100%
@@ -127,14 +144,33 @@ body
                             display: block
                             top: 45%
 
-            //     .objectsArea
-            //         height: 100%
-            //         width: 100vw
-            //         position: absolute
-            //         left: 50%
-            //         @include transform(translateX(-50%))
-
             #ruleArea
+                .ruleBroad
+                    position: inherit
+                    height: 100%
+                    width: 100%
+
+                    .topObject, .bottomObject
+                        position: absolute
+                        top: 0
+                        height: 15%
+                        width: 100%
+                        background: green
+
+                    .middleObject
+                        position: absolute
+                        top: 15%
+                        height: 70%
+                        width: 100%
+                        background: $red
+                        padding: 5% 10%
+                        @include boxSizing()
+                        overflow: auto
+
+                        .contentObject
+                    .bottomObject
+                        top: 85%
+                    
                 .trees
                     position: absolute
                     bottom: 0
@@ -150,6 +186,97 @@ body
                         z-index: -1
                         left: -30%
                         @include transformOrigin(50% 100%)
+            #wheelArea
+                .introCircle
+                    position: absolute
+                    height: 80vmin
+                    width: 80vmin
+                    bottom: 0
+                    left: 50%
+                    @include transform(translateX(-50%))
+                    .outsideCorner
+                        position: inherit
+                        height: 108%
+                        width: 108%
+                        border-radius: 100vmax
+                        @include transform(translate(-50%, -50%))
+                        left: 50%
+                        top: 50%
+                        @extend .yellowGradient
+                        &:before
+                            content: ""
+                            position: absolute
+                            height: 96%
+                            width: 96%
+                            left: 50%
+                            top: 50%
+                            @include transform(translate(-50%, -50%))
+                            border-radius: inherit 
+                            background: white
+                            opacity: 0.2
+                    .insideCorner
+                        position: inherit
+                        height: inherit
+                        width: inherit
+                        border-radius: 100vmax
+                        overflow: hidden
+                        @extend .redGradientBackground
+                        &:before
+                            content: ""
+                            position: absolute
+                            height: 96%
+                            width: 96%
+                            left: 50%
+                            top: 50%
+                            @include transform(translate(-50%, -50%))
+                            border-radius: inherit 
+                            background: black
+                            opacity: 0.2
+
+                        &:after
+                            content: ""
+                            position: absolute
+                            height: 80%
+                            width: 80%
+                            left: 50%
+                            top: 50%
+                            @include transform(translate(-50%, -50%))
+                            border: dotted  $yellow 1vmin
+                            border-radius: inherit
+
+                        .circleGroup
+                            position: absolute
+                            z-index: 1
+                            // width: 70%
+                            // height: 10%
+                            left: 50%
+                            .circle
+                                position: absolute
+                                height: 16vmin
+                                width: 16vmin
+                                @include transform(translate(-50%, -50%))
+                                &:nth-child(1)
+                                    @include transform(translate(-170%, -10%))
+                                &:nth-child(2)
+                                    @include transform(translate(70%, -10%))
+                                &:nth-child(3)
+                                    @include transform(translate(-120%, 0))
+                                &:nth-child(4)
+                                    @include transform(translate(20%, 0))
+                                &:nth-child(5)
+                                    @include transform(translate(-50%, 20%) scale(1.1))
+
+                            &.bottom
+                                @include transform(scaleY(-1))
+
+                        .introContext
+                            font-size: $introTitleSize
+                            position: absolute
+                            left: 50%
+                            top: 50%
+                            width: 100%
+                            @include transform(translate(-50%, -50%))
+
                         
             //         .tree02
             //             background: url(../img/tree-02.svg) no-repeat top
