@@ -16,7 +16,7 @@
     <body>
       <header>
         <div class="wrapper"><a id="topLogo" href="#"></a>
-          <nav class="afterLogin"><a>Tên đăng nhập</a><a>9000 điểm</a></nav>
+          <nav class="beforeLogin"><a>Đăng nhập</a><a>Đăng ký</a></nav>
         </div>
       </header>
       <section class="decoration">
@@ -27,7 +27,7 @@
           <div class="object circle"></div>
         </div>
       </section>
-      <section class="mountains activeWheel">
+      <section class="mountains">
         <div id="ruleArea">
           <div class="top"></div>
           <div class="content">
@@ -66,7 +66,7 @@
             </div>
           </div>
           <div class="bottom">
-            <div class="bottomLink"><img class="mountainBackground" src="common/img/yellow-mountain.svg" alt="Menu section"><a href="#">Thể lệ</a>
+            <div class="bottomLink"><img class="mountainBackground" src="common/img/yellow-mountain.svg" alt="Menu section"><a href="#Rule" data-page-target="Rule">Thể lệ</a>
               <div class="trees">
                 <div class="tree01"></div>
                 <div class="tree02"></div>
@@ -105,7 +105,7 @@
                   </form>
                 </div>
               </div>
-              <div class="wheelCircle di-none">
+              <div class="wheelCircle diss-none">
                 <div class="outsideCorner">
                   <div class="wingBehind"></div>
                   <div class="wingBehind"></div>
@@ -120,47 +120,234 @@
                     <div class="circle circleSpecial"></div>
                   </div>
                 </div>
+                <div class="circle pointer"></div>
                 <div class="insideCorner">
                   <div id="wheelRotate">
-                    <div class="wheel_num" data-number="1"><span class="pointValue">100</span></div>
-                    <div class="wheel_num" data-number="2"><span class="pointValue">100</span></div>
-                    <div class="wheel_num" data-number="3"><span class="pointValue">100</span></div>
-                    <div class="wheel_num" data-number="4"><span class="pointValue">100</span></div>
-                    <div class="wheel_num" data-number="5"><span class="pointValue">100</span></div>
-                    <div class="wheel_num" data-number="6"><span class="pointValue">100</span></div>
-                    <div class="wheel_num" data-number="7"><span class="pointValue">100</span></div>
-                    <div class="wheel_num" data-number="8"><span class="pointValue">100</span></div>
-                    <div class="wheel_num" data-number="9"><span class="pointValue">100</span></div>
-                    <div class="wheel_num" data-number="10"><span class="pointValue">100</span></div>
-                    <div class="wheel_num" data-number="11"><span class="pointValue">100</span></div>
-                    <div class="wheel_num" data-number="12"><span class="pointValue">100</span></div>
-                    <div class="wheel_num" data-number="13"><span class="pointValue">100</span></div>
-                    <div class="wheel_num" data-number="14"><span class="pointValue">100</span></div>
-                    <div class="wheel_num" data-number="15"><span class="pointValue">100</span></div>
-                    <div class="wheel_num" data-number="16"><span class="pointValue">100</span></div>
-                    <div class="wheel_num" data-number="17"><span class="pointValue">100</span></div>
-                    <div class="wheel_num" data-number="18"><span class="pointValue">100</span></div>
-                    <div class="wheel_num" data-number="19"><span class="pointValue">100</span></div>
-                    <div class="wheel_num" data-number="20"><span class="pointValue">100</span></div>
+                    <div class="wheelNum" data-number="1"><span class="pointValue">100</span></div>
+                    <div class="wheelNum" data-number="2"><span class="pointValue">100</span></div>
+                    <div class="wheelNum" data-number="3"><span class="pointValue">100</span></div>
+                    <div class="wheelNum" data-number="4"><span class="pointValue">100</span></div>
+                    <div class="wheelNum" data-number="5"><span class="pointValue">100</span></div>
+                    <div class="wheelNum" data-number="6"><span class="pointValue">100</span></div>
+                    <div class="wheelNum" data-number="7"><span class="pointValue">100</span></div>
+                    <div class="wheelNum" data-number="8"><span class="pointValue">100</span></div>
+                    <div class="wheelNum" data-number="9"><span class="pointValue">100</span></div>
+                    <div class="wheelNum" data-number="10"><span class="pointValue">100</span></div>
+                    <div class="wheelNum" data-number="11"><span class="pointValue">100</span></div>
+                    <div class="wheelNum" data-number="12"><span class="pointValue">100</span></div>
+                    <div class="wheelNum" data-number="13"><span class="pointValue">100</span></div>
+                    <div class="wheelNum" data-number="14"><span class="pointValue">100</span></div>
+                    <div class="wheelNum" data-number="15"><span class="pointValue">100</span></div>
+                    <div class="wheelNum" data-number="16"><span class="pointValue">100</span></div>
+                    <div class="wheelNum" data-number="17"><span class="pointValue">100</span></div>
+                    <div class="wheelNum" data-number="18"><span class="pointValue">100</span></div>
+                    <div class="wheelNum" data-number="19"><span class="pointValue">100</span></div>
+                    <div class="wheelNum" data-number="20"><span class="pointValue">100</span></div>
+                  </div>
+                  <div class="wheelCenter"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bottom">
+            <div class="bottomLink"><img class="mountainBackground" src="common/img/yellow-mountain.svg" alt="Menu section"><a href="#Wheel" data-page-target="Wheel">Vòng quay</a></div>
+          </div>
+        </div>
+        <div id="resultArea">
+          <div class="top"></div>
+          <div class="content">
+            <div class="objectsArea">
+              <div class="ruleBroad"><img id="resultBackground" src="common/img/clip-path.svg">
+                <div class="circleGroup">
+                  <div class="circle"></div>
+                  <div class="circle"></div>
+                  <div class="circle"></div>
+                  <div class="circle"></div>
+                  <div class="circle"></div>
+                  <div class="circle circleSpecial"></div>
+                </div>
+                <div class="circleGroup bottom">
+                  <div class="circle"></div>
+                  <div class="circle"></div>
+                  <div class="circle"></div>
+                  <div class="circle"></div>
+                  <div class="circle"></div>
+                  <div class="circle circleSpecial"></div>
+                </div>
+                <div class="middleObject">
+                  <h2 class="titleText">Kết quả</h2>
+                  <div class="contentObject">
+                    <table>
+                      <tr>
+                        <th>STT</th>
+                        <th>Tài khoản</th>
+                        <th>Điểm</th>
+                        <th>Thời gian</th>
+                      </tr>
+                      <tr class="current-user">
+                        <td>1</td>
+                        <td>Username1</td>
+                        <td>102</td>
+                        <td>1/13/2017</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Username1</td>
+                        <td>102</td>
+                        <td>1/13/2017</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Username1</td>
+                        <td>102</td>
+                        <td>1/13/2017</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Username1</td>
+                        <td>102</td>
+                        <td>1/13/2017</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Username1</td>
+                        <td>102</td>
+                        <td>1/13/2017</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Username1</td>
+                        <td>102</td>
+                        <td>1/13/2017</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Username1</td>
+                        <td>102</td>
+                        <td>1/13/2017</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Username1</td>
+                        <td>102</td>
+                        <td>1/13/2017</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Username1</td>
+                        <td>102</td>
+                        <td>1/13/2017</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Username1</td>
+                        <td>102</td>
+                        <td>1/13/2017</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Username1</td>
+                        <td>102</td>
+                        <td>1/13/2017</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Username1</td>
+                        <td>102</td>
+                        <td>1/13/2017</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Username1</td>
+                        <td>102</td>
+                        <td>1/13/2017</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Username1</td>
+                        <td>102</td>
+                        <td>1/13/2017</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Username1</td>
+                        <td>102</td>
+                        <td>1/13/2017</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Username1</td>
+                        <td>102</td>
+                        <td>1/13/2017</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Username1</td>
+                        <td>102</td>
+                        <td>1/13/2017</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Username1</td>
+                        <td>102</td>
+                        <td>1/13/2017</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Username1</td>
+                        <td>102</td>
+                        <td>1/13/2017</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Username1</td>
+                        <td>102</td>
+                        <td>1/13/2017</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Username1</td>
+                        <td>102</td>
+                        <td>1/13/2017</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Username1</td>
+                        <td>102</td>
+                        <td>1/13/2017</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Username1</td>
+                        <td>102</td>
+                        <td>1/13/2017</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Username1</td>
+                        <td>102</td>
+                        <td>1/13/2017</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Username1</td>
+                        <td>102</td>
+                        <td>1/13/2017</td>
+                      </tr>
+                    </table>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div class="bottom">
-            <div class="bottomLink"><img class="mountainBackground" src="common/img/yellow-mountain.svg" alt="Menu section"><a href="#">Vòng quay</a></div>
-          </div>
-        </div>
-        <div id="resultArea">
-          <div class="top"></div>
-          <div class="content"></div>
-          <div class="bottom">
-            <div class="bottomLink"><img class="mountainBackground" src="common/img/yellow-mountain.svg" alt="Menu section"><a href="#">Kết quả</a></div>
+            <div class="bottomLink"><img class="mountainBackground" src="common/img/yellow-mountain.svg" alt="Menu section"><a href="#Result" data-page-target="Result">Kết quả</a></div>
           </div>
         </div>
       </section>
-      <section></section>
-      <footer></footer>
     </body>
+    <script type="text/javascript" src="common/js/jquery-2.2.1.min.js"></script>
+    <script type="text/javascript" src="common/js/jquery-ui.js"></script>
+    <script type="text/javascript" src="common/js/init.js"></script>
   </body>
 </html>

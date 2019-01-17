@@ -66,12 +66,12 @@ body
             .conerCircles
                 .circle
                     position: fixed
-                    width: 20vmax
-                    height: 20vmax
+                    width: 10vmax
+                    height: 10vmax
                     top: 0
                     left: 0
                     z-index: 10
-                    @include transform(translate(-50%, -50%))
+                    @include transform(translate(-50%, -50%) scale(2))
                     &:nth-child(2)
                         left: 100%
                     &:nth-child(3)
@@ -86,44 +86,50 @@ body
             max-width: 60vw
             // min-width: 800px
             margin: 0 auto
+            // margin-right: auto
+            // margin-left: auto
             left:0
             right: 0
             display: flex
-            
-            &.activeRule
-                margin-left: 40vw
+            @include transition(all 1s)
+
+            &.Rule
+                left: 40vw
                 div[id$="Area"]:not(#ruleArea) .content
                     display: none
 
-            &.activeResult
-                margin-right: 40vw
+            &.Result
+                right: 40vw
                 div[id$="Area"]:not(#resultArea) .content
                     display: none
 
-            &.activeWheel, &:not(.activeRule):not(.activeResult)
+            &.Wheel, &:not(.Rule):not(.Result)
                 div[id$="Area"]:not(#wheelArea) .content
                     display: none
-
+                    
+            $objectSize: 60vh
+            $objectSize: 60vmin
             div[id$="Area"]
                 height: 90vh
                 position: relative
                 // background: rgba(255,255,255,0.5)   
                 @include flex(1)
                 @include transition(flex 0.5s)
-                &.active
-                    @include flex(1.1)
                 
                 .content
                     position: relative
                     height: 90%
                     z-index: 1
+
                     .objectsArea
                         height: 100%
-                        width: 80vw
+                        width: $objectSize
                         position: absolute
-                        left: 10vw
+                        // left: $objectSize / 8
                         // background: green
-                        @include transform(translateX(-50%))
+                        left: 50%
+                        top: 50%
+                        @include transform(translate(-50%, -50%))
                 .bottom
                     position: absolute
                     bottom: 0
@@ -132,48 +138,112 @@ body
                     height: 15%
                     text-align: center
                     .bottomLink
+                        position: relative
                         height: 100%
                         width: 100%
                         position: relative
+                        @include transition(all 0.5s)
+                        @include transformOrigin(50% 100%)
+                        
                         .mountainBackground
                             position: absolute
                             height: 120%
                             top: 50%
                             @include transform(translate(-50%, -50%))
                             pointer-events: none
-
                         a
                             font-size: 150%
                             position: relative
                             display: block
                             top: 45%
 
-            #ruleArea
+                        &:hover
+                            @include transform(scale(1.2))
+                            // z-index: 1
+
+                            a
+                                text-decoration: none
+
+
+            #ruleArea, #resultArea
                 .ruleBroad
                     position: inherit
-                    height: 100%
+                    height: 90%
                     width: 100%
+                    top: 50%
+                    left: 50%
+                    @include transform(translate(-50%, -50%))
 
                     .topObject, .bottomObject
                         position: absolute
-                        top: 0
+                        // top: 0
                         height: 15%
                         width: 100%
                         background: green
 
                     .middleObject
-                        position: absolute
+                        position: relative
                         top: 15%
                         height: 70%
                         width: 100%
-                        background: $red
                         padding: 5% 10%
+                        // overflow: auto
                         @include boxSizing()
-                        overflow: auto
+                        left: 50%
+                        @include transform(translateX(-50%))
+                        display: flex
+                        flex-direction: column
+
+                        .contentObject
+                            @include flex(1)
+                            overflow: auto
 
                     .bottomObject
-                        top: 85%
-                    
+                        // top: 85%
+                        @include transform(scale(-1) translateY(-100%))
+            
+            #ruleArea
+                .ruleBroad
+                    width: 150%
+                    .topObject, .bottomObject
+                        // background: url(../img/top-rule.svg) no-repeat center bottom
+                        z-index: 1
+                        // position: ab
+                        height: 0%
+                        &:before
+                            content: ""
+                            position: absolute
+                            width: 110%
+                            height: $objectSize / 50
+                            left: 50%
+                            @extend .yellowRadialGradientHorizontal
+                            @include transform(translate(-50%, -50%))
+                    .middleObject
+                        padding-bottom: 20%
+                        @extend .redGradientBackground
+                        // border-radius: 20%
+                        // border-top: solid $objectSize/80 $yellow
+                        // border-bottom: solid $objectSize/80 $yellow
+                        overflow: auto
+                        top: 0
+                        height: 90%
+                        .contentObject
+                            overflow: initial
+                            position: relative
+                            &:after
+                                padding: 10%
+                                content: ""
+                                background: url(../img/pattern_motif_rounded.png) repeat center
+                                background-size: 5%
+                                position: absolute
+                                top: 0
+                                // bottom: 0
+                                left: -5%
+                                right: -5%
+                                // height: 100%
+                                bottom: 0
+                                z-index: -1
+                                opacity: 0.1
                 .trees
                     position: absolute
                     bottom: 0
@@ -340,22 +410,28 @@ body
                         position: absolute
                         z-index: -1
                         left: 50%
-                        .circle
-                            position: absolute
-                            height: $introSize/6
-                            width: $introSize/6
-                            @include transform(translate(-50%, -50%))
-                            &:nth-child(1)
-                                @include transform(translate(-120%, -40%))
-                            &:nth-child(2)
-                                @include transform(translate(20%, -40%))
-                            &:nth-child(3)
-                                z-index: -1
-                                @include transform(translate(-50%, -50%) scale(1.4))
 
                         &.bottom
                             @include transform(scaleY(-1))
-
+                    .circle
+                        position: absolute
+                        height: $introSize/6
+                        width: $introSize/6
+                        @include transform(translate(-50%, -50%))
+                        &:nth-child(1)
+                            @include transform(translate(-120%, -40%))
+                        &:nth-child(2)
+                            @include transform(translate(20%, -40%))
+                        &:nth-child(3)
+                            z-index: -1
+                            @include transform(translate(-50%, -50%) scale(1.4))
+                        &.pointer
+                            left: 50%
+                            z-index: 9
+                            height: $introSize/8
+                            width: $introSize/8
+                            @include transform(translate(-50%, -100%) rotate(-135deg))
+            
                     .outsideCorner
                         .wingBehind
                             pointer-events: none
@@ -370,3 +446,145 @@ body
                             z-index: -2
                             &:nth-child(2)
                                 @include transform(translate(0%, -50%) scale(-1))
+
+                    .insideCorner
+                        &:after
+                            height: 70%
+                            width: 70%
+                            @extend .yellowLinearGradient
+                            border-style: solid
+                            border-width: $introSize/100
+                            box-sizing: border-box
+                    #wheelRotate
+                        @extend .autoWheel
+                        position: absolute
+                        height: 100%
+                        width: 100%
+                        .wheelNum
+                            text-align: center
+                            position: absolute
+                            // top: 5%
+                            height: 50%
+                            width: 13%
+                            left: calc(50% - 6.5%)
+                            @include transformOrigin(50% 100%)
+                            @for $i from 1 through 20
+                                @include setRotate($i)
+                            
+                            .pointValue
+                                display: block
+                                padding-top: 40%
+                                // margin-top: 50%
+                                // @include transform(rotate(-90deg))
+                                font-size: 200%
+                                -webkit-background-clip: text
+                                -webkit-text-fill-color: transparent
+                                @extend .yellowLinearGradient
+                                position: relative
+
+                                &:before
+                                    $dotSize: $introSize/40
+                                    content: ""
+                                    height: $dotSize
+                                    width: $dotSize
+                                    // background: red
+                                    position: absolute
+                                    border-radius: $dotSize
+                                    top: 20%
+                                    left: 50%
+                                    margin: 0 auto
+                                    @extend .yellowRadialGradient
+
+
+                    .wheelCenter
+                        position: absolute
+                        height: 65%
+                        width: 65%
+                        background: white
+                        z-index: 2
+                        top: 50%
+                        left: 50%
+                        @include transform(translate(-50%, -50%))
+                        border-radius: $introSize
+                        overflow: hidden
+                        &:before
+                            content: ""
+                            @extend .patternBackground
+                            z-index: 2
+                            opacity: 1
+            
+            #resultArea
+                $objectSize: 50vmin
+                .objectsArea
+                    width: $objectSize    
+                .ruleBroad
+                    position: relative
+                    height: initial
+                    &:before
+                        position: absolute
+                        content: ""
+                        @include boxSizing(initial)
+                        padding: 40%
+                        background: url(../img/result-board.svg) no-repeat center
+                        height: 100%
+                        width: 100%
+                        left: 50%
+                        top: 35%
+                        bottom: 0
+                        @include transform(translate(-50%, -50%))
+                        z-index: 1
+                        pointer-events: none
+
+                    .middleObject
+                        @include boxSizing(initial)
+                        max-height: $objectSize / 1.5
+                        width: 80%
+                        padding: 0
+
+                    .contentObject
+                        table
+                            width: 100%
+                            text-align: center
+                    
+                    .circleGroup
+                        position: absolute
+                        z-index: -1
+                        padding-left: 50%
+                        top: 50%
+                        .circle
+                            position: absolute
+                            width: $objectSize / 5
+                            height: $objectSize / 5
+
+                            &:nth-child(1)
+                                @include transform(translate(-$objectSize / 1.25, -$objectSize / 5.5))
+                            &:nth-child(2)
+                                @include transform(translate(-$objectSize / 1.42, -$objectSize / 3.6) scale(0.8))
+                                z-index: -1
+                            &:nth-child(3)
+                                @include transform(translate(-$objectSize / 1.37, -$objectSize / 15) scale(0.8))
+                                z-index: -1
+                            &:nth-child(4)
+                                @include transform(translate(-$objectSize / 1.43, $objectSize / 30) scale(0.8))
+                                z-index: -2
+                            &:nth-child(5)
+                                @include transform(translate(-$objectSize / 1.65, -$objectSize / 2.7) scale(0.8))
+                                z-index: -2
+                            &.circleSpecial
+                                @include transform(translate(-$objectSize / 1.5, -$objectSize / 6))
+                                z-index: -2
+                            
+                        &.bottom
+                            @include transform(scaleX(-1))
+                    #resultBackground
+                        position: absolute
+                        height: 180%
+                        width: 180%
+                        left: 50%
+                        top: 45%
+                        bottom: 0
+                        @include transform(translate(-50%, -50%))
+                        @include boxSizing(initial)
+                        z-index: -1
+                        fill: red
+                            
