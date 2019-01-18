@@ -35,7 +35,7 @@ table {
   border-spacing: 0;
 }
 
-.yellowLinearGradient, body section.mountains #wheelArea .wheelCircle #wheelRotate .wheelNum .pointValue, body section.mountains #wheelArea .wheelCircle .insideCorner:after, body section.mountains #wheelArea .introCircle .outsideCorner:after, body section.mountains #wheelArea .wheelCircle .outsideCorner:after, .titleText {
+.yellowLinearGradient, body section.mountains #wheelArea .wheelCircle #wheelRotate .wheelNum .pointValue, body section.mountains #wheelArea .wheelCircle .insideCorner:after, body section.mountains #wheelArea .introCircle .outsideCorner:after, body section.mountains #wheelArea .wheelCircle .outsideCorner:after, body section.mountains #ruleArea .ruleBroad .topObject .ropes:before, body section.mountains #ruleArea .ruleBroad .topObject .ropes:after, body section.mountains #ruleArea .ruleBroad .bottomObject .ropes:before, body section.mountains #ruleArea .ruleBroad .bottomObject .ropes:after, .titleText {
   background: #ffed4a;
   background: -moz-linear-gradient(-45deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
   background: -webkit-linear-gradient(-45deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
@@ -51,7 +51,7 @@ table {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="$yellow", endColorstr="$yellow-dark",GradientType=0 );
 }
 
-.yellowRadialGradientHorizontal, body section.mountains #ruleArea .ruleBroad .topObject:before, body section.mountains #ruleArea .ruleBroad .bottomObject:before {
+.yellowRadialGradientHorizontal, body section.mountains #ruleArea .ruleBroad .topObject .bracePipe, body section.mountains #ruleArea .ruleBroad .bottomObject .bracePipe {
   background: #ffed4a;
   background: -moz-linear-gradient(2deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
   background: -webkit-linear-gradient(2deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
@@ -437,6 +437,7 @@ body section.mountains {
   left: 0;
   right: 0;
   display: flex;
+  opacity: 1;
   -webkit-transition: all 1s;
   -o-transition: all 1s;
   transition: all 1s;
@@ -445,16 +446,16 @@ body section.mountains.Rule {
   left: 40vw;
 }
 body section.mountains.Rule div[id$=Area]:not(#ruleArea) .content {
-  display: none;
+  opacity: 0;
 }
 body section.mountains.Result {
   right: 40vw;
 }
 body section.mountains.Result div[id$=Area]:not(#resultArea) .content {
-  display: none;
+  opacity: 0;
 }
 body section.mountains.Wheel div[id$=Area]:not(#wheelArea) .content, body section.mountains:not(.Rule):not(.Result) div[id$=Area]:not(#wheelArea) .content {
-  display: none;
+  opacity: 0;
 }
 body section.mountains div[id$=Area] {
   height: 90vh;
@@ -471,6 +472,10 @@ body section.mountains div[id$=Area] .content {
   position: relative;
   height: 90%;
   z-index: 1;
+  opacity: 1;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
 }
 body section.mountains div[id$=Area] .content .objectsArea {
   height: 100%;
@@ -584,16 +589,89 @@ body section.mountains #ruleArea .ruleBroad .topObject, body section.mountains #
   z-index: 1;
   height: 0%;
 }
-body section.mountains #ruleArea .ruleBroad .topObject:before, body section.mountains #ruleArea .ruleBroad .bottomObject:before {
+body section.mountains #ruleArea .ruleBroad .topObject .bracePipe, body section.mountains #ruleArea .ruleBroad .bottomObject .bracePipe {
   content: "";
   position: absolute;
-  width: 110%;
+  width: 120%;
   height: 1.2vmin;
-  left: 50%;
+  left: 46%;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+body section.mountains #ruleArea .ruleBroad .topObject .bracePipe .circle.end, body section.mountains #ruleArea .ruleBroad .topObject .bracePipe #wheelArea .introCircle .insideCorner [class$=Context].loginContext input.end, body section.mountains #wheelArea .introCircle .insideCorner [class$=Context].loginContext #ruleArea .ruleBroad .topObject .bracePipe input.end, body section.mountains #ruleArea .ruleBroad .topObject .bracePipe #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext input.end, body section.mountains #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext #ruleArea .ruleBroad .topObject .bracePipe input.end, body section.mountains #ruleArea .ruleBroad .bottomObject .bracePipe .circle.end, body section.mountains #ruleArea .ruleBroad .bottomObject .bracePipe #wheelArea .introCircle .insideCorner [class$=Context].loginContext input.end, body section.mountains #wheelArea .introCircle .insideCorner [class$=Context].loginContext #ruleArea .ruleBroad .bottomObject .bracePipe input.end, body section.mountains #ruleArea .ruleBroad .bottomObject .bracePipe #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext input.end, body section.mountains #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext #ruleArea .ruleBroad .bottomObject .bracePipe input.end {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 12vmin;
+  height: 12vmin;
+  -webkit-transform: translate(-50%, -45%) scale(0.05, 0.1);
+  -ms-transform: translate(-50%, -45%) scale(0.05, 0.1);
+  -o-transform: translate(-50%, -45%) scale(0.05, 0.1);
+  transform: translate(-50%, -45%) scale(0.05, 0.1);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body section.mountains #ruleArea .ruleBroad .topObject .bracePipe .circle.end:nth-child(2), body section.mountains #ruleArea .ruleBroad .topObject .bracePipe #wheelArea .introCircle .insideCorner [class$=Context].loginContext input.end:nth-child(2), body section.mountains #wheelArea .introCircle .insideCorner [class$=Context].loginContext #ruleArea .ruleBroad .topObject .bracePipe input.end:nth-child(2), body section.mountains #ruleArea .ruleBroad .topObject .bracePipe #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext input.end:nth-child(2), body section.mountains #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext #ruleArea .ruleBroad .topObject .bracePipe input.end:nth-child(2), body section.mountains #ruleArea .ruleBroad .bottomObject .bracePipe .circle.end:nth-child(2), body section.mountains #ruleArea .ruleBroad .bottomObject .bracePipe #wheelArea .introCircle .insideCorner [class$=Context].loginContext input.end:nth-child(2), body section.mountains #wheelArea .introCircle .insideCorner [class$=Context].loginContext #ruleArea .ruleBroad .bottomObject .bracePipe input.end:nth-child(2), body section.mountains #ruleArea .ruleBroad .bottomObject .bracePipe #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext input.end:nth-child(2), body section.mountains #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext #ruleArea .ruleBroad .bottomObject .bracePipe input.end:nth-child(2) {
+  right: 0;
+  left: initial;
+  -webkit-transform: translate(50%, -45%) scale(0.05, 0.1);
+  -ms-transform: translate(50%, -45%) scale(0.05, 0.1);
+  -o-transform: translate(50%, -45%) scale(0.05, 0.1);
+  transform: translate(50%, -45%) scale(0.05, 0.1);
+}
+body section.mountains #ruleArea .ruleBroad .topObject .bracePipe .circleGroup, body section.mountains #ruleArea .ruleBroad .bottomObject .bracePipe .circleGroup {
+  position: absolute;
+  width: 12vmin;
+  -webkit-transform: scale(0.35);
+  -ms-transform: scale(0.35);
+  -o-transform: scale(0.35);
+  transform: scale(0.35);
+  -webkit-transform-origin: 50% 0;
+  -moz-transform-origin: 50% 0;
+  -ms-transform-origin: 50% 0;
+  -o-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+}
+body section.mountains #ruleArea .ruleBroad .topObject .bracePipe .circleGroup .circle, body section.mountains #ruleArea .ruleBroad .topObject .bracePipe .circleGroup #wheelArea .introCircle .insideCorner [class$=Context].loginContext input, body section.mountains #wheelArea .introCircle .insideCorner [class$=Context].loginContext #ruleArea .ruleBroad .topObject .bracePipe .circleGroup input, body section.mountains #ruleArea .ruleBroad .topObject .bracePipe .circleGroup #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext input, body section.mountains #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext #ruleArea .ruleBroad .topObject .bracePipe .circleGroup input, body section.mountains #ruleArea .ruleBroad .bottomObject .bracePipe .circleGroup .circle, body section.mountains #ruleArea .ruleBroad .bottomObject .bracePipe .circleGroup #wheelArea .introCircle .insideCorner [class$=Context].loginContext input, body section.mountains #wheelArea .introCircle .insideCorner [class$=Context].loginContext #ruleArea .ruleBroad .bottomObject .bracePipe .circleGroup input, body section.mountains #ruleArea .ruleBroad .bottomObject .bracePipe .circleGroup #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext input, body section.mountains #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext #ruleArea .ruleBroad .bottomObject .bracePipe .circleGroup input {
+  position: relative;
+  width: 12vmin;
+  height: 12vmin;
+}
+body section.mountains #ruleArea .ruleBroad .topObject .bracePipe .circleGroup .circle:nth-child(1), body section.mountains #ruleArea .ruleBroad .topObject .bracePipe .circleGroup #wheelArea .introCircle .insideCorner [class$=Context].loginContext input:nth-child(1), body section.mountains #wheelArea .introCircle .insideCorner [class$=Context].loginContext #ruleArea .ruleBroad .topObject .bracePipe .circleGroup input:nth-child(1), body section.mountains #ruleArea .ruleBroad .topObject .bracePipe .circleGroup #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext input:nth-child(1), body section.mountains #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext #ruleArea .ruleBroad .topObject .bracePipe .circleGroup input:nth-child(1), body section.mountains #ruleArea .ruleBroad .bottomObject .bracePipe .circleGroup .circle:nth-child(1), body section.mountains #ruleArea .ruleBroad .bottomObject .bracePipe .circleGroup #wheelArea .introCircle .insideCorner [class$=Context].loginContext input:nth-child(1), body section.mountains #wheelArea .introCircle .insideCorner [class$=Context].loginContext #ruleArea .ruleBroad .bottomObject .bracePipe .circleGroup input:nth-child(1), body section.mountains #ruleArea .ruleBroad .bottomObject .bracePipe .circleGroup #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext input:nth-child(1), body section.mountains #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext #ruleArea .ruleBroad .bottomObject .bracePipe .circleGroup input:nth-child(1) {
+  -webkit-transform: translateY(-25%) scale(1.5);
+  -ms-transform: translateY(-25%) scale(1.5);
+  -o-transform: translateY(-25%) scale(1.5);
+  transform: translateY(-25%) scale(1.5);
+}
+body section.mountains #ruleArea .ruleBroad .topObject .bracePipe .circleGroup .circle:nth-child(1):after, body section.mountains #ruleArea .ruleBroad .topObject .bracePipe .circleGroup #wheelArea .introCircle .insideCorner [class$=Context].loginContext input:nth-child(1):after, body section.mountains #wheelArea .introCircle .insideCorner [class$=Context].loginContext #ruleArea .ruleBroad .topObject .bracePipe .circleGroup input:nth-child(1):after, body section.mountains #ruleArea .ruleBroad .topObject .bracePipe .circleGroup #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext input:nth-child(1):after, body section.mountains #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext #ruleArea .ruleBroad .topObject .bracePipe .circleGroup input:nth-child(1):after, body section.mountains #ruleArea .ruleBroad .topObject .bracePipe .circleGroup .circle:nth-child(1):after, body section.mountains #ruleArea .ruleBroad .bottomObject .bracePipe .circleGroup .circle:nth-child(1):after, body section.mountains #ruleArea .ruleBroad .bottomObject .bracePipe .circleGroup #wheelArea .introCircle .insideCorner [class$=Context].loginContext input:nth-child(1):after, body section.mountains #wheelArea .introCircle .insideCorner [class$=Context].loginContext #ruleArea .ruleBroad .bottomObject .bracePipe .circleGroup input:nth-child(1):after, body section.mountains #ruleArea .ruleBroad .bottomObject .bracePipe .circleGroup #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext input:nth-child(1):after, body section.mountains #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext #ruleArea .ruleBroad .bottomObject .bracePipe .circleGroup input:nth-child(1):after, body section.mountains #ruleArea .ruleBroad .bottomObject .bracePipe .circleGroup .circle:nth-child(1):after {
+  content: none;
+}
+body section.mountains #ruleArea .ruleBroad .topObject .ropes, body section.mountains #ruleArea .ruleBroad .bottomObject .ropes {
+  position: absolute;
+  height: 60vmin;
+  width: 50%;
+  bottom: 0;
+  z-index: -1;
+  left: 25%;
+}
+body section.mountains #ruleArea .ruleBroad .topObject .ropes:before, body section.mountains #ruleArea .ruleBroad .topObject .ropes:after, body section.mountains #ruleArea .ruleBroad .bottomObject .ropes:before, body section.mountains #ruleArea .ruleBroad .bottomObject .ropes:after {
+  content: "";
+  width: 5px;
+  height: 100%;
+  position: absolute;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background-size: 10%;
+  opacity: 1;
+}
+body section.mountains #ruleArea .ruleBroad .topObject .ropes:after, body section.mountains #ruleArea .ruleBroad .bottomObject .ropes:after {
+  left: initial;
+  right: 0;
 }
 body section.mountains #ruleArea .ruleBroad .middleObject {
   padding-bottom: 20%;
@@ -906,7 +984,7 @@ body section.mountains #wheelArea .wheelCircle .insideCorner:after {
   width: 70%;
   border-style: solid;
   border-width: 0.6vmin;
-  box-sizing: border-box;
+  @inclde boxSizing();
 }
 body section.mountains #wheelArea .wheelCircle #wheelRotate {
   position: absolute;

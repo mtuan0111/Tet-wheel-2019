@@ -91,25 +91,30 @@ body
             left:0
             right: 0
             display: flex
+            opacity: 1
             @include transition(all 1s)
 
             &.Rule
                 left: 40vw
                 div[id$="Area"]:not(#ruleArea) .content
-                    display: none
+                    opacity: 0
+                    // display: none
 
             &.Result
                 right: 40vw
                 div[id$="Area"]:not(#resultArea) .content
-                    display: none
+                    opacity: 0
+                    // display: none
 
             &.Wheel, &:not(.Rule):not(.Result)
                 div[id$="Area"]:not(#wheelArea) .content
-                    display: none
+                    opacity: 0
+                    // display: none
                     
             $objectSize: 60vh
             $objectSize: 60vmin
             div[id$="Area"]
+
                 height: 90vh
                 position: relative
                 // background: rgba(255,255,255,0.5)   
@@ -120,7 +125,8 @@ body
                     position: relative
                     height: 90%
                     z-index: 1
-
+                    opacity: 1
+                    @include transition(all 0.5s)
                     .objectsArea
                         height: 100%
                         width: $objectSize
@@ -210,20 +216,87 @@ body
                         z-index: 1
                         // position: ab
                         height: 0%
-                        &:before
+                        .bracePipe
                             content: ""
                             position: absolute
-                            width: 110%
+                            width: 120%
                             height: $objectSize / 50
-                            left: 50%
+                            left: 46%
                             @extend .yellowRadialGradientHorizontal
                             @include transform(translate(-50%, -50%))
+                            // &:before
+                            //     content: ""
+                            //     @extend .circle
+                            //     height: 50px
+                            //     width: 50%
+                            .circle.end
+                                position: absolute
+                                left: 0
+                                top: 0
+                                width: $objectSize / 5
+                                height: $objectSize / 5
+                                @include transform(translate(-50%, -45%) scale(0.05, 0.1))
+                                @include boxSizing()
+
+                                &:nth-child(2)
+                                    right: 0
+                                    left: initial
+                                    @include transform(translate(50%, -45%) scale(0.05, 0.1))
+
+                            .circleGroup
+                                position: absolute
+                                width: $objectSize / 5
+                                // height: $objectSize / 5
+                                // right: 0
+                                
+                                @include transform(scale(0.35))
+                                @include transformOrigin(50% 0)
+                                .circle
+                                    position: relative
+                                    width: $objectSize / 5
+                                    height: $objectSize / 5
+                                    &:nth-child(1)
+                                        // background: @red
+                                        @include transform(translateY(-25%) scale(1.5))
+                                        &:after, &:after
+                                            content: none
+
+                            // .circleGroup
+                                // &:nth-child(1)
+                                    // right: 0
+                                    
+
+                        .ropes
+                            position: absolute
+                            height: $objectSize
+                            width: 50%
+                            // background: red
+                            bottom: 0
+                            z-index: -1
+                            left: 25%
+                            &:before, &:after
+                                content: ""
+                                width: 5px
+                                height: 100%
+                                // background: $red
+                                position: absolute
+                                @extend .yellowLinearGradient
+                                @include transform(translateX(-50%))
+                                // background-color: $red
+                                background-size: 10%
+                                opacity: 1
+                            &:after
+                                left: initial
+                                right: 0
+
                     .middleObject
                         padding-bottom: 20%
                         @extend .redGradientBackground
+                        
                         // border-radius: 20%
                         // border-top: solid $objectSize/80 $yellow
                         // border-bottom: solid $objectSize/80 $yellow
+
                         overflow: auto
                         top: 0
                         height: 90%
@@ -454,7 +527,7 @@ body
                             @extend .yellowLinearGradient
                             border-style: solid
                             border-width: $introSize/100
-                            box-sizing: border-box
+                            @inclde boxSizing()
                     #wheelRotate
                         @extend .autoWheel
                         position: absolute

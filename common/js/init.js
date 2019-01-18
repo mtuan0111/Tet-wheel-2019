@@ -25,28 +25,28 @@ $(document).ready(function() {
   //   touchInit();
 });
 
-// $(window).load(function(){
-//     var wheel = new Wheel();
-//     wheel.clickToPlay();
-//     // var notiBroad = new notificationBroad($(".broad-obs.small"));
-//     // var notiBroad = new notificationBroad($(".broad-obs"));
-//     var loginBroad;
-//     $(document).on("click",".loginButton",function(e){
-//         if(!loginBroad){
-//             loginBroad = new notificationBroad();
-//             loginBroad.setLoginForm();
-//         }else{
-//             $(loginBroad.loginUser.loginForm).submit();
-//         }
-//         // console.log("loginBroad: ", loginBroad);
-//         loginBroad.showLoginForm();
-//         e.stopPropagation()
-//     });
+$(window).load(function() {
+  var wheel = new Wheel();
+  wheel.clickToPlay();
+  // var notiBroad = new notificationBroad($(".broad-obs.small"));
+  // var notiBroad = new notificationBroad($(".broad-obs"));
+  var loginBroad;
+  $(document).on("click", ".loginButton", function(e) {
+    if (!loginBroad) {
+      loginBroad = new notificationBroad();
+      loginBroad.setLoginForm();
+    } else {
+      $(loginBroad.loginUser.loginForm).submit();
+    }
+    // console.log("loginBroad: ", loginBroad);
+    loginBroad.showLoginForm();
+    e.stopPropagation();
+  });
 
-//     $(".wrapper-loading").fadeOut(300,function(){
-//         $(this).remove();
-//     });
-// })
+  $(".wrapper-loading").fadeOut(300, function() {
+    $(this).remove();
+  });
+});
 // function get_current_rotate(id) {
 //     var el = document.getElementById(id);
 //     var st = window.getComputedStyle(el, null);
