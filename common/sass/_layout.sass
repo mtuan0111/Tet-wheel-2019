@@ -99,17 +99,34 @@ body
                 div[id$="Area"]:not(#ruleArea) .content
                     opacity: 0
                     // display: none
+                    pointer-events: none
 
             &.Result
                 right: 40vw
                 div[id$="Area"]:not(#resultArea) .content
                     opacity: 0
                     // display: none
+                    pointer-events: none
 
-            &.Wheel, &:not(.Rule):not(.Result)
+            &.Login
                 div[id$="Area"]:not(#wheelArea) .content
                     opacity: 0
                     // display: none
+                    pointer-events: none
+
+                .objectsArea 
+                    >*:not(.loginCircle)
+                        display: none
+
+            &.Wheel, &:not(.Rule):not(.Result):not(.Login)
+                div[id$="Area"]:not(#wheelArea) .content
+                    opacity: 0
+                    // display: none
+                    pointer-events: none
+                
+                .objectsArea 
+                    >*:not(.wheelCircle)
+                        display: none
                     
             $objectSize: 60vh
             $objectSize: 60vmin
@@ -120,13 +137,15 @@ body
                 // background: rgba(255,255,255,0.5)   
                 @include flex(1)
                 @include transition(flex 0.5s)
-                
+                display: flex
                 .content
+                    opacity: 1
+                    @include transition(all 0.5s)
+
                     position: relative
                     height: 90%
                     z-index: 1
-                    opacity: 1
-                    @include transition(all 0.5s)
+                    
                     .objectsArea
                         height: 100%
                         width: $objectSize
@@ -335,7 +354,7 @@ body
                         @include transformOrigin(50% 100%)
             #wheelArea
                 $introSize: 60vmin
-                .introCircle, .wheelCircle
+                .loginCircle, .wheelCircle
                     position: absolute
                     height: $introSize
                     width: $introSize

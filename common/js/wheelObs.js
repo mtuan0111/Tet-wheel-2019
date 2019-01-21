@@ -91,11 +91,14 @@ function Wheel() {
       point_value.setAttribute("class", "pointValue");
       point_value.setAttribute("data-pointValue", this.shuffleArray[i]);
       this.rotateObjs[i].innerHTML = "";
-      console.log("this.rotateObjs[i]: ", this.rotateObjs[i]);
       $(this.rotateObjs[i]).append(point_value);
     }
   };
   this.bindingPoint();
+
+  function newFunction() {
+    console.log("this.rotateObjs[i]: ", this.rotateObjs[i]);
+  }
   // this.rotate();
 }
 
