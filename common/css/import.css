@@ -128,7 +128,7 @@ table {
 }
 
 .titleText {
-  font-size: 5vmin;
+  font-size: 7.5vmin;
   text-align: center;
   margin: 5% 10%;
   -webkit-background-clip: text;
@@ -136,7 +136,7 @@ table {
 }
 
 h1.titleText {
-  font-size: 10vmin;
+  font-size: 20vmin;
 }
 
 p.textContent {
@@ -440,7 +440,9 @@ body {
   min-height: 100vh;
   color: white;
   font-family: "Lobster", cursive;
-  font-size: 2vmin;
+  font-size: 2.5vmin;
+  display: flex;
+  flex-direction: column;
 }
 body:before {
   content: "";
@@ -506,12 +508,11 @@ body section.decoration .conerCircles .circle:nth-child(4), body section.decorat
   left: 100%;
 }
 body section.mountains {
-  position: fixed;
-  bottom: 0;
-  max-width: 60vw;
   margin: 0 auto;
-  left: 0;
-  right: 0;
+  -ms-flex: 1;
+  -webkit-flex: 1;
+  -moz-flex: 1;
+  flex: 1;
   display: flex;
   opacity: 1;
   -webkit-transition: all 1s;
@@ -547,7 +548,6 @@ body section.mountains.Wheel .objectsArea > *:not(.wheelCircle), body section.mo
   display: none;
 }
 body section.mountains div[id$=Area] {
-  height: 90vh;
   position: relative;
   -ms-flex: 1;
   -webkit-flex: 1;
@@ -557,6 +557,7 @@ body section.mountains div[id$=Area] {
   -o-transition: flex 0.5s;
   transition: flex 0.5s;
   display: flex;
+  flex-direction: column;
 }
 body section.mountains div[id$=Area] .content {
   opacity: 1;
@@ -566,6 +567,10 @@ body section.mountains div[id$=Area] .content {
   position: relative;
   height: 90%;
   z-index: 1;
+  -ms-flex: 1;
+  -webkit-flex: 1;
+  -moz-flex: 1;
+  flex: 1;
 }
 body section.mountains div[id$=Area] .content .objectsArea {
   height: 100%;
@@ -578,52 +583,11 @@ body section.mountains div[id$=Area] .content .objectsArea {
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-body section.mountains div[id$=Area] .bottom {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 15%;
-  text-align: center;
-}
-body section.mountains div[id$=Area] .bottom .bottomLink {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  position: relative;
-  -webkit-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
-  -webkit-transform-origin: 50% 100%;
-  -moz-transform-origin: 50% 100%;
-  -ms-transform-origin: 50% 100%;
-  -o-transform-origin: 50% 100%;
-  transform-origin: 50% 100%;
-}
-body section.mountains div[id$=Area] .bottom .bottomLink .mountainBackground {
-  position: absolute;
-  height: 120%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-}
-body section.mountains div[id$=Area] .bottom .bottomLink a {
-  font-size: 150%;
-  position: relative;
-  display: block;
-  top: 45%;
-}
-body section.mountains div[id$=Area] .bottom .bottomLink:hover {
-  -webkit-transform: scale(1.2);
-  -ms-transform: scale(1.2);
-  -o-transform: scale(1.2);
-  transform: scale(1.2);
-}
-body section.mountains div[id$=Area] .bottom .bottomLink:hover a {
-  text-decoration: none;
+body section.mountains #mainNav {
+  -ms-flex: 1 100%;
+  -webkit-flex: 1 100%;
+  -moz-flex: 1 100%;
+  flex: 1 100%;
 }
 body section.mountains #ruleArea .ruleBroad, body section.mountains #resultArea .ruleBroad {
   position: inherit;
@@ -949,6 +913,8 @@ body section.mountains #wheelArea .loginCircle .insideCorner .circleGroup.bottom
   -ms-transform: scaleY(-1);
   -o-transform: scaleY(-1);
   transform: scaleY(-1);
+  top: initial;
+  bottom: 0;
 }
 body section.mountains #wheelArea .loginCircle .insideCorner [class$=Context], body section.mountains #wheelArea .wheelCircle .insideCorner [class$=Context] {
   position: absolute;
@@ -1009,6 +975,8 @@ body section.mountains #wheelArea .wheelCircle .circleGroup.bottom {
   -ms-transform: scaleY(-1);
   -o-transform: scaleY(-1);
   transform: scaleY(-1);
+  top: initial;
+  bottom: 0;
 }
 body section.mountains #wheelArea .wheelCircle .circle, body section.mountains #wheelArea .loginCircle .insideCorner [class$=Context].loginContext .wheelCircle input, body section.mountains #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext input {
   position: absolute;
@@ -1293,7 +1261,7 @@ body section.mountains #resultArea .ruleBroad .contentObject table {
 body section.mountains #resultArea .ruleBroad .circleGroup {
   position: absolute;
   z-index: -1;
-  padding-left: 50%;
+  left: 50%;
   top: 50%;
 }
 body section.mountains #resultArea .ruleBroad .circleGroup .circle, body section.mountains #resultArea .ruleBroad .circleGroup #wheelArea .loginCircle .insideCorner [class$=Context].loginContext input, body section.mountains #wheelArea .loginCircle .insideCorner [class$=Context].loginContext #resultArea .ruleBroad .circleGroup input, body section.mountains #resultArea .ruleBroad .circleGroup #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext input, body section.mountains #wheelArea .wheelCircle .insideCorner [class$=Context].loginContext #resultArea .ruleBroad .circleGroup input {
@@ -1365,9 +1333,14 @@ body section.mountains #resultArea .ruleBroad #resultBackground {
   z-index: -1;
   fill: red;
 }
+body #sectionNav {
+  display: block;
+  height: 10vh;
+  text-align: center;
+}
 
 body {
-  font-size: 2vmin;
+  font-size: 2.5vmin;
 }
 
 :after, :before {
@@ -1394,6 +1367,24 @@ a:hover {
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+
+@media (max-width: 800px) and (orientation: portrait) {
+  #ruleArea .mountainBackground, #resultArea .mountainBackground {
+    display: none;
+  }
+
+  body section.mountains div[id$=Area] .bottom {
+    -webkit-transition: height 0.5s;
+    -o-transition: height 0.5s;
+    transition: height 0.5s;
+  }
+  body section.mountains div[id$=Area] .bottom .mountainBackground {
+    z-index: -1;
+  }
+  body section.mountains.activeMobileNav .bottom {
+    height: 25% !important;
+  }
 }
 
 /*# sourceMappingURL=import.css.map */

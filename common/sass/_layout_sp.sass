@@ -1,0 +1,24 @@
+$standardFontsize: 4vmin
+$h2titleSize: 4vmin
+$h1titleSize: 20vmin
+
+$introTitleSize: 50vmin
+
+#ruleArea, #resultArea
+    .mountainBackground
+        display: none
+
+body section.mountains 
+
+    div[id$=Area] .bottom 
+        .mountainBackground
+            z-index: -1
+        @include transition(height 0.5s)
+        .bottomLink
+            &:hover
+                // height: 25%
+                // @include transform(none)
+
+    &.activeMobileNav
+        .bottom
+            height: 25% !important

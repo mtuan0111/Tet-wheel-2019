@@ -19,11 +19,7 @@ html(lang="en")
                 a#topLogo(href="#")
                 nav.beforeLogin
                     a(href="#Login" data-page-target="Login") Đăng nhập
-                    a Đăng ký
-                    
-                //- nav.afterLogin
-                //-     a Tên đăng nhập
-                //-     a 9000 điểm
+                    a(href="/register") Đăng ký 
                     
         section.decoration
             .conerCircles
@@ -101,13 +97,13 @@ html(lang="en")
                                         | Ban Quản trị Vinaresearch
                             .bottomObject
                             
-                .bottom
-                    .bottomLink
-                        img.mountainBackground(src="common/img/yellow-mountain.svg", alt="Menu section")
-                        a(href="#Rule" data-page-target="Rule") Thể lệ
-                        .trees
-                            .tree01
-                            .tree02
+                //- .bottom
+                //-     .bottomLink
+                //-         img.mountainBackground(src="common/img/yellow-mountain.svg", alt="Menu section")
+                //-         a(href="#Rule" data-page-target="Rule") Thể lệ
+                //-         .trees
+                //-             .tree01
+                //-             .tree02
 
             #wheelArea
                 .top
@@ -164,11 +160,10 @@ html(lang="en")
                                         .wheelNum(data-number=i)
                                             span.pointValue 100
                                 .wheelCenter
-                .bottom
-                    .bottomLink
-                        img.mountainBackground(src="common/img/yellow-mountain.svg", alt="Menu section")
-                        a(href="#Wheel" data-page-target="Wheel") Vòng quay
-
+                //- .bottom
+                //-     .bottomLink
+                //-         img.mountainBackground(src="common/img/yellow-mountain.svg", alt="Menu section")
+                //-         a(href="#Wheel" data-page-target="Wheel") Vòng quay
 
             #resultArea
                 .top
@@ -333,11 +328,17 @@ html(lang="en")
                                             td 1/13/2017
                             //- .bottomObject
                             
-                .bottom
-                    .bottomLink
-                        img.mountainBackground(src="common/img/yellow-mountain.svg", alt="Menu section")
-                        a(href="#Result" data-page-target="Result") Kết quả
+                //- .bottom
+                //-     .bottomLink
+                //-         img.mountainBackground(src="common/img/yellow-mountain.svg", alt="Menu section")
+                //-         a(href="#Result" data-page-target="Result") Kết quả
                 //- .objectsArea
+            
+        section#sectionNav
+            a(href="#Rule" data-page-target="Rule") Thể lệ
+            a(href="#Wheel" data-page-target="Wheel") Vòng quay
+            a(href="#Result" data-page-target="Result") Kết quả
+
     
     script(type='text/javascript' src="common/js/jquery-2.2.1.min.js")
 
