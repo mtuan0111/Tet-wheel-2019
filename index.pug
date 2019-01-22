@@ -155,11 +155,14 @@ html(lang="en")
 
                             .circle.pointer
                             .insideCorner
-                                #wheelRotate
+                                #wheelRotate.autoWheel
                                     - for (var i=1; i<=20; i++)
                                         .wheelNum(data-number=i)
                                             span.pointValue 100
                                 .wheelCenter
+                                    .notiInfo
+                                        p.notiTitle Thông báo
+                                        p.notiContent Bạn đã quay vào ô 100 điểm Bạn đã quay vào ô 100 điểm Bạn đã quay vào ô 100 điểm Bạn đã quay vào ô 100 điểm
                 //- .bottom
                 //-     .bottomLink
                 //-         img.mountainBackground(src="common/img/yellow-mountain.svg", alt="Menu section")
@@ -334,7 +337,7 @@ html(lang="en")
                 //-         a(href="#Result" data-page-target="Result") Kết quả
                 //- .objectsArea
             
-        section#sectionNav
+        nav#sectionNav
             a(href="#Rule" data-page-target="Rule") Thể lệ
             a(href="#Wheel" data-page-target="Wheel") Vòng quay
             a(href="#Result" data-page-target="Result") Kết quả

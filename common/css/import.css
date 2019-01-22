@@ -35,7 +35,7 @@ table {
   border-spacing: 0;
 }
 
-.yellowLinearGradient, body section.mountains #wheelArea .wheelCircle #wheelRotate .wheelNum .pointValue, body section.mountains #wheelArea .wheelCircle .insideCorner:after, body section.mountains #wheelArea .loginCircle .outsideCorner:after, body section.mountains #wheelArea .wheelCircle .outsideCorner:after, body section.mountains #ruleArea .ruleBroad .topObject .ropes:before, body section.mountains #ruleArea .ruleBroad .topObject .ropes:after, body section.mountains #ruleArea .ruleBroad .bottomObject .ropes:before, body section.mountains #ruleArea .ruleBroad .bottomObject .ropes:after, .titleText {
+.yellowLinearGradient, body #sectionNav a, body section.mountains #wheelArea .wheelCircle #wheelRotate .wheelNum .pointValue, body section.mountains #wheelArea .wheelCircle .insideCorner:after, body section.mountains #wheelArea .loginCircle .outsideCorner:after, body section.mountains #wheelArea .wheelCircle .outsideCorner:after, body section.mountains #ruleArea .ruleBroad .topObject .ropes:before, body section.mountains #ruleArea .ruleBroad .topObject .ropes:after, body section.mountains #ruleArea .ruleBroad .bottomObject .ropes:before, body section.mountains #ruleArea .ruleBroad .bottomObject .ropes:after, .titleText {
   background: #ffed4a;
   background: -moz-linear-gradient(-45deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
   background: -webkit-linear-gradient(-45deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
@@ -75,7 +75,7 @@ table {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="$red", endColorstr="$red-dark",GradientType=0 );
 }
 
-.redGradientBackground, body section.mountains #wheelArea .loginCircle .insideCorner, body section.mountains #wheelArea .wheelCircle .insideCorner, body section.mountains #ruleArea .ruleBroad .middleObject {
+.redGradientBackground, body section.mountains #wheelArea .loginCircle .insideCorner, body section.mountains #wheelArea .wheelCircle .insideCorner, body section.mountains #ruleArea .ruleBroad {
   background: #cc2121;
   background: -moz-radial-gradient(#cc2121 0%, #3d0a0a 100%);
   background: -webkit-radial-gradient(#cc2121 0%, #3d0a0a 100%);
@@ -229,7 +229,7 @@ p.textContent {
     -ms-transform: translate(-50%) rotate(30deg);
   }
 }
-.autoWheel, body section.mountains #wheelArea .wheelCircle #wheelRotate {
+.autoWheel {
   animation: wheel_rotate linear 20s;
   animation-iteration-count: infinite;
   -webkit-animation: wheel_rotate linear 20s;
@@ -443,6 +443,7 @@ body {
   font-size: 2.5vmin;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 body:before {
   content: "";
@@ -459,6 +460,7 @@ body:before {
 }
 body header {
   padding-top: 4vmin;
+  z-index: 2;
 }
 body header .wrapper {
   display: flex;
@@ -508,7 +510,7 @@ body section.decoration .conerCircles .circle:nth-child(4), body section.decorat
   left: 100%;
 }
 body section.mountains {
-  margin: 0 auto;
+  margin: 0 -50%;
   -ms-flex: 1;
   -webkit-flex: 1;
   -moz-flex: 1;
@@ -520,27 +522,27 @@ body section.mountains {
   transition: all 1s;
 }
 body section.mountains.Rule {
-  left: 40vw;
+  margin: 0 0 0 40%;
 }
-body section.mountains.Rule div[id$=Area]:not(#ruleArea) .content {
+body section.mountains.Rule div[id$=Area]:not(#ruleArea) {
   opacity: 0;
   pointer-events: none;
 }
 body section.mountains.Result {
-  right: 40vw;
+  margin: 0 40% 0 0;
 }
-body section.mountains.Result div[id$=Area]:not(#resultArea) .content {
+body section.mountains.Result div[id$=Area]:not(#resultArea) {
   opacity: 0;
   pointer-events: none;
 }
-body section.mountains.Login div[id$=Area]:not(#wheelArea) .content {
+body section.mountains.Login div[id$=Area]:not(#wheelArea) {
   opacity: 0;
   pointer-events: none;
 }
 body section.mountains.Login .objectsArea > *:not(.loginCircle) {
   display: none;
 }
-body section.mountains.Wheel div[id$=Area]:not(#wheelArea) .content, body section.mountains:not(.Rule):not(.Result):not(.Login) div[id$=Area]:not(#wheelArea) .content {
+body section.mountains.Wheel div[id$=Area]:not(#wheelArea), body section.mountains:not(.Rule):not(.Result):not(.Login) div[id$=Area]:not(#wheelArea) {
   opacity: 0;
   pointer-events: none;
 }
@@ -558,12 +560,12 @@ body section.mountains div[id$=Area] {
   transition: flex 0.5s;
   display: flex;
   flex-direction: column;
-}
-body section.mountains div[id$=Area] .content {
   opacity: 1;
   -webkit-transition: all 0.5s;
   -o-transition: all 0.5s;
   transition: all 0.5s;
+}
+body section.mountains div[id$=Area] .content {
   position: relative;
   height: 90%;
   z-index: 1;
@@ -638,10 +640,15 @@ body section.mountains #ruleArea .ruleBroad .bottomObject, body section.mountain
 }
 body section.mountains #ruleArea .ruleBroad {
   width: 150%;
+  padding: 5%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 body section.mountains #ruleArea .ruleBroad .topObject, body section.mountains #ruleArea .ruleBroad .bottomObject {
   z-index: 1;
   height: 0%;
+  top: 0;
 }
 body section.mountains #ruleArea .ruleBroad .topObject .bracePipe, body section.mountains #ruleArea .ruleBroad .bottomObject .bracePipe {
   content: "";
@@ -731,7 +738,7 @@ body section.mountains #ruleArea .ruleBroad .middleObject {
   padding-bottom: 20%;
   overflow: auto;
   top: 0;
-  height: 90%;
+  height: 100%;
 }
 body section.mountains #ruleArea .ruleBroad .middleObject .contentObject {
   overflow: initial;
@@ -1198,6 +1205,10 @@ body section.mountains #wheelArea .wheelCircle #wheelRotate .wheelNum .pointValu
   top: 20%;
   left: 50%;
   margin: 0 auto;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 body section.mountains #wheelArea .wheelCircle .wheelCenter {
   position: absolute;
@@ -1218,6 +1229,22 @@ body section.mountains #wheelArea .wheelCircle .wheelCenter:before {
   content: "";
   z-index: 2;
   opacity: 1;
+}
+body section.mountains #wheelArea .wheelCircle .wheelCenter .notiInfo {
+  color: #cc2121;
+  position: absolute;
+  z-index: 3;
+  top: 45%;
+  left: 50%;
+  width: 80%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+body section.mountains #wheelArea .wheelCircle .wheelCenter .notiInfo .notiTitle {
+  font-size: 3.75vmin;
 }
 body section.mountains #resultArea .objectsArea {
   width: 50vmin;
@@ -1337,6 +1364,14 @@ body #sectionNav {
   display: block;
   height: 10vh;
   text-align: center;
+}
+body #sectionNav a {
+  margin: 2%;
+  padding: 1%;
+  border-radius: 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 150%;
 }
 
 body {

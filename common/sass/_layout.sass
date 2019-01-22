@@ -29,6 +29,7 @@ body
     font-size: $standardFontsize
     display: flex
     flex-direction: column
+    overflow: hidden
     &:before
         content: ""
         position: absolute
@@ -44,6 +45,7 @@ body
 
     header
         padding-top: 4vmin
+        z-index: 2
         .wrapper
             display: flex
         #topLogo
@@ -82,28 +84,28 @@ body
                         top: 100%
                         left: 100%
         &.mountains
-            margin: 0 auto
+            margin: 0 -50%
             @include flex(1)
             display: flex
             opacity: 1
             @include transition(all 1s)
 
             &.Rule
-                left: 40vw
-                div[id$="Area"]:not(#ruleArea) .content
+                margin: 0 0 0 40%
+                div[id$="Area"]:not(#ruleArea)
                     opacity: 0
                     // display: none
                     pointer-events: none
 
             &.Result
-                right: 40vw
-                div[id$="Area"]:not(#resultArea) .content
+                margin: 0 40% 0 0
+                div[id$="Area"]:not(#resultArea)
                     opacity: 0
                     // display: none
                     pointer-events: none
 
             &.Login
-                div[id$="Area"]:not(#wheelArea) .content
+                div[id$="Area"]:not(#wheelArea)
                     opacity: 0
                     // display: none
                     pointer-events: none
@@ -113,7 +115,7 @@ body
                         display: none
 
             &.Wheel, &:not(.Rule):not(.Result):not(.Login)
-                div[id$="Area"]:not(#wheelArea) .content
+                div[id$="Area"]:not(#wheelArea)
                     opacity: 0
                     // display: none
                     pointer-events: none
@@ -130,9 +132,9 @@ body
                 @include transition(flex 0.5s)
                 display: flex
                 flex-direction: column
+                opacity: 1
+                @include transition(all 0.5s)
                 .content
-                    opacity: 1
-                    @include transition(all 0.5s)
 
                     position: relative
                     height: 90%
@@ -149,39 +151,6 @@ body
                         left: 50%
                         top: 50%
                         @include transform(translate(-50%, -50%))
-                // .bottom
-                //     // position: absolute
-                //     // bottom: 0
-                //     // left: 0
-                //     // right: 0
-                //     height: 15%
-                //     text-align: center
-                //     .bottomLink
-                //         position: relative
-                //         height: 100%
-                //         width: 100%
-                //         position: relative
-                //         @include transition(all 0.5s)
-                //         @include transformOrigin(50% 100%)
-                        
-                //         .mountainBackground
-                //             position: absolute
-                //             height: 120%
-                //             top: 50%
-                //             @include transform(translate(-50%, -50%))
-                //             pointer-events: none
-                //         a
-                //             font-size: 150%
-                //             position: relative
-                //             display: block
-                //             top: 45%
-
-                //         &:hover
-                //             @media (min-width: 801px)
-                //                 @include transform(scale(1.2))
-
-                //             a
-                //                 text-decoration: none
 
             #mainNav
                 @include flex(1 100%)
@@ -225,11 +194,16 @@ body
             #ruleArea
                 .ruleBroad
                     width: 150%
+                    padding: 5%
+                    // box-sizing: border-box
+                    @include boxSizing()
+                    @extend .redGradientBackground
                     .topObject, .bottomObject
                         // background: url(../img/top-rule.svg) no-repeat center bottom
                         z-index: 1
                         // position: ab
                         height: 0%
+                        top: 0
                         .bracePipe
                             content: ""
                             position: absolute
@@ -305,15 +279,14 @@ body
 
                     .middleObject
                         padding-bottom: 20%
-                        @extend .redGradientBackground
-                        
+                                               
                         // border-radius: 20%
                         // border-top: solid $objectSize/80 $yellow
                         // border-bottom: solid $objectSize/80 $yellow
 
                         overflow: auto
                         top: 0
-                        height: 90%
+                        height: 100%
                         .contentObject
                             overflow: initial
                             position: relative
@@ -547,7 +520,6 @@ body
                             border-width: $introSize/100
                             @inclde boxSizing()
                     #wheelRotate
-                        @extend .autoWheel
                         position: absolute
                         height: 100%
                         width: 100%
@@ -583,8 +555,10 @@ body
                                     border-radius: $dotSize
                                     top: 20%
                                     left: 50%
+                                    
                                     margin: 0 auto
                                     @extend .yellowRadialGradient
+                                    @include transform(translateX(-50%))
 
 
                     .wheelCenter
@@ -603,6 +577,19 @@ body
                             @extend .patternBackground
                             z-index: 2
                             opacity: 1
+
+                        .notiInfo 
+                            color: $red
+                            position: absolute
+                            z-index: 3
+                            top: 45%
+                            left: 50%
+                            width: 80%
+                            @include transform(translate(-50%, -50%))
+                            text-align: center
+                            .notiTitle
+                                font-size: $h2titleSize / 2
+                           
             #resultArea
                 $objectSize: 50vmin
                 .objectsArea
@@ -681,4 +668,14 @@ body
     #sectionNav
         display: block
         height: 10vh
-        text-align: center    
+        text-align: center
+        a
+            margin: 2%
+            // @extend .h1titleSize
+            @extend .yellowLinearGradient
+            padding: 1%
+            border-radius: 100%
+            -webkit-background-clip: text
+            -webkit-text-fill-color: transparent
+            font-size: 150%
+

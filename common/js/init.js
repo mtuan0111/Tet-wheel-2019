@@ -1,75 +1,78 @@
 $(document).ready(function() {
-  var _this = this;
-  var hashPage = window.location.hash.split("#")[1];
-  hashPage = !hashPage ? "Wheel" : hashPage;
-  var currentPage = hashPage;
-  if (hashPage) {
-    var classes = $(".mountains")[0].className.split(" ");
-    var targetPage = $(".mountains ." + hashPage)[0];
-    // alert(targetPage);
-    // if (targetPage) {
-    $(".mountains")
-      .removeClass(currentPage == hashPage ? "" : currentPage)
-      .addClass(hashPage);
-    // }
-  }
+    var _this = this;
+    var hashPage = window.location.hash.split("#")[1];
+    hashPage = !hashPage ? "Wheel" : hashPage;
+    var currentPage = hashPage;
+    if (hashPage) {
+        var classes = $(".mountains")[0].className.split(" ");
+        var targetPage = $(".mountains ." + hashPage)[0];
+        // alert(targetPage);
+        // if (targetPage) {
+        $(".mountains")
+            .removeClass(currentPage == hashPage ? "" : currentPage)
+            .addClass(hashPage);
+        // }
+    }
 
-  $(document).on("click", "a[data-page-target]", function() {
-    var page_target = $(this).data("page-target");
-    $(".mountains")
-      .removeClass(currentPage == page_target ? "" : currentPage)
-      .addClass(page_target);
-    currentPage = page_target;
-  });
+    $(document).on("click", "a[data-page-target]", function() {
+        var page_target = $(this).data("page-target");
+        $(".mountains")
+            .removeClass(currentPage == page_target ? "" : currentPage)
+            .addClass(page_target);
+        currentPage = page_target;
+    });
 
-  //   touchInit();
+    //   touchInit();
 });
 
 $(window).load(function() {
-  var wheel = new Wheel();
-  wheel.clickToPlay();
-  // var notiBroad = new notificationBroad($(".broad-obs.small"));
-  // var notiBroad = new notificationBroad($(".broad-obs"));
-  var loginBroad;
-  $(document).on("click", ".loginButton", function(e) {
-    if (!loginBroad) {
-      loginBroad = new notificationBroad();
-      loginBroad.setLoginForm();
-    } else {
-      $(loginBroad.loginUser.loginForm).submit();
-    }
-    // console.log("loginBroad: ", loginBroad);
-    loginBroad.showLoginForm();
-    e.stopPropagation();
-  });
+    var wheel = new Wheel();
+    wheel.clickToPlay();
+    // var notiBroad = new notificationBroad($(".broad-obs.small"));
+    // var notiBroad = new notificationBroad($(".broad-obs"));
+    var loginBroad;
+    $(document).on("click", ".loginButton", function(e) {
+        if (!loginBroad) {
+            loginBroad = new notificationBroad();
+            loginBroad.setLoginForm();
+        } else {
+            $(loginBroad.loginUser.loginForm).submit();
+        }
+        // console.log("loginBroad: ", loginBroad);
+        loginBroad.showLoginForm();
+        e.stopPropagation();
+    });
 
-  $(".wrapper-loading").fadeOut(300, function() {
-    $(this).remove();
-  });
+    $(".wrapper-loading").fadeOut(300, function() {
+        $(this).remove();
+    });
 });
-// function get_current_rotate(id) {
-//     var el = document.getElementById(id);
-//     var st = window.getComputedStyle(el, null);
-//     var tr = st.getPropertyValue("-webkit-transform") ||
-//         st.getPropertyValue("-moz-transform") ||
-//         st.getPropertyValue("-ms-transform") ||
-//         st.getPropertyValue("-o-transform") ||
-//         st.getPropertyValue("transform") ||
-//         "FAIL";
-//     if (tr !== "none") {
-//         var values = tr.split('(')[1].split(')')[0].split(',');
-//         var a = values[0];
-//         var b = values[1];
-//         var c = values[2];
-//         var d = values[3];
+function get_current_rotate(id) {
+    var el = document.getElementById(id);
+    var st = window.getComputedStyle(el, null);
+    var tr =
+        st.getPropertyValue("-webkit-transform") ||
+        st.getPropertyValue("-moz-transform") ||
+        st.getPropertyValue("-ms-transform") ||
+        st.getPropertyValue("-o-transform") ||
+        st.getPropertyValue("transform") ||
+        "FAIL";
+    if (tr !== "none") {
+        var values = tr
+            .split("(")[1]
+            .split(")")[0]
+            .split(",");
+        var a = values[0];
+        var b = values[1];
+        var c = values[2];
+        var d = values[3];
 
-//         var scale = Math.sqrt(a * a + b * b);
-//         var sin = b / scale;
-//         var angle = Math.round(Math.atan2(b, a) * (180 / Math.PI));
-//         return angle;
-//     } else
-//      return 0;
-// };
+        var scale = Math.sqrt(a * a + b * b);
+        var sin = b / scale;
+        var angle = Math.round(Math.atan2(b, a) * (180 / Math.PI));
+        return angle;
+    } else return 0;
+}
 
 // var elemRotate = document.getElementById("circle-world");
 // var currentDeg;
