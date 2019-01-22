@@ -95,7 +95,9 @@ Wheel.prototype.rotate = function(point_value = "") {
     var rotate_duration = getRandomIntInclusive(10000, 12000);
     var horizontal_deg = 0;
     var deg_rotate =
-        -(loop * 360 + point_peace * 18) + random_pointer + horizontal_deg;
+        -(loop * 360 + point_peace * (360 / _this.shuffleArray.length)) +
+        random_pointer +
+        horizontal_deg;
 
     _this.rotating = true;
 
