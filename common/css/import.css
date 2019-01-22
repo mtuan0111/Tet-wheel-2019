@@ -1055,6 +1055,7 @@ body section.mountains #wheelArea .wheelCircle #wheelRotate {
   position: absolute;
   height: 100%;
   width: 100%;
+  cursor: pointer;
 }
 body section.mountains #wheelArea .wheelCircle #wheelRotate .wheelNum {
   text-align: center;

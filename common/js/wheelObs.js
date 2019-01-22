@@ -3,7 +3,7 @@ function Wheel() {
     this.rotating = false;
     this.rotateObject = this.selector.find("#wheelRotate");
     this.rotateObjs = this.rotateObject.find("[data-number]");
-    this.notiBroad = new notificationBroad($(".broad-obs.small"));
+    this.notiBroad = new notificationBroad($(".notiInfo"));
 
     var points_array = [
         1,
@@ -102,7 +102,7 @@ Wheel.prototype.rotate = function(point_value = "") {
     $({ deg: current_deg }).animate(
         { deg: deg_rotate },
         {
-            duration: rotate_duration,
+            duration: rotate_duration / 10,
             easing: "easeOutQuart",
             specialEasing: "easeOutQuart",
             step: function(now) {

@@ -1,11 +1,12 @@
 function notificationBroad(obs) {
     var _this = this;
     if (!obs) {
-        _this.Obj = $($(".broad-obs")[0]).clone();
+        _this.Obj = $($(".notiInfo")[0]).clone();
     } else _this.Obj = obs;
 
-    _this.title = _this.Obj.find(".broad-title");
+    _this.title = _this.Obj.find(".notiTitle");
     _this.messageContent = _this.title.next();
+
     _this.loginUser;
     // console.log(_this.messageContent);
     // _this.slideUp();
@@ -16,7 +17,7 @@ notificationBroad.prototype.setTitle = function(
     stringTitle = "Khai Xuân Đón Lộc"
 ) {
     console.log("stringTitle: ", stringTitle);
-    // this.title[0].innerHTML = stringTitle;
+    this.title[0].innerHTML = stringTitle;
 };
 
 notificationBroad.prototype.setContent = function(messageContent) {
@@ -40,7 +41,7 @@ notificationBroad.prototype.setTakePoint = function(pointValue) {
     pointAppend.setAttribute("class", "pointValue");
     pointAppend.append(pointValue);
     // messageAppend
-    var message = "Bạn đã quay được vào ô";
+    var message = "Bạn đã quay được vào ô ";
     messageAppend.append(message);
     messageAppend.append(pointAppend);
     messageAppend.append(document.createTextNode(" điểm"));
@@ -50,13 +51,9 @@ notificationBroad.prototype.setTakePoint = function(pointValue) {
 notificationBroad.prototype.setLoginForm = function() {
     var _this = this;
     _this.slideUp();
-    // setTimeout(function(){
     _this.setTitle("Đăng nhập");
     _this.loginUser = new loginUser();
     _this.setContent(_this.loginUser.createForm());
-    // },300);
-    // $("[data-page-target='C']").click();
-    // window.location.hash = "C";
 };
 
 notificationBroad.prototype.showLoginForm = function() {
