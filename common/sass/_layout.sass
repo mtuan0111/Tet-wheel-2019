@@ -322,6 +322,8 @@ body
                         @include transformOrigin(50% 100%)
             #wheelArea
                 $introSize: 60vmin
+                .loginCircle
+                    z-index: 1
                 .loginCircle, .wheelCircle
                     position: absolute
                     height: $introSize
@@ -448,7 +450,7 @@ body
                                     border: none
                                     border-bottom: solid $introSize/200 $yellow
                                     outline: none
-                                    @extend .circle
+                                    // @extend .circle
                                     &::placeholder
                                         color: white
                                         opacity: 0.5
@@ -456,9 +458,20 @@ body
                                     &:focus
                                         border-bottom-color: $yellow-dark
                                 
-                                input#remember, input + label 
-                                    display: inline-block
-                                    vertical-align: middle
+                                // input#rememberMe
+                                //     width: 2vmin
+                                //     height: 2vmin
+
+                                // input#rememberMe
+                                //     display: inline-block
+                                //     vertical-align: middle
+                                    
+
+                                //     & + label 
+                                //         margin-left: 5%
+                                
+                                .error-message
+                                    display: none
 
                                 input[type="submit"]
                                     // @:hover

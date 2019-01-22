@@ -16,7 +16,7 @@ html(lang="en")
             .wrapper
                 a#topLogo(href="#")
                 nav.beforeLogin
-                    a(href="#Login" data-page-target="Login") Đăng nhập
+                    a.loginButton(href="#Login") Đăng nhập
                     a(href="/register") Đăng ký 
                     
         section.decoration
@@ -124,18 +124,20 @@ html(lang="en")
                                     .circle
                                     .circle.circleSpecial
 
-                                .introContext
-                                    h1.introText 2019
-                                        .subTitle Vòng quay Tết
-
-                                form(action="", method="post").loginContext
-                                    input(type="text" placeholder="Nhập username")
-                                    input(type="password" placeholder="Nhập mật khẩu")
-                                    input#remember(type="checkbox")
-                                    label(for="remember") Nhớ đăng nhập
-                                    p.txt-al-c
-                                        a#forgetPassword(href="#") Quên mật khẩu
-                                    input(type="submit" value="Đăng nhập")
+                                //- .introContext
+                                //-     h1.introText 2019
+                                //-         .subTitle Vòng quay Tết
+                                .notiInfo
+                                    p.notiTitle Thông báo
+                                    div.notiContent 
+                                        form(action="", method="post").loginContext
+                                            input(type="text" placeholder="Nhập username")
+                                            input(type="password" placeholder="Nhập mật khẩu")
+                                            input#remember(type="checkbox")
+                                            label(for="remember") Nhớ đăng nhập
+                                            p.txt-al-c
+                                                a#forgetPassword(href="#") Quên mật khẩu
+                                            input(type="submit" value="Đăng nhập")
                         
                         .wheelCircle
                             .outsideCorner
@@ -349,7 +351,7 @@ html(lang="en")
 
     script(type='text/javascript' src="common/js/wheelObs.js")
 
-    //- script(type='text/javascript' src="common/js/loginUser.js")
+    script(type='text/javascript' src="common/js/loginUser.js")
 
     script(type='text/javascript' src="common/js/init.js")
 

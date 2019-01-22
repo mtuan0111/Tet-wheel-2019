@@ -83,15 +83,12 @@ Wheel.prototype.rotate = function(point_value = "") {
 
     if (point_value != "") {
         while (point_value !== _this.shuffleArray[point_peace]) {
-            //- console.log(point_value);
             point_peace = getRandomIntInclusive(0, _this.shuffleArray.length);
         }
     }
     point_value = _this.shuffleArray[point_peace];
-    console.log("point_value: ", point_value);
     var loop = getRandomIntInclusive(4, 6);
     var random_pointer = getRandomIntInclusive(-6, 6);
-    console.log("random_pointer: ", random_pointer);
     var rotate_duration = getRandomIntInclusive(10000, 12000);
     var horizontal_deg = 0;
     var deg_rotate =

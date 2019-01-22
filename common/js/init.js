@@ -29,15 +29,19 @@ $(window).load(function() {
     var wheel = new Wheel();
     wheel.clickToPlay();
     // var notiBroad = new notificationBroad($(".broad-obs.small"));
-    // var notiBroad = new notificationBroad($(".broad-obs"));
+
+    var loginObject = $($(".loginCircle")[0]);
     var loginBroad;
+
     $(document).on("click", ".loginButton", function(e) {
         if (!loginBroad) {
-            loginBroad = new notificationBroad();
+            console.log("create new login form");
+            loginBroad = new notificationBroad(loginObject);
             loginBroad.setLoginForm();
-        } else {
-            $(loginBroad.loginUser.loginForm).submit();
         }
+        // else {
+        //     $(loginBroad.loginUser.loginForm).submit();
+        // }
         // console.log("loginBroad: ", loginBroad);
         loginBroad.showLoginForm();
         e.stopPropagation();

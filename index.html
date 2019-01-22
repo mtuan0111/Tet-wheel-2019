@@ -14,7 +14,7 @@
     <body>
       <header>
         <div class="wrapper"><a id="topLogo" href="#"></a>
-          <nav class="beforeLogin"><a href="#Login" data-page-target="Login">Đăng nhập</a><a href="/register">Đăng ký </a></nav>
+          <nav class="beforeLogin"><a class="loginButton" href="#Login">Đăng nhập</a><a href="/register">Đăng ký </a></nav>
         </div>
       </header>
       <section class="decoration">
@@ -98,19 +98,19 @@
                     <div class="circle"></div>
                     <div class="circle circleSpecial"></div>
                   </div>
-                  <div class="introContext">
-                    <h1 class="introText">2019
-                      <div class="subTitle">Vòng quay Tết</div>
-                    </h1>
+                  <div class="notiInfo">
+                    <p class="notiTitle">Thông báo</p>
+                    <div class="notiContent"> 
+                      <form class="loginContext" action="" method="post">
+                        <input type="text" placeholder="Nhập username">
+                        <input type="password" placeholder="Nhập mật khẩu">
+                        <input id="remember" type="checkbox">
+                        <label for="remember">Nhớ đăng nhập</label>
+                        <p class="txt-al-c"><a id="forgetPassword" href="#">Quên mật khẩu</a></p>
+                        <input type="submit" value="Đăng nhập">
+                      </form>
+                    </div>
                   </div>
-                  <form class="loginContext" action="" method="post">
-                    <input type="text" placeholder="Nhập username">
-                    <input type="password" placeholder="Nhập mật khẩu">
-                    <input id="remember" type="checkbox">
-                    <label for="remember">Nhớ đăng nhập</label>
-                    <p class="txt-al-c"><a id="forgetPassword" href="#">Quên mật khẩu</a></p>
-                    <input type="submit" value="Đăng nhập">
-                  </form>
                 </div>
               </div>
               <div class="wheelCircle">
@@ -358,6 +358,7 @@
     <script type="text/javascript" src="common/js/jquery-ui.js"></script>
     <script type="text/javascript" src="common/js/notificationBroad.js"></script>
     <script type="text/javascript" src="common/js/wheelObs.js"></script>
+    <script type="text/javascript" src="common/js/loginUser.js"></script>
     <script type="text/javascript" src="common/js/init.js"></script>
   </head>
 </html>

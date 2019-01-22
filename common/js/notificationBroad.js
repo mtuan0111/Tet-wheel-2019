@@ -1,6 +1,7 @@
 function notificationBroad(obs) {
     var _this = this;
     if (!obs) {
+        console.log($($(".notiInfo")[0]));
         _this.Obj = $($(".notiInfo")[0]).clone();
     } else _this.Obj = obs;
 
@@ -51,9 +52,13 @@ notificationBroad.prototype.setTakePoint = function(pointValue) {
 notificationBroad.prototype.setLoginForm = function() {
     var _this = this;
     _this.slideUp();
+    // setTimeout(function(){
     _this.setTitle("Đăng nhập");
     _this.loginUser = new loginUser();
     _this.setContent(_this.loginUser.createForm());
+    // },300);
+    // $("[data-page-target='C']").click();
+    // window.location.hash = "C";
 };
 
 notificationBroad.prototype.showLoginForm = function() {
@@ -63,9 +68,9 @@ notificationBroad.prototype.showLoginForm = function() {
         _this.Obj[0]
             .getAttribute("class")
             .split(" ")
-            .indexOf("loginBroad") == -1
+            .indexOf("Login") == -1
     ) {
-        _this.Obj[0].className += " loginBroad";
+        _this.Obj[0].className += " Login";
     }
     $(_this.Obj)
         .fadeIn(300)
