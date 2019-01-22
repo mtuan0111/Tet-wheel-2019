@@ -1224,6 +1224,7 @@ body section.mountains #wheelArea .wheelCircle .wheelCenter {
   transform: translate(-50%, -50%);
   border-radius: 60vmin;
   overflow: hidden;
+  pointer-events: none;
 }
 body section.mountains #wheelArea .wheelCircle .wheelCenter:before {
   content: "";
