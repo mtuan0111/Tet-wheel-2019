@@ -445,7 +445,7 @@ body {
   flex-direction: column;
   overflow: hidden;
 }
-body:before {
+body:before, body:after {
   content: "";
   position: absolute;
   top: 0;
@@ -457,6 +457,10 @@ body:before {
   background-size: 2vmin;
   z-index: -1;
   opacity: 0.2;
+}
+body:after {
+  background: url(../img/lotusBackground.svg) no-repeat bottom;
+  background-size: cover;
 }
 body header {
   padding-top: 4vmin;
@@ -1230,7 +1234,7 @@ body section#content #wheelArea .wheelCircle #wheelCenter:before {
   z-index: 2;
   opacity: 1;
 }
-body section#content #wheelArea .wheelCircle #wheelCenter .notiInfo {
+body section#content #wheelArea .wheelCircle #wheelCenter .notification {
   color: #cc2121;
   position: absolute;
   z-index: 3;
@@ -1243,7 +1247,7 @@ body section#content #wheelArea .wheelCircle #wheelCenter .notiInfo {
   transform: translate(-50%, -50%);
   text-align: center;
 }
-body section#content #wheelArea .wheelCircle #wheelCenter .notiInfo .notiTitle {
+body section#content #wheelArea .wheelCircle #wheelCenter .notification .title {
   font-size: 3.75vmin;
 }
 body section#content #resultArea .objectsArea {

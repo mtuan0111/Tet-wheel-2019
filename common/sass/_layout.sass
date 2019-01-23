@@ -30,7 +30,7 @@ body
     display: flex
     flex-direction: column
     overflow: hidden
-    &:before
+    &:before, &:after
         content: ""
         position: absolute
         top: 0
@@ -42,6 +42,10 @@ body
         background-size: 2vmin
         z-index: -1
         opacity: 0.2
+
+    &:after
+        background: url(../img/lotusBackground.svg) no-repeat bottom
+        background-size: cover
 
     header
         padding-top: 4vmin
@@ -623,7 +627,7 @@ body
                             z-index: 2
                             opacity: 1
 
-                        .notiInfo 
+                        .notification 
                             color: $red
                             position: absolute
                             z-index: 3
@@ -632,7 +636,7 @@ body
                             width: 80%
                             @include transform(translate(-50%, -50%))
                             text-align: center
-                            .notiTitle
+                            .title
                                 font-size: $h2titleSize / 2
                            
             #resultArea
