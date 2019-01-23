@@ -15,9 +15,9 @@ html(lang="en")
         header
             .wrapper
                 a#topLogo(href="#")
-                nav.beforeLogin
-                    a.loginButton(href="#Login") Đăng nhập
-                    a(href="/register") Đăng ký 
+                //- nav.beforeLogin
+                //-     a.loginButton(href="#Login") Đăng nhập
+                //-     a(href="/register") Đăng ký 
                     
         section.decoration
             .conerCircles
@@ -26,7 +26,7 @@ html(lang="en")
                 .object.circle
                 .object.circle
 
-        section.mountains
+        section.mountains#content
             #ruleArea
                 .top
                 .content
@@ -49,50 +49,62 @@ html(lang="en")
                                 h2.titleText
                                     | Thể lệ
                                 .contentObject
-                                    p.textContent
-                                        | Nhân dịp Tết Nguyên Đán Kỷ Hợi 2019 sắp đến, Ban Quản Trị cộng đồng khảo sát trực tuyến Vinaresearch tổ chức chương trình Vòng quay may mắn - Hái Lộc Đầu Xuân để thay lời cảm ơn chân thành nhất gửi đến các bạn thành viên đã đồng hành, tin tưởng Vinaresearch trong suốt thời gian vừa qua. 
-                                    p.textContent
-                                        | Hòa vào không khí náo nhiệt chuẩn bị cho năm mới sắp đến, Vòng quay may mắn - sân chơi quen thuộc nhưng không thiếu bất ngờ mới sẽ giúp bạn thử vận may của mình trong dịp đầu năm Kỷ Hợi. Đừng quên đăng nhập mỗi ngày để tham gia nhé!!!
-                                    p.textContent
-                                        | Thời gian: 
-                                    p.textContent
-                                        | -Chương trình bắt đầu từ 9h00 ngày 01/02/2019 đến 23h59' ngày 10/02/2019
-                                    p.textContent
-                                        | Cách thức tham gia:
-                                    p.textContent
-                                        | - Truy cập vào trang web sau để tham gia chương trình: [link]
-                                    p.textContent
-                                        | Thể lệ: 
-                                    p.textContent
-                                        | - Mỗi ngày, mỗi thành viên sẽ đuợc tặng một lượt quay may mắn sau khi đăng nhập tại website Vinaresearch.net. Ngoài ra, chỉ với 10 điểm là bạn có thể đổi lấy thêm 1 lượt quay cho mình, số lượt quay mà bạn có thể đổi là không giới hạn, phụ thuộc vào số điểm bạn còn trong tài khoản của mình tại Vinaresearch.
-                                    p.textContent
-                                        | - Khi Vòng quay may mắn bắt đầu khởi động, thành viên có cơ hội nhận được những số điểm thưởng tương ứng trên vòng quay. 
-                                    p.textContent
-                                        | - Số điểm lớn nhất được tặng mỗi ngày của Vòng quay may mắn là Kỷ Hợi may mắn tương ứng với 1000 điểm thưởng.
-                                    p.textContent
-                                        | Nếu quay vào ô có hình Bao Lì Xì trong Vòng quay may mắn, bạn sẽ nhận được giải thưởng lớn thứ 2 trong chương trình, tương ứng với 300 điểm.
-                                    p.textContent
-                                        | Lưu ý: 
-                                    p.textContent
-                                        | Mỗi ngày chương trình chỉ tặng tối đa 2,303 phần quà (tương ứng các mức điểm thưởng khác nhau). Trong trường hợp số phần quà đã chạm ngưỡng cho phép thì vòng quay sẽ không quay được nữa và sẽ được khởi động lại vào 09h30 ngày hôm sau. 
-                                    p.textContent
-                                        | Điều kiện tham gia:
-                                    p.textContent
-                                        | - Là thành viên của cộng đồng khảo sát trực tuyến Vinaresearch.
-                                    p.textContent
-                                        | - Chủ tài khoản là người thật, không vi phạm bất kỳ quy định nào trên cộng đồng khảo sát trực tuyến Vinaresearch.
-                                    p.textContent
-                                        | Quy định: 
-                                    p.textContent
-                                        | - Thành viên không được sử dụng phần mềm để gây rối, điều chỉnh kết quả của Vòng quay may mắn. Nếu vi phạm quy định này và bị phát hiện, thành viên sẽ bị khóa tài khoản vĩnh viễn tại Vinaresearch.
-                                    p.textContent
-                                        | - Trong mọi truờng hợp tranh chấp về luật chơi này, BQT Vinaresearch là người có quyết định cuối cùng.
-                                    p.textContent
-                                        | Mọi thắc mắc xin liên hệ bộ phận hỗ trợ (Hotline: 083 848 3732) hoặc hộp thư:support@vinaresearch.net
-                                    p.textContent
-                                        | Thân ái 
-                                    p.textContent
-                                        | Ban Quản trị Vinaresearch
+                                    p
+                                    | Nhân dịp Tết Nguyên Đán Đinh Dậu 2017, Ban Quản Trị cộng đồng khảo sát trực tuyến Vinaresearch tổ chức chương trình Vòng quay may mắn - Khai xuân đón lộc để thay lời cảm ơn chân thành nhất gửi đến các bạn thành viên đã đồng hành, tin tưởng Vinaresearch trong suốt thời gian vừa qua.
+                                    p
+                                    | Hòa vào không khí náo nhiệt chuẩn bị cho năm mới sắp đến, Vòng quay may mắn - sân chơi quen thuộc cùng những bất ngờ mới sẽ giúp bạn thử vận may của mình trong dịp đầu năm Đinh Dậu, đừng quên đăng nhập mỗi ngày để tham gia nhé.
+                                    dl
+                                    dt Thời gian
+                                    dd Chương trình bắt đầu từ 9h ngày 23/01/2017 đến 23h59' ngày 06/02/2017
+                                    dt Cách thức tham gia
+                                    dd
+                                        | Truy cập vào trang web sau để tham gia chương trình: 
+                                        a(href='https://vinaresearch.net/public/vong-quay-tet-2019/') Link
+                                    dt Thể lệ
+                                    dd
+                                        ul
+                                        li
+                                            | Mỗi ngày, mỗi thành viên sẽ đuợc tặng một lượt quay may mắn sau khi đăng nhập tại website Vinaresearch.net.
+                                        li
+                                            | Khi Vòng quay may mắn bắt đầu khởi động, thành viên có cơ hội nhận được những số điểm thưởng tương ứng trên vòng quay.
+                                        li
+                                            | Số điểm lớn nhất được tặng mỗi ngày của Vòng quay may mắn là 
+                                            strong.strongText Bao lì xì
+                                            |  tương ứng với 
+                                            strong.strongText 300
+                                            |  điểm thưởng.
+                                        p
+                                        | Ngoài ra, trong suốt thời gian diễn ra Vòng quay may mắn - Khai Xuân Đón Lộc sẽ có duy nhất 1 Giải đặc biệt - 
+                                        strong.strongText 1000
+                                        |  điểm dành cho thành viên may mắn nhất quay trúng vào ô có hình 
+                                        strong.strongText Gà May Mắn
+                                        | .
+                                    dt Lưu ý
+                                    dd
+                                        | Mỗi ngày chương trình chỉ tặng tối đa 2,031 phần quà (tương ứng các mức điểm thưởng khác nhau). Trong trường hợp số phần quà đã chạm ngưỡng cho phép thì vòng quay sẽ không quay được nữa và sẽ được khởi động lại vào 9h ngày hôm sau.
+                                    dt Điều kiện tham gia
+                                    dd
+                                        ul
+                                        li Là thành viên của cộng đồng khảo sát trực tuyến Vinaresearch.
+                                        li
+                                            | Chủ tài khoản là người thật, không vi phạm bất kỳ quy định nào trên cộng đồng khảo sát trực tuyến Vinaresearch.
+                                    dt Quy định
+                                    dd
+                                        ul
+                                        li
+                                            | Thành viên không được sử dụng phần mềm để gây rối, điều chỉnh kết quả của Vòng quay may mắn. Nếu vi phạm quy định này và bị phát hiện, thành viên sẽ bị khóa tài khoản vĩnh viễn tại Vinaresearch.
+                                        li
+                                            | Trong một ngày, mỗi thành viên chỉ có tối đa 1 lượt quay. Trong truờng hợp có lỗi kĩ thuật và thành viên có thể quay đuợc vào lần thứ 2, kết quả lần này sẽ không đuợc tính.
+                                        li
+                                            | Trong mọi truờng hợp tranh chấp về luật chơi này, BQT Vinaresearch là người có quyết định cuối cùng.
+                                    p
+                                        | Mọi thắc mắc xin liên hệ bộ phận hỗ trợ (Hotline: 083 848 3732) hoặc hộp thư: 
+                                        a(href='mailto:support@vinaresearch.net') support@vinaresearch.net
+                                    .orgSign
+                                        div
+                                        p Thân ái 
+                                        p Ban Quản trị Vinaresearch
+
                             .bottomObject
                             
                 //- .bottom
@@ -107,7 +119,7 @@ html(lang="en")
                 .top
                 .content
                     .objectsArea
-                        .loginCircle
+                        //- .loginCircle
                             .outsideCorner
                             .insideCorner
                                 .circleGroup
@@ -157,9 +169,9 @@ html(lang="en")
                             .insideCorner
                                 #wheelRotate.autoWheel
                                     - for (var i=1; i<=20; i++)
-                                        .wheelNum(data-number=i)
-                                            span.pointValue 100
-                                .wheelCenter
+                                        .wheel-wing(data-number=i)
+                                            //- span.pointValue 100
+                                #wheelCenter
                                     .notiInfo
                                         p.notiTitle Thông báo
                                         div.notiContent 
@@ -336,24 +348,26 @@ html(lang="en")
                 //-         img.mountainBackground(src="common/img/yellow-mountain.svg", alt="Menu section")
                 //-         a(href="#Result" data-page-target="Result") Kết quả
                 //- .objectsArea
-            
-        nav#sectionNav
-            a(href="#Rule" data-page-target="Rule") Thể lệ
-            a(href="#Wheel" data-page-target="Wheel") Vòng quay
-            a(href="#Result" data-page-target="Result") Kết quả
+        
+        footer
+            nav#sectionNav.pageNav
+                //- a(href="#Rule" data-page-target="Rule") Thể lệ
+                //- a(href="#Wheel" data-page-target="Wheel") Vòng quay
+                //- a(href="#Result" data-page-target="Result") Kết quả
 
     
-    script(type='text/javascript' src="common/js/jquery-2.2.1.min.js")
-
-    script(type='text/javascript' src="common/js/jquery-ui.js")
-
-    script(type='text/javascript' src="common/js/notificationBroad.js")
-
-    script(type='text/javascript' src="common/js/wheelObs.js")
-
-    script(type='text/javascript' src="common/js/loginUser.js")
-
-    script(type='text/javascript' src="common/js/init.js")
+    script(type='text/javascript', src='common/js/jquery-2.2.1.min.js')
+    script(type='text/javascript', src='common/js/jquery-ui.js')
+    script(type='text/javascript', src='common/js/loginForm.js')
+    script(type='text/javascript', src='common/js/User.js')
+    script(type='text/javascript', src='common/js/navObs.js')
+    //- script(type='text/javascript', src='common/js/friendList.js')
+    script(type='text/javascript', src='common/js/resultObs.js')
+    script(type='text/javascript', src='common/js/notificationMessage.js')
+    script(type='text/javascript', src='common/js/wheelObs.js')
+    script(type='text/javascript', src='common/js/dragEvent.js')
+    script(type='text/javascript', src='common/js/init.js')
+    //- script(type='text/javascript', src='common/js/fireFly.js')
 
         //- section
         //-     //- p This is a post about Pug template engine, enjoy it!

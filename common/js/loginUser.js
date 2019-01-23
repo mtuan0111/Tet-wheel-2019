@@ -39,10 +39,10 @@ loginUser.prototype.createForm = function() {
     submitBtn.setAttribute("type", "submit");
     submitBtn.setAttribute("value", "Đăng nhập");
 
-    // var skipBtn = document.createElement("a");
-    // skipBtn.setAttribute("class", "skipLogin");
-    // skipBtn.setAttribute("href", "javascript:void(0)");
-    // $(skipBtn).append("Trở lại");
+    var skipBtn = document.createElement("a");
+    skipBtn.setAttribute("class", "skipLogin");
+    skipBtn.setAttribute("href", "javascript:void(0)");
+    $(skipBtn).append("Trở lại");
 
     $(form).append(username);
     $(form).append(password);
@@ -50,7 +50,7 @@ loginUser.prototype.createForm = function() {
     $(form).append(rememberMe);
     $(form).append(errorMessage);
     $(form).append(submitBtn);
-    // $(form).append(skipBtn);
+    $(form).append(skipBtn);
     _this.loginForm = form;
 
     $(document).on("submit", form, function(e) {
@@ -87,19 +87,13 @@ loginUser.prototype.createForm = function() {
     });
 
     $(document).on("click", ".skipLogin", function(e) {
-        $(this)
-            .parents(".loginCircle")
-            .fadeOut(300, function() {
-                $(this).remove();
-            });
+        _this.removeForm();
         e.preventDefault();
     });
 
     $(document).on("click", "body", function(e) {
-        if ($(".skipLogin").parents(".loginCircle")[0]) {
-            $(".skipLogin")
-                .parents(".loginCircle")
-                .fadeOut(300, function() {});
+        if ($(form).parents(".loginCircle")[0]) {
+            _this.removeForm();
         }
         e.preventDefault();
     });
@@ -111,4 +105,11 @@ loginUser.prototype.createForm = function() {
     return form;
 };
 
-loginUser.prototype.removeForm = function() {};
+loginUser.prototype.removeForm = function() {
+    var _this = this;
+    $(_this.loginForm)
+        .parents(".loginCircle")
+        .fadeOut(300, function() {
+            // $(this).remove();
+        });
+};

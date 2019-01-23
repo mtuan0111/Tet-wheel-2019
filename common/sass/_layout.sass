@@ -83,46 +83,46 @@ body
                     &:nth-child(4)
                         top: 100%
                         left: 100%
-        &.mountains
+        &#content
             margin: 0 -50%
             @include flex(1)
             display: flex
             opacity: 1
             @include transition(all 1s)
 
-            &.Rule
+            &.gioithieu
                 margin: 0 0 0 40%
                 div[id$="Area"]:not(#ruleArea)
                     opacity: 0
                     // display: none
                     pointer-events: none
 
-            &.Result
+            &.ketqua
                 margin: 0 40% 0 0
                 div[id$="Area"]:not(#resultArea)
                     opacity: 0
                     // display: none
                     pointer-events: none
 
-            &.Login
+            &.dangnhap
                 div[id$="Area"]:not(#wheelArea)
                     opacity: 0
                     // display: none
                     pointer-events: none
 
-                .objectsArea 
-                    >*:not(.loginCircle)
-                        display: none
+                // .objectsArea 
+                //     >*:not(.loginCircle)
+                //         display: none
 
-            &.Wheel, &:not(.Rule):not(.Result):not(.Login)
+            &.vongquay, &:not(.gioithieu):not(.ketqua):not(.dangnhap)
                 div[id$="Area"]:not(#wheelArea)
                     opacity: 0
                     // display: none
                     pointer-events: none
                 
-                .objectsArea 
-                    >*:not(.wheelCircle)
-                        display: none
+                // .objectsArea 
+                //     >*:not(.wheelCircle)
+                //         display: none
                     
             $objectSize: 60vh
             $objectSize: 60vmin
@@ -419,7 +419,7 @@ body
                                 top: initial
                                 bottom: 0
 
-                        [class$="Context"]
+                        #loginBroad
                             position: absolute
                             left: 50%
                             top: 50%
@@ -435,7 +435,7 @@ body
                                     .subTitle
                                         font-size: $introSize/10
 
-                            &.loginContext
+                            #frmLogin
                                 // background: red
                                 input
                                     font-size: $introSize/20 
@@ -470,7 +470,7 @@ body
                                 //     & + label 
                                 //         margin-left: 5%
                                 
-                                .error-message
+                                .errorMessage
                                     display: none
 
                                 input[type="submit"]
@@ -537,7 +537,7 @@ body
                         height: 100%
                         width: 100%
                         cursor: pointer
-                        .wheelNum
+                        .wheel-wing
                             text-align: center
                             position: absolute
                             // top: 5%
@@ -548,34 +548,64 @@ body
                             @for $i from 1 through 20
                                 @include setRotate($i)
                             
-                            .pointValue
+                            &:before
+                                // margin-top: 2.25vh
+                                content: attr(data-point-value)
                                 display: block
-                                padding-top: 40%
-                                // margin-top: 50%
-                                // @include transform(rotate(-90deg))
-                                font-size: 200%
+                                top: 10%
+                                position: relative
+                                font-size: 150%
                                 -webkit-background-clip: text
                                 -webkit-text-fill-color: transparent
                                 @extend .yellowLinearGradient
                                 position: relative
+                                // -webkit-transform: rotate(90deg)
+                                // -ms-transform: rotate(90deg)
+                                // -o-transform: rotate(90deg)
+                                // transform: rotate(90deg)
+                                // font-size: 95%
+                            &:after
+                                $dotSize: $introSize/40
+                                content: ""
+                                height: $dotSize
+                                width: $dotSize
+                                // background: red
+                                position: absolute
+                                border-radius: $dotSize
+                                top: 2%
+                                left: 50%
 
-                                &:before
-                                    $dotSize: $introSize/40
-                                    content: ""
-                                    height: $dotSize
-                                    width: $dotSize
-                                    // background: red
-                                    position: absolute
-                                    border-radius: $dotSize
-                                    top: 20%
-                                    left: 50%
+                                margin: 0 auto
+                                @extend .yellowRadialGradient
+                                @include transform(translateX(-50%))
+                            // .pointValue
+                            //     display: block
+                            //     padding-top: 40%
+                            //     // margin-top: 50%
+                            //     // @include transform(rotate(-90deg))
+                            //     font-size: 200%
+                            //     -webkit-background-clip: text
+                            //     -webkit-text-fill-color: transparent
+                            //     @extend .yellowLinearGradient
+                            //     position: relative
+
+                            //     &:before
+                            //         $dotSize: $introSize/40
+                            //         content: ""
+                            //         height: $dotSize
+                            //         width: $dotSize
+                            //         // background: red
+                            //         position: absolute
+                            //         border-radius: $dotSize
+                            //         top: 20%
+                            //         left: 50%
                                     
-                                    margin: 0 auto
-                                    @extend .yellowRadialGradient
-                                    @include transform(translateX(-50%))
+                            //         margin: 0 auto
+                            //         @extend .yellowRadialGradient
+                            //         @include transform(translateX(-50%))
 
 
-                    .wheelCenter
+                    #wheelCenter
                         position: absolute
                         height: 65%
                         width: 65%
@@ -680,7 +710,7 @@ body
                         z-index: -1
                         fill: red
             
-    #sectionNav
+    #sectionNav.pageNav
         display: block
         height: 10vh
         text-align: center
@@ -692,5 +722,9 @@ body
             border-radius: 100%
             -webkit-background-clip: text
             -webkit-text-fill-color: transparent
-            font-size: 150%
+            // font-size: 150%
+            &[data-username]
+                &:before
+                    content: attr(data-username) " | " attr(data-userpoint)
+
 

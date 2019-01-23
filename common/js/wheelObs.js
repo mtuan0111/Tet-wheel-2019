@@ -1,262 +1,124 @@
 function Wheel() {
-    this.selector = $(".wheelCircle");
-    this.rotating = false;
-    this.rotateObject = this.selector.find("#wheelRotate");
-    this.rotateObjs = this.rotateObject.find("[data-number]");
-    this.notiBroad = new notificationBroad($(".notiInfo"));
+    var _this = this;
+    _this.wheel = document.getElementById("wheel");
+    _this.rotateObject = document.getElementById('wheelRotate');
+    _this.rotateWings = _this.rotateObject.getElementsByClassName("wheel-wing");
 
-    var points_array = [
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        5,
-        5,
-        5,
-        5,
-        20,
-        20,
-        20,
-        30,
-        30,
-        50,
-        300,
-        1000
-    ];
-    var points_array = [
-        1,
-        20,
-        1,
-        5,
-        1,
-        1000,
-        1,
-        20,
-        5,
-        30,
-        1,
-        20,
-        1,
-        5,
-        300,
-        5,
-        1,
-        30,
-        1,
-        50
-    ];
-    this.shuffleArray = points_array;
-    this.shuffleArray = shuffle(points_array);
+    _this.rotating = false;
+    _this.selected = null;
 
-    this.bindingPoint = function() {
+    points_array = [20, 20, 20, 20, 20, 20, 20, 20, 20, 50, 50, 50, 50, 50, 50, 100, 100, 100, 500, 500];
+    // var points_array = [1, 21, 1, 5, 1, 100, 1, 20, 5, 30, 1, 20,1, 5, 500, 5, 1, 30,  1, 50];
+    _this.shuffleArray = shuffle(points_array);
+
+    _this.bindingPoint = function() {
         for (i = 0; i < this.shuffleArray.length; i++) {
-            var point_value;
-
-            point_value = document.createElement("span");
-            point_value.setAttribute("data-number", i + 1);
-            point_value.innerHTML = this.shuffleArray[i];
-            point_value.setAttribute("class", "pointValue");
-            point_value.setAttribute("data-pointValue", this.shuffleArray[i]);
-            this.rotateObjs[i].innerHTML = "";
-            $(this.rotateObjs[i]).append(point_value);
+          var point_value = this.shuffleArray[i];
+          _this.rotateWings[i].setAttribute("data-point-value", point_value);
         }
-    };
-    this.bindingPoint();
-
-    function newFunction() {
-        console.log("this.rotateObjs[i]: ", this.rotateObjs[i]);
     }
+    _this.bindingPoint();
+    _this.clickToPlay();
 }
 
-Wheel.prototype.rotate = function(point_value = "") {
+Wheel.prototype.rotate = function(point_value='') {
     var _this = this;
-    // console.log("_this.rotateObject: ", _this.rotateObject);
-    var elem = _this.rotateObject.stop(true, false).removeClass("autoWheel");
-    var current_deg = get_current_rotate("wheelRotate");
-    //- setting variable
+    var elem = $(_this.rotateObject).stop(true, false).removeClass("autoWheel");
+    var current_deg = get_current_rotate(elem[0]);
+
     var point_peace = 0;
     point_peace = getRandomIntInclusive(0, _this.shuffleArray.length);
-
-    if (point_value != "") {
+    if(point_value != ''){
         while (point_value !== _this.shuffleArray[point_peace]) {
-            point_peace = getRandomIntInclusive(0, _this.shuffleArray.length);
+            point_peace = getRandomIntInclusive(0, (_this.shuffleArray.length - 1));
         }
     }
     point_value = _this.shuffleArray[point_peace];
-    var loop = getRandomIntInclusive(4, 6);
-    var random_pointer = getRandomIntInclusive(-6, 6);
+    $(_this.rotateWings).removeClass("active");
+    $(_this.selected).removeClass("active");
+    _this.selected = _this.rotateWings[point_peace];
+    var loop = getRandomIntInclusive(8, 10);
+    var random_pointer = getRandomIntInclusive(-6,6);
     var rotate_duration = getRandomIntInclusive(10000, 12000);
-    var horizontal_deg = 0;
-    var deg_rotate =
-        -(loop * 360 + point_peace * (360 / _this.shuffleArray.length)) +
-        random_pointer +
-        horizontal_deg;
-
+    var horizontal_deg = -90;
+    var deg_rotate = (loop * 360 + (point_peace) * -18) + random_pointer + horizontal_deg;
     _this.rotating = true;
 
-    $({ deg: current_deg }).animate(
-        { deg: deg_rotate },
-        {
-            duration: rotate_duration / 10,
-            easing: "easeOutQuart",
-            specialEasing: "easeOutQuart",
-            step: function(now) {
-                elem.css({
-                    "-webkit-transform": "rotate(" + now + "deg)",
-                    "-moz-transform": "rotate(" + now + "deg)",
-                    "-ms-transform": "rotate(" + now + "deg)",
-                    "-o-transform": "rotate(" + now + "deg)",
-                    transform: "rotate(" + now + "deg)"
-                });
-                //- elem.style.transform="rotate(" + now + "deg)";
-            },
-            done: function() {
-                _this.notiBroad.setTakePoint(point_value);
+    $(_this.wheel).addClass("rotating");
+    setTimeout(function(){
+        $(_this.wheel).removeClass("rotating");
+    },rotate_duration/1.5);
 
-                setTimeout(function() {
-                    _this.rotating = false;
-                }, 1000);
+    $({deg: current_deg}).animate({deg: deg_rotate}, {
+        duration: rotate_duration,
+        // duration: 0,
+        easing: "easeOutQuart",
+        specialEasing: "easeOutQuart",
+        step: function(now){
+            nowe = now % 360;
+            var activePeace = Math.round((360 - nowe) / 18 + (horizontal_deg) / 18);
 
-                var current_deg = get_current_rotate("wheelRotate");
-                $({ deg: current_deg }).animate(
-                    { deg: current_deg - random_pointer },
-                    {
-                        duration: 1000,
-                        easing: "easeOutQuart",
-                        specialEasing: "easeOutQuart",
-                        step: function(now) {
-                            elem.css({
-                                "-webkit-transform": "rotate(" + now + "deg)",
-                                "-moz-transform": "rotate(" + now + "deg)",
-                                "-ms-transform": "rotate(" + now + "deg)",
-                                "-o-transform": "rotate(" + now + "deg)",
-                                transform: "rotate(" + now + "deg)"
-                            });
-                        }
-                    }
-                );
-            }
-        }
-    );
-};
+            // if(activePeace < 0){
+            activePeace = activePeace < 0 ? 20 + activePeace : activePeace;
+            $(_this.rotateWings).removeClass("active");
+            $(_this.rotateWings[activePeace]).addClass("active");
 
-Wheel.prototype.clickToPlay = function(point_value = "") {
-    var _this = this;
-    $(document).on("click", _this.rotateObject.selector, function() {
-        if (!_this.rotating) {
-            _this.rotate();
-            // _this.getPointAndPlay();
-        }
+            // }
+
+            $(elem).css({
+                '-webkit-transform': "rotate(" + nowe + "deg)",
+                '-moz-transform': "rotate(" + nowe + "deg)",
+                '-ms-transform': "rotate(" + nowe + "deg)",
+                '-o-transform': "rotate(" + nowe + "deg)",
+                'transform': "rotate(" + nowe + "deg)"
+            });
+        },
+        done: function(){
+            var messageNotifi = "Xin chúc mừng, bạn đã quay vào ô " + point_value + " điểm.";
+
+            User.getUserInfo();
+
+            new notificationMessage(messageNotifi,"",10);
+            $(_this.selected).addClass("active");
+
+            setTimeout(function(){
+                _this.rotating = false;
+                // $(_this.rotateWings).removeClass("active");
+            },1000);
+        },
     });
 };
+
+Wheel.prototype.clickToPlay= function(point_value=''){
+    var _this = this;
+    $(document).on("click","#wheelRotate",function(){
+        location.hash = "vongquay";
+        getHashURL();
+        if(!_this.rotating){
+            _this.getPointAndPlay();
+        };
+    })
+}
 
 Wheel.prototype.getPointAndPlay = function() {
     var _this = this;
-    _this.rotate();
-    $.ajax({
-        url: "/public/api-campaign/golden-wheel2017/ajax-get-lucky-number",
-        type: "POST",
-        dataType: "json"
-    }).done(function(data) {
-        if (data.error == 0) {
+    User.getPlay(function(data){
+        if(data.error == 0){
             _this.rotate(data.data);
-        } else {
-            var error_message = data.data;
-            if (jQuery.inArray(data.error, [1, 2]) != -1) {
-                var tomorrow = new Date();
-                tomorrow.setDate(tomorrow.getDate() + 1);
-
-                var d = new Date();
-                var day = d.getDate();
-                var hour = d.getHours();
-                if (hour >= 0 && hour <= 8) {
-                    date = "hôm nay";
-                } else {
-                    date = day + 1 + "/06";
-                }
-                error_message =
-                    error_message +
-                    "\n Vui lòng thử lại vào 9h30 ngày " +
-                    date +
-                    " nhé!";
-            }
-            _this.notiBroad.setMessage(error_message);
         }
-    });
-};
-
-function wheel_action(point_value) {
-    var elem = $("#rotate-wheel")
-        .stop(true, false)
-        .removeClass("auto-wheel");
-    var current_deg = get_current_rotate("rotate-wheel");
-    $(document).off("click", "#rotate-wheel");
-
-    //- setting variable
-    var point_peace = 0;
-    point_peace = getRandomIntInclusive(0, points_array.length);
-    while (point_value !== points_array[point_peace]) {
-        //- console.log(point_value);
-        point_peace = getRandomIntInclusive(0, points_array.length);
-    }
-    //- console.log(point_peace);
-    var loop = getRandomIntInclusive(4, 6);
-    var random_pointer = getRandomIntInclusive(-16, 16);
-    var rotate_duration = getRandomIntInclusive(10000, 12000);
-    var deg_rotate = -(loop * 360 + point_peace * 36) + random_pointer;
-
-    $(window).bind("beforeunload", function(e) {
-        if (out) {
-            return "Do you really want to leave this page now?";
-        }
-    });
-
-    //- Ending setting variable
-
-    $({
-        deg: current_deg
-    }).animate(
-        {
-            deg: deg_rotate
-        },
-        {
-            duration: rotate_duration,
-            easing: "easeOutQuart",
-            specialEasing: "easeOutQuart",
-            step: function(now) {
-                elem.css({
-                    "-webkit-transform": "rotate(" + now + "deg)",
-                    "-moz-transform": "rotate(" + now + "deg)",
-                    "-ms-transform": "rotate(" + now + "deg)",
-                    "-o-transform": "rotate(" + now + "deg)",
-                    transform: "rotate(" + now + "deg)"
-                });
-                //- elem.style.transform="rotate(" + now + "deg)";
-            },
-            done: function() {
-                $(document).on("click", "#rotate-wheel", function() {
-                    wheel_action(200);
-                });
-                //- console.log(point_peace);
-                $(".point-result").attr(
-                    "data-score",
-                    points_array[point_peace]
-                );
-                //- console.log(get_current_rotate("rotate-wheel"));
-            }
-        }
-    );
+    })
 }
 
-function get_current_rotate(id) {
-    var el = document.getElementById(id);
+Wheel.prototype.resetState = function(){
+    var _this = this;
+    $(_this.rotateObject).addClass("autoWheel");
+    $(_this.rotateWings).removeClass("active");
+}
+
+function get_current_rotate(el) {
+    // var el = document.getElementById(id);
     var st = window.getComputedStyle(el, null);
-    var tr =
-        st.getPropertyValue("-webkit-transform") ||
+    var tr = st.getPropertyValue("-webkit-transform") ||
         st.getPropertyValue("-moz-transform") ||
         st.getPropertyValue("-ms-transform") ||
         st.getPropertyValue("-o-transform") ||
@@ -265,33 +127,29 @@ function get_current_rotate(id) {
 
     // With rotate(30deg)...
     // matrix(0.866025, 0.5, -0.5, 0.866025, 0px, 0px)
-    //- console.log('Matrix: ' + tr);
+    // console.log('Matrix: ' + tr);
 
     // rotation matrix - http://en.wikipedia.org/wiki/Rotation_matrix
     if (tr !== "none") {
-        var values = tr
-            .split("(")[1]
-            .split(")")[0]
-            .split(",");
+        var values = tr.split('(')[1].split(')')[0].split(',');
         var a = values[0];
         var b = values[1];
         var c = values[2];
         var d = values[3];
 
-        var scale = Math.sqrt(a * a + b * b);
-
-        //- console.log('Scale: ' + scale);
+        var scale = Math.sqrt(a * a + c * c);
 
         // arc sin, convert from radians to degrees, round
-        var sin = b / scale;
+        var sin = c / scale;
         // next line works for 30deg but not 130deg (returns 50);
         // var angle = Math.round(Math.asin(sin) * (180/Math.PI));
-        var angle = Math.round(Math.atan2(b, a) * (180 / Math.PI));
+        var angle = Math.round(Math.atan2(c, a) * (180 / Math.PI));
 
-        //- console.log('Rotate: ' + angle + 'deg');
+        // console.log('Rotate: ' + angle + 'deg');
         return angle;
-    } else return 0;
-}
+    } else
+        return 0;
+};
 
 function getRandomIntInclusive(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -299,11 +157,11 @@ function getRandomIntInclusive(min, max) {
 
 function shuffle(array) {
     var currentIndex = array.length,
-        temporaryValue,
-        randomIndex;
+        temporaryValue, randomIndex;
 
     // While there remain elements to shuffle...
     while (0 !== currentIndex) {
+
         // Pick a remaining element...
         randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex -= 1;
