@@ -51,14 +51,17 @@ function getUserCampInfo(){
     if ($auth -> getIdentity()){
         $userInfo = $auth -> getIdentity();
         $userID = $userInfo->UserID;
-        $friendWheel = new ApiCampaign_Model_CampFriendWheel();
-        $numRound = $friendWheel->checkUserHasTurn($userID,1);
+        $TetWheelModel = new Default_Model_TetWheel2019();
+        // $numRound = $friendWheel->checkUserHasTurn($userID,1);
+        $checkExist = $TetWheelModel->checkUserJoined($userID);
 
-        $sql = "SELECT sum(`point`) as totalPoint FROM  `camp_friendwheel_history` WHERE UserID = {$userID}";
+        $checkExist = $checkExist ? true : false;
+
+        $sql = "SELECT sum(`point`) as totalPoint FROM  `golden_wheel_history` WHERE UserID = {$userID} and YEAR( TIMESTAMP ) = 2019";
         $totalPoint = $db->fetchOne($sql);
 
         $userCampData = array(
-            "numRound" => $numRound,
+            "numRound" => $checkExist,
             "totalPoint" => $totalPoint
         );
     }

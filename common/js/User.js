@@ -136,16 +136,16 @@ User.prototype.getUserWheelInfo = function() {
             if (data) {
                 _this.numRound = data.numRound;
                 _this.totalPoint = data.totalPoint ? data.totalPoint : 0;
-                if (_this.numRound <= 0) {
+                if (_this.numRound) {
                     messageRound =
-                        "Hiện tại, bạn không có lượt quay nào. Hãy <a href='/public/recommend/recommend' target='_blank'>mời bạn bè tham gia</a> để có lượt quay nhé!.";
+                        "Hôm nay bạn đã hết lượt quay rồi. Hãy ghé lại vào ngày mai bạn nhé!";
                 } else {
                     _this.totalPoint = data.totalPoint ? data.totalPoint : 0;
                     messageRound =
-                        "Hiện tại, bạn có " + _this.numRound + " lượt quay.";
+                        "Hôm nay bạn đã chưa tham gia quay. Hãy bấm vào vòng quay để quay bạn nhé!";
                 }
                 messageRound +=
-                    "<br>Tổng số điểm bạn nhận được vòng quay bạn bè là " +
+                    '<br>Tổng số điểm bạn nhận được "Vòng quay may mắn" là ' +
                     _this.totalPoint +
                     " điểm.";
                 new notificationMessage(messageRound, _this.UserName);
