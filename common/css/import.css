@@ -75,7 +75,7 @@ table {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="$red", endColorstr="$red-dark",GradientType=0 );
 }
 
-.redGradientBackground, body section#content #wheelArea .loginCircle .insideCorner, body section#content #wheelArea .wheelCircle .insideCorner, body section#content #ruleArea .ruleBroad {
+.redGradientBackground, body section#content #wheelArea .loginCircle .insideCorner, body section#content #wheelArea .wheelCircle .insideCorner, body section#content #ruleArea .ruleBroad, body {
   background: #cc2121;
   background: -moz-radial-gradient(#cc2121 0%, #3d0a0a 100%);
   background: -webkit-radial-gradient(#cc2121 0%, #3d0a0a 100%);
@@ -435,8 +435,6 @@ p.textContent {
 }
 
 body {
-  background: url(../img/red-gradient.svg) #3d0a0a;
-  background-size: cover;
   height: 100vh;
   width: 100vw;
   color: white;
