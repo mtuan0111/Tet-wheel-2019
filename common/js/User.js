@@ -108,12 +108,10 @@ User.prototype.getUserInfo = function(afterLogin = false, callback = null) {
                 _this.Point = data.Point ? data.Point : 0;
                 if (afterLogin) {
                     welcomeMessage =
-                        "Xin chào " +
-                        _this.UserName +
-                        ", chúc bạn một năm mới An Khang Thịnh Vượng";
+                        "Chúc bạn một năm Kỷ Hợi An Khang Thịnh Vượng - Vạn Sự Như Ý";
                     new notificationMessage(
                         welcomeMessage,
-                        "Vòng quay May Mắn 2019",
+                        "Xin chào " + _this.UserName,
                         10
                     );
                 }

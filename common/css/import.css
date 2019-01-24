@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Lobster&amp;subset=vietnamese");
+@import url("https://fonts.googleapis.com/css?family=Lobster&ampsubset=vietnamese");
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   border: 0;
@@ -75,7 +75,7 @@ table {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="$red", endColorstr="$red-dark",GradientType=0 );
 }
 
-.redGradientBackground, body section#content #wheelArea .loginCircle .insideCorner, body section#content #wheelArea .wheelCircle .insideCorner, body section#content #ruleArea .ruleBroad, body {
+.redGradientBackground, body section#content #wheelArea .wheelCircle #wheelCenter .campaignIcon, body section#content #wheelArea .loginCircle .insideCorner, body section#content #wheelArea .wheelCircle .insideCorner, body section#content #ruleArea .ruleBroad, body {
   background: #cc2121;
   background: -moz-radial-gradient(#cc2121 0%, #3d0a0a 100%);
   background: -webkit-radial-gradient(#cc2121 0%, #3d0a0a 100%);
@@ -1246,6 +1246,29 @@ body section#content #wheelArea .wheelCircle #wheelCenter .notification {
 }
 body section#content #wheelArea .wheelCircle #wheelCenter .notification .title {
   font-size: 3.75vmin;
+}
+body section#content #wheelArea .wheelCircle #wheelCenter .notification ~ .campaignIcon {
+  opacity: 0;
+}
+body section#content #wheelArea .wheelCircle #wheelCenter .campaignIcon {
+  opacity: 1;
+  position: absolute;
+  height: 80%;
+  width: 80%;
+  left: 50%;
+  top: 50%;
+  border-radius: 100%;
+  -webkit-mask-image: url(../img/pig-face.png);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 80%;
+  -webkit-mask-position: center;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
+  transition: opacity 0.5s;
 }
 body section#content #resultArea .objectsArea {
   width: 50vmin;

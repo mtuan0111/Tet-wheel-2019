@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Lobster&amp;subset=vietnamese')
+@import url('https://fonts.googleapis.com/css?family=Lobster&ampsubset=vietnamese')
 /* Let's get this party started */
 ::-webkit-scrollbar
     width: 4px
@@ -648,6 +648,33 @@ body
                             text-align: center
                             .title
                                 font-size: $h2titleSize / 2
+
+                            & ~ .campaignIcon
+                                opacity: 0
+ 
+
+                        .campaignIcon
+                            // display: none
+                            opacity: 1
+                            position: absolute
+                            
+                            height: 80%
+                            width: 80%
+                            left: 50%
+                            top: 50%
+                            border-radius: 100%
+
+                            @extend .redGradientBackground
+                            -webkit-mask-image: url(../img/pig-face.png)
+                            -webkit-mask-repeat: no-repeat
+                            -webkit-mask-size: 80%
+                            -webkit-mask-position: center
+                            // -webkit-filter: drop-shadow(2px 2px 5px rgba(0,0,0, .5))
+                            @include transform(translate(-50%, -50%))
+                            @include transition(opacity 0.5s)
+
+
+
                            
             #resultArea
                 $objectSize: 50vmin
