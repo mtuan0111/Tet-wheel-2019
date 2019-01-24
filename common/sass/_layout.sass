@@ -32,10 +32,6 @@ body
     flex-direction: column
     overflow: hidden
     position: relative
-    left: 0
-    bottom: 0
-    right: 0
-    top: 0
     z-index: 1
     @extend .redGradientBackground
 
@@ -102,9 +98,8 @@ body
             @include flex(1)
             display: flex
             opacity: 1
-            @include transition(all 1s)
+            @include transition(left 1s)
             position: relative
-            overflow: hidden
 
             &.gioithieu
                 // margin: 0 0 0 100%

@@ -444,10 +444,6 @@ body {
   flex-direction: column;
   overflow: hidden;
   position: relative;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  top: 0;
   z-index: 1;
 }
 body:before, body:after {
@@ -527,11 +523,10 @@ body section#content {
   flex: 1;
   display: flex;
   opacity: 1;
-  -webkit-transition: all 1s;
-  -o-transition: all 1s;
-  transition: all 1s;
+  -webkit-transition: left 1s;
+  -o-transition: left 1s;
+  transition: left 1s;
   position: relative;
-  overflow: hidden;
 }
 body section#content.gioithieu {
   left: 0;
