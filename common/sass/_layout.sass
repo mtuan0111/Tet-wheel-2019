@@ -512,6 +512,7 @@ body
                             height: $introSize/8
                             width: $introSize/8
                             @include transform(translate(-50%, -100%) rotate(-135deg))
+                            // @include transition(transform 0.08s)
             
                     .outsideCorner
                         .wingBehind
@@ -657,7 +658,7 @@ body
                         left: 50%
                         top: 35%
                         bottom: 0
-                        @include transform(translate(-50%, -50%))
+                        @include transform(translateX(-50%))
                         z-index: 1
                         pointer-events: none
 
@@ -707,7 +708,7 @@ body
                         height: 180%
                         width: 180%
                         left: 50%
-                        top: 45%
+                        top: 50%
                         bottom: 0
                         @include transform(translate(-50%, -50%))
                         @include boxSizing(initial)

@@ -67,14 +67,21 @@ function getUserCampInfo(){
 }
 
 function getResultList(){
-    global $db, $auth;
+    global $auth, $db;
 
-    $sql = "SELECT g.userid, g.timestamp , u.UserName , sum(g.point)as total
-                FROM ( SELECT * FROM `camp_friendwheel_history`ORDER BY id DESC) g JOIN `user` u ON g.userid = u.UserID
-                GROUP BY userid
-                ORDER BY total DESC,id DESC
-                limit 20";
-    $listResults = $db->fetchAll($sql);
+    // $sql = "SELECT g.userid, g.timestamp , u.UserName , sum(g.point)as total
+    //             FROM ( SELECT * FROM `camp_friendwheel_history`ORDER BY id DESC) g JOIN `user` u ON g.userid = u.UserID
+    //             GROUP BY userid
+    //             ORDER BY total DESC,id DESC
+    //             limit 20";
+    // $listResults = $db->fetchAll($sql);
+
+    $TetWheelModel = new Default_Model_GoldenWheelHistory();
+    $listResults = $TetWheelModel->resultList(2019)->toArray();
+
+    // var_dump($listResults);
+    // var_dump($listResults2->toArray());
+    // die;
 
     if ($auth -> getIdentity()){
         $userInfo = $auth -> getIdentity();

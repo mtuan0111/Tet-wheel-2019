@@ -80,7 +80,7 @@ User.prototype.logOut = function() {
         url: "/public/index/logout/source/friendwheel",
         success: function(data) {
             logoutMessage = "Hẹn gặp lại " + _this.UserName + "!";
-            new notificationMessage(logoutMessage);
+            new notificationMessage(logoutMessage, "Đăng xuất");
             wheel.resetState();
         }
     }).done(function() {
@@ -110,10 +110,10 @@ User.prototype.getUserInfo = function(afterLogin = false, callback = null) {
                     welcomeMessage =
                         "Xin chào " +
                         _this.UserName +
-                        ",<br>Hãy <a href='/public/recommend/recommend' target='blank'>mời bạn bè tham gia</a> để có được nhiều vòng quay nhé!";
+                        ", chúc bạn một năm mới An Khang Thịnh Vượng";
                     new notificationMessage(
                         welcomeMessage,
-                        "Vòng quay bạn bè",
+                        "Vòng quay May Mắn 2019",
                         10
                     );
                 }
@@ -201,7 +201,7 @@ User.prototype.getPlay = function(callback = null) {
         _this.gettingData = true;
         $.ajax({
             type: "POST",
-            url: "/public/api-campaign/friend-wheel2017/ajax-get-lucky-number",
+            url: "/public/api-campaign/tet-wheel-2019/ajax-get-lucky-number",
             dataType: "json"
         })
             .done(function(data) {

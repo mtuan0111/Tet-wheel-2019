@@ -86,7 +86,7 @@ window.onload = function() {
 // }
 
 window.onresize = function(event) {
-    $("#footer .pageNav")[0].removeAttribute("style");
+    $("footer .pageNav")[0].removeAttribute("style");
 };
 
 function getHashURLh(hash) {
