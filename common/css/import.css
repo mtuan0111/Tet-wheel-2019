@@ -529,6 +529,7 @@ body section#content {
   -webkit-transition: all 1s;
   -o-transition: all 1s;
   transition: all 1s;
+  overflow: hidden;
 }
 body section#content.gioithieu {
   margin: 0 0 0 40%;
