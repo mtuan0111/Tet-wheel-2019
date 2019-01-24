@@ -15,47 +15,55 @@ $h1titleSize: 20vmin
 
 $introTitleSize: 20vmin
 
-.yellowLinearGradient
+@mixin yellowLinearGradient()
     background: $yellow
     background: -moz-linear-gradient($rotate, $yellow 10%, $yellow-dark 25%, $yellow 40%, $yellow 60%, $yellow-dark 75%, $yellow 90%)
     background: -webkit-linear-gradient($rotate, $yellow 10%, $yellow-dark 25%, $yellow 40%, $yellow 60%, $yellow-dark 75%, $yellow 90%)
     background: linear-gradient($rotate, $yellow 10%, $yellow-dark 25%, $yellow 40%, $yellow 60%, $yellow-dark 75%, $yellow 90%)
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$yellow', endColorstr='$yellow-dark',GradientType=0 )
 
-.yellowRadialGradient
+@mixin yellowRadialGradient()
     background: $yellow
     background: -moz-radial-gradient($yellow 20%, $yellow-dark 25%, $yellow 30%, $yellow 70%, $yellow-dark 75%, $yellow 80%, $yellow 100%)
     background: -webkit-radial-gradient($yellow 20%, $yellow-dark 25%, $yellow 30%, $yellow 70%, $yellow-dark 75%, $yellow 80%, $yellow 100%)
     background: radial-gradient($yellow 20%, $yellow-dark 25%, $yellow 30%, $yellow 70%, $yellow-dark 75%, $yellow 80%, $yellow 100%)
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$yellow', endColorstr='$yellow-dark',GradientType=0 )
 
-.yellowRadialGradientHorizontal
+@mixin yellowRadialGradientHorizontal()
     background: $yellow
     background: -moz-linear-gradient(2deg, $yellow 10%, $yellow-dark 25%, $yellow 40%, $yellow 60%, $yellow-dark 75%, $yellow 90%)
     background: -webkit-linear-gradient(2deg, $yellow 10%, $yellow-dark 25%, $yellow 40%, $yellow 60%, $yellow-dark 75%, $yellow 90%)
     background: linear-gradient(2deg, $yellow 10%, $yellow-dark 25%, $yellow 40%, $yellow 60%, $yellow-dark 75%, $yellow 90%)
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$yellow', endColorstr='$yellow-dark',GradientType=0 )
 
-.redLinearGradient
+@mixin yellowGradientBackground()
+    background: $yellow
+    background: -moz-radial-gradient($yellow 0%, $yellow-dark 100%)
+    background: -webkit-radial-gradient($yellow 0%, $yellow-dark 100%)
+    background: radial-gradient($yellow 0%, $yellow-dark 100%)
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$yellow', endColorstr='$yellow-dark',GradientType=0 )
+
+@mixin redLinearGradient()
     background: $red
     background: -moz-linear-gradient($rotate, $red 0%, $red-dark 25%, $red 50%, $red-dark 75%, $red 100%)
     background: -webkit-linear-gradient($rotate, $red 0%, $red-dark 25%, $red 50%, $red-dark 75%, $red 100%)
     background: linear-gradient($rotate, $red 0%, $red-dark 25%, $red 50%, $red-dark 75%, $red 100%)
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$red', endColorstr='$red-dark',GradientType=0 )
 
-.redRadialGradient
+@mixin redRadialGradient()
     background: $red
     background: -moz-radial-gradient($red 0%, $red-dark 25%, $red 50%, $red-dark 75%, $red 100%)
     background: -webkit-radial-gradient($red 0%, $red-dark 25%, $red 50%, $red-dark 75%, $red 100%)
     background: radial-gradient($red 0%, $red-dark 25%, $red 50%, $red-dark 75%, $red 100%)
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$red', endColorstr='$red-dark',GradientType=0 )
 
-.redGradientBackground
+@mixin redGradientBackground()
     background: $red
     background: -moz-radial-gradient($red 0%, $red-dark 100%)
     background: -webkit-radial-gradient($red 0%, $red-dark 100%)
     background: radial-gradient($red 0%, $red-dark 100%)
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$red', endColorstr='$red-dark',GradientType=0 )
+
 
 .patternBackground
     content: ""
@@ -70,13 +78,13 @@ $introTitleSize: 20vmin
     z-index: -1
     opacity: 0.2
 
-.circle
+@mixin circle()
     // background: url(../img/circle-motif-02.svg)
     position: relative
     // height: 10vmin
     // width: 10vmin
 
-    @extend .redRadialGradient
+    @include redRadialGradient()
     border-radius: 100vmax
     border: solid 0.8vmin
     border-color: $yellow
@@ -111,13 +119,16 @@ $introTitleSize: 20vmin
         border-top-left-radius: 0
         // @include transform(rotate(-135deg))
 
+.circle
+    @include circle()
+    
 .titleText
     font-size: $h2titleSize
     text-align: center
     margin: 5% 10%
+    @include yellowLinearGradient()
     -webkit-background-clip: text
     -webkit-text-fill-color: transparent
-    @extend .yellowLinearGradient
 
 h1.titleText
     font-size: $h1titleSize

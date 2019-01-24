@@ -33,7 +33,7 @@ body
     overflow: hidden
     position: relative
     z-index: 1
-    @extend .redGradientBackground
+    @include redGradientBackground()
 
     &:before, &:after
         content: ""
@@ -169,7 +169,7 @@ body
             #ruleArea, #resultArea
                 .ruleBroad
                     position: inherit
-                    max-height: 90%
+                    height: 100%
                     width: 100%
                     top: 50%
                     left: 50%
@@ -185,9 +185,10 @@ body
                     .middleObject
                         position: relative
                         // top: 15%
-                        height: 70%
+                        height: 55%
                         width: 100%
                         padding: 5% 10%
+                        top: 30%
                         // overflow: auto
                         @include boxSizing()
                         // left: 50%
@@ -210,7 +211,7 @@ body
                     height: 100%
                     // box-sizing: border-box
                     @include boxSizing()
-                    @extend .redGradientBackground
+                    @include redGradientBackground()
                     .topObject, .bottomObject
                         // background: url(../img/top-rule.svg) no-repeat center bottom
                         z-index: 1
@@ -223,7 +224,7 @@ body
                             width: 120%
                             height: $objectSize / 50
                             left: 46%
-                            @extend .yellowRadialGradientHorizontal
+                            @include yellowRadialGradientHorizontal()
                             @include transform(translate(-50%, -50%))
                             // &:before
                             //     content: ""
@@ -281,7 +282,7 @@ body
                                 // height: 100%
                                 // background: $red
                                 position: absolute
-                                @extend .yellowLinearGradient
+                                @include yellowLinearGradient()
                                 @include transform(translateX(-50%))
                                 // background-color: $red
                                 background-size: 10%
@@ -374,14 +375,14 @@ body
                             top: 50%
                             @include transform(translate(-50%, -50%))
                             border-radius: inherit
-                            @extend .yellowLinearGradient
+                            @include yellowLinearGradient()
                     .insideCorner
                         position: inherit
                         height: inherit
                         width: inherit
                         border-radius: 100%
                         overflow: hidden
-                        @extend .redGradientBackground
+                        @include redGradientBackground()
                         &:before
                             content: ""
                             position: absolute
@@ -404,6 +405,29 @@ body
                             @include transform(translate(-50%, -50%))
                             border: dotted  $yellow $introSize/60
                             border-radius: inherit
+
+                        .splashEffect
+                            position: inherit
+                            height: inherit
+                            width: inherit
+                            &:before, &:after
+                                content: ""
+                                position: absolute
+                                height: inherit
+                                width: 5%
+                                background: white
+                                @include transform(skew(45deg))
+                                opacity: 0.5
+                                // left: -100%
+                            &:before
+                                @extend .splashMoving_01
+                                opacity: 0.8
+                            &:after
+                                width: 30%
+                                // content: none
+                                // @include transform(skew(50deg))
+                                @extend .splashMoving_02
+                                opacity: 0.3
 
                         .circleGroup
                             position: absolute
@@ -542,7 +566,7 @@ body
                         &:after
                             height: 70%
                             width: 70%
-                            @extend .yellowLinearGradient
+                            @include yellowLinearGradient()
                             border-style: solid
                             border-width: $introSize/100
                             @inclde boxSizing()
@@ -569,9 +593,9 @@ body
                                 top: 10%
                                 position: relative
                                 font-size: 150%
+                                @include yellowLinearGradient()
                                 -webkit-background-clip: text
                                 -webkit-text-fill-color: transparent
-                                @extend .yellowLinearGradient
                                 position: relative
                                 // -webkit-transform: rotate(90deg)
                                 // -ms-transform: rotate(90deg)
@@ -590,7 +614,7 @@ body
                                 left: 50%
 
                                 margin: 0 auto
-                                @extend .yellowRadialGradient
+                                @include yellowRadialGradient()
                                 @include transform(translateX(-50%))
                             // .pointValue
                             //     display: block
@@ -600,7 +624,7 @@ body
                             //     font-size: 200%
                             //     -webkit-background-clip: text
                             //     -webkit-text-fill-color: transparent
-                            //     @extend .yellowLinearGradient
+                            //     @include yellowLinearGradient()
                             //     position: relative
 
                             //     &:before
@@ -615,7 +639,7 @@ body
                             //         left: 50%
                                     
                             //         margin: 0 auto
-                            //         @extend .yellowRadialGradient
+                            //         @include yellowRadialGradient()
                             //         @include transform(translateX(-50%))
 
 
@@ -664,7 +688,7 @@ body
                             top: 50%
                             border-radius: 100%
 
-                            @extend .redGradientBackground
+                            @include redGradientBackground()
                             -webkit-mask-image: url(../img/pig-face.png)
                             -webkit-mask-repeat: no-repeat
                             -webkit-mask-size: 80%
@@ -683,8 +707,8 @@ body
                 .ruleBroad
                     position: relative
                     // height: initial
-                    width: 130%
-                    top: 45%
+                    // width: 130%
+                    top: 50%
                     &:before, &:after
                         position: absolute
                         content: ""
@@ -702,8 +726,8 @@ body
 
                     &:before
                         background: url(../img/clip-path.svg) no-repeat center
-                        background-size: 80%
-                        background-position-y: 75%
+                        // background-size: 80%
+                        // background-position-y: 75%
                     .middleObject
                         // max-height: $objectSize / 1.5
                         // width: 80%
@@ -766,14 +790,14 @@ body
                     //     fill: red
                     //     pointer-events: none
             
-    #sectionNav.pageNav
+    .pageNav
         display: block
         height: 10vh
         text-align: center
         a
             margin: 2%
             // @extend .h1titleSize
-            @extend .yellowLinearGradient
+            @include yellowLinearGradient()
             padding: 1%
             border-radius: 100%
             -webkit-background-clip: text

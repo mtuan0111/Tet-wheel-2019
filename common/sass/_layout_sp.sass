@@ -1,35 +1,101 @@
-$standardFontsize: 4vmin
-$h2titleSize: 4vmin
-$h1titleSize: 20vmin
+@media (max-width: 800px) and (orientation: portrait)
 
-$introTitleSize: 50vmin
+    
+    $standardFontsize: 4vmin
+    $h2titleSize: 4vmin
+    $h1titleSize: 20vmin
 
-#ruleArea, #resultArea
-    .mountainBackground
-        display: none
+    $introTitleSize: 50vmin
 
-body section.mountains 
-
-    div[id$=Area] .bottom 
+    #ruleArea, #resultArea
         .mountainBackground
-            z-index: -1
-        @include transition(height 0.5s)
-        .bottomLink
-            &:hover
-                // height: 25%
-                // @include transform(none)
+            display: none
 
-    &.activeMobileNav
-        .bottom
-            height: 25% !important
+    body
+        section.decoration 
+            .conerCircles 
+                .circle
+                    transform: translate(-50%, -50%) scale(1.5)
+        section.mountains 
+            div[id$=Area] .bottom 
+                .mountainBackground
+                    z-index: -1
+                @include transition(height 0.5s)
+                .bottomLink
+                    &:hover
+                        // height: 25%
+                        // @include transform(none)
 
-section#content 
-    #resultArea 
-        .ruleBroad 
-            &:before, &:after
-                content: none !important
-                // width: 120vw !important
+            &.activeMobileNav
+                .bottom
+                    height: 25% !important
 
-#sectionNav
-    .pageNav
-        
+        section#content 
+            #resultArea 
+                .ruleBroad 
+                    &:before, &:after
+                        content: none !important
+                        // width: 120vw !important
+        footer
+            position: relative
+            .pageNav
+                &.active
+                    a.btnToggle
+                        // border-bottom: none
+                        border-top: inherit
+                        // border-left: none
+                        // border-right: none 
+                height: initial
+                display: none
+                flex-direction: column
+                background: $red
+                @include yellowLinearGradient()
+                padding: 2% 0 10% 0
+                position: relative
+                // z-index: 1
+                &:before
+                    content: ""
+                    position: absolute
+                    top: -2%
+                    bottom: 0
+                    left: 0
+                    right: 0
+                    @include yellowGradientBackground()
+                    z-index: -1
+                a
+                    @include flex(1)
+                    display: block
+                    text-align: center
+                    @include redLinearGradient()
+                    -webkit-background-clip: text
+                    -webkit-text-fill-color: transparent
+                    font-size: 180%
+                    border-bottom: solid 2px $red
+                    margin-top: 0
+            a.btnToggle
+                // background: red
+                display: inline-block
+                position: absolute
+                z-index: 1
+                @include circle()
+                @include transform(translate(-50%, -50%))
+                left: 50%
+                top: 4vmin
+                height: 12vmin
+                width: 12vmin
+                background: none
+                @include transition(all 0.5s)
+                &.active
+                    border-radius: 0
+                    border-bottom-width: 2px
+                    border-top: none 
+                    border-left: none
+                    border-right: none 
+                    height: 16vmin
+                    width: 16vmin
+                
+
+
+                
+
+            
