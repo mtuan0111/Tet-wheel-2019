@@ -519,7 +519,8 @@ body section.decoration .conerCircles .circle:nth-child(4) {
   left: 100%;
 }
 body section#content {
-  margin: 0 -50%;
+  width: 300vw;
+  left: calc(50vw - 150vw);
   -ms-flex: 1;
   -webkit-flex: 1;
   -moz-flex: 1;
@@ -529,16 +530,18 @@ body section#content {
   -webkit-transition: all 1s;
   -o-transition: all 1s;
   transition: all 1s;
+  position: relative;
+  overflow: hidden;
 }
 body section#content.gioithieu {
-  margin: 0 0 0 40%;
+  left: 0;
 }
 body section#content.gioithieu div[id$=Area]:not(#ruleArea) {
   opacity: 0;
   pointer-events: none;
 }
 body section#content.ketqua {
-  margin: 0 40% 0 0;
+  left: -200%;
 }
 body section#content.ketqua div[id$=Area]:not(#resultArea) {
   opacity: 0;

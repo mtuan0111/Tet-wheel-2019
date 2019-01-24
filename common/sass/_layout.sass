@@ -97,21 +97,25 @@ body
                         top: 100%
                         left: 100%
         &#content
-            margin: 0 -50%
+            width: 300vw
+            left: calc(50vw - 150vw)
             @include flex(1)
             display: flex
             opacity: 1
             @include transition(all 1s)
-            
+            position: relative
+            overflow: hidden
+
             &.gioithieu
-                margin: 0 0 0 40%
+                // margin: 0 0 0 100%
+                left: 0
                 div[id$="Area"]:not(#ruleArea)
                     opacity: 0
                     // display: none
                     pointer-events: none
 
             &.ketqua
-                margin: 0 40% 0 0
+                left: -200%
                 div[id$="Area"]:not(#resultArea)
                     opacity: 0
                     // display: none
