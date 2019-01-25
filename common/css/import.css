@@ -1523,9 +1523,9 @@ body section#content #wheelArea .wheelCircle #wheelCenter .campaignIcon {
   background: -webkit-radial-gradient(#cc2121 0%, #3d0a0a 100%);
   background: radial-gradient(#cc2121 0%, #3d0a0a 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="$red", endColorstr="$red-dark",GradientType=0 );
-  -webkit-mask-image: url(../img/pig-face.png);
+  -webkit-mask-image: url(../img/pig-icon-03.png);
   -webkit-mask-repeat: no-repeat;
-  -webkit-mask-size: 80%;
+  -webkit-mask-size: 70%;
   -webkit-mask-position: center;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
