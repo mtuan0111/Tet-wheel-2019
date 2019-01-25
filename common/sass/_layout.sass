@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster&ampsubset=vietnamese')
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i')
 /* Let's get this party started */
 ::-webkit-scrollbar
     width: 4px
@@ -26,7 +27,8 @@ body
     height: 100vh
     width: 100vw
     color: white
-    font-family: 'Lobster', cursive
+    font-family: 'Playfair Display', serif
+    font-weight: 500
     font-size: $standardFontsize
     display: flex
     flex-direction: column
@@ -166,14 +168,21 @@ body
 
             #mainNav
                 @include flex(1 100%)
+            
             #ruleArea, #resultArea
                 .ruleBroad
                     position: inherit
-                    height: 100%
-                    width: 100%
+
                     top: 50%
                     left: 50%
+
+                    padding: 5%
+                    width: 150%
+                    height: 100%
+
                     @include transform(translate(-50%, -50%))
+                    @include boxSizing()
+                    @include redGradientBackground()
 
                     .topObject, .bottomObject
                         position: absolute
@@ -182,29 +191,115 @@ body
                         width: 100%
                         background: green
 
+                        // background: url(../img/top-rule.svg) no-repeat center bottom
+                        z-index: 1
+                        // position: ab
+                        height: 0%
+                        top: 0
+                        .bracePipe
+                            content: ""
+                            position: absolute
+                            width: 120%
+                            height: $objectSize / 50
+                            left: 46%
+                            @include yellowRadialGradientHorizontal()
+                            @include transform(translate(-50%, -50%))
+                            // &:before
+                            //     content: ""
+                            //     @extend .circle
+                            //     height: 50px
+                            //     width: 50%
+                            .circle.end
+                                position: absolute
+                                left: 0
+                                top: 0
+                                width: $objectSize / 5
+                                height: $objectSize / 5
+                                @include transform(translate(-50%, -45%) scale(0.05, 0.1))
+                                @include boxSizing()
+
+                                &:nth-child(2)
+                                    right: 0
+                                    left: initial
+                                    @include transform(translate(50%, -45%) scale(0.05, 0.1))
+
+                            .circleGroup
+                                position: absolute
+                                width: $objectSize / 5
+                                // height: $objectSize / 5
+                                // right: 0
+                                
+                                @include transform(scale(0.35))
+                                @include transformOrigin(50% 0)
+                                .circle
+                                    position: relative
+                                    width: $objectSize / 5
+                                    height: $objectSize / 5
+                                    &:nth-child(1)
+                                        // background: @red
+                                        @include transform(translateY(-25%) scale(1.5))
+                                        &:after, &:after
+                                            content: none
+
+                            // .circleGroup
+                                // &:nth-child(1)
+                                    // right: 0
+                                   
+
                     .middleObject
                         position: relative
                         // top: 15%
                         height: 55%
                         width: 100%
-                        padding: 5% 10%
-                        top: 30%
+                        padding: 5%
+                        // top: 30%
                         // overflow: auto
                         @include boxSizing()
                         // left: 50%
                         // @include transform(translateX(-50%))
                         display: flex
                         flex-direction: column
+                        // padding-bottom: 20%
+                        height: 100%      
+                        // border-radius: 20%
+                        // border-top: solid $objectSize/80 $yellow
+                        // border-bottom: solid $objectSize/80 $yellow
 
+                        overflow: auto
+                        top: 0
+                        // height: 100%
                         .contentObject
-                            @include flex(1)
+                            overflow: initial
+                            position: relative
                             overflow: auto
+                            @include flex(1)
+                            // &:after
+                            //     padding: 10%
+                            //     content: ""
+                            //     background: url(../img/pattern_motif_rounded.png) repeat center
+                            //     background-size: 5%
+                            //     position: absolute
+                            //     top: 0
+                            //     // bottom: 0
+                            //     // left: -5%
+                            //     // right: -5%
+                            //     // height: 100%
+                            //     bottom: 0
+                            //     z-index: -1
+                            //     opacity: 0.1
+                            table
+                                width: 100%
+                                text-align: center
+                            
+                            & > *
+                                margin-top: 20px
+                                
 
                     .bottomObject
                         // top: 85%
                         @include transform(scale(-1) translateY(-100%))
             
-            #ruleArea
+            #ruleArea_tmp
                 .ruleBroad
                     width: 150%
                     padding: 5%
@@ -696,11 +791,12 @@ body
                             // -webkit-filter: drop-shadow(2px 2px 5px rgba(0,0,0, .5))
                             @include transform(translate(-50%, -50%))
                             @include transition(opacity 0.5s)
-
-
-
-                           
+             
             #resultArea
+                .circleGroup
+                    display: none
+            
+            #resultArea_tmp
                 $objectSize: 50vmin
                 .objectsArea
                     width: $objectSize    

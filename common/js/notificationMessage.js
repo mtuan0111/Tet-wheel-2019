@@ -30,7 +30,7 @@ notificationMessage.prototype.createMessage = function(text, title) {
     messageText.className += " message";
     messageText.innerHTML = text;
 
-    messageTitle = document.createElement("p");
+    messageTitle = document.createElement("h2");
     messageTitle.className += " title";
     messageTitle.innerHTML = title;
 

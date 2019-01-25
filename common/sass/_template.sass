@@ -5,8 +5,10 @@ body
     pointer-events: none
 
 a
-    color: $red
+    color: $yellow
+    font-weight: bold
     text-decoration: none
+    font-style: italic
     &:hover
         text-decoration: underline
 
@@ -19,3 +21,21 @@ a
     left: 50%
     top: 50%
     @include transform(translate(-50%, -50%))
+
+h1, h2, h3, h4, h5, dt
+    @include titleFont()
+
+dt
+    font-size: 150%
+    margin-top: 10px
+
+strong
+    font-weight: bold
+    color: $yellow
+    font-size: 110%
+
+table
+    th
+        border-bottom: solid 1px $yellow
+        padding: 1vmin
+        @include titleFont()

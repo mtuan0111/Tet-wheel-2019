@@ -51,7 +51,7 @@ loginForm.prototype.createBroad = function(callback = null) {
 
     _this.insideCorner.appendChild(_this.broadContent);
 
-    _this.title = document.createElement("p");
+    _this.title = document.createElement("h2");
     _this.title.className += "title";
     _this.title.innerHTML = "Đăng nhập";
 

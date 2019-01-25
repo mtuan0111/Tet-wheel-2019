@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Lobster&ampsubset=vietnamese");
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i");
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   border: 0;
@@ -471,7 +472,8 @@ body {
   height: 100vh;
   width: 100vw;
   color: white;
-  font-family: "Lobster", cursive;
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
   font-size: 2.5vmin;
   display: flex;
   flex-direction: column;
@@ -632,50 +634,15 @@ body section#content #mainNav {
 }
 body section#content #ruleArea .ruleBroad, body section#content #resultArea .ruleBroad {
   position: inherit;
-  height: 100%;
-  width: 100%;
   top: 50%;
   left: 50%;
+  padding: 5%;
+  width: 150%;
+  height: 100%;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-}
-body section#content #ruleArea .ruleBroad .topObject, body section#content #ruleArea .ruleBroad .bottomObject, body section#content #resultArea .ruleBroad .topObject, body section#content #resultArea .ruleBroad .bottomObject {
-  position: absolute;
-  height: 15%;
-  width: 100%;
-  background: green;
-}
-body section#content #ruleArea .ruleBroad .middleObject, body section#content #resultArea .ruleBroad .middleObject {
-  position: relative;
-  height: 55%;
-  width: 100%;
-  padding: 5% 10%;
-  top: 30%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-}
-body section#content #ruleArea .ruleBroad .middleObject .contentObject, body section#content #resultArea .ruleBroad .middleObject .contentObject {
-  -ms-flex: 1;
-  -webkit-flex: 1;
-  -moz-flex: 1;
-  flex: 1;
-  overflow: auto;
-}
-body section#content #ruleArea .ruleBroad .bottomObject, body section#content #resultArea .ruleBroad .bottomObject {
-  -webkit-transform: scale(-1) translateY(-100%);
-  -ms-transform: scale(-1) translateY(-100%);
-  -o-transform: scale(-1) translateY(-100%);
-  transform: scale(-1) translateY(-100%);
-}
-body section#content #ruleArea .ruleBroad {
-  width: 150%;
-  padding: 5%;
-  height: 100%;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -685,12 +652,16 @@ body section#content #ruleArea .ruleBroad {
   background: radial-gradient(#cc2121 0%, #3d0a0a 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="$red", endColorstr="$red-dark",GradientType=0 );
 }
-body section#content #ruleArea .ruleBroad .topObject, body section#content #ruleArea .ruleBroad .bottomObject {
+body section#content #ruleArea .ruleBroad .topObject, body section#content #ruleArea .ruleBroad .bottomObject, body section#content #resultArea .ruleBroad .topObject, body section#content #resultArea .ruleBroad .bottomObject {
+  position: absolute;
+  height: 15%;
+  width: 100%;
+  background: green;
   z-index: 1;
   height: 0%;
   top: 0;
 }
-body section#content #ruleArea .ruleBroad .topObject .bracePipe, body section#content #ruleArea .ruleBroad .bottomObject .bracePipe {
+body section#content #ruleArea .ruleBroad .topObject .bracePipe, body section#content #ruleArea .ruleBroad .bottomObject .bracePipe, body section#content #resultArea .ruleBroad .topObject .bracePipe, body section#content #resultArea .ruleBroad .bottomObject .bracePipe {
   content: "";
   position: absolute;
   width: 120%;
@@ -706,7 +677,7 @@ body section#content #ruleArea .ruleBroad .topObject .bracePipe, body section#co
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-body section#content #ruleArea .ruleBroad .topObject .bracePipe .circle.end, body section#content #ruleArea .ruleBroad .bottomObject .bracePipe .circle.end {
+body section#content #ruleArea .ruleBroad .topObject .bracePipe .circle.end, body section#content #ruleArea .ruleBroad .bottomObject .bracePipe .circle.end, body section#content #resultArea .ruleBroad .topObject .bracePipe .circle.end, body section#content #resultArea .ruleBroad .bottomObject .bracePipe .circle.end {
   position: absolute;
   left: 0;
   top: 0;
@@ -720,7 +691,7 @@ body section#content #ruleArea .ruleBroad .topObject .bracePipe .circle.end, bod
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-body section#content #ruleArea .ruleBroad .topObject .bracePipe .circle.end:nth-child(2), body section#content #ruleArea .ruleBroad .bottomObject .bracePipe .circle.end:nth-child(2) {
+body section#content #ruleArea .ruleBroad .topObject .bracePipe .circle.end:nth-child(2), body section#content #ruleArea .ruleBroad .bottomObject .bracePipe .circle.end:nth-child(2), body section#content #resultArea .ruleBroad .topObject .bracePipe .circle.end:nth-child(2), body section#content #resultArea .ruleBroad .bottomObject .bracePipe .circle.end:nth-child(2) {
   right: 0;
   left: initial;
   -webkit-transform: translate(50%, -45%) scale(0.05, 0.1);
@@ -728,7 +699,7 @@ body section#content #ruleArea .ruleBroad .topObject .bracePipe .circle.end:nth-
   -o-transform: translate(50%, -45%) scale(0.05, 0.1);
   transform: translate(50%, -45%) scale(0.05, 0.1);
 }
-body section#content #ruleArea .ruleBroad .topObject .bracePipe .circleGroup, body section#content #ruleArea .ruleBroad .bottomObject .bracePipe .circleGroup {
+body section#content #ruleArea .ruleBroad .topObject .bracePipe .circleGroup, body section#content #ruleArea .ruleBroad .bottomObject .bracePipe .circleGroup, body section#content #resultArea .ruleBroad .topObject .bracePipe .circleGroup, body section#content #resultArea .ruleBroad .bottomObject .bracePipe .circleGroup {
   position: absolute;
   width: 12vmin;
   -webkit-transform: scale(0.35);
@@ -741,21 +712,140 @@ body section#content #ruleArea .ruleBroad .topObject .bracePipe .circleGroup, bo
   -o-transform-origin: 50% 0;
   transform-origin: 50% 0;
 }
-body section#content #ruleArea .ruleBroad .topObject .bracePipe .circleGroup .circle, body section#content #ruleArea .ruleBroad .bottomObject .bracePipe .circleGroup .circle {
+body section#content #ruleArea .ruleBroad .topObject .bracePipe .circleGroup .circle, body section#content #ruleArea .ruleBroad .bottomObject .bracePipe .circleGroup .circle, body section#content #resultArea .ruleBroad .topObject .bracePipe .circleGroup .circle, body section#content #resultArea .ruleBroad .bottomObject .bracePipe .circleGroup .circle {
   position: relative;
   width: 12vmin;
   height: 12vmin;
 }
-body section#content #ruleArea .ruleBroad .topObject .bracePipe .circleGroup .circle:nth-child(1), body section#content #ruleArea .ruleBroad .bottomObject .bracePipe .circleGroup .circle:nth-child(1) {
+body section#content #ruleArea .ruleBroad .topObject .bracePipe .circleGroup .circle:nth-child(1), body section#content #ruleArea .ruleBroad .bottomObject .bracePipe .circleGroup .circle:nth-child(1), body section#content #resultArea .ruleBroad .topObject .bracePipe .circleGroup .circle:nth-child(1), body section#content #resultArea .ruleBroad .bottomObject .bracePipe .circleGroup .circle:nth-child(1) {
   -webkit-transform: translateY(-25%) scale(1.5);
   -ms-transform: translateY(-25%) scale(1.5);
   -o-transform: translateY(-25%) scale(1.5);
   transform: translateY(-25%) scale(1.5);
 }
-body section#content #ruleArea .ruleBroad .topObject .bracePipe .circleGroup .circle:nth-child(1):after, body section#content #ruleArea .ruleBroad .topObject .bracePipe .circleGroup .circle:nth-child(1):after, body section#content #ruleArea .ruleBroad .bottomObject .bracePipe .circleGroup .circle:nth-child(1):after, body section#content #ruleArea .ruleBroad .bottomObject .bracePipe .circleGroup .circle:nth-child(1):after {
+body section#content #ruleArea .ruleBroad .topObject .bracePipe .circleGroup .circle:nth-child(1):after, body section#content #ruleArea .ruleBroad .topObject .bracePipe .circleGroup .circle:nth-child(1):after, body section#content #ruleArea .ruleBroad .bottomObject .bracePipe .circleGroup .circle:nth-child(1):after, body section#content #ruleArea .ruleBroad .bottomObject .bracePipe .circleGroup .circle:nth-child(1):after, body section#content #resultArea .ruleBroad .topObject .bracePipe .circleGroup .circle:nth-child(1):after, body section#content #resultArea .ruleBroad .topObject .bracePipe .circleGroup .circle:nth-child(1):after, body section#content #resultArea .ruleBroad .bottomObject .bracePipe .circleGroup .circle:nth-child(1):after, body section#content #resultArea .ruleBroad .bottomObject .bracePipe .circleGroup .circle:nth-child(1):after {
   content: none;
 }
-body section#content #ruleArea .ruleBroad .topObject .ropes, body section#content #ruleArea .ruleBroad .bottomObject .ropes {
+body section#content #ruleArea .ruleBroad .middleObject, body section#content #resultArea .ruleBroad .middleObject {
+  position: relative;
+  height: 55%;
+  width: 100%;
+  padding: 5%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: auto;
+  top: 0;
+}
+body section#content #ruleArea .ruleBroad .middleObject .contentObject, body section#content #resultArea .ruleBroad .middleObject .contentObject {
+  overflow: initial;
+  position: relative;
+  overflow: auto;
+  -ms-flex: 1;
+  -webkit-flex: 1;
+  -moz-flex: 1;
+  flex: 1;
+}
+body section#content #ruleArea .ruleBroad .middleObject .contentObject table, body section#content #resultArea .ruleBroad .middleObject .contentObject table {
+  width: 100%;
+  text-align: center;
+}
+body section#content #ruleArea .ruleBroad .middleObject .contentObject > *, body section#content #resultArea .ruleBroad .middleObject .contentObject > * {
+  margin-top: 20px;
+}
+body section#content #ruleArea .ruleBroad .bottomObject, body section#content #resultArea .ruleBroad .bottomObject {
+  -webkit-transform: scale(-1) translateY(-100%);
+  -ms-transform: scale(-1) translateY(-100%);
+  -o-transform: scale(-1) translateY(-100%);
+  transform: scale(-1) translateY(-100%);
+}
+body section#content #ruleArea_tmp .ruleBroad {
+  width: 150%;
+  padding: 5%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background: #cc2121;
+  background: -moz-radial-gradient(#cc2121 0%, #3d0a0a 100%);
+  background: -webkit-radial-gradient(#cc2121 0%, #3d0a0a 100%);
+  background: radial-gradient(#cc2121 0%, #3d0a0a 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="$red", endColorstr="$red-dark",GradientType=0 );
+}
+body section#content #ruleArea_tmp .ruleBroad .topObject, body section#content #ruleArea_tmp .ruleBroad .bottomObject {
+  z-index: 1;
+  height: 0%;
+  top: 0;
+}
+body section#content #ruleArea_tmp .ruleBroad .topObject .bracePipe, body section#content #ruleArea_tmp .ruleBroad .bottomObject .bracePipe {
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 1.2vmin;
+  left: 46%;
+  background: #ffed4a;
+  background: -moz-linear-gradient(2deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
+  background: -webkit-linear-gradient(2deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
+  background: linear-gradient(2deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="$yellow", endColorstr="$yellow-dark",GradientType=0 );
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+body section#content #ruleArea_tmp .ruleBroad .topObject .bracePipe .circle.end, body section#content #ruleArea_tmp .ruleBroad .bottomObject .bracePipe .circle.end {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 12vmin;
+  height: 12vmin;
+  -webkit-transform: translate(-50%, -45%) scale(0.05, 0.1);
+  -ms-transform: translate(-50%, -45%) scale(0.05, 0.1);
+  -o-transform: translate(-50%, -45%) scale(0.05, 0.1);
+  transform: translate(-50%, -45%) scale(0.05, 0.1);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body section#content #ruleArea_tmp .ruleBroad .topObject .bracePipe .circle.end:nth-child(2), body section#content #ruleArea_tmp .ruleBroad .bottomObject .bracePipe .circle.end:nth-child(2) {
+  right: 0;
+  left: initial;
+  -webkit-transform: translate(50%, -45%) scale(0.05, 0.1);
+  -ms-transform: translate(50%, -45%) scale(0.05, 0.1);
+  -o-transform: translate(50%, -45%) scale(0.05, 0.1);
+  transform: translate(50%, -45%) scale(0.05, 0.1);
+}
+body section#content #ruleArea_tmp .ruleBroad .topObject .bracePipe .circleGroup, body section#content #ruleArea_tmp .ruleBroad .bottomObject .bracePipe .circleGroup {
+  position: absolute;
+  width: 12vmin;
+  -webkit-transform: scale(0.35);
+  -ms-transform: scale(0.35);
+  -o-transform: scale(0.35);
+  transform: scale(0.35);
+  -webkit-transform-origin: 50% 0;
+  -moz-transform-origin: 50% 0;
+  -ms-transform-origin: 50% 0;
+  -o-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+}
+body section#content #ruleArea_tmp .ruleBroad .topObject .bracePipe .circleGroup .circle, body section#content #ruleArea_tmp .ruleBroad .bottomObject .bracePipe .circleGroup .circle {
+  position: relative;
+  width: 12vmin;
+  height: 12vmin;
+}
+body section#content #ruleArea_tmp .ruleBroad .topObject .bracePipe .circleGroup .circle:nth-child(1), body section#content #ruleArea_tmp .ruleBroad .bottomObject .bracePipe .circleGroup .circle:nth-child(1) {
+  -webkit-transform: translateY(-25%) scale(1.5);
+  -ms-transform: translateY(-25%) scale(1.5);
+  -o-transform: translateY(-25%) scale(1.5);
+  transform: translateY(-25%) scale(1.5);
+}
+body section#content #ruleArea_tmp .ruleBroad .topObject .bracePipe .circleGroup .circle:nth-child(1):after, body section#content #ruleArea_tmp .ruleBroad .topObject .bracePipe .circleGroup .circle:nth-child(1):after, body section#content #ruleArea_tmp .ruleBroad .bottomObject .bracePipe .circleGroup .circle:nth-child(1):after, body section#content #ruleArea_tmp .ruleBroad .bottomObject .bracePipe .circleGroup .circle:nth-child(1):after {
+  content: none;
+}
+body section#content #ruleArea_tmp .ruleBroad .topObject .ropes, body section#content #ruleArea_tmp .ruleBroad .bottomObject .ropes {
   position: absolute;
   height: 60vmin;
   width: 50%;
@@ -763,7 +853,7 @@ body section#content #ruleArea .ruleBroad .topObject .ropes, body section#conten
   z-index: -1;
   left: 25%;
 }
-body section#content #ruleArea .ruleBroad .topObject .ropes:before, body section#content #ruleArea .ruleBroad .topObject .ropes:after, body section#content #ruleArea .ruleBroad .bottomObject .ropes:before, body section#content #ruleArea .ruleBroad .bottomObject .ropes:after {
+body section#content #ruleArea_tmp .ruleBroad .topObject .ropes:before, body section#content #ruleArea_tmp .ruleBroad .topObject .ropes:after, body section#content #ruleArea_tmp .ruleBroad .bottomObject .ropes:before, body section#content #ruleArea_tmp .ruleBroad .bottomObject .ropes:after {
   content: "";
   width: 5px;
   position: absolute;
@@ -779,21 +869,21 @@ body section#content #ruleArea .ruleBroad .topObject .ropes:before, body section
   background-size: 10%;
   opacity: 1;
 }
-body section#content #ruleArea .ruleBroad .topObject .ropes:after, body section#content #ruleArea .ruleBroad .bottomObject .ropes:after {
+body section#content #ruleArea_tmp .ruleBroad .topObject .ropes:after, body section#content #ruleArea_tmp .ruleBroad .bottomObject .ropes:after {
   left: initial;
   right: 0;
 }
-body section#content #ruleArea .ruleBroad .middleObject {
+body section#content #ruleArea_tmp .ruleBroad .middleObject {
   padding-bottom: 20%;
   height: 100%;
   overflow: auto;
   top: 0;
 }
-body section#content #ruleArea .ruleBroad .middleObject .contentObject {
+body section#content #ruleArea_tmp .ruleBroad .middleObject .contentObject {
   overflow: initial;
   position: relative;
 }
-body section#content #ruleArea .ruleBroad .middleObject .contentObject:after {
+body section#content #ruleArea_tmp .ruleBroad .middleObject .contentObject:after {
   padding: 10%;
   content: "";
   background: url(../img/pattern_motif_rounded.png) repeat center;
@@ -806,14 +896,14 @@ body section#content #ruleArea .ruleBroad .middleObject .contentObject:after {
   z-index: -1;
   opacity: 0.1;
 }
-body section#content #ruleArea .trees {
+body section#content #ruleArea_tmp .trees {
   position: absolute;
   bottom: 0;
   width: 100%;
   height: 260%;
   pointer-events: none;
 }
-body section#content #ruleArea .trees .tree01, body section#content #ruleArea .trees .tree02 {
+body section#content #ruleArea_tmp .trees .tree01, body section#content #ruleArea_tmp .trees .tree02 {
   background: url(../img/tree-01.svg) no-repeat bottom;
   position: absolute;
   width: 100%;
@@ -1378,14 +1468,17 @@ body section#content #wheelArea .wheelCircle #wheelCenter .campaignIcon {
   -o-transition: opacity 0.5s;
   transition: opacity 0.5s;
 }
-body section#content #resultArea .objectsArea {
+body section#content #resultArea .circleGroup {
+  display: none;
+}
+body section#content #resultArea_tmp .objectsArea {
   width: 50vmin;
 }
-body section#content #resultArea .ruleBroad {
+body section#content #resultArea_tmp .ruleBroad {
   position: relative;
   top: 50%;
 }
-body section#content #resultArea .ruleBroad:before, body section#content #resultArea .ruleBroad:after {
+body section#content #resultArea_tmp .ruleBroad:before, body section#content #resultArea_tmp .ruleBroad:after {
   position: absolute;
   content: "";
   -webkit-box-sizing: initial;
@@ -1405,70 +1498,70 @@ body section#content #resultArea .ruleBroad:before, body section#content #result
   z-index: -1;
   pointer-events: none;
 }
-body section#content #resultArea .ruleBroad:before {
+body section#content #resultArea_tmp .ruleBroad:before {
   background: url(../img/clip-path.svg) no-repeat center;
 }
-body section#content #resultArea .ruleBroad .contentObject table {
+body section#content #resultArea_tmp .ruleBroad .contentObject table {
   width: 100%;
   text-align: center;
 }
-body section#content #resultArea .ruleBroad .circleGroup {
+body section#content #resultArea_tmp .ruleBroad .circleGroup {
   position: absolute;
   z-index: -1;
   right: 0;
   top: 50%;
 }
-body section#content #resultArea .ruleBroad .circleGroup:nth-child(2) {
+body section#content #resultArea_tmp .ruleBroad .circleGroup:nth-child(2) {
   left: initial;
   right: initial;
 }
-body section#content #resultArea .ruleBroad .circleGroup .circle {
+body section#content #resultArea_tmp .ruleBroad .circleGroup .circle {
   position: absolute;
   width: 10vmin;
   height: 10vmin;
 }
-body section#content #resultArea .ruleBroad .circleGroup .circle:nth-child(1) {
+body section#content #resultArea_tmp .ruleBroad .circleGroup .circle:nth-child(1) {
   -webkit-transform: translate(0%, -35%);
   -ms-transform: translate(0%, -35%);
   -o-transform: translate(0%, -35%);
   transform: translate(0%, -35%);
 }
-body section#content #resultArea .ruleBroad .circleGroup .circle:nth-child(2) {
+body section#content #resultArea_tmp .ruleBroad .circleGroup .circle:nth-child(2) {
   -webkit-transform: translate(-25%, 13%) scale(0.8);
   -ms-transform: translate(-25%, 13%) scale(0.8);
   -o-transform: translate(-25%, 13%) scale(0.8);
   transform: translate(-25%, 13%) scale(0.8);
   z-index: -1;
 }
-body section#content #resultArea .ruleBroad .circleGroup .circle:nth-child(3) {
+body section#content #resultArea_tmp .ruleBroad .circleGroup .circle:nth-child(3) {
   -webkit-transform: translate(-35%, -73%) scale(0.8);
   -ms-transform: translate(-35%, -73%) scale(0.8);
   -o-transform: translate(-35%, -73%) scale(0.8);
   transform: translate(-35%, -73%) scale(0.8);
   z-index: -1;
 }
-body section#content #resultArea .ruleBroad .circleGroup .circle:nth-child(4) {
+body section#content #resultArea_tmp .ruleBroad .circleGroup .circle:nth-child(4) {
   -webkit-transform: translate(-50%, 50%) scale(0.8);
   -ms-transform: translate(-50%, 50%) scale(0.8);
   -o-transform: translate(-50%, 50%) scale(0.8);
   transform: translate(-50%, 50%) scale(0.8);
   z-index: -2;
 }
-body section#content #resultArea .ruleBroad .circleGroup .circle:nth-child(5) {
+body section#content #resultArea_tmp .ruleBroad .circleGroup .circle:nth-child(5) {
   -webkit-transform: translate(-70%, -96%) scale(0.8);
   -ms-transform: translate(-70%, -96%) scale(0.8);
   -o-transform: translate(-70%, -96%) scale(0.8);
   transform: translate(-70%, -96%) scale(0.8);
   z-index: -2;
 }
-body section#content #resultArea .ruleBroad .circleGroup .circle.circleSpecial {
+body section#content #resultArea_tmp .ruleBroad .circleGroup .circle.circleSpecial {
   -webkit-transform: translate(-55%, -27%);
   -ms-transform: translate(-55%, -27%);
   -o-transform: translate(-55%, -27%);
   transform: translate(-55%, -27%);
   z-index: -2;
 }
-body section#content #resultArea .ruleBroad .circleGroup.bottom {
+body section#content #resultArea_tmp .ruleBroad .circleGroup.bottom {
   -webkit-transform: scaleX(-1);
   -ms-transform: scaleX(-1);
   -o-transform: scaleX(-1);
@@ -1504,8 +1597,10 @@ body {
 }
 
 a {
-  color: #cc2121;
+  color: #ffed4a;
+  font-weight: bold;
   text-decoration: none;
+  font-style: italic;
 }
 a:hover {
   text-decoration: underline;
@@ -1523,6 +1618,27 @@ a:hover {
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+
+h1, h2, h3, h4, h5, dt {
+  font-family: "Lobster", cursive;
+}
+
+dt {
+  font-size: 150%;
+  margin-top: 10px;
+}
+
+strong {
+  font-weight: bold;
+  color: #ffed4a;
+  font-size: 110%;
+}
+
+table th {
+  border-bottom: solid 1px #ffed4a;
+  padding: 1vmin;
+  font-family: "Lobster", cursive;
 }
 
 @media screen and (max-width: 800px) and (max-width: 800px) and (orientation: portrait) {
