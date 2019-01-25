@@ -86,7 +86,7 @@ Wheel.prototype.rotate = function(point_value = "") {
     $({ deg: current_deg }).animate(
         { deg: deg_rotate },
         {
-            duration: rotate_duration / 10,
+            duration: rotate_duration,
             // duration: 0,
             easing: "easeOutQuart",
             specialEasing: "easeOutQuart",
@@ -147,7 +147,7 @@ Wheel.prototype.rotate = function(point_value = "") {
             },
             done: function() {
                 var messageNotifi =
-                    "Bạn đã quay vào ô " + point_value + " điểm.";
+                    "Bạn đã nhận được " + point_value + " điểm từ vòng quay.";
 
                 // User.getUserInfo();
 

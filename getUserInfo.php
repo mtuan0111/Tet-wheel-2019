@@ -29,8 +29,6 @@ if (isset($_POST['request'])){
     }
 }
 
-// var_dump($_SESSION['Zend_Auth']['storage']); die;
-
 
 function getUserInfo(){
     global $db, $auth;
