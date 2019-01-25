@@ -36,6 +36,14 @@ body
     position: relative
     z-index: 1
     @include redGradientBackground()
+    
+    .main-wrapper
+        height: inherit
+        width: inherit
+        position: fixed
+        display: inherit
+        overflow: inherit
+        flex-direction: inherit
 
     &:before, &:after
         content: ""
@@ -55,15 +63,17 @@ body
         background-size: cover
 
     header
-        padding-top: 4vmin
+        padding-top: 2vmin
+        padding-bottom: 2vmin
         z-index: 2
         .wrapper
             display: flex
         #topLogo
             background: url(../img/vina_logo_white.svg) center no-repeat
             background-size: contain
-            width: 25vmin
+            width: 20vmin
             height: 5vmin
+            margin: 0 auto
         nav
             @include flex(1)
             align-self: center
@@ -251,7 +261,7 @@ body
                         // top: 15%
                         height: 55%
                         width: 100%
-                        padding: 5%
+                        // padding: 5%
                         // top: 30%
                         // overflow: auto
                         @include boxSizing()
@@ -268,7 +278,11 @@ body
                         overflow: auto
                         top: 0
                         // height: 100%
+                        .titleText
+                            margin-top: 2%
+                            margin-bottom: 2%
                         .contentObject
+                            padding: 4% 2%
                             overflow: initial
                             position: relative
                             overflow: auto
@@ -524,6 +538,13 @@ body
                                 @extend .splashMoving_02
                                 opacity: 0.3
 
+                        &:hover
+                            .spalshEffect
+                                &:before
+                                    @extend .splashMoving_01
+                                &:after
+                                    @extend .splashMoving_02
+
                         .circleGroup
                             position: absolute
                             z-index: 1
@@ -737,7 +758,12 @@ body
                             //         @include yellowRadialGradient()
                             //         @include transform(translateX(-50%))
 
-
+                        &:before
+                            content: ""
+                            position: absolute
+                            height: 100%
+                            width: 100%
+                            z-index: 300
                     #wheelCenter
                         position: absolute
                         height: 65%
@@ -749,7 +775,7 @@ body
                         @include transform(translate(-50%, -50%))
                         border-radius: $introSize
                         overflow: hidden
-                        pointer-events: none
+                        // pointer-events: none
                         &:before
                             content: ""
                             @extend .patternBackground
@@ -791,10 +817,18 @@ body
                             // -webkit-filter: drop-shadow(2px 2px 5px rgba(0,0,0, .5))
                             @include transform(translate(-50%, -50%))
                             @include transition(opacity 0.5s)
+                            cursor: pointer
+                            &:hover
+                                @extend .bubbleEffect
+
+
+                        .notification
+                            a
+                                color: $red
              
-            #resultArea
-                .circleGroup
-                    display: none
+            // #resultArea
+            //     .circleGroup
+            //         display: none
             
             #resultArea_tmp
                 $objectSize: 50vmin

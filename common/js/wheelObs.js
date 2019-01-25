@@ -147,13 +147,11 @@ Wheel.prototype.rotate = function(point_value = "") {
             },
             done: function() {
                 var messageNotifi =
-                    "Xin chúc mừng, bạn đã quay vào ô " +
-                    point_value +
-                    " điểm.";
+                    "Bạn đã quay vào ô " + point_value + " điểm.";
 
                 // User.getUserInfo();
 
-                new notificationMessage(messageNotifi, "", 10);
+                new notificationMessage(messageNotifi, "Xin chúc mừng", 10);
                 $(_this.selected).addClass("active");
 
                 setTimeout(function() {
@@ -186,7 +184,7 @@ Wheel.prototype.rotate = function(point_value = "") {
 
 Wheel.prototype.clickToPlay = function(point_value = "") {
     var _this = this;
-    $(document).on("click", "#wheelRotate", function() {
+    $(document).on("click", "#wheelRotate, .campaignIcon", function() {
         location.hash = "vongquay";
         getHashURL();
         if (!_this.rotating) {

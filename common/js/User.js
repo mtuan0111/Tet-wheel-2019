@@ -77,7 +77,7 @@ User.prototype.logOut = function() {
     var _this = this;
     $.ajax({
         type: "POST",
-        url: "/public/index/logout/source/friendwheel",
+        url: "/public/index/logout/source/goldenwheel2019",
         success: function(data) {
             logoutMessage = "Hẹn gặp lại " + _this.UserName + "!";
             new notificationMessage(logoutMessage, "Đăng xuất");
@@ -108,12 +108,22 @@ User.prototype.getUserInfo = function(afterLogin = false, callback = null) {
                 _this.Point = data.Point ? data.Point : 0;
                 if (afterLogin) {
                     welcomeMessage =
-                        "Chúc bạn một năm Kỷ Hợi An Khang Thịnh Vượng - Vạn Sự Như Ý";
+                        'Chúc bạn một năm Kỷ Hợi An Khang Thịnh Vượng - Vạn Sự Như Ý<br>\
+                        Click vào vòng quay để quay bạn nhé!<br>\
+                        Xem <a href="#gioithieu">thể lệ</a> của vòng quay.';
                     new notificationMessage(
                         welcomeMessage,
                         "Xin chào " + _this.UserName,
                         10
                     );
+                }
+            } else {
+                if (afterLogin) {
+                    welcomeMessage =
+                        'Chúc bạn một năm Kỷ Hợi An Khang Thịnh Vượng - Vạn Sự Như Ý <br>\
+                    Bạn hãy <a href="#dangnhap">đăng nhập</a> để tham gia quay nhé<br>\
+                    Xem <a href="#gioithieu">Thể lệ</a> của vòng quay';
+                    new notificationMessage(welcomeMessage, "Chào bạn", 10);
                 }
             }
             if (callback) {
@@ -208,7 +218,11 @@ User.prototype.getPlay = function(callback = null) {
                 if (error == 0 && callback) {
                     callback(data);
                 } else {
-                    new notificationMessage(value);
+                    if (error == 3) {
+                        var loginMessage =
+                            'Bạn cần <a href="#dangnhap">đăng nhập</a> để quay.';
+                        new notificationMessage(loginMessage);
+                    } else new notificationMessage(value);
                 }
             })
             .always(function() {

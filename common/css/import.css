@@ -88,7 +88,6 @@ table {
 .titleText {
   font-size: 7.5vmin;
   text-align: center;
-  margin: 5% 10%;
   background: #ffed4a;
   background: -moz-linear-gradient(-45deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
   background: -webkit-linear-gradient(-45deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
@@ -374,7 +373,7 @@ p.textContent {
     display: initial;
   }
 }
-.splashMoving_01, body section#content #wheelArea .loginCircle .insideCorner .splashEffect:before, body section#content #wheelArea .wheelCircle .insideCorner .splashEffect:before {
+.splashMoving_01, body section#content #wheelArea .loginCircle .insideCorner:hover .spalshEffect:before, body section#content #wheelArea .wheelCircle .insideCorner:hover .spalshEffect:before, body section#content #wheelArea .loginCircle .insideCorner .splashEffect:before, body section#content #wheelArea .wheelCircle .insideCorner .splashEffect:before {
   animation: splash_moving linear 10s forwards;
   -webkit-animation: splash_moving linear 10s forwards;
   -moz-animation: splash_moving linear 10s forwards;
@@ -387,7 +386,7 @@ p.textContent {
   -ms-animation-iteration-count: infinite;
 }
 
-.splashMoving_02, body section#content #wheelArea .loginCircle .insideCorner .splashEffect:after, body section#content #wheelArea .wheelCircle .insideCorner .splashEffect:after {
+.splashMoving_02, body section#content #wheelArea .loginCircle .insideCorner:hover .spalshEffect:after, body section#content #wheelArea .wheelCircle .insideCorner:hover .spalshEffect:after, body section#content #wheelArea .loginCircle .insideCorner .splashEffect:after, body section#content #wheelArea .wheelCircle .insideCorner .splashEffect:after {
   animation: splash_moving linear 10s forwards;
   -webkit-animation: splash_moving linear 10s forwards;
   -moz-animation: splash_moving linear 10s forwards;
@@ -445,6 +444,54 @@ p.textContent {
     left: 150%;
   }
 }
+.bubbleEffect, body section#content #wheelArea .wheelCircle #wheelCenter .campaignIcon:hover {
+  animation: bubbling linear 0.5s;
+  -webkit-animation: bubbling linear 0.5s;
+  -moz-animation: bubbling linear 0.5s;
+  -o-animation: bubbling linear 0.5s;
+  -ms-animation: bubbling linear 0.5s;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+  -ms-animation-iteration-count: infinite;
+  animation-direction: alternate;
+  -webkit-animation-direction: alternate;
+  -moz-animation-direction: alternate;
+  -o-animation-direction: alternate;
+  -ms-animation-direction: alternate;
+}
+
+@keyframes bubbling {
+  100% {
+    height: 85%;
+    width: 85%;
+  }
+}
+@-moz-keyframes bubbling {
+  100% {
+    height: 85%;
+    width: 85%;
+  }
+}
+@-webkit-keyframes bubbling {
+  100% {
+    height: 85%;
+    width: 85%;
+  }
+}
+@-o-keyframes bubbling {
+  100% {
+    height: 85%;
+    width: 85%;
+  }
+}
+@-ms-keyframes bubbling {
+  100% {
+    height: 85%;
+    width: 85%;
+  }
+}
 /* Let's get this party started */
 ::-webkit-scrollbar {
   width: 4px;
@@ -486,6 +533,14 @@ body {
   background: radial-gradient(#cc2121 0%, #3d0a0a 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="$red", endColorstr="$red-dark",GradientType=0 );
 }
+body .main-wrapper {
+  height: inherit;
+  width: inherit;
+  position: fixed;
+  display: inherit;
+  overflow: inherit;
+  flex-direction: inherit;
+}
 body:before, body:after {
   content: "";
   position: absolute;
@@ -504,7 +559,8 @@ body:after {
   background-size: cover;
 }
 body header {
-  padding-top: 4vmin;
+  padding-top: 2vmin;
+  padding-bottom: 2vmin;
   z-index: 2;
 }
 body header .wrapper {
@@ -513,8 +569,9 @@ body header .wrapper {
 body header #topLogo {
   background: url(../img/vina_logo_white.svg) center no-repeat;
   background-size: contain;
-  width: 25vmin;
+  width: 20vmin;
   height: 5vmin;
+  margin: 0 auto;
 }
 body header nav {
   -ms-flex: 1;
@@ -730,7 +787,6 @@ body section#content #ruleArea .ruleBroad .middleObject, body section#content #r
   position: relative;
   height: 55%;
   width: 100%;
-  padding: 5%;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -740,7 +796,12 @@ body section#content #ruleArea .ruleBroad .middleObject, body section#content #r
   overflow: auto;
   top: 0;
 }
+body section#content #ruleArea .ruleBroad .middleObject .titleText, body section#content #resultArea .ruleBroad .middleObject .titleText {
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
 body section#content #ruleArea .ruleBroad .middleObject .contentObject, body section#content #resultArea .ruleBroad .middleObject .contentObject {
+  padding: 4% 2%;
   overflow: initial;
   position: relative;
   overflow: auto;
@@ -1403,6 +1464,13 @@ body section#content #wheelArea .wheelCircle #wheelRotate .wheel-wing:after {
   -o-transform: translateX(-50%);
   transform: translateX(-50%);
 }
+body section#content #wheelArea .wheelCircle #wheelRotate:before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 300;
+}
 body section#content #wheelArea .wheelCircle #wheelCenter {
   position: absolute;
   height: 65%;
@@ -1417,7 +1485,6 @@ body section#content #wheelArea .wheelCircle #wheelCenter {
   transform: translate(-50%, -50%);
   border-radius: 60vmin;
   overflow: hidden;
-  pointer-events: none;
 }
 body section#content #wheelArea .wheelCircle #wheelCenter:before {
   content: "";
@@ -1467,9 +1534,10 @@ body section#content #wheelArea .wheelCircle #wheelCenter .campaignIcon {
   -webkit-transition: opacity 0.5s;
   -o-transition: opacity 0.5s;
   transition: opacity 0.5s;
+  cursor: pointer;
 }
-body section#content #resultArea .circleGroup {
-  display: none;
+body section#content #wheelArea .wheelCircle #wheelCenter .notification a {
+  color: #cc2121;
 }
 body section#content #resultArea_tmp .objectsArea {
   width: 50vmin;
