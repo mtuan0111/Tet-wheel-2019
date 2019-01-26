@@ -696,8 +696,9 @@ body
                             position: absolute
                             // top: 5%
                             height: 50%
-                            width: 13%
-                            left: calc(50% - 6.5%)
+                            width: 20%
+                            left: calc(50%)
+                            margin-left: -10%
                             @include transformOrigin(50% 100%)
                             @for $i from 1 through 20
                                 @include setRotate($i)
@@ -726,8 +727,8 @@ body
                                 // background: red
                                 position: absolute
                                 border-radius: $dotSize
-                                top: 2%
-                                left: 50%
+                                top: 5%
+                                left: 15%
 
                                 margin: 0 auto
                                 @include yellowRadialGradient()
@@ -825,7 +826,7 @@ body
 
 
                         .notification
-                            a
+                            a, strong
                                 color: $red
              
             // #resultArea
