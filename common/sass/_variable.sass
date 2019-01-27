@@ -60,13 +60,12 @@ $introTitleSize: 20vmin
     background: radial-gradient($red 0%, $red-dark 25%, $red 50%, $red-dark 75%, $red 100%)
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$red', endColorstr='$red-dark',GradientType=0 )
 
-@mixin redGradientBackground()
-    background: $red
-    background: -moz-radial-gradient($red 0%, $red-dark 100%)
-    background: -webkit-radial-gradient($red 0%, $red-dark 100%)
-    background: radial-gradient($red 0%, $red-dark 100%)
+@mixin redGradientBackground($opacity: 1)
+    background: rgba($red, $opacity)
+    background: -moz-radial-gradient(rgba($red,$opacity) 0%, $red-dark 100%)
+    background: -webkit-radial-gradient(rgba($red,$opacity) 0%, $red-dark 100%)
+    background: radial-gradient(rgba($red,$opacity) 0%, $red-dark 100%)
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$red', endColorstr='$red-dark',GradientType=0 )
-
 
 .patternBackground
     content: ""
@@ -79,7 +78,7 @@ $introTitleSize: 20vmin
     background-size: 2%
     background-size: 2vmin
     z-index: -1
-    opacity: 0.2
+    opacity: 0.1
 
 @mixin circle()
     // background: url(../img/circle-motif-02.svg)
@@ -108,11 +107,6 @@ $introTitleSize: 20vmin
         width: 30%
         height: 30%
         border-width: 0.3vmin
-        // background: red
-    // border-image: -moz-linear-gradient($rotate, $yellow 0%, $yellow-dark 25%, $yellow 50%, $yellow-dark 75%, $yellow 100%) 1 100%
-    // border-image: -webkit-linear-gradient($rotate, $yellow 0%, $yellow-dark 25%, $yellow 50%, $yellow-dark 75%, $yellow 100%) 1 100%
-    // border-image: linear-gradient($rotate, $yellow 0%, $yellow-dark 25%, $yellow 50%, $yellow-dark 75%, $yellow 100%) 1 100%
-
 
 
     &.circleSpecial

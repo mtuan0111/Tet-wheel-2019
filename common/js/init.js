@@ -10,7 +10,7 @@ window.onload = function() {
 
   $(document).on(
     "click",
-    '.pageNav a, a[href="#dangnhap"], a[href="#gioithieu"], a[href="#dangnhap"]',
+    '.pageNav a, a[href="#dangnhap"], a[href="#thele"], a[href="#dangnhap"]',
     function(e) {
       if (window.mobilecheck()) {
         $("footer .pageNav")

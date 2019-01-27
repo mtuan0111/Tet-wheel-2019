@@ -121,11 +121,7 @@ body
                 position: fixed
                 top: -50%
                 left: -50%
-                // @include transform(translate(-50%, -50%))
                 background: $red-dark
-                // @include transform(translate(-50%, -50%))
-                // background
-
 
                 -webkit-mask-image: url(../img/circle-01.svg)
                 -webkit-mask-repeat: no-repeat
@@ -135,7 +131,7 @@ body
                 opacity: 0.2
 
 
-            &.gioithieu
+            &.thele
                 // margin: 0 0 0 100%
                 left: 0
                 div[id$="Area"]:not(#ruleArea)
@@ -160,7 +156,7 @@ body
                 //     >*:not(.loginCircle)
                 //         display: none
 
-            &.vongquay, &:not(.gioithieu):not(.ketqua):not(.dangnhap)
+            &.vongquay, &:not(.thele):not(.ketqua):not(.dangnhap)
                 div[id$="Area"]:not(#wheelArea)
                     opacity: 0
                     // display: none
@@ -214,7 +210,7 @@ body
 
                     @include transform(translate(-50%, -50%))
                     @include boxSizing()
-                    @include redGradientBackground()
+                    @include redGradientBackground(0.5)
 
                     .topObject, .bottomObject
                         position: absolute

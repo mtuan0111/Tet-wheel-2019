@@ -47,7 +47,7 @@ table {
   background-size: 2%;
   background-size: 2vmin;
   z-index: -1;
-  opacity: 0.2;
+  opacity: 0.1;
 }
 
 .circle {
@@ -649,10 +649,10 @@ body section#content:after {
   -webkit-mask-position: center;
   opacity: 0.2;
 }
-body section#content.gioithieu {
+body section#content.thele {
   left: 0;
 }
-body section#content.gioithieu div[id$=Area]:not(#ruleArea) {
+body section#content.thele div[id$=Area]:not(#ruleArea) {
   opacity: 0;
   pointer-events: none;
 }
@@ -667,7 +667,7 @@ body section#content.dangnhap div[id$=Area]:not(#wheelArea) {
   opacity: 0;
   pointer-events: none;
 }
-body section#content.vongquay div[id$=Area]:not(#wheelArea), body section#content:not(.gioithieu):not(.ketqua):not(.dangnhap) div[id$=Area]:not(#wheelArea) {
+body section#content.vongquay div[id$=Area]:not(#wheelArea), body section#content:not(.thele):not(.ketqua):not(.dangnhap) div[id$=Area]:not(#wheelArea) {
   opacity: 0;
   pointer-events: none;
 }
@@ -727,10 +727,10 @@ body section#content #ruleArea .ruleBroad, body section#content #resultArea .rul
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  background: #cc2121;
-  background: -moz-radial-gradient(#cc2121 0%, #3d0a0a 100%);
-  background: -webkit-radial-gradient(#cc2121 0%, #3d0a0a 100%);
-  background: radial-gradient(#cc2121 0%, #3d0a0a 100%);
+  background: rgba(204, 33, 33, 0.5);
+  background: -moz-radial-gradient(rgba(204, 33, 33, 0.5) 0%, #3d0a0a 100%);
+  background: -webkit-radial-gradient(rgba(204, 33, 33, 0.5) 0%, #3d0a0a 100%);
+  background: radial-gradient(rgba(204, 33, 33, 0.5) 0%, #3d0a0a 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="$red", endColorstr="$red-dark",GradientType=0 );
 }
 body section#content #ruleArea .ruleBroad .topObject, body section#content #ruleArea .ruleBroad .bottomObject, body section#content #resultArea .ruleBroad .topObject, body section#content #resultArea .ruleBroad .bottomObject {

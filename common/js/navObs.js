@@ -11,7 +11,7 @@ mainNavigate.prototype.generateNavArray = function(dataUser) {
   var _this = this;
   if (!dataUser) {
     var arrayData = [
-      { href: "#gioithieu", innerHTML: "Giới thiệu" },
+      { href: "#thele", innerHTML: "Thể lệ" },
       { href: "#vongquay", innerHTML: "Vòng quay" },
       { href: "#ketqua", innerHTML: "Kết quả" },
       { href: "#dangnhap", innerHTML: "Đăng nhập" }
@@ -20,7 +20,7 @@ mainNavigate.prototype.generateNavArray = function(dataUser) {
     _this.Username = dataUser["UserName"];
     _this.Point = dataUser["Point"];
     var arrayData = [
-      { href: "#gioithieu", innerHTML: "Giới thiệu" },
+      { href: "#thele", innerHTML: "Thể lệ" },
       { href: "#vongquay", innerHTML: "Vòng quay" },
       // { href: "#danhsach", innerHTML: "Danh sách" },
       {

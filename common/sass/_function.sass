@@ -11,8 +11,34 @@
     -o-transform-origin: $transform
     transform-origin: $transform
 
-@mixin appendTransform($transform)
-    @include transform(translate(-50%,-80%) $transform)
+@mixin box-shadow($shadowValue: 8px 0px 0px 0px rgba(0,0,0,0.2), $secondShadow: null)
+    $secondShadow_str: null
+    @if ($secondShadow != null)
+        $secondShadow_str: $secondShadow
+    -webkit-box-shadow: $shadowValue, $secondShadow_str
+    -moz-box-shadow: $shadowValue, $secondShadow_str
+    box-shadow: $shadowValue, $secondShadow_str
+
+@mixin text-shadow($shadowValue: 8px 0px 0px 0px rgba(0,0,0,0.2), $secondShadow: null)
+    $secondShadow_str: null
+    @if ($secondShadow != null)
+        $secondShadow_str: $secondShadow
+    -webkit-text-shadow: $shadowValue, $secondShadow_str
+    -moz-text-shadow: $shadowValue, $secondShadow_str
+    -ms-text-shadow: $shadowValue, $secondShadow_str
+    -o-text-shadow: $shadowValue, $secondShadow_str
+    text-shadow: $shadowValue, $secondShadow_str
+
+@mixin option-gradient-background($gradient, $imageBackground: null)
+    $imageBackground_str: null
+    @if ($imageBackground != null)
+        $imageBackground_str: $imageBackground
+    background: $imageBackground_str, -webkit- + $gradient //*Safari 5.1-6*/
+    background: $imageBackground_str, -o- + $gradient //*Opera 11.1-12*/
+    background: $imageBackground_str, -moz- + $gradient //*Fx 3.6-15*/
+    background: $imageBackground_str, $gradient //*Standard*/
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$yellow', endColorstr='$yellow-dark',GradientType=0 )
+
 
 @mixin boxSizing($value: border-box)
     -webkit-box-sizing: $value
@@ -56,3 +82,27 @@
     background: -moz-linear-gradient($colorString)
     background: -webkit-linear-gradient($colorString)
     background: linear-gradient($colorString)
+
+
+
+    // ____________________
+@function str-split($string, $separator) 
+    // empty array/list
+    $split-arr: ()
+    // first index of separator in string
+    $index : str-index($string, $separator)
+    // loop through string
+    @while $index != null 
+        // get the substring from the first character to the separator
+        $item: str-slice($string, 1, $index - 1)
+        // push item to array
+        $split-arr: append($split-arr, $item)
+        // remove item and separator from string
+        $string: str-slice($string, $index + 1)
+        // find new index of separator
+        $index : str-index($string, $separator)
+
+    // add the remaining string to list (the last item)
+    $split-arr: append($split-arr, $string)
+
+    @return $split-arr
