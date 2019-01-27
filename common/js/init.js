@@ -169,13 +169,22 @@ window.mobilecheck = function() {
     )
       check = true;
   })(navigator.userAgent || navigator.vendor || window.opera);
+  window.checkIphone();
   checkOrientation = window.innerWidth < window.innerHeight;
   return (check || mobileWidthCheck) && checkOrientation;
 };
 
 window.checkIphone = function() {
   IOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-  checkOrientation = window.innerWidth < window.innerHeight;
+  if (
+    navigator.platform == "iPad" ||
+    navigator.platform == "iPhone" ||
+    navigator.platform == "iPod"
+  ) {
+    $(".btnToggle")
+      .css("position", "fixed")
+      .css("top", $("window").height());
+  }
   return IOS && window.mobilecheck();
 };
 
