@@ -1829,13 +1829,10 @@ table th {
     flex: 1;
     display: block;
     text-align: center;
-    background: #cc2121;
-    background: -moz-linear-gradient(-45deg, #cc2121 0%, #3d0a0a 25%, #cc2121 50%, #3d0a0a 75%, #cc2121 100%);
-    background: -webkit-linear-gradient(-45deg, #cc2121 0%, #3d0a0a 25%, #cc2121 50%, #3d0a0a 75%, #cc2121 100%);
-    background: linear-gradient(-45deg, #cc2121 0%, #3d0a0a 25%, #cc2121 50%, #3d0a0a 75%, #cc2121 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="$red", endColorstr="$red-dark",GradientType=0 );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #cc2121;
+    -webkit-background-clip: initial;
+    -webkit-text-fill-color: initial;
+    background: initial;
     font-size: 180%;
     border-bottom: solid 2px #cc2121;
     margin-top: 0;
