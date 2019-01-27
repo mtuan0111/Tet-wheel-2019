@@ -175,6 +175,8 @@ window.mobilecheck = function() {
 
 window.checkIphone = function() {
   IOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  console.log("navigator: ", navigator);
+  alert(window.innerHeight + " - " + window.outerHeight);
   if (IOS && window.mobilecheck()) {
     if (
       navigator.platform == "iPad" ||
