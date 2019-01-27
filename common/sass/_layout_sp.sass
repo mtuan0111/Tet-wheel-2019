@@ -75,10 +75,11 @@
             a.btnToggle
                 // background: red
                 display: inline-block
-                position: absolute
                 z-index: 1
                 @include circle()
                 @include transform(translate(-50%, -50%))
+                position: -webkit-sticky
+                position: sticky
                 left: 50%
                 top: 4vmin
                 height: 12vmin

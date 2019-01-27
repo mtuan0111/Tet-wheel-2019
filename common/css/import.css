@@ -1842,7 +1842,6 @@ table th {
   }
   body footer a.btnToggle {
     display: inline-block;
-    position: absolute;
     z-index: 1;
     position: relative;
     background: #cc2121;
@@ -1857,6 +1856,8 @@ table th {
     -ms-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    position: -webkit-sticky;
+    position: sticky;
     left: 50%;
     top: 4vmin;
     height: 12vmin;
