@@ -175,15 +175,15 @@ window.mobilecheck = function() {
 
 window.checkIphone = function() {
   IOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-  console.log("navigator: ", navigator);
-  alert(window.innerHeight + " - " + window.outerHeight);
+  // console.log("navigator: ", navigator);
+  // alert(window.innerHeight + " - " + window.outerHeight);
   if (IOS && window.mobilecheck()) {
     if (
       navigator.platform == "iPad" ||
       navigator.platform == "iPhone" ||
       navigator.platform == "iPod"
     ) {
-      $(".btnToggle").css("background", "red");
+      $("body").css("height", window.innerHeight);
     }
   }
   return IOS && window.mobilecheck();
