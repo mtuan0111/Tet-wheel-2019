@@ -178,7 +178,9 @@ window.checkIphone = function() {
   // console.log("navigator: ", navigator);
   // alert(window.innerHeight + " - " + window.outerHeight);
   if (IOS && window.mobilecheck()) {
-    $("body").css("height", window.innerHeight);
+    document.getElementsByTagName("body")[0].style.height = window.innerHeight;
+  } else {
+    document.getElementsByTagName("body")[0].removeAttribute("style");
   }
   return IOS && window.mobilecheck();
 };
