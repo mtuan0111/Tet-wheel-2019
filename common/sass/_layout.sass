@@ -58,9 +58,9 @@ body
         z-index: -1
         opacity: 0.2
 
-    &:after
-        background: url(../img/lotusBackground.svg) no-repeat bottom
-        background-size: cover
+    // &:after
+    //     background: url(../img/lotusBackground.svg) no-repeat bottom
+    //     background-size: cover
 
     header
         padding-top: 2vmin
@@ -112,6 +112,28 @@ body
             opacity: 1
             @include transition(left 1s)
             position: relative
+            &:after
+                @extend .autoWheel-slow
+                content: ""
+                height: 200%
+                width: 200%
+                z-index: -1
+                position: fixed
+                top: -50%
+                left: -50%
+                // @include transform(translate(-50%, -50%))
+                background: $red-dark
+                // @include transform(translate(-50%, -50%))
+                // background
+
+
+                -webkit-mask-image: url(../img/circle-01.svg)
+                -webkit-mask-repeat: no-repeat
+                -webkit-mask-size: 100%
+                -webkit-mask-position: center
+
+                opacity: 0.2
+
 
             &.gioithieu
                 // margin: 0 0 0 100%
@@ -719,6 +741,38 @@ body
                                 // -o-transform: rotate(90deg)
                                 // transform: rotate(90deg)
                                 // font-size: 95%
+                            &[data-point-value="1000"], &[data-point-value="300"]
+                                &:before
+                                    content: ""
+                                    width: 100%
+                                    height: 100%
+                                    // @include transform(rotate(90deg))
+                                    text-align: center
+                                    margin: 0 auto
+                                    background: $yellow
+                                    -webkit-mask-image: url(../img/pig-icon-01.svg)
+                                    -webkit-mask-repeat: no-repeat
+                                    -webkit-mask-size: 35%
+                                    -webkit-mask-position: center top
+                                &:hover
+                                    &:before
+                                        content: attr(data-point-value)
+                                        display: block
+                                        top: 10%
+                                        position: relative
+                                        font-size: 150%
+                                        @include yellowLinearGradient()
+                                        -webkit-background-clip: text
+                                        -webkit-text-fill-color: transparent
+                                        position: relative
+
+                            &[data-point-value="300"]:before
+                                -webkit-mask-image: url(../img/lucky-money.svg)
+                                -webkit-mask-repeat: no-repeat
+                                -webkit-mask-size: 35%
+                                -webkit-mask-position: center top
+
+
                             &:after
                                 $dotSize: $introSize/40
                                 content: ""
@@ -812,7 +866,7 @@ body
 
                             @include redGradientBackground()
 
-                            -webkit-mask-image: url(../img/pig-icon-03.png)
+                            -webkit-mask-image: url(../img/pig-icon-03.svg)
                             -webkit-mask-repeat: no-repeat
                             -webkit-mask-size: 70%
                             -webkit-mask-position: center

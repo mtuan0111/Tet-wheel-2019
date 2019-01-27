@@ -68,11 +68,11 @@ notificationMessage.prototype.destroy = function() {
   timeoutDelay = _this.timeOut * 1000;
 
   setTimeout(function() {
-    var randomImage = Math.round(Math.random() * 9);
+    var randomImage = Math.round(Math.random() * 8) + 1;
     document.getElementsByClassName("campaignIcon")[0].style =
       "-webkit-mask-image: url(common/img/pig-icon-0" +
       randomImage +
-      ".png);\
+      ".svg);\
       -webkit-mask-repeat: no-repeat;\
       -webkit-mask-size: 70%;\
       -webkit-mask-position: center;";
