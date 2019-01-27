@@ -169,8 +169,8 @@ window.mobilecheck = function() {
     )
       check = true;
   })(navigator.userAgent || navigator.vendor || window.opera);
-  // checkOrientation = window.innerWidth < window.innerHeight;
-  return check || mobileWidthCheck;
+  checkOrientation = window.innerWidth < window.innerHeight;
+  return (check || mobileWidthCheck) && checkOrientation;
 };
 
 window.checkIphone = function() {
@@ -178,13 +178,7 @@ window.checkIphone = function() {
   // console.log("navigator: ", navigator);
   // alert(window.innerHeight + " - " + window.outerHeight);
   if (IOS && window.mobilecheck()) {
-    if (
-      navigator.platform == "iPad" ||
-      navigator.platform == "iPhone" ||
-      navigator.platform == "iPod"
-    ) {
-      $("body").css("height", window.innerHeight);
-    }
+    $("body").css("height", window.innerHeight);
   }
   return IOS && window.mobilecheck();
 };
