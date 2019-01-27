@@ -169,11 +169,13 @@ window.mobilecheck = function() {
     )
       check = true;
   })(navigator.userAgent || navigator.vendor || window.opera);
-  return check || mobileWidthCheck;
+  checkOrientation = window.innerWidth < window.innerHeight;
+  return (check || mobileWidthCheck) && checkOrientation;
 };
 
 window.checkIphone = function() {
   IOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  checkOrientation = window.innerWidth < window.innerHeight;
   return IOS && window.mobilecheck();
 };
 
