@@ -4,14 +4,32 @@
     <meta name="viewport" content="user-scalable=0, width=device-width, maximum-scale=1.0, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="Content-Style-Type" content="text/css">
-    <title>Vinaresearch - Tết 2019</title>
-    <link rel="stylesheet" type="text/css" href="common/css/import.css?v=5" media="all">
-    <meta property="og:url" content="https://vinaresearch.net/public/vong-quay-tet-2019">
+    <title>Vòng quay may mắn - Hái Lộc Đầu Xuân</title>
+    <link rel="stylesheet" type="text/css" href="common/css/import.css" media="all">
+    <meta property="og:url" content="https://stagingws.vinaresearch.net/public/vong-quay-tet-2019">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Vòng quay may mắn | Khai Xuân Đón Lộc">
-    <meta property="og:description" content="Nhân dịp Tết Nguyên Đán Đinh Dậu 2017 sắp đến, Ban Quản Trị cộng đồng khảo sát trực tuyến Vinaresearch tổ chức chương trình Vòng quay may mắn - Khai xuân đón lộc để thay lời cảm ơn chân thành nhất gửi đến các bạn thành viên đã đồng hành, tin tưởng Vinaresearch trong suốt thời gian vừa qua. ">
+    <meta property="og:title" content="Vòng quay may mắn | Hái Lộc Đầu Xuân">
+    <meta property="og:description" content="Nhân dịp Tết Nguyên Đán Kỷ Hợi 2019 sắp đến, Ban Quản Trị cộng đồng khảo sát trực tuyến Vinaresearch tổ chức chương trình Vòng quay may mắn - Hái Lộc Đầu Xuân để thay lời cảm ơn chân thành nhất gửi đến các bạn thành viên đã đồng hành, tin tưởng Vinaresearch trong suốt thời gian vừa qua.">
     <meta property="og:image" content="https://vinaresearch.net/public/vong-quay-tet-2019/common/img/vong-quay-Tet-2019-fb.png">
     <body>
+      <script>
+        window.fbAsyncInit = function() {
+        FB.init({
+        appId            : '1523657244529194',
+        autoLogAppEvents : true,
+        xfbml            : true,
+        version          : 'v3.2'
+        });
+        };
+        (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+        
+      </script>
       <div class="main-wrapper">
         <header>
           <div class="wrapper"><a id="topLogo" href="#"></a></div>
@@ -64,7 +82,7 @@
                           <p>Nếu quay vào ô có hình <strong class="strongText">Bao Lì Xì </strong>trong Vòng quay may mắn, bạn sẽ nhận được giải thưởng lớn thứ 2 trong chương trình, tương ứng với <strong class="strongText">300</strong> điểm.</p>
                         </dd>
                         <dt>Lưu ý</dt>
-                        <dd>Mỗi ngày chương trình chỉ tặng tối đa 2,303 phần quà (tương ứng các mức điểm thưởng khác nhau). Trong trường hợp số phần quà đã chạm ngưỡng cho phép thì vòng quay sẽ không quay được nữa và sẽ được khởi động lại vào 09h30 ngày hôm sau.</dd>
+                        <dd>Mỗi ngày chương trình chỉ tặng tối đa <strong>2,303 phần quà</strong> (tương ứng các mức điểm thưởng khác nhau). Trong trường hợp số phần quà đã chạm ngưỡng cho phép thì vòng quay sẽ không quay được nữa và sẽ được khởi động lại vào <strong>09h30 ngày hôm sau</strong>.</dd>
                         <dt>Điều kiện tham gia</dt>
                         <dd>
                           <ul>
@@ -139,10 +157,6 @@
                       <div class="wheel-wing" data-number="20"></div>
                     </div>
                     <div id="wheelCenter">
-                      <div class="notification">
-                        <p class="title">Thông báo</p>
-                        <p class="message">Bạn đang có sự số kết nối, vui lòng thử lại.</p>
-                      </div>
                       <div class="campaignIcon"></div>
                     </div>
                   </div>
@@ -339,6 +353,9 @@
         </section>
         <footer><a class="btnToggle" href="javascript:void(0)"></a>
           <nav class="pageNav" id="sectionNav"></nav>
+          <div class="socialButton txt-al-c">
+            <div class="fb-like" data-href="https://stagingws.vinaresearch.net/public/vong-quay-tet-2019" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
+          </div>
         </footer>
       </div>
     </body>
@@ -351,6 +368,7 @@
     <script type="text/javascript" src="common/js/notificationMessage.js"></script>
     <script type="text/javascript" src="common/js/wheelObs.js"></script>
     <script type="text/javascript" src="common/js/dragEvent.js"></script>
+    <script type="text/javascript" src="common/js/facebookObject.js"></script>
     <script type="text/javascript" src="common/js/init.js"></script>
   </head>
 </html>

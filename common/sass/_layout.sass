@@ -477,10 +477,11 @@ body
                         height: 108%
                         width: 108%
                         border-radius: 100%
-                        @include transform(translate(-50%, -50%))
                         left: 50%
                         top: 50%
                         z-index: 0
+                        @include transform(translate(-50%, -50%))
+                        @include box-shadow()
                         &:before
                             content: ""
                             position: absolute
@@ -503,13 +504,16 @@ body
                             @include transform(translate(-50%, -50%))
                             border-radius: inherit
                             @include yellowLinearGradient()
+                            @include box-shadow()
                     .insideCorner
+                        @include inset-box-shadow()
                         position: inherit
                         height: inherit
                         width: inherit
                         border-radius: 100%
                         overflow: hidden
                         @include redGradientBackground()
+                        
                         &:before
                             content: ""
                             position: absolute
@@ -704,6 +708,7 @@ body
                             border-style: solid
                             border-width: $introSize/100
                             @inclde boxSizing()
+                            @include box-shadow()
                     #wheelRotate
                         position: absolute
                         height: 100%
@@ -736,8 +741,8 @@ body
                                 // -ms-transform: rotate(90deg)
                                 // -o-transform: rotate(90deg)
                                 // transform: rotate(90deg)
-                                // font-size: 95%
-                            &[data-point-value="1000"], &[data-point-value="300"]
+                                // font-size: 95%                                
+                            &[data-point-value="1000"]
                                 &:before
                                     content: ""
                                     width: 100%
@@ -750,23 +755,30 @@ body
                                     -webkit-mask-repeat: no-repeat
                                     -webkit-mask-size: 35%
                                     -webkit-mask-position: center top
-                                &:hover
-                                    &:before
-                                        content: attr(data-point-value)
-                                        display: block
-                                        top: 10%
-                                        position: relative
-                                        font-size: 150%
-                                        @include yellowLinearGradient()
-                                        -webkit-background-clip: text
-                                        -webkit-text-fill-color: transparent
-                                        position: relative
 
                             &[data-point-value="300"]:before
-                                -webkit-mask-image: url(../img/lucky-money.svg)
-                                -webkit-mask-repeat: no-repeat
-                                -webkit-mask-size: 35%
-                                -webkit-mask-position: center top
+                                -webkit-transform: rotate(90deg)
+                                -ms-transform: rotate(90deg)
+                                -o-transform: rotate(90deg)
+                                transform: rotate(90deg)
+                                font-size: 100%
+                                line-height: 80%
+
+                                border: dashed 1px $yellow
+                                border-radius: 4%
+                                padding: 0 4% 8% 4%
+                                // padding-bottom: 8%
+                                display: inline-block
+                                font-weight: bold
+                                color: $yellow
+                                background: $red
+                                -webkit-background-clip: initial
+                                -webkit-text-fill-color: initial
+                                @include box-shadow()
+                                // -webkit-mask-image: url(../img/lucky-money.svg)
+                                // -webkit-mask-repeat: no-repeat
+                                // -webkit-mask-size: 35%
+                                // -webkit-mask-position: center top
 
 
                             &:after
@@ -783,6 +795,7 @@ body
                                 margin: 0 auto
                                 @include yellowRadialGradient()
                                 @include transform(translateX(-50%))
+                                
                             // .pointValue
                             //     display: block
                             //     padding-top: 40%
@@ -827,6 +840,7 @@ body
                         border-radius: $introSize
                         overflow: hidden
                         // pointer-events: none
+                        @include inset-box-shadow()
                         &:before
                             content: ""
                             @extend .patternBackground
