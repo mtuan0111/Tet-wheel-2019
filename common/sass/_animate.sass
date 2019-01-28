@@ -54,37 +54,46 @@
   100%
     -ms-transform: translate(-50%) rotate(30deg)
 
-.autoWheel
-  animation: wheel_rotate linear 20s
+
+@mixin autoWheel($animate: "wheel_rotate", $linear: "linear", $duration: "20s", $direction: null, $delay: null)
+  animation: #{$animate} #{$linear} #{$duration}
   animation-iteration-count: infinite
 
-  -webkit-animation: wheel_rotate linear 20s
+  -webkit-animation: #{$animate} #{$linear} #{$duration}
   -webkit-animation-iteration-count: infinite
 
-  -moz-animation: wheel_rotate linear 20s
+  -moz-animation: #{$animate} #{$linear} #{$duration}
   -moz-animation-iteration-count: infinite
 
-  -o-animation: wheel_rotate linear 20s
+  -o-animation: #{$animate} #{$linear} #{$duration}
   -o-animation-iteration-count: infinite
 
-  -ms-animation: wheel_rotate linear 20s
+  -ms-animation: #{$animate} #{$linear} #{$duration}
   -ms-animation-iteration-count: infinite
+  
+  @if ($direction)
+    animation-direction: #{$direction}
+    -webkit-animation-direction: #{$direction}
+    -moz-animation-direction: #{$direction}
+    -o-animation-direction: #{$direction}
+    -ms-animation-direction: #{$direction}
+
+  @if ($delay)
+    animation-delay: #{$delay}
+    -webkit-animation-delay: #{$delay}
+    -moz-animation-delay: #{$delay}
+    -o-animation-delay: #{$delay}
+    -ms-animation-delay: #{$delay}
+
+
+.autoWheel
+  @include autoWheel()
 
 .autoWheel-slow
-  animation: wheel_rotate linear 200s
-  animation-iteration-count: infinite
+  @include autoWheel(wheel_rotate, linear, 200s)
 
-  -webkit-animation: wheel_rotate linear 200s
-  -webkit-animation-iteration-count: infinite
-
-  -moz-animation: wheel_rotate linear 200s
-  -moz-animation-iteration-count: infinite
-
-  -o-animation: wheel_rotate linear 200s
-  -o-animation-iteration-count: infinite
-
-  -ms-animation: wheel_rotate linear 200s
-  -ms-animation-iteration-count: infinite
+.autoWheel-slow-reverse
+  @include autoWheel(wheel_rotate, linear, 50s, "reverse")
 
 @keyframes wheel_rotate
   0%
@@ -355,7 +364,6 @@
     -o-animation-delay: 0.11s
     -ms-animation-delay: 0.11s
 
-    
 
 @keyframes splash_moving
   0%, 90%

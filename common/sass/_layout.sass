@@ -297,10 +297,30 @@ body
                         top: 0
                         // height: 100%
                         .titleText
-                            margin-top: 2%
-                            margin-bottom: 2%
+                            // margin-top: 2%
+                            // margin-bottom: 2%
+                            &:before, &:after
+                                content: ""
+                                display: block
+                                height: 5vmin
+                                width: 100%
+                                max-width: 40%
+                                margin: 0 auto
+                                
+                                background: $yellow
+
+                                @include yellowLinearGradient()
+                                -webkit-mask-image: url(../img/motif-01.svg)
+                                -webkit-mask-repeat: no-repeat
+                                -webkit-mask-size: contain
+                                -webkit-mask-position: center
+
+                            &:after
+                                -webkit-mask-image: url(../img/motif-02.svg)
+                                -webkit-mask-position: center 20%
+
                         .contentObject
-                            padding: 4% 2%
+                            padding: 0 4% 2%
                             overflow: initial
                             position: relative
                             overflow: auto
@@ -843,7 +863,7 @@ body
                         @include inset-box-shadow()
                         &:before
                             content: ""
-                            @extend .patternBackground
+                            // @extend .patternBackground
                             z-index: 2
                             opacity: 1
 
@@ -874,20 +894,68 @@ body
                             top: 50%
                             border-radius: 100%
 
-                            @include redGradientBackground()
+                            @include yellowLinearGradient()
 
                             -webkit-mask-image: url(../img/pig-icon-03.svg)
                             -webkit-mask-repeat: no-repeat
                             -webkit-mask-size: 70%
-                            -webkit-mask-position: center
+                            -webkit-mask-position: center bottom
 
                             // -webkit-filter: drop-shadow(2px 2px 5px rgba(0,0,0, .5))
                             @include transform(translate(-50%, -50%))
                             @include transition(opacity 0.5s)
+
                             cursor: pointer
                             &:hover
                                 @extend .bubbleEffect
 
+                            &:before, &:after
+                                content: ""
+                                display: block
+                                position: absolute
+
+                                height: 98%
+                                width: 98%
+                                left: 50%
+                                top: 50%
+
+                                @include yellowLinearGradient()
+
+                                -webkit-mask-image: inherit
+                                -webkit-mask-repeat: inherit
+                                -webkit-mask-size: inherit
+                                -webkit-mask-position: inherit
+
+                                @include transform(translate(-50%, -50%))
+                                @include transition(opacity 0.5s)
+                            &:after
+
+                                @include redGradientBackground()
+                                height: 96%
+                                width: 96%
+                                z-index: 2
+
+                        .campaignCircle
+                            opacity: 0.2
+                            position: absolute
+
+                            height: 100%
+                            width: 100%
+                            // left: 50%
+                            // top: 50%
+
+                            // @include transform(translate(-50%, -50%))
+
+                            @include yellowGradientBackground()
+
+                            -webkit-mask-image: url(../img/circle-03.svg)
+                            -webkit-mask-repeat: no-repeat
+                            -webkit-mask-size: 200%
+                            -webkit-mask-position: center
+
+                            z-index: -1
+
+                            @extend .autoWheel-slow-reverse
 
                         .notification
                             a, strong

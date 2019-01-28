@@ -36,7 +36,7 @@ table {
   border-spacing: 0;
 }
 
-.patternBackground, body section#content #wheelArea .wheelCircle #wheelCenter:before {
+.patternBackground {
   content: "";
   position: absolute;
   top: 0;
@@ -52,9 +52,9 @@ table {
 
 .circle {
   position: relative;
-  -webkit-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8);
-  -moz-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8);
-  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8), 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8), 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8), 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
   background: #cc2121;
   background: -moz-radial-gradient(#cc2121 0%, #3d0a0a 25%, #cc2121 50%, #3d0a0a 75%, #cc2121 100%);
   background: -webkit-radial-gradient(#cc2121 0%, #3d0a0a 25%, #cc2121 50%, #3d0a0a 75%, #cc2121 100%);
@@ -218,6 +218,24 @@ p.textContent {
   -o-animation-iteration-count: infinite;
   -ms-animation: wheel_rotate linear 200s;
   -ms-animation-iteration-count: infinite;
+}
+
+.autoWheel-slow-reverse, body section#content #wheelArea .wheelCircle #wheelCenter .campaignCircle {
+  animation: wheel_rotate linear 50s;
+  animation-iteration-count: infinite;
+  -webkit-animation: wheel_rotate linear 50s;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation: wheel_rotate linear 50s;
+  -moz-animation-iteration-count: infinite;
+  -o-animation: wheel_rotate linear 50s;
+  -o-animation-iteration-count: infinite;
+  -ms-animation: wheel_rotate linear 50s;
+  -ms-animation-iteration-count: infinite;
+  animation-direction: reverse;
+  -webkit-animation-direction: reverse;
+  -moz-animation-direction: reverse;
+  -o-animation-direction: reverse;
+  -ms-animation-direction: reverse;
 }
 
 @keyframes wheel_rotate {
@@ -823,12 +841,30 @@ body section#content #ruleArea .ruleBroad .middleObject, body section#content #r
   overflow: auto;
   top: 0;
 }
-body section#content #ruleArea .ruleBroad .middleObject .titleText, body section#content #resultArea .ruleBroad .middleObject .titleText {
-  margin-top: 2%;
-  margin-bottom: 2%;
+body section#content #ruleArea .ruleBroad .middleObject .titleText:before, body section#content #ruleArea .ruleBroad .middleObject .titleText:after, body section#content #resultArea .ruleBroad .middleObject .titleText:before, body section#content #resultArea .ruleBroad .middleObject .titleText:after {
+  content: "";
+  display: block;
+  height: 5vmin;
+  width: 100%;
+  max-width: 40%;
+  margin: 0 auto;
+  background: #ffed4a;
+  background: #ffed4a;
+  background: -moz-linear-gradient(-45deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
+  background: -webkit-linear-gradient(-45deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
+  background: linear-gradient(-45deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="$yellow", endColorstr="$yellow-dark",GradientType=0 );
+  -webkit-mask-image: url(../img/motif-01.svg);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  -webkit-mask-position: center;
+}
+body section#content #ruleArea .ruleBroad .middleObject .titleText:after, body section#content #resultArea .ruleBroad .middleObject .titleText:after {
+  -webkit-mask-image: url(../img/motif-02.svg);
+  -webkit-mask-position: center 20%;
 }
 body section#content #ruleArea .ruleBroad .middleObject .contentObject, body section#content #resultArea .ruleBroad .middleObject .contentObject {
-  padding: 4% 2%;
+  padding: 0 4% 2%;
   overflow: initial;
   position: relative;
   overflow: auto;
@@ -1035,9 +1071,9 @@ body section#content #wheelArea .loginCircle .outsideCorner, body section#conten
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  -webkit-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8);
-  -moz-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8);
-  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8), 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8), 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8), 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
 }
 body section#content #wheelArea .loginCircle .outsideCorner:before, body section#content #wheelArea .wheelCircle .outsideCorner:before {
   content: "";
@@ -1072,14 +1108,14 @@ body section#content #wheelArea .loginCircle .outsideCorner:after, body section#
   background: -webkit-linear-gradient(-45deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
   background: linear-gradient(-45deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="$yellow", endColorstr="$yellow-dark",GradientType=0 );
-  -webkit-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8);
-  -moz-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8);
-  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8), 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8), 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8), 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
 }
 body section#content #wheelArea .loginCircle .insideCorner, body section#content #wheelArea .wheelCircle .insideCorner {
-  -webkit-box-shadow: inset 0px 0px 40px 0px rgba(0, 0, 0, 0.8);
-  -moz-box-shadow: inset 0px 0px 40px 0px rgba(0, 0, 0, 0.8);
-  box-shadow: inset 0px 0px 40px 0px rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: inset 0px 0px 40px 0px rgba(0, 0, 0, 0.8), inset 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: inset 0px 0px 40px 0px rgba(0, 0, 0, 0.8), inset 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0px 0px 40px 0px rgba(0, 0, 0, 0.8), inset 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
   position: inherit;
   height: inherit;
   width: inherit;
@@ -1327,9 +1363,9 @@ body section#content #wheelArea .wheelCircle .insideCorner:after {
   border-style: solid;
   border-width: 0.6vmin;
   @inclde boxSizing();
-  -webkit-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8);
-  -moz-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8);
-  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8), 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8), 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8), 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
 }
 body section#content #wheelArea .wheelCircle #wheelRotate {
   position: absolute;
@@ -1513,9 +1549,9 @@ body section#content #wheelArea .wheelCircle #wheelRotate .wheel-wing[data-point
   background: #cc2121;
   -webkit-background-clip: initial;
   -webkit-text-fill-color: initial;
-  -webkit-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8);
-  -moz-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8);
-  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8), 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8), 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8), 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
 }
 body section#content #wheelArea .wheelCircle #wheelRotate .wheel-wing:after {
   content: "";
@@ -1557,9 +1593,9 @@ body section#content #wheelArea .wheelCircle #wheelCenter {
   transform: translate(-50%, -50%);
   border-radius: 60vmin;
   overflow: hidden;
-  -webkit-box-shadow: inset 0px 0px 40px 0px rgba(0, 0, 0, 0.8);
-  -moz-box-shadow: inset 0px 0px 40px 0px rgba(0, 0, 0, 0.8);
-  box-shadow: inset 0px 0px 40px 0px rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: inset 0px 0px 40px 0px rgba(0, 0, 0, 0.8), inset 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: inset 0px 0px 40px 0px rgba(0, 0, 0, 0.8), inset 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0px 0px 40px 0px rgba(0, 0, 0, 0.8), inset 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
 }
 body section#content #wheelArea .wheelCircle #wheelCenter:before {
   content: "";
@@ -1593,15 +1629,15 @@ body section#content #wheelArea .wheelCircle #wheelCenter .campaignIcon {
   left: 50%;
   top: 50%;
   border-radius: 100%;
-  background: #cc2121;
-  background: -moz-radial-gradient(#cc2121 0%, #3d0a0a 100%);
-  background: -webkit-radial-gradient(#cc2121 0%, #3d0a0a 100%);
-  background: radial-gradient(#cc2121 0%, #3d0a0a 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="$red", endColorstr="$red-dark",GradientType=0 );
+  background: #ffed4a;
+  background: -moz-linear-gradient(-45deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
+  background: -webkit-linear-gradient(-45deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
+  background: linear-gradient(-45deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="$yellow", endColorstr="$yellow-dark",GradientType=0 );
   -webkit-mask-image: url(../img/pig-icon-03.svg);
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: 70%;
-  -webkit-mask-position: center;
+  -webkit-mask-position: center bottom;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
@@ -1610,6 +1646,57 @@ body section#content #wheelArea .wheelCircle #wheelCenter .campaignIcon {
   -o-transition: opacity 0.5s;
   transition: opacity 0.5s;
   cursor: pointer;
+}
+body section#content #wheelArea .wheelCircle #wheelCenter .campaignIcon:before, body section#content #wheelArea .wheelCircle #wheelCenter .campaignIcon:after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 98%;
+  width: 98%;
+  left: 50%;
+  top: 50%;
+  background: #ffed4a;
+  background: -moz-linear-gradient(-45deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
+  background: -webkit-linear-gradient(-45deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
+  background: linear-gradient(-45deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="$yellow", endColorstr="$yellow-dark",GradientType=0 );
+  -webkit-mask-image: inherit;
+  -webkit-mask-repeat: inherit;
+  -webkit-mask-size: inherit;
+  -webkit-mask-position: inherit;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+body section#content #wheelArea .wheelCircle #wheelCenter .campaignIcon:after {
+  background: #cc2121;
+  background: -moz-radial-gradient(#cc2121 0%, #3d0a0a 100%);
+  background: -webkit-radial-gradient(#cc2121 0%, #3d0a0a 100%);
+  background: radial-gradient(#cc2121 0%, #3d0a0a 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="$red", endColorstr="$red-dark",GradientType=0 );
+  height: 96%;
+  width: 96%;
+  z-index: 2;
+}
+body section#content #wheelArea .wheelCircle #wheelCenter .campaignCircle {
+  opacity: 0.2;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #ffed4a;
+  background: -moz-radial-gradient(#ffed4a 0%, #9a7000 100%);
+  background: -webkit-radial-gradient(#ffed4a 0%, #9a7000 100%);
+  background: radial-gradient(#ffed4a 0%, #9a7000 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="$yellow", endColorstr="$yellow-dark",GradientType=0 );
+  -webkit-mask-image: url(../img/circle-03.svg);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 200%;
+  -webkit-mask-position: center;
+  z-index: -1;
 }
 body section#content #wheelArea .wheelCircle #wheelCenter .notification a, body section#content #wheelArea .wheelCircle #wheelCenter .notification strong {
   color: #cc2121;
@@ -1860,9 +1947,9 @@ table th {
     display: inline-block;
     z-index: 1;
     position: relative;
-    -webkit-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8);
-    -moz-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8);
-    box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8);
+    -webkit-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8), 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8), 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8), 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
     background: #cc2121;
     background: -moz-radial-gradient(#cc2121 0%, #3d0a0a 25%, #cc2121 50%, #3d0a0a 75%, #cc2121 100%);
     background: -webkit-radial-gradient(#cc2121 0%, #3d0a0a 25%, #cc2121 50%, #3d0a0a 75%, #cc2121 100%);
