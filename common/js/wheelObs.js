@@ -86,7 +86,7 @@ Wheel.prototype.rotate = function(point_value = "") {
     $({ deg: current_deg }).animate(
         { deg: deg_rotate },
         {
-            duration: rotate_duration / 10,
+            duration: rotate_duration,
             // duration: 0,
             easing: "easeOutQuart",
             specialEasing: "easeOutQuart",
