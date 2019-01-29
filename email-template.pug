@@ -23,6 +23,10 @@ html(lang="en")
                 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=#cc2121, endColorstr=#3d0a0a,GradientType=0 );
             }
 
+            .wrapper a{
+                color: yellow;
+                text-decoration: none;
+            }
 
             .wrapper:before{
                 content: "";
@@ -36,29 +40,95 @@ html(lang="en")
                 background-size: 2vmin;
                 opacity: 0.2;
             }
-
             .topMail{
+                text-align: center;
+            }
+            .topMail h2{
                 color: #ffed4a;
                 text-align: center;
                 font-family: "Lobster", cursive;
-                font-weight: thin
+                font-weight: 100;
+                display: inline-block;
+                margin: 0;
+                line-height: 1.5
+            }
+            
+            .topMail h2:before, .topMail h2:after{
+                content: "";
+                background: yellow;
+                display: block;
+                height: 60px;
+                -webkit-mask-image: url(https://stagingws.vinaresearch.net/public/vong-quay-tet-2019/common/img/motif-01.svg);
+                -webkit-mask-repeat: no-repeat;
+                -webkit-mask-size: contain;
+                -webkit-mask-position: center bottom;
+            }
+
+            .topMail h2:after{
+                -webkit-mask-image: url(https://stagingws.vinaresearch.net/public/vong-quay-tet-2019/common/img/motif-02.svg);
+                -webkit-mask-position: center top;
+                height: 10px;
+            }
+
+            .topMail .subtitle{
+                text-transform: uppercase;
+                margin: 0;
+                font-size: 
+            }
+
+            .topMail .subtitle{
+                text-transform: uppercase;
+                margin: 0;
+                font-size: 80%;
+                letter-spacing: 3px;
+            }
+
+            .topMail .subtitle:before, .topMail .subtitle:after{
+                content: "";
+                background: yellow;
+                display: inline-block;
+                height: 20px;
+                width: 20px;
+                vertical-align: middle;
+
+                -webkit-mask-image: url(https://stagingws.vinaresearch.net/public/vong-quay-tet-2019/common/img/motif-03.svg);
+                -webkit-mask-repeat: no-repeat;
+                -webkit-mask-size: contain;
+                -webkit-mask-position: center bottom;
+            }
+
+            .topMail .subtitle:after{
+                -webkit-transform: scale(-1);
+                -ms-transform: scale(-1);
+                -o-transform: scale(-1);
+                transform: scale(-1);
+            }
+
+            .middleMail img{
+                max-width: 100%;
+                border-radius: 20px;
             }
 
     body
         .wrapper
             .topMail 
                 h2
-                    | Vòng quay may mắn - Hái Lộc Đầu Xuân
+                    | Vòng quay may mắn
+                p.subtitle
+                    | Hái Lộc Đầu Xuân
             .middleMail 
+                img(src="common/img/web-banner.png", alt="")
                 p
                     | Năm mới Tết đến, BQT Vinaresearch tổ chức chương trình Vòng quay may mắn - Hái Lộc Đầu Xuân để thay lời cảm ơn chân thành nhất gửi đến các bạn thành viên đã đồng hành, tin tưởng Vinaresearch trong suốt thời gian vừa qua. 
                 p
-                    | Chương trình "Vòng quay may mắn" với chủ đề Hái Lộc Đầu Xuân Kỷ Hợi sẽ chính thức bắt đầu vào 9h sáng ngày mai (01/02/2019), với số lượng quà tặng lên đến 2303 phần quà và phần quà GIÁ TRỊ nhất mỗi ngày là 1000 điểm nên các bạn có tham gia thì chắc chắn sẽ có quà rinh về nhé.
+                    | Chương trình "Vòng quay may mắn" với chủ đề Hái Lộc Đầu Xuân Kỷ Hợi sẽ chính thức bắt đầu vào 9h sáng ngày mai (01/02/2019), với số lượng quà tặng lên đến 2303 phần quà và phần quà GIÁ TRỊ nhất mỗi ngày là 
+                    strong 1000 điểm 
+                    |  nên các bạn có tham gia thì chắc chắn sẽ có quà rinh về nhé.
                 p
-                    | Mỗi ngày, mỗi thành viên sẽ được miễn phí 1 lượt quay và có thể đổi thêm lượt quay mới số lượng không giới hạn chỉ với 10 điểm/ lượt. Cho đến khi hết quà cho một ngày, vòng quay sẽ tự động đóng và sẽ được mở lại vào 9h ngày hôm sau.
+                    | Mỗi ngày, mỗi thành viên sẽ được miễn phí 1 lượt quay. Cho đến khi hết quà cho một ngày, vòng quay sẽ tự động đóng và sẽ được mở lại vào 9h ngày hôm sau.
 
             .bottomMail 
                 p
                     | Xem thông tin chi tiết của chương trình tại đây:
                     br
-                    | https://vinaresearch.net/public/vong-quay-may-man/
+                    a(href="https://vinaresearch.net/public/vong-quay-may-man/") https://vinaresearch.net/public/vong-quay-may-man/

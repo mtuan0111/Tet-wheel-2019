@@ -1054,22 +1054,31 @@ body
                     //     z-index: -1
                     //     fill: red
                     //     pointer-events: none
-            
-    .pageNav
-        display: block
-        height: 10vh
-        text-align: center
-        a
-            margin: 2%
-            // @extend .h1titleSize
-            @include yellowLinearGradient()
-            padding: 1%
-            border-radius: 100%
-            -webkit-background-clip: text
-            -webkit-text-fill-color: transparent
-            // font-size: 150%
-            &[data-username]
-                &:before
-                    content: attr(data-username) " | " attr(data-userpoint)
+    footer
+        position: relative
+        .pageNav
+            display: block
+            height: 8vh
+            text-align: center
+            padding: 2vh 0
+            a
+                margin: 2%
+                // @extend .h1titleSize
+                @include yellowLinearGradient()
+                padding: 1%
+                border-radius: 100%
+                -webkit-background-clip: text
+                -webkit-text-fill-color: transparent
+                // font-size: 150%
+                &[data-username]
+                    &:before
+                        content: attr(data-username) " | " attr(data-userpoint)
+
+        .socialButton
+            position: absolute
+            left: 50%
+            bottom: 20px
+            @include transform(translateX(-50%))
+            z-index: 1
 
 

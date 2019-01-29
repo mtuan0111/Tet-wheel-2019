@@ -11,7 +11,7 @@
     -o-transform-origin: $transform
     transform-origin: $transform
 
-@mixin box-shadow($shadowValue: 0px 0px 40px 0px rgba(0,0,0,0.8), $secondShadow: 0px 0px 20px 0px rgba(0,0,0,0.5))
+@mixin box-shadow($shadowValue: 0px 0px 3vmin 0px rgba(0,0,0,0.8), $secondShadow: 0px 0px 1.5vmin 0px rgba(0,0,0,0.5))
     $secondShadow_str: null
     @if ($secondShadow != null)
         $secondShadow_str: $secondShadow
@@ -19,7 +19,7 @@
     -moz-box-shadow: $shadowValue, $secondShadow_str
     box-shadow: $shadowValue, $secondShadow_str
 
-@mixin inset-box-shadow($shadowValue: inset 0px 0px 40px 0px rgba(0,0,0,0.8), $secondShadow: inset 0px 0px 20px 0px rgba(0,0,0,0.5))
+@mixin inset-box-shadow($shadowValue: inset 0px 0px 3vmin 0px rgba(0,0,0,0.8), $secondShadow: inset 0px 0px 1.5vmin 0px rgba(0,0,0,0.5))
     $secondShadow_str: null
     @if ($secondShadow != null)
         $secondShadow_str: $secondShadow
@@ -27,7 +27,7 @@
     -moz-box-shadow: $shadowValue, $secondShadow_str
     box-shadow: $shadowValue, $secondShadow_str
 
-@mixin text-shadow($shadowValue: 0px 0px 40px 0px rgba(0,0,0,0.8), $secondShadow: null)
+@mixin text-shadow($shadowValue: 0px 0px 3vmin 0px rgba(0,0,0,0.8), $secondShadow: null)
     $secondShadow_str: null
     @if ($secondShadow != null)
         $secondShadow_str: $secondShadow

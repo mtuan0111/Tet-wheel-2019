@@ -84,17 +84,19 @@
                 position: -webkit-sticky
                 position: sticky
                 left: 50%
-                top: 4vmin
+                margin-bottom: 5vmin
                 height: 12vmin
                 width: 12vmin
                 background: none
                 @include transition(all 0.5s)
+                @include box-shadow(initial, null)
                 &.active
                     border-radius: 0
                     border-bottom-width: 2px
                     border-top: none 
                     border-left: none
                     border-right: none 
+                    margin-bottom: -4vmin
                     height: 16vmin
                     width: 16vmin
                 

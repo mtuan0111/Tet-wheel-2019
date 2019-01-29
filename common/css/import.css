@@ -52,9 +52,9 @@ table {
 
 .circle {
   position: relative;
-  -webkit-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8), 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8), 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
-  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8), 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0px 0px 3vmin 0px rgba(0, 0, 0, 0.8), 0px 0px 1.5vmin 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 3vmin 0px rgba(0, 0, 0, 0.8), 0px 0px 1.5vmin 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 3vmin 0px rgba(0, 0, 0, 0.8), 0px 0px 1.5vmin 0px rgba(0, 0, 0, 0.5);
   background: #cc2121;
   background: -moz-radial-gradient(#cc2121 0%, #3d0a0a 25%, #cc2121 50%, #3d0a0a 75%, #cc2121 100%);
   background: -webkit-radial-gradient(#cc2121 0%, #3d0a0a 25%, #cc2121 50%, #3d0a0a 75%, #cc2121 100%);
@@ -1071,9 +1071,9 @@ body section#content #wheelArea .loginCircle .outsideCorner, body section#conten
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  -webkit-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8), 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8), 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
-  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8), 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0px 0px 3vmin 0px rgba(0, 0, 0, 0.8), 0px 0px 1.5vmin 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 3vmin 0px rgba(0, 0, 0, 0.8), 0px 0px 1.5vmin 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 3vmin 0px rgba(0, 0, 0, 0.8), 0px 0px 1.5vmin 0px rgba(0, 0, 0, 0.5);
 }
 body section#content #wheelArea .loginCircle .outsideCorner:before, body section#content #wheelArea .wheelCircle .outsideCorner:before {
   content: "";
@@ -1108,14 +1108,14 @@ body section#content #wheelArea .loginCircle .outsideCorner:after, body section#
   background: -webkit-linear-gradient(-45deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
   background: linear-gradient(-45deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="$yellow", endColorstr="$yellow-dark",GradientType=0 );
-  -webkit-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8), 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8), 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
-  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8), 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0px 0px 3vmin 0px rgba(0, 0, 0, 0.8), 0px 0px 1.5vmin 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 3vmin 0px rgba(0, 0, 0, 0.8), 0px 0px 1.5vmin 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 3vmin 0px rgba(0, 0, 0, 0.8), 0px 0px 1.5vmin 0px rgba(0, 0, 0, 0.5);
 }
 body section#content #wheelArea .loginCircle .insideCorner, body section#content #wheelArea .wheelCircle .insideCorner {
-  -webkit-box-shadow: inset 0px 0px 40px 0px rgba(0, 0, 0, 0.8), inset 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: inset 0px 0px 40px 0px rgba(0, 0, 0, 0.8), inset 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
-  box-shadow: inset 0px 0px 40px 0px rgba(0, 0, 0, 0.8), inset 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: inset 0px 0px 3vmin 0px rgba(0, 0, 0, 0.8), inset 0px 0px 1.5vmin 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: inset 0px 0px 3vmin 0px rgba(0, 0, 0, 0.8), inset 0px 0px 1.5vmin 0px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0px 0px 3vmin 0px rgba(0, 0, 0, 0.8), inset 0px 0px 1.5vmin 0px rgba(0, 0, 0, 0.5);
   position: inherit;
   height: inherit;
   width: inherit;
@@ -1363,9 +1363,9 @@ body section#content #wheelArea .wheelCircle .insideCorner:after {
   border-style: solid;
   border-width: 0.6vmin;
   @inclde boxSizing();
-  -webkit-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8), 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8), 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
-  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8), 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0px 0px 3vmin 0px rgba(0, 0, 0, 0.8), 0px 0px 1.5vmin 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 3vmin 0px rgba(0, 0, 0, 0.8), 0px 0px 1.5vmin 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 3vmin 0px rgba(0, 0, 0, 0.8), 0px 0px 1.5vmin 0px rgba(0, 0, 0, 0.5);
 }
 body section#content #wheelArea .wheelCircle #wheelRotate {
   position: absolute;
@@ -1549,9 +1549,9 @@ body section#content #wheelArea .wheelCircle #wheelRotate .wheel-wing[data-point
   background: #cc2121;
   -webkit-background-clip: initial;
   -webkit-text-fill-color: initial;
-  -webkit-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8), 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8), 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
-  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8), 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0px 0px 3vmin 0px rgba(0, 0, 0, 0.8), 0px 0px 1.5vmin 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 3vmin 0px rgba(0, 0, 0, 0.8), 0px 0px 1.5vmin 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 3vmin 0px rgba(0, 0, 0, 0.8), 0px 0px 1.5vmin 0px rgba(0, 0, 0, 0.5);
 }
 body section#content #wheelArea .wheelCircle #wheelRotate .wheel-wing:after {
   content: "";
@@ -1593,9 +1593,9 @@ body section#content #wheelArea .wheelCircle #wheelCenter {
   transform: translate(-50%, -50%);
   border-radius: 60vmin;
   overflow: hidden;
-  -webkit-box-shadow: inset 0px 0px 40px 0px rgba(0, 0, 0, 0.8), inset 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: inset 0px 0px 40px 0px rgba(0, 0, 0, 0.8), inset 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
-  box-shadow: inset 0px 0px 40px 0px rgba(0, 0, 0, 0.8), inset 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: inset 0px 0px 3vmin 0px rgba(0, 0, 0, 0.8), inset 0px 0px 1.5vmin 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: inset 0px 0px 3vmin 0px rgba(0, 0, 0, 0.8), inset 0px 0px 1.5vmin 0px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0px 0px 3vmin 0px rgba(0, 0, 0, 0.8), inset 0px 0px 1.5vmin 0px rgba(0, 0, 0, 0.5);
 }
 body section#content #wheelArea .wheelCircle #wheelCenter:before {
   content: "";
@@ -1797,12 +1797,16 @@ body section#content #resultArea_tmp .ruleBroad .circleGroup.bottom {
   -o-transform: scaleX(-1);
   transform: scaleX(-1);
 }
-body .pageNav {
-  display: block;
-  height: 10vh;
-  text-align: center;
+body footer {
+  position: relative;
 }
-body .pageNav a {
+body footer .pageNav {
+  display: block;
+  height: 8vh;
+  text-align: center;
+  padding: 2vh 0;
+}
+body footer .pageNav a {
   margin: 2%;
   background: #ffed4a;
   background: -moz-linear-gradient(-45deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
@@ -1814,8 +1818,18 @@ body .pageNav a {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-body .pageNav a[data-username]:before {
+body footer .pageNav a[data-username]:before {
   content: attr(data-username) " | " attr(data-userpoint);
+}
+body footer .socialButton {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  z-index: 1;
 }
 
 body {
@@ -1947,9 +1961,9 @@ table th {
     display: inline-block;
     z-index: 1;
     position: relative;
-    -webkit-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8), 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8), 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
-    box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.8), 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0px 0px 3vmin 0px rgba(0, 0, 0, 0.8), 0px 0px 1.5vmin 0px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 0px 3vmin 0px rgba(0, 0, 0, 0.8), 0px 0px 1.5vmin 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 3vmin 0px rgba(0, 0, 0, 0.8), 0px 0px 1.5vmin 0px rgba(0, 0, 0, 0.5);
     background: #cc2121;
     background: -moz-radial-gradient(#cc2121 0%, #3d0a0a 25%, #cc2121 50%, #3d0a0a 75%, #cc2121 100%);
     background: -webkit-radial-gradient(#cc2121 0%, #3d0a0a 25%, #cc2121 50%, #3d0a0a 75%, #cc2121 100%);
@@ -1965,13 +1979,16 @@ table th {
     position: -webkit-sticky;
     position: sticky;
     left: 50%;
-    top: 4vmin;
+    margin-bottom: 5vmin;
     height: 12vmin;
     width: 12vmin;
     background: none;
     -webkit-transition: all 0.5s;
     -o-transition: all 0.5s;
     transition: all 0.5s;
+    -webkit-box-shadow: initial;
+    -moz-box-shadow: initial;
+    box-shadow: initial;
   }
   body footer a.btnToggle:before, body footer a.btnToggle:after {
     content: "";
@@ -2002,6 +2019,7 @@ table th {
     border-top: none;
     border-left: none;
     border-right: none;
+    margin-bottom: -4vmin;
     height: 16vmin;
     width: 16vmin;
   }
