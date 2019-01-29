@@ -567,6 +567,89 @@ body {
   background: radial-gradient(#cc2121 0%, #3d0a0a 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="$red", endColorstr="$red-dark",GradientType=0 );
 }
+body #loadingProcessing {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background: #cc2121;
+  background: -moz-radial-gradient(#cc2121 0%, #3d0a0a 100%);
+  background: -webkit-radial-gradient(#cc2121 0%, #3d0a0a 100%);
+  background: radial-gradient(#cc2121 0%, #3d0a0a 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="$red", endColorstr="$red-dark",GradientType=0 );
+  z-index: 2;
+}
+body #loadingProcessing .content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+body #loadingProcessing .content h2 {
+  font-family: "Lobster", cursive;
+  font-size: 150%;
+  color: #ffed4a;
+  line-height: 2;
+  margin: 0;
+}
+body #loadingProcessing .content h2:before, body #loadingProcessing .content h2:after {
+  content: "";
+  display: block;
+  height: 5vmin;
+  width: 100%;
+  margin: 0 auto;
+  background: #ffed4a;
+  background: #ffed4a;
+  background: -moz-linear-gradient(-45deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
+  background: -webkit-linear-gradient(-45deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
+  background: linear-gradient(-45deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="$yellow", endColorstr="$yellow-dark",GradientType=0 );
+  -webkit-mask-image: url(../img/motif-01.svg);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  -webkit-mask-position: center bottom;
+}
+body #loadingProcessing .content h2:after {
+  -webkit-mask-image: url(../img/motif-02.svg);
+  -webkit-mask-position: center top;
+  height: 2vmin;
+}
+body #loadingProcessing .content .subtitle {
+  text-transform: uppercase;
+  letter-spacing: 1vmin;
+  font-size: 60%;
+  display: inline-block;
+  align-items: middle;
+}
+body #loadingProcessing .content .subtitle:before, body #loadingProcessing .content .subtitle:after {
+  margin: 1vmin;
+  content: "";
+  display: inline-block;
+  align-items: middle;
+  vertical-align: sub;
+  height: 2vmin;
+  width: 2vmin;
+  margin: 0 auto;
+  background: #ffed4a;
+  background: #ffed4a;
+  background: -moz-linear-gradient(-45deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
+  background: -webkit-linear-gradient(-45deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
+  background: linear-gradient(-45deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="$yellow", endColorstr="$yellow-dark",GradientType=0 );
+  -webkit-mask-image: url(../img/motif-03.svg);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  -webkit-mask-position: center;
+}
+body #loadingProcessing .content .subtitle:after {
+  -webkit-transform: scale(-1);
+  -ms-transform: scale(-1);
+  -o-transform: scale(-1);
+  transform: scale(-1);
+}
 body .main-wrapper {
   height: inherit;
   width: inherit;

@@ -37,6 +37,69 @@ body
     z-index: 1
     @include redGradientBackground()
     
+    #loadingProcessing
+        position: absolute
+        height: 100vh
+        width: 100vw
+        @include redGradientBackground()
+        z-index: 2
+        .content
+            position: absolute
+            left: 50%
+            top: 50%
+            @include transform(translate(-50%, -50%))
+            text-align: center
+            h2
+                @include titleFont()
+                font-size: 150%
+                color: $yellow
+                line-height: 2
+                margin: 0
+                &:before, &:after
+                    content: ""
+                    display: block
+                    height: 5vmin
+                    width: 100%
+                    margin: 0 auto
+                    
+                    background: $yellow
+
+                    @include yellowLinearGradient()
+                    -webkit-mask-image: url(../img/motif-01.svg)
+                    -webkit-mask-repeat: no-repeat
+                    -webkit-mask-size: contain
+                    -webkit-mask-position: center bottom
+                &:after
+                    -webkit-mask-image: url(../img/motif-02.svg)
+                    -webkit-mask-position: center top
+                    height: 2vmin
+
+            .subtitle
+                text-transform: uppercase
+                letter-spacing: 1vmin
+                font-size: 60%
+                display: inline-block
+                align-items: middle
+                &:before, &:after
+                    margin: 1vmin
+                    content: ""
+                    display: inline-block
+                    align-items: middle
+                    vertical-align: sub
+                    height: 2vmin
+                    width: 2vmin
+                    margin: 0 auto
+                    
+                    background: $yellow
+
+                    @include yellowLinearGradient()
+                    -webkit-mask-image: url(../img/motif-03.svg)
+                    -webkit-mask-repeat: no-repeat
+                    -webkit-mask-size: contain
+                    -webkit-mask-position: center
+                &:after
+                    @include transform(scale(-1))
+
     .main-wrapper
         height: inherit
         width: inherit
@@ -1054,6 +1117,9 @@ body
                     //     z-index: -1
                     //     fill: red
                     //     pointer-events: none
+
+
+
     footer
         position: relative
         .pageNav
