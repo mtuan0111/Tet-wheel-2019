@@ -420,7 +420,7 @@ body section .splashEffect {
 body section .splashEffect:before, body section .splashEffect:after {
   content: none;
 }
-body * {
+body section * {
   -webkit-box-shadow: none !important;
   -moz-box-shadow: none !important;
   box-shadow: none !important;
