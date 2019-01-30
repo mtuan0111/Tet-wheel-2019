@@ -425,5 +425,10 @@ body section * {
   -moz-box-shadow: none !important;
   box-shadow: none !important;
 }
+body section *:after, body section *:before {
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+}
 
 /*# sourceMappingURL=andoirdPerform.css.map */
