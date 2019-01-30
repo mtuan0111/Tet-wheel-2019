@@ -598,7 +598,7 @@ body #loadingProcessing {
 }
 body #loadingProcessing .titleContent {
   display: inline-block;
-  margin-bottom: 4vmin;
+  margin-bottom: 8vmin;
 }
 body #loadingProcessing .greetingMessage {
   font-style: italic;
@@ -850,11 +850,11 @@ body section#content #mainNav {
 }
 body section#content #ruleArea .ruleBroad, body section#content #resultArea .ruleBroad {
   position: inherit;
-  top: 50%;
+  top: 48%;
   left: 50%;
   padding: 5%;
   width: 150%;
-  height: 100%;
+  height: 90%;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
@@ -1047,10 +1047,30 @@ body section#content #ruleArea .ruleBroad .middleObject .contentObject > *, body
   margin-top: 20px;
 }
 body section#content #ruleArea .ruleBroad .bottomObject, body section#content #resultArea .ruleBroad .bottomObject {
-  -webkit-transform: scale(-1) translateY(-100%);
-  -ms-transform: scale(-1) translateY(-100%);
-  -o-transform: scale(-1) translateY(-100%);
-  transform: scale(-1) translateY(-100%);
+  display: block;
+  height: 8vmin;
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: initial;
+  margin: 0 auto;
+  background: #ffed4a;
+  display: absolute;
+  -webkit-mask-image: url(../img/motif-02.svg);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  -webkit-mask-position: center top;
+  pointer-events: none;
+  background: #ffed4a;
+  background: -moz-linear-gradient(-45deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
+  background: -webkit-linear-gradient(-45deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
+  background: linear-gradient(-45deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="$yellow", endColorstr="$yellow-dark",GradientType=0 );
+  -webkit-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  -o-transform: translateY(100%);
+  transform: translateY(100%);
 }
 body section#content #ruleArea_tmp .ruleBroad {
   width: 150%;
@@ -1950,6 +1970,9 @@ table th {
     display: none;
   }
 
+  body {
+    font-size: 90%;
+  }
   body header #topLogo {
     width: 40vmin;
     height: 10vmin;
@@ -1970,6 +1993,9 @@ table th {
   }
   body section#content #resultArea .ruleBroad:before, body section#content #resultArea .ruleBroad:after {
     content: none !important;
+  }
+  body section#content #wheelArea .wheelCircle #wheelRotate .wheel-wing:before {
+    top: 5%;
   }
   body footer {
     position: relative;

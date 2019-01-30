@@ -14,8 +14,10 @@ function greetingMessage(text = null, callback) {
     do {
       var pickMessage = Math.round(Math.random() * (countMessage - 1)) + 1;
       var text = _this.messages[pickMessage];
+      text = text.trim();
     } while (_this.checkMessageAvaliable(text));
 
+    console.log("pickMessage: ", pickMessage);
     text = _this.translateMessage(text);
     _this.timeOut = text.length / 30;
 
