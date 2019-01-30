@@ -6,7 +6,9 @@ body
             @extend .disableAnimate
 
         .splashEffect
-            *
+            display: none
+            &:before, &:after
+                content: none
                 @extend .disableAnimate
 
         .campaignCircle

@@ -396,7 +396,7 @@
     width: 85%;
   }
 }
-.disableAnimate, body section .campaignCircle, body section .splashEffect *, body section#content:after {
+.disableAnimate, body section .campaignCircle, body section .splashEffect:before, body section .splashEffect:after, body section#content:after {
   animation: none !important;
   -webkit-animation: none !important;
   -moz-animation: none !important;
@@ -412,6 +412,13 @@
   -moz-animation-direction: none !important;
   -o-animation-direction: none !important;
   -ms-animation-direction: none !important;
+}
+
+body section .splashEffect {
+  display: none;
+}
+body section .splashEffect:before, body section .splashEffect:after {
+  content: none;
 }
 
 /*# sourceMappingURL=andoirdPerform.css.map */
