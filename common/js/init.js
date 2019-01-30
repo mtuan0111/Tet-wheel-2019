@@ -187,19 +187,14 @@ window.checkIphone = function() {
     IOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
     // console.log("navigator: ", navigator);
     // alert(window.innerHeight + " - " + window.outerHeight);
-    if (IOS && window.mobilecheck()) {
+    if (window.mobilecheck()) {
         document.getElementsByTagName("body")[0].style.height =
             window.innerHeight;
     } else {
         document.getElementsByTagName("body")[0].removeAttribute("style");
     }
+
     return IOS && window.mobilecheck();
-};
-
-window.checkIphoneDevice = function() {
-    IOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-
-    return IOS;
 };
 
 window.loadDone = function() {
@@ -212,17 +207,12 @@ window.loadDone = function() {
 };
 
 window.performAndroid = function() {
-    console.log("performAndroid");
-    alert("window.mobilecheck()", window.mobilecheck());
     if (window.mobilecheck()) {
-        console.log("mobilecheck");
         if (!window.checkIphone) {
-            console.log("checkIphone");
             var style = document.createElement("link");
             style.rel = "stylesheet";
             style.type = "text/css";
             style.href = "common/css/andoirdPerform.css";
-            // style.setAttribute("href", "common/css/andoirdPerform.css");
             document.getElementsByTagName("head")[0].appendChild(style);
         }
     }
