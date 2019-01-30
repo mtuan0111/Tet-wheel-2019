@@ -396,22 +396,22 @@
     width: 85%;
   }
 }
-.disableAnimate, body section#content:after {
-  animation: none;
-  -webkit-animation: none;
-  -moz-animation: none;
-  -o-animation: none;
-  -ms-animation: none;
-  animation-iteration-count: none;
-  -webkit-animation-iteration-count: none;
-  -moz-animation-iteration-count: none;
-  -o-animation-iteration-count: none;
-  -ms-animation-iteration-count: none;
-  animation-direction: none;
-  -webkit-animation-direction: none;
-  -moz-animation-direction: none;
-  -o-animation-direction: none;
-  -ms-animation-direction: none;
+.disableAnimate, body section .campaignCircle, body section .splashEffect *, body section#content:after {
+  animation: none !important;
+  -webkit-animation: none !important;
+  -moz-animation: none !important;
+  -o-animation: none !important;
+  -ms-animation: none !important;
+  animation-iteration-count: none !important;
+  -webkit-animation-iteration-count: none !important;
+  -moz-animation-iteration-count: none !important;
+  -o-animation-iteration-count: none !important;
+  -ms-animation-iteration-count: none !important;
+  animation-direction: none !important;
+  -webkit-animation-direction: none !important;
+  -moz-animation-direction: none !important;
+  -o-animation-direction: none !important;
+  -ms-animation-direction: none !important;
 }
 
 /*# sourceMappingURL=andoirdPerform.css.map */
