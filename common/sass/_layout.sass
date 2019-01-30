@@ -1125,9 +1125,8 @@ body
         position: relative
         .pageNav
             display: block
-            height: 8vh
             text-align: center
-            padding: 2vh 0
+            padding: 0 0 3vh 0
             a
                 margin: 2%
                 // @extend .h1titleSize
@@ -1142,10 +1141,13 @@ body
                         content: attr(data-username) " | " attr(data-userpoint)
 
         .socialButton
-            position: absolute
-            left: 50%
-            bottom: 20px
-            @include transform(translateX(-50%))
+            // position: absolute
+            // left: 50%
+            // bottom: 20px
+            // @include transform(translateX(-50%))
             z-index: 1
+            margin: 0 auto
+            // margin-bottom: 4vmin
+            position: relative
 
 

@@ -1897,9 +1897,8 @@ body footer {
 }
 body footer .pageNav {
   display: block;
-  height: 8vh;
   text-align: center;
-  padding: 2vh 0;
+  padding: 0 0 3vh 0;
 }
 body footer .pageNav a {
   margin: 2%;
@@ -1917,14 +1916,9 @@ body footer .pageNav a[data-username]:before {
   content: attr(data-username) " | " attr(data-userpoint);
 }
 body footer .socialButton {
-  position: absolute;
-  left: 50%;
-  bottom: 20px;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
-  transform: translateX(-50%);
   z-index: 1;
+  margin: 0 auto;
+  position: relative;
 }
 
 body {
@@ -1984,6 +1978,10 @@ table th {
     display: none;
   }
 
+  body header #topLogo {
+    width: 40vmin;
+    height: 10vmin;
+  }
   body section.decoration .conerCircles .circle {
     transform: translate(-50%, -50%) scale(1.5);
   }
@@ -2073,7 +2071,7 @@ table th {
     position: -webkit-sticky;
     position: sticky;
     left: 50%;
-    margin-bottom: 5vmin;
+    margin-bottom: -4vmin;
     height: 12vmin;
     width: 12vmin;
     background: none;
@@ -2116,6 +2114,9 @@ table th {
     margin-bottom: -4vmin;
     height: 16vmin;
     width: 16vmin;
+  }
+  body footer .socialButton {
+    margin-bottom: 4vmin;
   }
 }
 
