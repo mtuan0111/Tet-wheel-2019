@@ -11,6 +11,11 @@
     -o-transform-origin: $transform
     transform-origin: $transform
 
+@mixin remove-box-shadow()
+    -webkit-box-shadow: none !important
+    -moz-box-shadow: none !important
+    box-shadow: none !important
+
 @mixin box-shadow($shadowValue: 0px 0px 3vmin 0px rgba(0,0,0,0.8), $secondShadow: 0px 0px 1.5vmin 0px rgba(0,0,0,0.5))
     $secondShadow_str: null
     @if ($secondShadow != null)

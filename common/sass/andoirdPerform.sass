@@ -1,4 +1,5 @@
 @import _animate
+@import _function
 body 
     section
         &#content:after
@@ -13,3 +14,6 @@ body
 
         .campaignCircle
             @extend .disableAnimate
+
+    *
+        @include remove-box-shadow()
