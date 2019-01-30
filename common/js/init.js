@@ -196,6 +196,12 @@ window.checkIphone = function() {
     return IOS && window.mobilecheck();
 };
 
+window.checkIphoneDevice = function() {
+    IOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+    return IOS;
+};
+
 window.loadDone = function() {
     loadingElement = document.getElementById("loadingProcessing");
     setTimeout(function() {
@@ -206,11 +212,12 @@ window.loadDone = function() {
 };
 
 window.performAndroid = function() {
-  console.log("performAndroid");
+    console.log("performAndroid");
+    alert("window.mobilecheck()", window.mobilecheck());
     if (window.mobilecheck()) {
-      console.log("mobilecheck");
+        console.log("mobilecheck");
         if (!window.checkIphone) {
-          console.log("checkIphone");
+            console.log("checkIphone");
             var style = document.createElement("link");
             style.rel = "stylesheet";
             style.type = "text/css";
