@@ -18,8 +18,12 @@ window.onload = function() {
                     .stop(true, false)
                     .slideUp();
 
-                $(".btnToggle").toggleClass("active");
+                $("footer").toggleClass("activeNav");
+            } else {
+                $("footer").removeClass("activeNav");
+                $("footer .pageNav")[0].removeAttribute("style");
             }
+
             if (!wheel.rotating) {
                 getHashURLh(this.getAttribute("href"));
             } else {
@@ -40,8 +44,12 @@ window.onload = function() {
                 .stop(true, false)
                 .slideToggle();
 
-            $(this).toggleClass("active");
+            $("footer").toggleClass("activeNav");
+        } else {
+            $("footer").removeClass("activeNav");
+            $("footer .pageNav")[0].removeAttribute("style");
         }
+
         e.preventDefault();
         return;
     });

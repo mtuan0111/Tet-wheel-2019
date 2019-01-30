@@ -2107,7 +2107,7 @@ table th {
   body footer a.btnToggle.pointer {
     border-top-left-radius: 0;
   }
-  body footer a.btnToggle.active {
+  body footer.activeNav a.btnToggle {
     border-radius: 0;
     border-bottom-width: 2px;
     border-top: none;
