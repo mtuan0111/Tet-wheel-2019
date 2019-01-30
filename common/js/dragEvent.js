@@ -1,24 +1,29 @@
 var elemRotate = document.getElementById("content");
 var movePoint;
 var endPoint;
-var targetPageArr = new Array('gioithieu','vongquay','ketqua');
+var targetPageArr = new Array("thele", "vongquay", "ketqua");
 var currentPagePos;
 var activeRotate = false;
 
-function touchHandler(event)
-{
+function touchHandler(event) {
     var touches = event.changedTouches,
         first = touches[0],
         type = "";
-    switch(event.type)
-    {
-        case "touchstart": type = "mousedown"; break;
+    switch (event.type) {
+        case "touchstart":
+            type = "mousedown";
+            break;
         // case "mousedown": type = "mousedown"; break;
-        case "touchmove":  type = "mousemove"; break;
+        case "touchmove":
+            type = "mousemove";
+            break;
         // case "mousemove":  type = "mousemove"; break;
-        case "touchend":   type = "mouseup";   break;
+        case "touchend":
+            type = "mouseup";
+            break;
         // case "mouseup":   type = "mouseup";   break;
-        default:           return;
+        default:
+            return;
     }
 
     // Default intruction
@@ -26,22 +31,33 @@ function touchHandler(event)
     //                screenX, screenY, clientX, clientY, ctrlKey,
     //                altKey, shiftKey, metaKey, button, relatedTarget);
 
-
     var simulatedEvent = document.createEvent("MouseEvent");
-    simulatedEvent.initMouseEvent(type, true, true, window, 1,
-                                  first.screenX, first.screenY,
-                                  first.clientX, first.clientY, false,
-                                  false, false, false, 0/*left*/, null);
+    simulatedEvent.initMouseEvent(
+        type,
+        true,
+        true,
+        window,
+        1,
+        first.screenX,
+        first.screenY,
+        first.clientX,
+        first.clientY,
+        false,
+        false,
+        false,
+        false,
+        0 /*left*/,
+        null
+    );
 
     first.target.dispatchEvent(simulatedEvent);
 
-    switch(type)
-    {
+    switch (type) {
         case "mousedown":
             firstPoint = first.pageX;
             movePoint = first.pageX;
-            elemRotate.className.split(" ").forEach(function(el){
-                if(targetPageArr.indexOf(el) != -1){
+            elemRotate.className.split(" ").forEach(function(el) {
+                if (targetPageArr.indexOf(el) != -1) {
                     currentPagePos = targetPageArr.indexOf(el);
                 }
             });
@@ -49,7 +65,7 @@ function touchHandler(event)
         case "mousemove":
             // moveRange = first.pageX - firstPoint;
             // activeRotate = ((Math.abs(moveRange) > 50) && (Math.abs(moveRange) < 150));
-            
+
             // if(activeRotate){
             //     $(elemRotate).css({
             //         '-webkit-transform': "translateX(" + moveRange/3 + "px)",
@@ -61,31 +77,34 @@ function touchHandler(event)
             //     // }
             // }
             // movePoint = first.pageX;
-          break;
+            break;
         case "mouseup":
-          endPoint = first.pageX;
-          moveRange = endPoint - firstPoint;
+            endPoint = first.pageX;
+            moveRange = endPoint - firstPoint;
 
-          if (moveRange < -150){
-            var targetPage = targetPageArr[currentPagePos + 1];
-            if(targetPage){
-                $(".bottomMenu a[data-page-target="+ targetPage +"]").click();
+            if (moveRange < -150) {
+                var targetPage = targetPageArr[currentPagePos + 1];
+                if (targetPage) {
+                    $(
+                        ".bottomMenu a[data-page-target=" + targetPage + "]"
+                    ).click();
+                }
+            } else if (moveRange > 150) {
+                var targetPage = targetPageArr[currentPagePos - 1];
+                if (targetPage) {
+                    $(
+                        ".bottomMenu a[data-page-target=" + targetPage + "]"
+                    ).click();
+                }
             }
-          }else if (moveRange > 150){
-            var targetPage = targetPageArr[currentPagePos - 1];
-            if(targetPage){
-                $(".bottomMenu a[data-page-target="+ targetPage +"]").click();
-            }
-          }
-          if (targetPage)
-              window.location.hash = targetPage;
+            if (targetPage) window.location.hash = targetPage;
 
             getHashURLh(window.location.hash);
-          $(elemRotate).removeAttr("style");
+            $(elemRotate).removeAttr("style");
 
-          break;
+            break;
         default:
-          return;
+            return;
     }
 }
 
@@ -99,4 +118,3 @@ function touchInit() {
     // touchElement.addEventListener("mouseup", touchHandler, true);
     touchElement.addEventListener("touchcancel", touchHandler, true);
 }
-
