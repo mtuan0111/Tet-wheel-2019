@@ -596,6 +596,19 @@ body #loadingProcessing {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="$red", endColorstr="$red-dark",GradientType=0 );
   z-index: 2;
 }
+body #loadingProcessing .titleContent {
+  display: inline-block;
+  margin-bottom: 4vmin;
+}
+body #loadingProcessing .greetingMessage {
+  font-style: italic;
+  position: relative;
+}
+body #loadingProcessing .greetingMessage p {
+  font-size: 80%;
+  opacity: 0.8;
+  display: inline-block;
+}
 body #loadingProcessing .content {
   position: absolute;
   left: 50%;

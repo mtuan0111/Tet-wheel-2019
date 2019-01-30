@@ -43,7 +43,33 @@ body
         width: 100vw
         @include redGradientBackground()
         z-index: 2
+        .titleContent
+            display: inline-block
+            margin-bottom: 4vmin
+
+        .greetingMessage
+            font-style: italic
+            position: relative
+            // &:before, &:after
+            //     content: '"'
+            //     font-size: 500%
+            //     position: absolute
+            //     // @include titleFont()
+            //     @include transform(translateX(-100%))
+            //     left: -10%
+            //     top: 0
+
+            // &:after
+            //     left: initial
+            //     @include transform(translateX(100%))
+            //     right: 0
+                
+            p
+                font-size: 80%
+                opacity: 0.8
+                display: inline-block
         .content
+            
             position: absolute
             left: 50%
             top: 50%
