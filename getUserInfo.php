@@ -77,7 +77,7 @@ function getResultList(){
     //             limit 20";
     // $listResults = $db->fetchAll($sql);
 
-    $TetWheelModel = new Default_Model_GoldenWheelHistory();
+    $TetWheelModel = new Default_Model_TetWheel2019History();
     $listResults = $TetWheelModel->resultList(2019)->toArray();
 
     // var_dump($listResults);

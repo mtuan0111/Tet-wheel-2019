@@ -15,7 +15,7 @@ facebookObject.prototype.sharePoint = function(dataUser) {
         " điểm từ Vòng Quay May Mắn - Xuân Kỷ Hợi. Click vào đây để tham gia cùng " +
         username +
         " nhé!";
-    var hashTag = "#VongQuayMayMan";
+    var hashTag = "#Luckywheel2019";
 
     // FB.ui(
     //     {
@@ -62,16 +62,17 @@ facebookObject.prototype.sharePoint = function(dataUser) {
     FB.ui(
         {
             method: "share",
-            href: "https://vinaresearch.net",
+            href: "https://vinaresearch.net/public/vong-quay-tet-2019",
             quote: descriptionSharing,
             hashtag: hashTag,
             action_properties: JSON.stringify({
                 object: {
-                    "og:url": "https://vinaresearch.net",
+                    "og:url":
+                        "https://vinaresearch.net/public/vong-quay-tet-2019",
                     "og:title": "Vòng Quay May Mắn - Xuân Kỷ Hợi",
                     "og:description": descriptionSharing,
                     "og:image":
-                        "https://vinaresearch.net/public/error/images/crying-girl.svg"
+                        "https://vinaresearch.net/public/vong-quay-tet-2019/common/img/facebook-post.png"
                 }
             })
         },

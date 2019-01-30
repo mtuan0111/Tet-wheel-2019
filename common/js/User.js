@@ -214,7 +214,9 @@ User.prototype.getPlay = function(callback = null) {
                 } else {
                     if (error == 3) {
                         var loginMessage =
-                            'Bạn cần <a href="#dangnhap">đăng nhập</a> để quay.';
+                            'Bạn cần <a href="#dangnhap">đăng nhập</a> để quay.<br>\
+                            Bạn chưa có tài khoản Vinaresearch?<br>\
+                            <a class="registerBtn" href="https://vinaresearch.net/" target="_blank">Đăng ký ngay</a>';
                         new notificationMessage(loginMessage);
                     } else new notificationMessage(value);
                 }

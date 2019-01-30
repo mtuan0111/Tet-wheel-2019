@@ -1355,7 +1355,7 @@ body section#content #wheelArea .loginCircle .insideCorner #loginBroad.introCont
 body section#content #wheelArea .loginCircle .insideCorner #loginBroad #frmLogin input, body section#content #wheelArea .wheelCircle .insideCorner #loginBroad #frmLogin input {
   font-size: 3vmin;
   max-width: 30vmin;
-  padding: 1.2vmin;
+  padding: 0.6vmin 1.2vmin;
   text-align: inherit;
   margin: 0.6vmin auto;
   display: block;
@@ -1379,6 +1379,9 @@ body section#content #wheelArea .loginCircle .insideCorner #loginBroad #frmLogin
 }
 body section#content #wheelArea .loginCircle .insideCorner #loginBroad #frmLogin a#forgetPassword, body section#content #wheelArea .wheelCircle .insideCorner #loginBroad #frmLogin a#forgetPassword {
   color: inherit;
+  font-size: 80%;
+}
+body section#content #wheelArea .loginCircle .insideCorner .registerBtn, body section#content #wheelArea .wheelCircle .insideCorner .registerBtn {
   font-size: 80%;
 }
 body section#content #wheelArea .wheelCircle .circleGroup {
