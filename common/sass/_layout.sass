@@ -168,8 +168,8 @@ body
                         top: 100%
                         left: 100%
         &#content
-            width: 300vw
-            left: calc(50vw - 150vw)
+            width: 100vw
+            // left: calc(50vw - 150vw)
             @include flex(1)
             display: flex
             opacity: 1
@@ -196,24 +196,24 @@ body
 
             &.thele
                 // margin: 0 0 0 100%
-                left: 0
+                // left: 0
                 div[id$="Area"]:not(#ruleArea)
-                    opacity: 0
-                    // display: none
-                    pointer-events: none
+                    // opacity: 0
+                    display: none
+                    // pointer-events: none
 
             &.ketqua
-                left: -200%
+                // left: -200%
                 div[id$="Area"]:not(#resultArea)
-                    opacity: 0
-                    // display: none
-                    pointer-events: none
+                    // opacity: 0
+                    display: none
+                    // pointer-events: none
 
             &.dangnhap
                 div[id$="Area"]:not(#wheelArea)
-                    opacity: 0
-                    // display: none
-                    pointer-events: none
+                    // opacity: 0
+                    display: none
+                    // pointer-events: none
 
                 // .objectsArea 
                 //     >*:not(.loginCircle)
@@ -221,9 +221,9 @@ body
 
             &.vongquay, &:not(.thele):not(.ketqua):not(.dangnhap)
                 div[id$="Area"]:not(#wheelArea)
-                    opacity: 0
-                    // display: none
-                    pointer-events: none
+                    // opacity: 0
+                    display: none
+                    // pointer-events: none
                 
                 // .objectsArea 
                 //     >*:not(.wheelCircle)
@@ -816,9 +816,10 @@ body
                                 top: 10%
                                 position: relative
                                 font-size: 150%
-                                @include yellowLinearGradient()
-                                -webkit-background-clip: text
-                                -webkit-text-fill-color: transparent
+                                color: $yellow
+                                // @include yellowLinearGradient()
+                                // -webkit-background-clip: text
+                                // -webkit-text-fill-color: transparent
                                 position: relative
                                 // -webkit-transform: rotate(90deg)
                                 // -ms-transform: rotate(90deg)

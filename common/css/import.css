@@ -725,8 +725,7 @@ body section.decoration .conerCircles .circle:nth-child(4) {
   left: 100%;
 }
 body section#content {
-  width: 300vw;
-  left: calc(50vw - 150vw);
+  width: 100vw;
   -ms-flex: 1;
   -webkit-flex: 1;
   -moz-flex: 1;
@@ -753,27 +752,17 @@ body section#content:after {
   -webkit-mask-position: center;
   opacity: 0.2;
 }
-body section#content.thele {
-  left: 0;
-}
 body section#content.thele div[id$=Area]:not(#ruleArea) {
-  opacity: 0;
-  pointer-events: none;
-}
-body section#content.ketqua {
-  left: -200%;
+  display: none;
 }
 body section#content.ketqua div[id$=Area]:not(#resultArea) {
-  opacity: 0;
-  pointer-events: none;
+  display: none;
 }
 body section#content.dangnhap div[id$=Area]:not(#wheelArea) {
-  opacity: 0;
-  pointer-events: none;
+  display: none;
 }
 body section#content.vongquay div[id$=Area]:not(#wheelArea), body section#content:not(.thele):not(.ketqua):not(.dangnhap) div[id$=Area]:not(#wheelArea) {
-  opacity: 0;
-  pointer-events: none;
+  display: none;
 }
 body section#content div[id$=Area] {
   position: relative;
@@ -1595,13 +1584,7 @@ body section#content #wheelArea .wheelCircle #wheelRotate .wheel-wing:before {
   top: 10%;
   position: relative;
   font-size: 150%;
-  background: #ffed4a;
-  background: -moz-linear-gradient(-45deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
-  background: -webkit-linear-gradient(-45deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
-  background: linear-gradient(-45deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="$yellow", endColorstr="$yellow-dark",GradientType=0 );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #ffed4a;
   position: relative;
 }
 body section#content #wheelArea .wheelCircle #wheelRotate .wheel-wing[data-point-value="1000"]:before {
@@ -1959,7 +1942,6 @@ dt {
 strong {
   font-weight: bold;
   color: #ffed4a;
-  font-size: 110%;
 }
 
 table th {

@@ -7,7 +7,6 @@ function User() {
 
 User.prototype.openLogin = function() {
     var _this = this;
-    console.log("openLogin: ");
     if (typeof _this.Username !== "undefined") {
         location.hash = "";
         getHashURL();
@@ -28,7 +27,6 @@ User.prototype.openLogin = function() {
 
 User.prototype.closeLogin = function() {
     var _this = this;
-    console.log("closeLogin: ");
     setTimeout(function() {
         _this.loginObject.remove();
     });
@@ -37,7 +35,6 @@ User.prototype.closeLogin = function() {
 
 User.prototype.login = function(callback = null) {
     var _this = this;
-    console.log("login: ");
     _this.clearData();
 
     username = _this.loginForm.querySelector("[name='lg_Username']").value;
@@ -65,9 +62,7 @@ User.prototype.login = function(callback = null) {
                 callback(data);
             }
         },
-        error: function(error) {
-            console.log(error);
-        }
+        error: function(error) {}
     }).fail(function() {
         _this.failConnection();
     });
@@ -95,7 +90,6 @@ User.prototype.logOut = function() {
 
 User.prototype.getUserInfo = function(afterLogin = false, callback = null) {
     var _this = this;
-    console.log("getUserInfo: ");
     $.ajax({
         type: "POST",
         url: "getUserInfo.php",
@@ -108,21 +102,21 @@ User.prototype.getUserInfo = function(afterLogin = false, callback = null) {
                 _this.Point = data.Point ? data.Point : 0;
                 if (afterLogin) {
                     welcomeMessage =
-                        'Chúc bạn một năm Kỷ Hợi An Khang Thịnh Vượng - Vạn Sự Như Ý<br>\
-                        Click vào <a href="#vongquay">vòng quay</a> để quay bạn nhé!<br>\
-                        Xem <a href="#thele">thể lệ</a> của vòng quay.';
+                        'một năm Kỷ Hợi<br> <strong>An Khang Thịnh Vượng</strong><br>\
+                        Click vào vòng quay để quay bạn nhé!<br>\
+                        Xem <a href="#thele">thể lệ</a>.';
                     new notificationMessage(
                         welcomeMessage,
-                        "Xin chào " + _this.UserName,
+                        "Chúc " + _this.UserName,
                         10
                     );
                 }
             } else {
                 if (afterLogin) {
                     welcomeMessage =
-                        'Chúc bạn một năm Kỷ Hợi An Khang Thịnh Vượng - Vạn Sự Như Ý <br>\
+                        'Chúc bạn một năm Kỷ Hợi<br> <strong>An Khang Thịnh Vượng</strong><br>\
                     Bạn hãy <a href="#dangnhap">đăng nhập</a> để tham gia quay nhé<br>\
-                    Xem <a href="#thele">Thể lệ</a> của vòng quay';
+                    Xem <a href="#thele">Thể lệ</a>';
                     new notificationMessage(welcomeMessage, "Chào bạn", 10);
                 }
             }
@@ -247,16 +241,6 @@ User.prototype.getUserFriendList = function() {
                 for (var i = 0; i < data.length; i++) {
                     var row = data[i];
 
-                    // var usernameLengthLimit = 10;
-                    // if (row.UserName.length > usernameLengthLimit){
-                    //     row.UserName = row.UserName.substring(0, usernameLengthLimit - 1) + "..";
-                    // }
-
-                    // var emailLengthLimit = 25;
-                    // if (row.email.length > emailLengthLimit){
-                    //     row.email = row.email.substring(0, emailLengthLimit - 1) + "..";
-                    // }
-
                     dataArray.push([i + 1, row.UserName, row.email]);
                 }
 
@@ -265,7 +249,6 @@ User.prototype.getUserFriendList = function() {
                 } else {
                     _this.friendListObject.drawData(dataArray);
                 }
-                // console.log("_this.friendListObject: ", _this.friendListObject);
             }
         }
     }).fail(function() {

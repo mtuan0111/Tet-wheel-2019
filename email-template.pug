@@ -5,127 +5,162 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
         title Document
-        style.
-
-            @import url('https://fonts.googleapis.com/css?family=Lobster&ampsubset=vietnamese');
-            @import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i');
-
-            .wrapper{
-                color: white;
-                font-family: "Playfair Display", serif;
-                max-width: 500px;
-                margin: 0 auto;
-                padding: 20px;
-                background: #cc2121;
-                background: -moz-radial-gradient(#cc2121 0%, #3d0a0a 100%);
-                background: -webkit-radial-gradient(#cc2121 0%, #3d0a0a 100%);
-                background: radial-gradient(#cc2121 0%, #3d0a0a 100%);
-                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=#cc2121, endColorstr=#3d0a0a,GradientType=0 );
-            }
-
-            .wrapper a{
-                color: yellow;
-                text-decoration: none;
-            }
-
-            .wrapper:before{
-                content: "";
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                background: url(https://stagingws.vinaresearch.net/public/vong-quay-tet-2019/common/img/pattern-motif.svg) center repeat;
-                background-size: 2%;
-                background-size: 2vmin;
-                opacity: 0.2;
-            }
-            .topMail{
-                text-align: center;
-            }
-            .topMail h2{
-                color: #ffed4a;
-                text-align: center;
-                font-family: "Lobster", cursive;
-                font-weight: 100;
-                display: inline-block;
-                margin: 0;
-                line-height: 1.5
-            }
-            
-            .topMail h2:before, .topMail h2:after{
-                content: "";
-                background: yellow;
-                display: block;
-                height: 60px;
-                -webkit-mask-image: url(https://stagingws.vinaresearch.net/public/vong-quay-tet-2019/common/img/motif-01.svg);
-                -webkit-mask-repeat: no-repeat;
-                -webkit-mask-size: contain;
-                -webkit-mask-position: center bottom;
-            }
-
-            .topMail h2:after{
-                -webkit-mask-image: url(https://stagingws.vinaresearch.net/public/vong-quay-tet-2019/common/img/motif-02.svg);
-                -webkit-mask-position: center top;
-                height: 10px;
-            }
-
-            .topMail .subtitle{
-                text-transform: uppercase;
-                margin: 0;
-                font-size: 
-            }
-
-            .topMail .subtitle{
-                text-transform: uppercase;
-                margin: 0;
-                font-size: 80%;
-                letter-spacing: 3px;
-            }
-
-            .topMail .subtitle:before, .topMail .subtitle:after{
-                content: "";
-                background: yellow;
-                display: inline-block;
-                height: 20px;
-                width: 20px;
-                vertical-align: middle;
-
-                -webkit-mask-image: url(https://stagingws.vinaresearch.net/public/vong-quay-tet-2019/common/img/motif-03.svg);
-                -webkit-mask-repeat: no-repeat;
-                -webkit-mask-size: contain;
-                -webkit-mask-position: center bottom;
-            }
-
-            .topMail .subtitle:after{
-                -webkit-transform: scale(-1);
-                -ms-transform: scale(-1);
-                -o-transform: scale(-1);
-                transform: scale(-1);
-            }
-
-            .middleMail img{
-                max-width: 100%;
-                border-radius: 20px;
-            }
 
     body
         .wrapper
+            style.
+                @import url('https://fonts.googleapis.com/css?family=Lobster&ampsubset=vietnamese');
+                @import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i');
+
+                .wrapper{
+                    color: white;
+                    font-family: "Playfair Display", serif;
+                    max-width: 500px;
+                    margin: 0 auto;
+                    padding: 40px;
+                    background: #cc2121;
+                    background: -moz-radial-gradient(#cc2121 0%, #3d0a0a 100%);
+                    background: -webkit-radial-gradient(#cc2121 0%, #3d0a0a 100%);
+                    background: radial-gradient(#cc2121 0%, #3d0a0a 100%);
+                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=#cc2121, endColorstr=#3d0a0a,GradientType=0 );
+                    box-sizing: border-box;
+                    position: relative
+                }
+
+                .wrapper a{
+                    color: yellow;
+                    text-decoration: none;
+                }
+
+                .wrapper strong{
+                    color: yellow;
+                }
+                .wrapper:before{
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    background: url(https://stagingws.vinaresearch.net/public/vong-quay-tet-2019/common/img/pattern-motif.svg) center repeat;
+                    background-size: 2%;
+                    background-size: 2vmin;
+                    opacity: 0.2;
+                }
+
+                .wrapper:after{
+                    content: "";
+                    position: absolute;
+                    top: 10px;
+                    bottom: 10px;
+                    left: 10px;
+                    right: 10px;
+                    border: dashed yellow 0.5px
+                }
+
+                .wrapper:before{
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    background: url(https://stagingws.vinaresearch.net/public/vong-quay-tet-2019/common/img/pattern-motif.svg) center repeat;
+                    background-size: 2%;
+                    background-size: 2vmin;
+                    opacity: 0.2;
+                }
+                .topMail{
+                    text-align: center;
+                }
+                .topMail h2{
+                    color: #ffed4a;
+                    text-align: center;
+                    font-family: "Lobster", cursive;
+                    font-weight: 100;
+                    display: inline-block;
+                    margin: 0;
+                    line-height: 1.5
+                }
+                
+                .topMail h2:before, .topMail h2:after{
+                    content: "";
+                    background: yellow;
+                    display: block;
+                    height: 60px;
+                    -webkit-mask-image: url(https://stagingws.vinaresearch.net/public/vong-quay-tet-2019/common/img/motif-01.svg);
+                    -webkit-mask-repeat: no-repeat;
+                    -webkit-mask-size: contain;
+                    -webkit-mask-position: center bottom;
+                }
+
+                .topMail h2:after{
+                    -webkit-mask-image: url(https://stagingws.vinaresearch.net/public/vong-quay-tet-2019/common/img/motif-02.svg);
+                    -webkit-mask-position: center top;
+                    height: 10px;
+                }
+
+                .topMail .subtitle{
+                    text-transform: uppercase;
+                    margin: 0;
+                    font-size: 
+                }
+
+                .topMail .subtitle{
+                    text-transform: uppercase;
+                    margin: 0;
+                    font-size: 80%;
+                    letter-spacing: 3px;
+                }
+
+                .topMail .subtitle:before, .topMail .subtitle:after{
+                    content: "";
+                    background: yellow;
+                    display: inline-block;
+                    height: 20px;
+                    width: 20px;
+                    vertical-align: middle;
+
+                    -webkit-mask-image: url(https://stagingws.vinaresearch.net/public/vong-quay-tet-2019/common/img/motif-03.svg);
+                    -webkit-mask-repeat: no-repeat;
+                    -webkit-mask-size: contain;
+                    -webkit-mask-position: center bottom;
+                }
+
+                .topMail .subtitle:after{
+                    -webkit-transform: scale(-1);
+                    -ms-transform: scale(-1);
+                    -o-transform: scale(-1);
+                    transform: scale(-1);
+                }
+
+                .middleMail img{
+                    max-width: 100%;
+                    border-radius: 20px;
+                }
             .topMail 
                 h2
                     | Vòng quay may mắn
                 p.subtitle
                     | Hái Lộc Đầu Xuân
             .middleMail 
-                img(src="common/img/web-banner.png", alt="")
+                //- img(src="common/img/web-banner.png", alt="")
                 p
-                    | Năm mới Tết đến, BQT Vinaresearch tổ chức chương trình Vòng quay may mắn - Hái Lộc Đầu Xuân để thay lời cảm ơn chân thành nhất gửi đến các bạn thành viên đã đồng hành, tin tưởng Vinaresearch trong suốt thời gian vừa qua. 
+                    | Năm mới Tết đến, BQT Vinaresearch tổ chức chương trình 
+                    strong Vòng Quay May Mắn - Hái Lộc Đầu Xuân 
+                    |  để thay lời cảm ơn chân thành nhất gửi đến các bạn thành viên đã đồng hành, tin tưởng Vinaresearch trong suốt thời gian vừa qua. 
                 p
-                    | Chương trình "Vòng quay may mắn" với chủ đề Hái Lộc Đầu Xuân Kỷ Hợi sẽ chính thức bắt đầu vào 9h sáng ngày mai (01/02/2019), với số lượng quà tặng lên đến 2303 phần quà và phần quà GIÁ TRỊ nhất mỗi ngày là 
+                    | Chương trình "Vòng quay may mắn" với chủ đề Hái Lộc Đầu Xuân Kỷ Hợi sẽ chính thức bắt đầu vào 
+                    strong 9h sáng ngày 01/02/2019
+                    | , với số lượng quà tặng lên đến 
+                    strong 2303 phần quà 
+                    |  và phần quà giá trị nhất mỗi ngày là 
                     strong 1000 điểm 
                     |  nên các bạn có tham gia thì chắc chắn sẽ có quà rinh về nhé.
                 p
-                    | Mỗi ngày, mỗi thành viên sẽ được miễn phí 1 lượt quay. Cho đến khi hết quà cho một ngày, vòng quay sẽ tự động đóng và sẽ được mở lại vào 9h ngày hôm sau.
+                    | Mỗi ngày, mỗi thành viên sẽ được miễn phí 1 lượt quay. Cho đến khi hết quà cho một ngày, vòng quay sẽ tự động đóng và sẽ được mở lại vào 
+                    strong 9h sáng 
+                    |  ngày hôm sau.
 
             .bottomMail 
                 p
