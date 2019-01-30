@@ -526,6 +526,24 @@ p.textContent {
     width: 85%;
   }
 }
+.disableAnimate {
+  animation: none;
+  -webkit-animation: none;
+  -moz-animation: none;
+  -o-animation: none;
+  -ms-animation: none;
+  animation-iteration-count: none;
+  -webkit-animation-iteration-count: none;
+  -moz-animation-iteration-count: none;
+  -o-animation-iteration-count: none;
+  -ms-animation-iteration-count: none;
+  animation-direction: none;
+  -webkit-animation-direction: none;
+  -moz-animation-direction: none;
+  -o-animation-direction: none;
+  -ms-animation-direction: none;
+}
+
 /* Let's get this party started */
 ::-webkit-scrollbar {
   width: 4px;
