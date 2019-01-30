@@ -197,7 +197,7 @@ window.checkIphone = function() {
     // alert(window.innerHeight + " - " + window.outerHeight);
     if (window.mobilecheck()) {
         document.getElementsByTagName("body")[0].style.height =
-            window.innerHeight;
+            window.innerHeight + "px";
     } else {
         document.getElementsByTagName("body")[0].removeAttribute("style");
     }
