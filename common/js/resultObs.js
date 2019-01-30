@@ -16,7 +16,12 @@ function resultTableBroad(listResult = null) {
 }
 
 resultTableBroad.prototype.drawData = function(listResult) {
-    var listTitle = ["STT", "Tài khoản", "Điểm", "Thời gian"];
+    var listTitle = [
+        "STT",
+        "Tài khoản",
+        "Tổng điểm",
+        "Thời gian quay mới nhất"
+    ];
     if (!listResult) listResult = [listTitle];
 
     var result = document.createElement("table");
@@ -41,7 +46,7 @@ resultTableBroad.prototype.drawData = function(listResult) {
             trData.appendChild(tdData);
         }
         if (listResult[i][4]) {
-            trData.className += "current";
+            trData.className += "currentUser";
         }
         result.appendChild(trData);
     }

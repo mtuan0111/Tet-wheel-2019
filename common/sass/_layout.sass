@@ -405,6 +405,47 @@ body
                             table
                                 width: 100%
                                 text-align: center
+                                tr
+                                    padding: 1vmin 0
+                                    &:nth-child(2)
+                                        color: $yellow
+                                        font-size: 110%
+                                        font-weight: bold
+                                        @include yellowLinearGradient()
+                                        -webkit-background-clip: text
+                                        -webkit-text-fill-color: transparent
+                                    &.currentUser
+                                        td
+                                            padding: 1vmin 0
+                                        td:first-child, td:last-child
+                                            position: relative
+                                            &:before
+                                                content: ""
+                                                display: inline-block
+                                                position: absolute
+                                                background: blue
+                                                height: 4vmin
+                                                width: 4vmin
+
+                                                left: -2vmin
+                                                top: 60%
+
+                                                -webkit-mask-image: url(../img/motif-03.svg)
+                                                -webkit-mask-repeat: no-repeat
+                                                -webkit-mask-size: contain
+                                                -webkit-mask-position: center    
+
+                                                @include yellowLinearGradient()
+                                                @include transform(translateY(-50%))
+
+                                        td:last-child
+                                            &:before
+                                                @include transform(translateY(-50%) scale(-1))
+                                                left: initial
+                                                right: -2vmin
+                                        
+
+
                             
                             & > *
                                 margin-top: 20px
@@ -1031,97 +1072,6 @@ body
             // #resultArea
             //     .circleGroup
             //         display: none
-            
-            #resultArea_tmp
-                $objectSize: 50vmin
-                .objectsArea
-                    width: $objectSize    
-                .ruleBroad
-                    position: relative
-                    // height: initial
-                    // width: 130%
-                    top: 50%
-                    &:before, &:after
-                        position: absolute
-                        content: ""
-                        @include boxSizing(initial)
-                        padding: 40%
-                        background: url(../img/result-board.svg) no-repeat center
-                        height: 100%
-                        width: 100%
-                        left: 50%
-                        top: 50%
-                        bottom: 0
-                        @include transform(translate(-50%, -50%))
-                        z-index: -1
-                        pointer-events: none
-
-                    &:before
-                        background: url(../img/clip-path.svg) no-repeat center
-                        // background-size: 80%
-                        // background-position-y: 75%
-                    .middleObject
-                        // max-height: $objectSize / 1.5
-                        // width: 80%
-                        // margin: 0 auto
-                        // padding: 0
-                        // // top: $objectSize / 2
-                        // @include boxSizing(initial)
-                        // // @include transform(translateY(-50%))
-                        
-                        
-
-                    .contentObject
-                        table
-                            width: 100%
-                            text-align: center
-                    
-                    .circleGroup
-                        position: absolute
-                        z-index: -1
-                        right: 0
-                        top: 50%
-                        &:nth-child(2)
-                            left: initial
-                            right: initial
-                        .circle
-                            position: absolute
-                            width: $objectSize / 5
-                            height: $objectSize / 5
-
-                            &:nth-child(1)
-                                @include transform(translate(0%, -35%))
-                            &:nth-child(2)
-                                @include transform(translate(-25%, 13%) scale(0.8))
-                                z-index: -1
-                            &:nth-child(3)
-                                @include transform(translate(-35%, -73%) scale(0.8))
-                                z-index: -1
-                            &:nth-child(4)
-                                @include transform(translate(-50%, 50%) scale(0.8))
-                                z-index: -2
-                            &:nth-child(5)
-                                @include transform(translate(-70%, -96%) scale(0.8))
-                                z-index: -2
-                            &.circleSpecial
-                                @include transform(translate(-55%, -27%))
-                                z-index: -2
-                            
-                        &.bottom
-                            @include transform(scaleX(-1))
-                    // #resultBackground
-                    //     position: absolute
-                    //     height: 180%
-                    //     width: 180%
-                    //     left: 50%
-                    //     top: 50%
-                    //     bottom: 0
-                    //     @include transform(translate(-50%, -50%))
-                    //     @include boxSizing(initial)
-                    //     z-index: -1
-                    //     fill: red
-                    //     pointer-events: none
-
 
 
     footer

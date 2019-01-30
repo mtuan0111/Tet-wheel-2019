@@ -978,6 +978,58 @@ body section#content #ruleArea .ruleBroad .middleObject .contentObject table, bo
   width: 100%;
   text-align: center;
 }
+body section#content #ruleArea .ruleBroad .middleObject .contentObject table tr, body section#content #resultArea .ruleBroad .middleObject .contentObject table tr {
+  padding: 1vmin 0;
+}
+body section#content #ruleArea .ruleBroad .middleObject .contentObject table tr:nth-child(2), body section#content #resultArea .ruleBroad .middleObject .contentObject table tr:nth-child(2) {
+  color: #ffed4a;
+  font-size: 110%;
+  font-weight: bold;
+  background: #ffed4a;
+  background: -moz-linear-gradient(-45deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
+  background: -webkit-linear-gradient(-45deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
+  background: linear-gradient(-45deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="$yellow", endColorstr="$yellow-dark",GradientType=0 );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+body section#content #ruleArea .ruleBroad .middleObject .contentObject table tr.currentUser td, body section#content #resultArea .ruleBroad .middleObject .contentObject table tr.currentUser td {
+  padding: 1vmin 0;
+}
+body section#content #ruleArea .ruleBroad .middleObject .contentObject table tr.currentUser td:first-child, body section#content #ruleArea .ruleBroad .middleObject .contentObject table tr.currentUser td:last-child, body section#content #resultArea .ruleBroad .middleObject .contentObject table tr.currentUser td:first-child, body section#content #resultArea .ruleBroad .middleObject .contentObject table tr.currentUser td:last-child {
+  position: relative;
+}
+body section#content #ruleArea .ruleBroad .middleObject .contentObject table tr.currentUser td:first-child:before, body section#content #ruleArea .ruleBroad .middleObject .contentObject table tr.currentUser td:last-child:before, body section#content #resultArea .ruleBroad .middleObject .contentObject table tr.currentUser td:first-child:before, body section#content #resultArea .ruleBroad .middleObject .contentObject table tr.currentUser td:last-child:before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  background: blue;
+  height: 4vmin;
+  width: 4vmin;
+  left: -2vmin;
+  top: 60%;
+  -webkit-mask-image: url(../img/motif-03.svg);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  -webkit-mask-position: center;
+  background: #ffed4a;
+  background: -moz-linear-gradient(-45deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
+  background: -webkit-linear-gradient(-45deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
+  background: linear-gradient(-45deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="$yellow", endColorstr="$yellow-dark",GradientType=0 );
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+body section#content #ruleArea .ruleBroad .middleObject .contentObject table tr.currentUser td:last-child:before, body section#content #resultArea .ruleBroad .middleObject .contentObject table tr.currentUser td:last-child:before {
+  -webkit-transform: translateY(-50%) scale(-1);
+  -ms-transform: translateY(-50%) scale(-1);
+  -o-transform: translateY(-50%) scale(-1);
+  transform: translateY(-50%) scale(-1);
+  left: initial;
+  right: -2vmin;
+}
 body section#content #ruleArea .ruleBroad .middleObject .contentObject > *, body section#content #resultArea .ruleBroad .middleObject .contentObject > * {
   margin-top: 20px;
 }
@@ -1798,102 +1850,6 @@ body section#content #wheelArea .wheelCircle #wheelCenter .campaignCircle {
 }
 body section#content #wheelArea .wheelCircle #wheelCenter .notification a, body section#content #wheelArea .wheelCircle #wheelCenter .notification strong {
   color: #cc2121;
-}
-body section#content #resultArea_tmp .objectsArea {
-  width: 50vmin;
-}
-body section#content #resultArea_tmp .ruleBroad {
-  position: relative;
-  top: 50%;
-}
-body section#content #resultArea_tmp .ruleBroad:before, body section#content #resultArea_tmp .ruleBroad:after {
-  position: absolute;
-  content: "";
-  -webkit-box-sizing: initial;
-  -moz-box-sizing: initial;
-  box-sizing: initial;
-  padding: 40%;
-  background: url(../img/result-board.svg) no-repeat center;
-  height: 100%;
-  width: 100%;
-  left: 50%;
-  top: 50%;
-  bottom: 0;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  z-index: -1;
-  pointer-events: none;
-}
-body section#content #resultArea_tmp .ruleBroad:before {
-  background: url(../img/clip-path.svg) no-repeat center;
-}
-body section#content #resultArea_tmp .ruleBroad .contentObject table {
-  width: 100%;
-  text-align: center;
-}
-body section#content #resultArea_tmp .ruleBroad .circleGroup {
-  position: absolute;
-  z-index: -1;
-  right: 0;
-  top: 50%;
-}
-body section#content #resultArea_tmp .ruleBroad .circleGroup:nth-child(2) {
-  left: initial;
-  right: initial;
-}
-body section#content #resultArea_tmp .ruleBroad .circleGroup .circle {
-  position: absolute;
-  width: 10vmin;
-  height: 10vmin;
-}
-body section#content #resultArea_tmp .ruleBroad .circleGroup .circle:nth-child(1) {
-  -webkit-transform: translate(0%, -35%);
-  -ms-transform: translate(0%, -35%);
-  -o-transform: translate(0%, -35%);
-  transform: translate(0%, -35%);
-}
-body section#content #resultArea_tmp .ruleBroad .circleGroup .circle:nth-child(2) {
-  -webkit-transform: translate(-25%, 13%) scale(0.8);
-  -ms-transform: translate(-25%, 13%) scale(0.8);
-  -o-transform: translate(-25%, 13%) scale(0.8);
-  transform: translate(-25%, 13%) scale(0.8);
-  z-index: -1;
-}
-body section#content #resultArea_tmp .ruleBroad .circleGroup .circle:nth-child(3) {
-  -webkit-transform: translate(-35%, -73%) scale(0.8);
-  -ms-transform: translate(-35%, -73%) scale(0.8);
-  -o-transform: translate(-35%, -73%) scale(0.8);
-  transform: translate(-35%, -73%) scale(0.8);
-  z-index: -1;
-}
-body section#content #resultArea_tmp .ruleBroad .circleGroup .circle:nth-child(4) {
-  -webkit-transform: translate(-50%, 50%) scale(0.8);
-  -ms-transform: translate(-50%, 50%) scale(0.8);
-  -o-transform: translate(-50%, 50%) scale(0.8);
-  transform: translate(-50%, 50%) scale(0.8);
-  z-index: -2;
-}
-body section#content #resultArea_tmp .ruleBroad .circleGroup .circle:nth-child(5) {
-  -webkit-transform: translate(-70%, -96%) scale(0.8);
-  -ms-transform: translate(-70%, -96%) scale(0.8);
-  -o-transform: translate(-70%, -96%) scale(0.8);
-  transform: translate(-70%, -96%) scale(0.8);
-  z-index: -2;
-}
-body section#content #resultArea_tmp .ruleBroad .circleGroup .circle.circleSpecial {
-  -webkit-transform: translate(-55%, -27%);
-  -ms-transform: translate(-55%, -27%);
-  -o-transform: translate(-55%, -27%);
-  transform: translate(-55%, -27%);
-  z-index: -2;
-}
-body section#content #resultArea_tmp .ruleBroad .circleGroup.bottom {
-  -webkit-transform: scaleX(-1);
-  -ms-transform: scaleX(-1);
-  -o-transform: scaleX(-1);
-  transform: scaleX(-1);
 }
 body footer {
   position: relative;
