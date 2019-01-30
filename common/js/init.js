@@ -216,12 +216,12 @@ window.loadDone = function() {
 
 window.performAndroid = function() {
     if (window.mobilecheck()) {
-        if (!window.checkIphone) {
+        if (!window.checkIphone()) {
             var style = document.createElement("link");
             style.rel = "stylesheet";
             style.type = "text/css";
             style.href = "common/css/andoirdPerform.css";
-            document.getElementsByTagName("head")[0].appendChild(style);
+            // document.getElementsByTagName("head")[0].appendChild(style);
         }
     }
 };
