@@ -206,6 +206,7 @@ window.loadDone = function() {
 };
 
 window.performAndroid = function() {
+  console.log("performAndroid");
     if (window.mobilecheck()) {
       console.log("mobilecheck");
         if (!window.checkIphone) {
