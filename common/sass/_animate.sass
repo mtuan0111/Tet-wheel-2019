@@ -145,7 +145,7 @@
   10%
     transform: translate(-50%, -100%) rotate(-165deg)
 
-  11%
+  30%
     transform: translate(-50%, -100%) rotate(-135deg)
 
   100%
@@ -159,7 +159,7 @@
   10%
     -moz-transform: translate(-50%, -100%) rotate(-165deg)
 
-  11%
+  30%
     -moz-transform: translate(-50%, -100%) rotate(-135deg)
 
   100%
@@ -173,7 +173,7 @@
   10%
     -webkit-transform: translate(-50%, -100%) rotate(-165deg)
 
-  11%
+  30%
     -webkit-transform: translate(-50%, -100%) rotate(-135deg)
 
   100%
@@ -187,7 +187,7 @@
   10%
     -o-transform: translate(-50%, -100%) rotate(-165deg)
 
-  11%
+  30%
     -o-transform: translate(-50%, -100%) rotate(-135deg)
 
   100%
@@ -201,7 +201,7 @@
   10%
     -ms-transform: translate(-50%, -100%) rotate(-165deg)
 
-  11%
+  30%
     -ms-transform: translate(-50%, -100%) rotate(-135deg)
 
   100%
@@ -493,6 +493,67 @@
     // display: initial
 
 
+.flipEffect
+    animation: flipping linear 5s
+    -webkit-animation: flipping linear 5s
+    -moz-animation: flipping linear 5s
+    -o-animation: flipping linear 5s
+    -ms-animation: flipping linear 5s
+    
+    animation-iteration-count: infinite
+    -webkit-animation-iteration-count: infinite
+    -moz-animation-iteration-count: infinite
+    -o-animation-iteration-count: infinite
+    -ms-animation-iteration-count: infinite
+
+    animation-direction: alternate
+    -webkit-animation-direction: alternate
+    -moz-animation-direction: alternate
+    -o-animation-direction: alternate
+    -ms-animation-direction: alternate
+    
+
+@keyframes flipping
+  0%
+    transform: scaleX(0.8)
+
+  100%
+    transform: scaleX(0.5)
+
+
+@-moz-keyframes flipping
+  0%
+    -moz-transform: scaleX(0.8)
+
+  100%
+    -moz-transform: scaleX(0.5)
+
+
+@-webkit-keyframes flipping
+  0%
+    -webkit-transform: scaleX(0.8)
+
+  100%
+    -webkit-transform: scaleX(0.5)
+
+
+@-o-keyframes flipping
+  0%
+    -o-transform: scaleX(0.8)
+
+  100%
+    -o-transform: scaleX(0.5)
+
+
+@-ms-keyframes flipping
+  0%
+    -ms-transform: scaleX(0.8)
+
+  100%
+    -ms-transform: scaleX(0.5)
+
+
+
 .bubbleEffect
     animation: bubbling linear 0.5s
     -webkit-animation: bubbling linear 0.5s
@@ -546,6 +607,65 @@
   100%
     height: 85%
     width: 85%
+
+.swingEffect
+    animation: swinging linear 10s
+    -webkit-animation: swinging linear 10s
+    -moz-animation: swinging linear 10s
+    -o-animation: swinging linear 10s
+    -ms-animation: swinging linear 10s
+    
+    animation-iteration-count: infinite
+    -webkit-animation-iteration-count: infinite
+    -moz-animation-iteration-count: infinite
+    -o-animation-iteration-count: infinite
+    -ms-animation-iteration-count: infinite
+
+    animation-direction: alternate
+    -webkit-animation-direction: alternate
+    -moz-animation-direction: alternate
+    -o-animation-direction: alternate
+    -ms-animation-direction: alternate
+    
+
+@keyframes swinging
+  100%
+    transform: scale(0.35) skew(2deg)
+
+  100%
+    transform: scale(0.35) skew(-2deg)
+
+
+@-moz-keyframes swinging
+  100%
+    -moz-transform: scale(0.35) skew(2deg)
+
+  100%
+    -moz-transform: scale(0.35) skew(-2deg)
+
+
+@-webkit-keyframes swinging
+  100%
+    -webkit-transform: scale(0.35) skew(2deg)
+
+  100%
+    -webkit-transform: scale(0.35) skew(-2deg)
+
+
+@-o-keyframes swinging
+  100%
+    -o-transform: scale(0.35) skew(2deg)
+
+  100%
+    -o-transform: scale(0.35) skew(-2deg)
+
+
+@-ms-keyframes swinging
+  100%
+    -ms-transform: scale(0.35) skew(2deg)
+
+  100%
+    -ms-transform: scale(0.35) skew(-2deg)
 
 
 .disableAnimate
