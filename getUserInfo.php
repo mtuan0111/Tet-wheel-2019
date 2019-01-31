@@ -1,12 +1,10 @@
 <?php
-// header("HTTP/1.0 404 Not Found"); // turn off this game
 require_once('func_ZendBootstrap.php');
 $userInfo = false;
 
 define("GET_USER_INFO","1",true);
 define("GET_USER_USERCAMP","2",true);
 define("GET_USER_RESULT","3",true);
-define("GET_USER_FRIENDLIST","4",true);
 
 if (isset($_POST['request'])){
     $request = $_POST['request'];
@@ -21,16 +19,13 @@ if (isset($_POST['request'])){
         case GET_USER_RESULT:
             getResultList();
             break;
-        case GET_USER_FRIENDLIST:
-            getFirstListCamp();
-            break;
         default:
             break;
     }
 }
 
-
-function getUserInfo(){
+function getUserInfo()
+{
     global $db, $auth;
     $userData = null;
     if ($auth -> getIdentity()){
@@ -43,15 +38,15 @@ function getUserInfo(){
     echo json_encode($userData);
 }
 
-function getUserCampInfo(){
+function getUserCampInfo()
+{
     global $db, $auth;
     $userCampData;
     if ($auth -> getIdentity()){
         $userInfo = $auth -> getIdentity();
         $userID = $userInfo->UserID;
-        $TetWheelModel = new Default_Model_TetWheel2019();
-        // $numRound = $friendWheel->checkUserHasTurn($userID,1);
-        $checkExist = $TetWheelModel->checkUserJoined($userID);
+        $mdlTetWheel = new Default_Model_TetWheel2019();
+        $checkExist = $mdlTetWheel->checkUserJoined($userID);
 
         $checkExist = $checkExist ? true : false;
 
@@ -67,22 +62,12 @@ function getUserCampInfo(){
     echo json_encode($userCampData);
 }
 
-function getResultList(){
+function getResultList()
+{
     global $auth, $db;
 
-    // $sql = "SELECT g.userid, g.timestamp , u.UserName , sum(g.point)as total
-    //             FROM ( SELECT * FROM `camp_friendwheel_history`ORDER BY id DESC) g JOIN `user` u ON g.userid = u.UserID
-    //             GROUP BY userid
-    //             ORDER BY total DESC,id DESC
-    //             limit 20";
-    // $listResults = $db->fetchAll($sql);
-
-    $TetWheelModel = new Default_Model_TetWheel2019History();
-    $listResults = $TetWheelModel->resultList(2019)->toArray();
-
-    // var_dump($listResults);
-    // var_dump($listResults2->toArray());
-    // die;
+    $mdlTetWheel = new Default_Model_TetWheel2019History();
+    $listResults = $mdlTetWheel->resultList(2019)->toArray();
 
     if ($auth -> getIdentity()){
         $userInfo = $auth -> getIdentity();
@@ -98,32 +83,3 @@ function getResultList(){
     header('Content-Type: application/json');
     echo json_encode($listResults);
 }
-
-function getFirstListCamp(){
-    global $db, $auth;
-
-    $listFriends;
-    if ($auth -> getIdentity()){
-        $userInfo = $auth -> getIdentity();
-        $userID = $userInfo->UserID;
-        $sql = "SELECT `UserName`,`email` FROM `camp_friendwheel` cf inner join `user` ON cf.UserID = {$userID} AND cf.FriendsID = `user`.UserID";
-        $listFriends = $db->fetchAll($sql);
-    }
-
-    header('Content-Type: application/json');
-    echo json_encode($listFriends);
-}
-
-// function getFriendList(){
-//     global $db, $auth;
-
-//     $sql = "SELECT u.UserID as uid,re.FriendsID as usname,u.FullName as fullname,u.Email as email from recommendtofriends as re, user as u where re.FriendsID = u.UserID and re.UserID = {$_SESSION['Zend_Auth']['storage']->UserID} order by u.UserID DESC";
-//     $listFriends=$db->fetchAll($sql);
-
-//     header('Content-Type: application/json');
-//     echo json_encode($listFriends);
-// }
-
-// function getFriendInfo($friendID){
-//     global $db;
-// }

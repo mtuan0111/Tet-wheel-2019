@@ -1,7 +1,6 @@
 function facebookObject(dataUser = null) {
     var _this = this;
     _this.user = dataUser;
-    console.log(_this.user);
 }
 
 facebookObject.prototype.sharePoint = function(dataUser) {

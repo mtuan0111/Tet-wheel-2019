@@ -24,16 +24,19 @@
             background: radial-gradient(#cc2121 0%, #3d0a0a 100%);
             filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=#cc2121, endColorstr=#3d0a0a,GradientType=0 );
             box-sizing: border-box;
-            position: relative
+            position: relative;
+            z-index: 1
         }
-        
+        .wrapper >div{
+            margin: 20px 0
+        }
         .wrapper a{
-            color: yellow;
+            color: #ffed4a;
             text-decoration: none;
         }
         
         .wrapper strong{
-            color: yellow;
+            color: #ffed4a;
         }
         .wrapper:before{
             content: "";
@@ -46,6 +49,7 @@
             background-size: 2%;
             background-size: 2vmin;
             opacity: 0.2;
+            z-index: -1;
         }
         
         .wrapper:after{
@@ -55,7 +59,8 @@
             bottom: 10px;
             left: 10px;
             right: 10px;
-            border: dashed yellow 0.5px
+            border: dashed #ffed4a 0.5px;
+            z-index: -2;
         }
         
         .wrapper:before{
@@ -85,9 +90,9 @@
         
         .topMail h2:before, .topMail h2:after{
             content: "";
-            background: yellow;
+            background: #ffed4a;
             display: block;
-            height: 60px;
+            height: 50px;
             -webkit-mask-image: url(https://stagingws.vinaresearch.net/public/vong-quay-tet-2019/common/img/motif-01.svg);
             -webkit-mask-repeat: no-repeat;
             -webkit-mask-size: contain;
@@ -115,7 +120,7 @@
         
         .topMail .subtitle:before, .topMail .subtitle:after{
             content: "";
-            background: yellow;
+            background: #ffed4a;
             display: inline-block;
             height: 20px;
             width: 20px;
@@ -138,6 +143,10 @@
             max-width: 100%;
             border-radius: 20px;
         }
+        
+        .orgSign{
+            text-align: right
+        }
       </style>
       <div class="topMail"> 
         <h2>Vòng quay may mắn</h2>
@@ -146,10 +155,14 @@
       <div class="middleMail"> 
         <p>Năm mới Tết đến, BQT Vinaresearch tổ chức chương trình <strong>Vòng Quay May Mắn - Hái Lộc Đầu Xuân </strong> để thay lời cảm ơn chân thành nhất gửi đến các bạn thành viên đã đồng hành, tin tưởng Vinaresearch trong suốt thời gian vừa qua. </p>
         <p>Chương trình "Vòng quay may mắn" với chủ đề Hái Lộc Đầu Xuân Kỷ Hợi sẽ chính thức bắt đầu vào <strong>9h sáng ngày 01/02/2019</strong>, với số lượng quà tặng lên đến <strong>2303 phần quà mỗi ngày</strong> và phần quà giá trị nhất mỗi ngày là <strong>1000 điểm </strong> nên các bạn có tham gia thì chắc chắn sẽ có quà rinh về nhé.</p>
-        <p>Mỗi ngày, mỗi thành viên sẽ được miễn phí 1 lượt quay. Cho đến khi hết quà cho một ngày, vòng quay sẽ tự động đóng và sẽ được mở lại vào <strong>9h sáng </strong> ngày hôm sau.</p>
+        <p>Mỗi ngày, mỗi thành viên sẽ có được 1 lượt quay. Cho đến khi hết quà cho một ngày, vòng quay sẽ tự động đóng và sẽ được mở lại vào <strong>9h sáng </strong> ngày hôm sau.</p>
       </div>
       <div class="bottomMail"> 
-        <p>Xem thông tin chi tiết của chương trình tại đây:<br/><a href="https://vinaresearch.net/public/vong-quay-may-man/">https://vinaresearch.net/public/vong-quay-may-man/</a></p>
+        <p>Xem thông tin chi tiết của chương trình tại đây:<br/><a href="https://vinaresearch.net/public/vong-quay-tet-2019/">https://vinaresearch.net/public/vong-quay-tet-2019/</a></p>
+        <p>Mọi thắc mắc xin liên hệ bộ phận hỗ trợ (Hotline: 083 848 3732) hoặc hộp thư: <a href="mailto:support@vinaresearch.net">support@vinaresearch.net</a></p>
+        <div class="orgSign">
+          <p>Thân ái <br/>Ban Quản trị Vinaresearch</p>
+        </div>
       </div>
     </div>
   </body>

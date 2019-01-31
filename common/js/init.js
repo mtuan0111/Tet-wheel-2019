@@ -29,8 +29,6 @@ window.onload = function() {
             } else {
                 var messageNotifi = "Bạn hãy chờ vòng quay quay xong nhé";
 
-                // User.getUserInfo();
-
                 new notificationMessage(messageNotifi);
                 e.preventDefault();
             }
@@ -59,59 +57,7 @@ window.onload = function() {
         fbObject.sharePoint();
         return;
     });
-
-    // paralax setting
-    // var scene = document.getElementById('content');
-    // var parallax = new Parallax(scene);
 };
-
-// Inject YouTube API script
-// var tag = document.createElement('script');
-// tag.src = "//www.youtube.com/player_api";
-// var firstScriptTag = document.getElementsByTagName('script')[0];
-// firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-// window.onYouTubePlayerAPIReady = function() {
-//     // create the global player from the specific iframe (#video)
-//     player = new YT.Player('video', {
-//         events: {
-//             // call this function when player is ready to use
-//             'onReady': onPlayerReady,
-//             'onStateChange': onPlayerStateChange,
-//         }
-//     });
-// }
-
-// function onPlayerReady(event) {
-
-//     if(typeof(player) == "undefined"){
-//         return;
-//     }
-
-//     if(typeof(player.playVideo) !== "undefined"){
-//         player.playVideo();
-//                 console.log("play video");
-//     }
-// }
-
-// function onPlayerPause(event){
-
-//     if(typeof(player) == "undefined"){
-//         return;
-//     }
-
-//     if(typeof(player.stopVideo) !== "undefined"){
-//         player.stopVideo();
-//                 console.log("stop video");
-//     }
-// }
-
-// function onPlayerStateChange(event) {
-//     if(event.data === 0) {
-//         console.log('done');
-//     }
-//     console.log("change");
-// }
 
 window.onresize = function(event) {
     $("footer .pageNav")[0].removeAttribute("style");
@@ -136,15 +82,11 @@ function getHashURLh(hash) {
 
     switch (hashPage) {
         case "thele":
-            // $("#introBroad").scrollTop($("#introBroad video").offset().top);
-            // setTimeout(function() {
-            //     player.play();
-            // }, 1000);
             break;
         case "ketqua":
             resultTable = document.getElementById("resultBroad");
             User.getUserResult();
-            // new notificationMessage("Bạn đang có xxx vòng quay.\n Bạn đã đạt xxx điểm từ vòng quay bạn bè.","Username");
+
             break;
         case "dangxuat":
             User.logOut();
@@ -159,7 +101,6 @@ function getHashURLh(hash) {
             User.getUserFriendList();
             break;
         case "vongquay":
-            // User.getUserFriendList();
             break;
         default:
             break;
@@ -193,8 +134,7 @@ window.mobilecheck = function() {
 
 window.checkIphone = function() {
     IOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-    // console.log("navigator: ", navigator);
-    // alert(window.innerHeight + " - " + window.outerHeight);
+
     if (window.mobilecheck()) {
         document.getElementsByTagName("body")[0].style.height =
             window.innerHeight + "px";

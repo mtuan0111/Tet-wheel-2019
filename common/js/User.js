@@ -209,16 +209,21 @@ User.prototype.getPlay = function(callback = null) {
             .done(function(data) {
                 error = data.error;
                 value = data.data;
-                if (error == 0 && callback) {
-                    callback(data);
-                } else {
-                    if (error == 3) {
+                switch (error) {
+                    case 0:
+                        if (callback) callback(data);
+                        break;
+                    case 3:
                         var loginMessage =
                             'Bạn cần <a href="#dangnhap">đăng nhập</a> để quay.<br>\
                             Bạn chưa có tài khoản Vinaresearch?<br>\
                             <a class="registerBtn" href="https://vinaresearch.net/" target="_blank">Đăng ký ngay</a>';
-                        new notificationMessage(loginMessage);
-                    } else new notificationMessage(value);
+                        value = loginMessage;
+                    case 4:
+                    case 5:
+                        value += '<br>Xem <a href="#thele">thể lệ</a>.';
+                    default:
+                        new notificationMessage(value);
                 }
             })
             .always(function() {

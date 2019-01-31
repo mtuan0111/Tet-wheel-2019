@@ -87,12 +87,10 @@ Wheel.prototype.rotate = function(point_value = "") {
         { deg: deg_rotate },
         {
             duration: rotate_duration,
-            // duration: 0,
             easing: "easeOutQuart",
             specialEasing: "easeOutQuart",
             step: function(now) {
                 nowe = now % 360;
-                // if(activePeace < 0){
                 var activePeace = Math.round(
                     (360 - nowe) / rotate_each_point +
                         horizontal_deg / rotate_each_point
@@ -106,7 +104,7 @@ Wheel.prototype.rotate = function(point_value = "") {
 
                 pointerRotate =
                     -(nowe % number_of_point) + rotate_each_point / 2;
-                // console.log(pointerRotate + ">" + -(rotate_each_point / 2));
+
                 if (pointerRotate < -rotate_each_point / 4) {
                     pointerRotate = pointerRotate;
                 } else pointerRotate = 0;
@@ -148,8 +146,6 @@ Wheel.prototype.rotate = function(point_value = "") {
                 sharePointButton.href = "#";
                 sharePointButton.className = "sharePoint";
                 sharePointButton.innerHTML = "Chia sẻ lên Facebook!";
-
-                console.log(sharePointButton.outerHTML);
 
                 var messageNotifi =
                     "Bạn đã nhận được <strong>" +
