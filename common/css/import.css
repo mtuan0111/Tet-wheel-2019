@@ -1006,7 +1006,7 @@ body section#content #ruleArea .ruleBroad .middleObject .contentObject table, bo
 body section#content #ruleArea .ruleBroad .middleObject .contentObject table tr, body section#content #resultArea .ruleBroad .middleObject .contentObject table tr {
   padding: 1vmin 0;
 }
-body section#content #ruleArea .ruleBroad .middleObject .contentObject table tr:nth-child(2), body section#content #resultArea .ruleBroad .middleObject .contentObject table tr:nth-child(2) {
+body section#content #ruleArea .ruleBroad .middleObject .contentObject table tr:nth-child(2) td, body section#content #resultArea .ruleBroad .middleObject .contentObject table tr:nth-child(2) td {
   color: #ffed4a;
   font-size: 110%;
   font-weight: bold;
