@@ -2055,6 +2055,9 @@ table th {
   body section#content #wheelArea .wheelCircle #wheelCenter {
     font-size: 75%;
   }
+  body section#content #wheelArea .loginCircle .insideCorner #loginBroad #frmLogin .errorMessage {
+    font-size: 70%;
+  }
   body footer {
     position: relative;
   }

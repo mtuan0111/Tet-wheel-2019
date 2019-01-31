@@ -7,6 +7,7 @@ window.onload = function() {
     touchInit();
     getHashURL();
     var greeting = new greetingMessage("", function(timeOut) {
+        timeOut = timeOut > 8 ? 8 : timeOut;
         window.loadDone(timeOut);
     });
     window.performAndroid();
