@@ -63,6 +63,7 @@ window.onload = function() {
 
 window.onresize = function(event) {
   $("footer .pageNav")[0].removeAttribute("style");
+  window.checkIphone();
 };
 
 function getHashURLh(hash) {
