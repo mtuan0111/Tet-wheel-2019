@@ -2071,9 +2071,6 @@ table th {
     padding: 2% 0 10% 0;
     position: relative;
   }
-  body footer .pageNav.active a.btnToggle {
-    border-top: inherit;
-  }
   body footer .pageNav:before {
     content: "";
     position: absolute;

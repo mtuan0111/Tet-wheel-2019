@@ -4,7 +4,6 @@ function mainNavigate(dataUser = null) {
     _this.currentNav = _this.parent.getElementsByClassName("pageNav")[0];
     _this.userData = dataUser;
     _this.topNav = _this.create(dataUser);
-    _this.parent.appendChild(_this.topNav);
 }
 
 mainNavigate.prototype.generateNavArray = function(dataUser) {
@@ -22,7 +21,7 @@ mainNavigate.prototype.generateNavArray = function(dataUser) {
         var arrayData = [
             { href: "#thele", innerHTML: "Thể lệ" },
             { href: "#vongquay", innerHTML: "Vòng quay" },
-            // { href: "#danhsach", innerHTML: "Danh sách" },
+
             {
                 href: "#thongtin",
                 "data-username": _this.Username,
@@ -64,12 +63,10 @@ mainNavigate.prototype.create = function(dataUser) {
     }
 
     if (_this.currentNav) {
-        _this.currentNav.remove();
+        _this.currentNav.innerHTML = topNav.innerHTML;
+        _this.topNav = _this.currentNav;
     }
 
-    if (_this.topNav) {
-        _this.topNav.replaceWith(topNav);
-    }
     return topNav;
 };
 

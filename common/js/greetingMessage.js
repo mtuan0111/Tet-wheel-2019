@@ -7,11 +7,11 @@ function greetingMessage(text = null, callback) {
 
     _this.readTextFile("common/greetings.txt", function() {
         var countMessage = _this.messages.length;
-
+        var text = "";
         do {
             var pickMessage =
                 Math.round(Math.random() * (countMessage - 1)) + 1;
-            var text = _this.messages[pickMessage];
+            text = _this.messages[pickMessage];
             text = text.trim();
         } while (_this.checkMessageAvaliable(text));
 

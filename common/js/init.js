@@ -13,14 +13,14 @@ window.onload = function() {
 
     $(document).on(
         "click",
-        '.pageNav a, a[href="#dangnhap"], a[href="#thele"], a[href="#dangnhap"]',
+        '.pageNav a, a[href="#dangnhap"], a[href="#thele"], a[href="#vongquay"]',
         function(e) {
             if (window.mobilecheck()) {
                 $("footer .pageNav")
                     .stop(true, false)
-                    .slideUp();
-
-                $("footer").toggleClass("activeNav");
+                    .slideUp(function() {
+                        $("footer").removeClass("activeNav");
+                    });
             } else {
                 $("footer").removeClass("activeNav");
                 $("footer .pageNav")[0].removeAttribute("style");
@@ -42,9 +42,9 @@ window.onload = function() {
         if (window.mobilecheck()) {
             $("footer .pageNav")
                 .stop(true, false)
-                .slideToggle();
-
-            $("footer").toggleClass("activeNav");
+                .slideToggle(function() {
+                    $("footer").toggleClass("activeNav");
+                });
         } else {
             $("footer").removeClass("activeNav");
             $("footer .pageNav")[0].removeAttribute("style");
@@ -68,7 +68,6 @@ function getHashURLh(hash) {
     if (wheel.rotating) {
         return;
     }
-
     var hashPage = hash.replace("#", "");
     var page = document.getElementById("content");
     page.className = hashPage;
