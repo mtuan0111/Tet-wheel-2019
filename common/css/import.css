@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Lobster&ampsubset=vietnamese");
 @import url("https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i");
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
@@ -579,6 +580,7 @@ body {
   overflow: hidden;
   position: relative;
   z-index: 1;
+  text-align: justify;
   background: #cc2121;
   background: -moz-radial-gradient(#cc2121 0%, #3d0a0a 100%);
   background: -webkit-radial-gradient(#cc2121 0%, #3d0a0a 100%);
@@ -595,6 +597,26 @@ body #loadingProcessing {
   background: radial-gradient(#cc2121 0%, #3d0a0a 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="$red", endColorstr="$red-dark",GradientType=0 );
   z-index: 2;
+}
+body #loadingProcessing .titleContent {
+  display: inline-block;
+  margin-bottom: 8vmin;
+}
+body #loadingProcessing .greetingMessage {
+  font-style: italic;
+  position: relative;
+}
+body #loadingProcessing .greetingMessage:after {
+  content: "-Sưu tầm-";
+  font-size: 80%;
+  margin-top: 4vmin;
+  display: block;
+  opacity: 0.8;
+}
+body #loadingProcessing .greetingMessage p {
+  font-size: 80%;
+  opacity: 0.8;
+  display: inline-block;
 }
 body #loadingProcessing .content {
   position: absolute;
@@ -616,8 +638,8 @@ body #loadingProcessing .content h2 {
 body #loadingProcessing .content h2:before, body #loadingProcessing .content h2:after {
   content: "";
   display: block;
-  height: 5vmin;
-  width: 100%;
+  height: 10vmin;
+  width: 101%;
   margin: 0 auto;
   background: #ffed4a;
   background: #ffed4a;
@@ -837,11 +859,11 @@ body section#content #mainNav {
 }
 body section#content #ruleArea .ruleBroad, body section#content #resultArea .ruleBroad {
   position: inherit;
-  top: 50%;
+  top: 55%;
   left: 50%;
   padding: 5%;
   width: 150%;
-  height: 100%;
+  height: 80%;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
@@ -863,13 +885,14 @@ body section#content #ruleArea .ruleBroad .topObject, body section#content #rule
   z-index: 1;
   height: 0%;
   top: 0;
+  left: 0;
 }
 body section#content #ruleArea .ruleBroad .topObject .bracePipe, body section#content #ruleArea .ruleBroad .bottomObject .bracePipe, body section#content #resultArea .ruleBroad .topObject .bracePipe, body section#content #resultArea .ruleBroad .bottomObject .bracePipe {
   content: "";
   position: absolute;
   width: 120%;
   height: 1.2vmin;
-  left: 46%;
+  left: 48%;
   background: #ffed4a;
   background: -moz-linear-gradient(2deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
   background: -webkit-linear-gradient(2deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
@@ -944,25 +967,27 @@ body section#content #ruleArea .ruleBroad .middleObject, body section#content #r
 }
 body section#content #ruleArea .ruleBroad .middleObject .titleText:before, body section#content #ruleArea .ruleBroad .middleObject .titleText:after, body section#content #resultArea .ruleBroad .middleObject .titleText:before, body section#content #resultArea .ruleBroad .middleObject .titleText:after {
   content: "";
-  display: block;
+  display: inline-block;
   height: 5vmin;
-  width: 100%;
+  width: 15%;
   max-width: 40%;
-  margin: 0 auto;
+  margin: 0 2%;
   background: #ffed4a;
   background: #ffed4a;
   background: -moz-linear-gradient(-45deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
   background: -webkit-linear-gradient(-45deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
   background: linear-gradient(-45deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="$yellow", endColorstr="$yellow-dark",GradientType=0 );
-  -webkit-mask-image: url(../img/motif-01.svg);
+  -webkit-mask-image: url(../img/motif-04.svg);
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: contain;
   -webkit-mask-position: center;
 }
 body section#content #ruleArea .ruleBroad .middleObject .titleText:after, body section#content #resultArea .ruleBroad .middleObject .titleText:after {
-  -webkit-mask-image: url(../img/motif-02.svg);
-  -webkit-mask-position: center 20%;
+  -webkit-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 body section#content #ruleArea .ruleBroad .middleObject .contentObject, body section#content #resultArea .ruleBroad .middleObject .contentObject {
   padding: 0 4% 2%;
@@ -1034,10 +1059,57 @@ body section#content #ruleArea .ruleBroad .middleObject .contentObject > *, body
   margin-top: 20px;
 }
 body section#content #ruleArea .ruleBroad .bottomObject, body section#content #resultArea .ruleBroad .bottomObject {
-  -webkit-transform: scale(-1) translateY(-100%);
-  -ms-transform: scale(-1) translateY(-100%);
-  -o-transform: scale(-1) translateY(-100%);
-  transform: scale(-1) translateY(-100%);
+  display: block;
+  height: 8vmin;
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: initial;
+  margin: 0 auto;
+  background: #ffed4a;
+  position: absolute;
+  -webkit-mask-image: url(../img/motif-02.svg);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  -webkit-mask-position: center top;
+  pointer-events: none;
+  background: #ffed4a;
+  background: -moz-linear-gradient(-45deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
+  background: -webkit-linear-gradient(-45deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
+  background: linear-gradient(-45deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="$yellow", endColorstr="$yellow-dark",GradientType=0 );
+  -webkit-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  -o-transform: translateY(100%);
+  transform: translateY(100%);
+}
+body section#content #ruleArea .ruleBroad .topObject:before, body section#content #resultArea .ruleBroad .topObject:before {
+  content: "";
+  display: block;
+  height: 14vmin;
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0.5vmin;
+  margin: 0 auto;
+  background: #ffed4a;
+  position: absolute;
+  -webkit-mask-image: url(../img/motif-01.svg);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  -webkit-mask-position: center bottom;
+  pointer-events: none;
+  background: #ffed4a;
+  background: -moz-linear-gradient(-45deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
+  background: -webkit-linear-gradient(-45deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
+  background: linear-gradient(-45deg, #ffed4a 10%, #9a7000 25%, #ffed4a 40%, #ffed4a 60%, #9a7000 75%, #ffed4a 90%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="$yellow", endColorstr="$yellow-dark",GradientType=0 );
+  -webkit-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+  transform: translateY(-100%);
 }
 body section#content #ruleArea_tmp .ruleBroad {
   width: 150%;
@@ -1879,6 +1951,19 @@ body footer .socialButton {
   margin: 0 auto;
   position: relative;
 }
+body footer .socialButton > * {
+  vertical-align: bottom;
+}
+body footer .socialButton .sharePoint {
+  border: 1px solid #4267b2;
+  display: inline-block;
+  background: #4267b2;
+  border-radius: 3px;
+  font-size: 12px;
+  padding: 2px 6px;
+  font-family: Helvetica, Arial, sans-serif;
+  cursor: pointer;
+}
 
 body {
   font-size: 2.5vmin;
@@ -1937,6 +2022,9 @@ table th {
     display: none;
   }
 
+  body {
+    font-size: 90%;
+  }
   body header #topLogo {
     width: 40vmin;
     height: 10vmin;
@@ -1955,8 +2043,17 @@ table th {
   body section.mountains.activeMobileNav .bottom {
     height: 25% !important;
   }
+  body section#content #ruleArea .ruleBroad, body section#content #resultArea .ruleBroad {
+    top: 50%;
+  }
   body section#content #resultArea .ruleBroad:before, body section#content #resultArea .ruleBroad:after {
     content: none !important;
+  }
+  body section#content #wheelArea .wheelCircle #wheelRotate .wheel-wing:before {
+    top: 5%;
+  }
+  body section#content #wheelArea .wheelCircle #wheelCenter {
+    font-size: 75%;
   }
   body footer {
     position: relative;
@@ -2002,7 +2099,7 @@ table th {
     -webkit-background-clip: initial;
     -webkit-text-fill-color: initial;
     background: initial;
-    font-size: 180%;
+    font-size: 120%;
     border-bottom: solid 2px #cc2121;
     margin-top: 0;
     border-radius: 0px;

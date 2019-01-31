@@ -27,8 +27,8 @@ html(lang="en")
                     position: relative;
                     z-index: 1
                 }
-                .wrapper >div{
-                    margin: 20px 0
+                .wrapper >div + div{
+                    margin-top: 20px
                 }
                 .wrapper a{
                     color: #ffed4a;
@@ -45,7 +45,7 @@ html(lang="en")
                     bottom: 0;
                     left: 0;
                     right: 0;
-                    background: url(https://stagingws.vinaresearch.net/public/vong-quay-tet-2019/common/img/pattern-motif.svg) center repeat;
+                    background: url(https://vinaresearch.net/public/vong-quay-tet-2019/common/img/pattern-motif.svg) center repeat;
                     background-size: 2%;
                     background-size: 2vmin;
                     opacity: 0.2;
@@ -70,7 +70,7 @@ html(lang="en")
                     bottom: 0;
                     left: 0;
                     right: 0;
-                    background: url(https://stagingws.vinaresearch.net/public/vong-quay-tet-2019/common/img/pattern-motif.svg) center repeat;
+                    background: url(https://vinaresearch.net/public/vong-quay-tet-2019/common/img/pattern-motif.svg) center repeat;
                     background-size: 2%;
                     background-size: 2vmin;
                     opacity: 0.2;
@@ -92,15 +92,17 @@ html(lang="en")
                     content: "";
                     background: #ffed4a;
                     display: block;
-                    height: 50px;
-                    -webkit-mask-image: url(https://stagingws.vinaresearch.net/public/vong-quay-tet-2019/common/img/motif-01.svg);
+
+                    height: 60px;
+                    -webkit-mask-image: url(https://vinaresearch.net/public/vong-quay-tet-2019/common/img/motif-01.svg);
+
                     -webkit-mask-repeat: no-repeat;
                     -webkit-mask-size: contain;
                     -webkit-mask-position: center bottom;
                 }
 
                 .topMail h2:after{
-                    -webkit-mask-image: url(https://stagingws.vinaresearch.net/public/vong-quay-tet-2019/common/img/motif-02.svg);
+                    -webkit-mask-image: url(https://vinaresearch.net/public/vong-quay-tet-2019/common/img/motif-02.svg);
                     -webkit-mask-position: center top;
                     height: 10px;
                 }
@@ -126,7 +128,7 @@ html(lang="en")
                     width: 20px;
                     vertical-align: middle;
 
-                    -webkit-mask-image: url(https://stagingws.vinaresearch.net/public/vong-quay-tet-2019/common/img/motif-03.svg);
+                    -webkit-mask-image: url(https://vinaresearch.net/public/vong-quay-tet-2019/common/img/motif-03.svg);
                     -webkit-mask-repeat: no-repeat;
                     -webkit-mask-size: contain;
                     -webkit-mask-position: center bottom;
@@ -147,6 +149,48 @@ html(lang="en")
                 .orgSign{
                     text-align: right
                 }
+
+                .pigs{
+                    text-align: center;
+                    bottom: 7px;
+                    text-align: center;
+                    padding-top: 20px
+                }
+                .pig-01, .pig-02, .pig-03, .pig-04, .pig-05, .pig-06{
+                    //- position: absolute;
+                    display: inline-block;
+                    bottom: 0;
+                    height: 60px;
+                    width: 60px;
+                    background: #ffed4a;
+                    bottom: 0;
+                    -webkit-mask-image: url(https://vinaresearch.net/public/vong-quay-tet-2019/common/img/pig-icon-01.svg);
+                    -webkit-mask-repeat: no-repeat;
+                    -webkit-mask-size: contain;
+                    -webkit-mask-position: center bottom;
+                }
+
+                .pig-02{
+                    -webkit-mask-image: url(https://vinaresearch.net/public/vong-quay-tet-2019/common/img/pig-icon-02.svg);
+                }
+
+                .pig-03{
+                    -webkit-mask-image: url(https://vinaresearch.net/public/vong-quay-tet-2019/common/img/pig-icon-03.svg);
+                }
+
+                .pig-04{
+                    -webkit-mask-image: url(https://vinaresearch.net/public/vong-quay-tet-2019/common/img/pig-icon-04.svg);
+                }
+
+                .pig-05{
+                    -webkit-mask-image: url(https://vinaresearch.net/public/vong-quay-tet-2019/common/img/pig-icon-05.svg);
+                }
+                
+                .pig-06{
+                    -webkit-mask-image: url(https://vinaresearch.net/public/vong-quay-tet-2019/common/img/pig-icon-06.svg);
+                }
+
+
             .topMail 
                 h2
                     | Vòng quay may mắn
@@ -175,6 +219,7 @@ html(lang="en")
                 p
                     | Xem thông tin chi tiết của chương trình tại đây:
                     br
+
                     a(href="https://vinaresearch.net/public/vong-quay-tet-2019/") https://vinaresearch.net/public/vong-quay-tet-2019/
                 p
                     | Mọi thắc mắc xin liên hệ bộ phận hỗ trợ (Hotline: 083 848 3732) hoặc hộp thư: 
@@ -184,3 +229,11 @@ html(lang="en")
                         |Thân ái 
                         br
                         |Ban Quản trị Vinaresearch
+
+                .pigs
+                    .pig-01
+                    .pig-02
+                    .pig-03
+                    .pig-04
+                    .pig-05
+

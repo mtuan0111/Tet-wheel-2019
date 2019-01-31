@@ -6,7 +6,9 @@ var player = document.getElementById("video");
 window.onload = function() {
     touchInit();
     getHashURL();
-    window.loadDone();
+    var greeting = new greetingMessage("", function(timeOut) {
+        window.loadDone(timeOut);
+    });
     window.performAndroid();
 
     $(document).on(
@@ -47,7 +49,6 @@ window.onload = function() {
             $("footer").removeClass("activeNav");
             $("footer .pageNav")[0].removeAttribute("style");
         }
-
         e.preventDefault();
         return;
     });
@@ -145,13 +146,14 @@ window.checkIphone = function() {
     return IOS && window.mobilecheck();
 };
 
-window.loadDone = function() {
+window.loadDone = function(secondOut = 1) {
+    secondOut = secondOut < 1 ? 1 : secondOut;
     loadingElement = document.getElementById("loadingProcessing");
     setTimeout(function() {
         $(loadingElement).slideUp(500, function() {
             $(this).remove();
         });
-    }, 1000);
+    }, secondOut * 1000);
 };
 
 window.performAndroid = function() {

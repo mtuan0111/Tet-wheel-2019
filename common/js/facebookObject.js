@@ -5,15 +5,18 @@ function facebookObject(dataUser = null) {
 
 facebookObject.prototype.sharePoint = function(dataUser) {
     var _this = this;
-    var username = _this.user["UserName"];
-    var point = _this.user["recentyAdded"];
-    var descriptionSharing =
-        username +
-        " vừa mới nhận được " +
-        point +
-        " điểm từ Vòng Quay May Mắn - Xuân Kỷ Hợi. Click vào đây để tham gia cùng " +
-        username +
-        " nhé!";
+    if (_this.user["recentyAdded"]) {
+        var username = _this.user["UserName"];
+        var point = _this.user["recentyAdded"];
+        var descriptionSharing =
+            username +
+            " vừa mới nhận được " +
+            point +
+            " điểm từ Vòng Quay May Mắn - Xuân Kỷ Hợi. Click vào đây để tham gia cùng " +
+            username +
+            " nhé!";
+    } else var descriptionSharing = null;
+
     var hashTag = "#Luckywheel2019";
 
     // FB.ui(

@@ -13,6 +13,7 @@
 
 
     body
+        font-size: 90%
         header
             #topLogo
                 width: 40vmin
@@ -36,11 +37,24 @@
                     height: 25% !important
 
         section#content 
+            #ruleArea, #resultArea
+                .ruleBroad 
+                    top: 50%
+                
             #resultArea 
                 .ruleBroad 
                     &:before, &:after
                         content: none !important
                         // width: 120vw !important
+            #wheelArea 
+                .wheelCircle 
+                    #wheelRotate 
+                        .wheel-wing
+                            &:before
+                                top: 5%
+
+                    #wheelCenter
+                        font-size: 75%
         footer
             position: relative
             .pageNav
@@ -75,7 +89,7 @@
                     -webkit-background-clip: initial
                     -webkit-text-fill-color: initial
                     background: initial
-                    font-size: 180%
+                    font-size: 120%
                     border-bottom: solid 2px $red
                     margin-top: 0
                     border-radius: 0px

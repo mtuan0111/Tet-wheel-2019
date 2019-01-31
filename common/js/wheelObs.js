@@ -103,7 +103,7 @@ Wheel.prototype.rotate = function(point_value = "") {
                 $(_this.rotateWings[activePeace]).addClass("active");
 
                 pointerRotate =
-                    -(nowe % number_of_point) + rotate_each_point / 2;
+                    -(nowe % number_of_point) + rotate_each_point / 3;
 
                 if (pointerRotate < -rotate_each_point / 4) {
                     pointerRotate = pointerRotate;
