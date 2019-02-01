@@ -219,10 +219,14 @@ User.prototype.getPlay = function(callback = null) {
                             Bạn chưa có tài khoản Vinaresearch?<br>\
                             <a class="registerBtn" href="https://vinaresearch.net/" target="_blank">Đăng ký ngay</a>';
                         value = loginMessage;
-                    case 4:
-                    case 5:
-                        value += '<br>Xem <a href="#thele">thể lệ</a>.';
+                    case 1:
+                    case 2:
+                        if (new Date().getDate() < 10) {
+                            value +=
+                                "<br>Hãy ghé lại vào 9h sáng ngày mai bạn nhé!";
+                        }
                     default:
+                        value += '<br>Xem <a href="#thele">thể lệ</a>.';
                         new notificationMessage(value);
                 }
             })
