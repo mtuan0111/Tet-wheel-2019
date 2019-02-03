@@ -1092,6 +1092,7 @@ body section#content #ruleArea .ruleBroad .topObject, body section#content #rule
   left: 0;
 }
 body section#content #ruleArea .ruleBroad .topObject .bracePipe, body section#content #ruleArea .ruleBroad .bottomObject .bracePipe, body section#content #resultArea .ruleBroad .topObject .bracePipe, body section#content #resultArea .ruleBroad .bottomObject .bracePipe {
+  display: none;
   content: "";
   position: absolute;
   width: 120%;
@@ -1170,8 +1171,6 @@ body section#content #ruleArea .ruleBroad .middleObject, body section#content #r
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
   height: 100%;
   overflow: auto;
   top: 0;
@@ -2137,6 +2136,17 @@ body section#content #wheelArea .wheelCircle #wheelCenter .campaignCircle {
 body section#content #wheelArea .wheelCircle #wheelCenter .notification a, body section#content #wheelArea .wheelCircle #wheelCenter .notification strong {
   color: #cc2121;
 }
+body section#content #resultArea .ruleBroad:after, body section#content #ruleArea .ruleBroad:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: url(../img/lotusBackground.svg) no-repeat center bottom;
+  opacity: 0.1;
+}
 body footer {
   position: relative;
 }
@@ -2260,7 +2270,7 @@ table th {
   body section#content #ruleArea .ruleBroad, body section#content #resultArea .ruleBroad {
     top: 50%;
   }
-  body section#content #resultArea .ruleBroad:before, body section#content #resultArea .ruleBroad:after {
+  body section#content #resultArea .ruleBroad:before {
     content: none !important;
   }
   body section#content #wheelArea .wheelCircle #wheelRotate .wheel-wing:before {

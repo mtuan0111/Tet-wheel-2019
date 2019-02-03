@@ -324,6 +324,7 @@ body
                         top: 0
                         left: 0
                         .bracePipe
+                            display: none
                             content: ""
                             position: absolute
                             width: 120%
@@ -390,8 +391,8 @@ body
                         @include boxSizing()
                         // left: 50%
                         // @include transform(translateX(-50%))
-                        display: flex
-                        flex-direction: column
+                        // display: flex
+                        // flex-direction: column
                         // padding-bottom: 20%
                         height: 100%      
                         // border-radius: 20%
@@ -1159,9 +1160,20 @@ body
                             a, strong
                                 color: $red
              
-            // #resultArea
-            //     .circleGroup
-            //         display: none
+            #resultArea, #ruleArea
+                .ruleBroad
+                    &:after
+                        content: ""
+                        display: block
+                        position: absolute
+                        top: 0
+                        bottom: 0
+                        left: 0
+                        right: 0
+                        background: url(../img/lotusBackground.svg) no-repeat center bottom
+                        opacity: 0.1
+                    // .circleGroup
+                    //     display: none
 
 
     footer
